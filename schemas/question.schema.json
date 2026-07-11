@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Question Metadata",
+  "type": "object",
+  "required": ["source_exam_origin", "academic_source_truth", "cognitive_complexity_tier", "prerequisite_nodes"],
+  "properties": {
+    "source_exam_origin": { "type": "string" },
+    "academic_source_truth": { "type": "string" },
+    "cognitive_complexity_tier": { "type": "string", "enum": ["TIER_1_BASIC", "TIER_2_EXTENDED", "TIER_3_JEE_NEET_CHALLENGE"] },
+    "prerequisite_nodes": { "type": "array", "items": { "type": "string" } },
+    "tags": { "type": "array", "items": { "type": "string" } }
+  },
+  "additionalProperties": false
+}

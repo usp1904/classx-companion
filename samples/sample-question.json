@@ -1,0 +1,7 @@
+{
+  "source_exam_origin": "CBSE_BOARD_2023",
+  "academic_source_truth": "NCERT_2026_27_CH4",
+  "cognitive_complexity_tier": "TIER_1_BASIC",
+  "prerequisite_nodes": ["MATH_CLASS6_FRACTIONS", "MATH_CLASS10_LINEAR_EQUATIONS"],
+  "tags": ["quadratic", "factorization"]
+}

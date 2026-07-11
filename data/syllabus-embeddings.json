@@ -1,0 +1,297 @@
+[
+  {
+    "id": "subject-mathematics",
+    "type": "subject",
+    "path": "Mathematics",
+    "title": "Mathematics",
+    "text": "NCERT Class X mathematics with foundation topics, theorems, and solved exercises. Chapters include Real Numbers, Polynomials, and Pair of Linear Equations in Two Variables.",
+    "metadata": {
+      "subject": "Mathematics"
+    }
+  },
+  {
+    "id": "chapter-real-numbers",
+    "type": "chapter",
+    "path": "Mathematics > Real Numbers",
+    "title": "Real Numbers",
+    "text": "Number systems, Euclid's algorithm, and properties of real numbers. Topics include Euclid's Division Lemma, Fundamental Theorem of Arithmetic, Irrational Numbers, and Decimal Representations.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Real Numbers"
+    }
+  },
+  {
+    "id": "exercise-rm-1",
+    "type": "exercise",
+    "path": "Mathematics > Real Numbers > rm-1",
+    "title": "Prove that the square root of 2 is irrational.",
+    "text": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Write p = 2k => 2q^2 = 4k^2 => q^2 = 2k^2, so q is even. Contradiction. Therefore sqrt(2) is irrational.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Real Numbers",
+      "exerciseId": "rm-1"
+    }
+  },
+  {
+    "id": "exercise-rm-2",
+    "type": "exercise",
+    "path": "Mathematics > Real Numbers > rm-2",
+    "title": "Show that between any two rational numbers there exists an irrational number.",
+    "text": "Given rationals a < b, choose x = a + (b - a) / sqrt(2). Then x is irrational and lies between a and b.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Real Numbers",
+      "exerciseId": "rm-2"
+    }
+  },
+  {
+    "id": "chapter-polynomials",
+    "type": "chapter",
+    "path": "Mathematics > Polynomials",
+    "title": "Polynomials",
+    "text": "Polynomial operations, zeroes, and algebraic identities. Topics include Degree of Polynomial, Zeroes of Polynomial, Remainder Theorem, and Factor Theorem.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Polynomials"
+    }
+  },
+  {
+    "id": "exercise-pm-1",
+    "type": "exercise",
+    "path": "Mathematics > Polynomials > pm-1",
+    "title": "If p(x) is a polynomial with p(2)=0, show that (x-2) is a factor of p(x).",
+    "text": "By the Factor Theorem, if p(2)=0 then (x-2) divides p(x).",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Polynomials",
+      "exerciseId": "pm-1"
+    }
+  },
+  {
+    "id": "chapter-pair-of-linear-equations",
+    "type": "chapter",
+    "path": "Mathematics > Pair of Linear Equations in Two Variables",
+    "title": "Pair of Linear Equations in Two Variables",
+    "text": "Solve linear systems using substitution, elimination, and graphical methods. Topics include Graphical Method, Substitution Method, Elimination Method, and Applications in Word Problems.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Pair of Linear Equations in Two Variables"
+    }
+  },
+  {
+    "id": "exercise-pl-1",
+    "type": "exercise",
+    "path": "Mathematics > Pair of Linear Equations in Two Variables > pl-1",
+    "title": "Solve the system x + y = 5 and 2x - y = 1.",
+    "text": "Add equations to eliminate y: 3x = 6, so x = 2. Then y = 3.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Pair of Linear Equations in Two Variables",
+      "exerciseId": "pl-1"
+    }
+  },
+  {
+    "id": "subject-science",
+    "type": "subject",
+    "path": "Science",
+    "title": "Science",
+    "text": "Class X science syllabus with Physics, Chemistry, and Biology chapters covering optics, electricity, chemical reactions, periodic classification, life processes, and control and coordination.",
+    "metadata": {
+      "subject": "Science"
+    }
+  },
+  {
+    "id": "subsubject-physics",
+    "type": "subsubject",
+    "path": "Science > Physics",
+    "title": "Physics",
+    "text": "Class X physics concepts and numericals covering optics, electricity, and motion.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Physics"
+    }
+  },
+  {
+    "id": "chapter-light-reflection-refraction",
+    "type": "chapter",
+    "path": "Science > Physics > Light - Reflection and Refraction",
+    "title": "Light - Reflection and Refraction",
+    "text": "Reflection, refraction, lenses, and mirrors with ray diagrams and laws of optics. Topics include Laws of Reflection, Spherical Mirrors, Refraction, and Lenses and Lens Formula.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Physics",
+      "chapter": "Light - Reflection and Refraction"
+    }
+  },
+  {
+    "id": "exercise-ph-1",
+    "type": "exercise",
+    "path": "Science > Physics > Light - Reflection and Refraction > ph-1",
+    "title": "A concave mirror forms a real image at a distance equal to its focal length. Where is the object placed?",
+    "text": "For a concave mirror, when object distance u = f, the image forms at infinity. Therefore the object is at the focus.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Physics",
+      "chapter": "Light - Reflection and Refraction",
+      "exerciseId": "ph-1"
+    }
+  },
+  {
+    "id": "chapter-electricity",
+    "type": "chapter",
+    "path": "Science > Physics > Electricity",
+    "title": "Electricity",
+    "text": "Current, resistance, Ohm's law, series and parallel circuits, and heating effects. Topics include Electric Current, Ohm's Law, Resistance, and Series and Parallel Combinations.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Physics",
+      "chapter": "Electricity"
+    }
+  },
+  {
+    "id": "exercise-ph-2",
+    "type": "exercise",
+    "path": "Science > Physics > Electricity > ph-2",
+    "title": "Calculate the total resistance of three resistors 2Ω, 3Ω and 6Ω in parallel.",
+    "text": "1/R = 1/2 + 1/3 + 1/6 = 1. So R = 1Ω.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Physics",
+      "chapter": "Electricity",
+      "exerciseId": "ph-2"
+    }
+  },
+  {
+    "id": "subsubject-chemistry",
+    "type": "subsubject",
+    "path": "Science > Chemistry",
+    "title": "Chemistry",
+    "text": "Class X chemistry fundamentals: chemical reactions, periodicity, metals and non-metals.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Chemistry"
+    }
+  },
+  {
+    "id": "chapter-chemical-reactions-equations",
+    "type": "chapter",
+    "path": "Science > Chemistry > Chemical Reactions and Equations",
+    "title": "Chemical Reactions and Equations",
+    "text": "Types of chemical reactions, balancing equations, and activity series. Topics include Types of Reactions, Balancing Chemical Equations, Endothermic and Exothermic Reactions.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Chemistry",
+      "chapter": "Chemical Reactions and Equations"
+    }
+  },
+  {
+    "id": "exercise-ch-1",
+    "type": "exercise",
+    "path": "Science > Chemistry > Chemical Reactions and Equations > ch-1",
+    "title": "Balance the equation: Fe + O2 -> Fe2O3.",
+    "text": "4Fe + 3O2 -> 2Fe2O3.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Chemistry",
+      "chapter": "Chemical Reactions and Equations",
+      "exerciseId": "ch-1"
+    }
+  },
+  {
+    "id": "chapter-periodic-classification-elements",
+    "type": "chapter",
+    "path": "Science > Chemistry > Periodic Classification of Elements",
+    "title": "Periodic Classification of Elements",
+    "text": "Modern periodic table, periodic trends, and element groups. Topics include Periodic Properties, Atomic Number and Mass Number, Groups and Periods.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Chemistry",
+      "chapter": "Periodic Classification of Elements"
+    }
+  },
+  {
+    "id": "exercise-ch-2",
+    "type": "exercise",
+    "path": "Science > Chemistry > Periodic Classification of Elements > ch-2",
+    "title": "Explain why atomic radius decreases across a period.",
+    "text": "Across a period, nuclear charge increases while electron shielding stays roughly constant, pulling electrons closer and reducing atomic radius.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Chemistry",
+      "chapter": "Periodic Classification of Elements",
+      "exerciseId": "ch-2"
+    }
+  },
+  {
+    "id": "subsubject-biology",
+    "type": "subsubject",
+    "path": "Science > Biology",
+    "title": "Biology",
+    "text": "Class X biology syllabus covering life processes, control and coordination, and reproduction.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Biology"
+    }
+  },
+  {
+    "id": "chapter-life-processes",
+    "type": "chapter",
+    "path": "Science > Biology > Life Processes",
+    "title": "Life Processes",
+    "text": "Nutrition, respiration, transportation, and excretion in plants and animals. Topics include Nutrition, Respiration, Transportation, and Excretion.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Biology",
+      "chapter": "Life Processes"
+    }
+  },
+  {
+    "id": "exercise-bio-1",
+    "type": "exercise",
+    "path": "Science > Biology > Life Processes > bio-1",
+    "title": "Describe the process of transpiration in plants.",
+    "text": "Transpiration is the loss of water vapour through stomata. It helps in nutrient transport and cooling the plant.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Biology",
+      "chapter": "Life Processes",
+      "exerciseId": "bio-1"
+    }
+  },
+  {
+    "id": "chapter-control-and-coordination",
+    "type": "chapter",
+    "path": "Science > Biology > Control and Coordination",
+    "title": "Control and Coordination",
+    "text": "Nervous system, hormones, and plant responses. Topics include Nervous System, Hormones, and Plant Tropisms.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Biology",
+      "chapter": "Control and Coordination"
+    }
+  },
+  {
+    "id": "exercise-bio-2",
+    "type": "exercise",
+    "path": "Science > Biology > Control and Coordination > bio-2",
+    "title": "What is the role of the endocrine system in coordination?",
+    "text": "The endocrine system secretes hormones that regulate growth, metabolism, and homeostasis, acting alongside the nervous system.",
+    "metadata": {
+      "subject": "Science",
+      "subsubject": "Biology",
+      "chapter": "Control and Coordination",
+      "exerciseId": "bio-2"
+    }
+  },
+  {
+    "id": "subject-social-studies-missing",
+    "type": "subject",
+    "path": "Social Studies",
+    "title": "Social Studies",
+    "text": "Social Studies syllabus data is not available in the current workspace.",
+    "metadata": {
+      "subject": "Social Studies",
+      "status": "missing"
+    }
+  }
+]

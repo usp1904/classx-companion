@@ -1,0 +1,306 @@
+{
+  "meta": {
+    "generatedAt": "2026-07-11T00:00:00Z",
+    "source": "data/syllabus.json",
+    "notes": "Social Studies content not found in the current workspace. Add History/Geography/Civics/Economics syllabus data when available."
+  },
+  "documentTree": [
+    {
+      "id": "mathematics",
+      "type": "subject",
+      "name": "Mathematics",
+      "description": "NCERT Class X mathematics with foundation topics, theorems, and solved exercises.",
+      "children": [
+        {
+          "id": "real-numbers",
+          "type": "chapter",
+          "name": "Real Numbers",
+          "summary": "Number systems, Euclid's algorithm, and properties of real numbers.",
+          "topics": [
+            "Euclid's Division Lemma",
+            "Fundamental Theorem of Arithmetic",
+            "Irrational Numbers",
+            "Decimal Representations"
+          ],
+          "theorems": [
+            "Euclid's Division Lemma",
+            "Fundamental Theorem of Arithmetic"
+          ],
+          "exercises": [
+            {
+              "id": "rm-1",
+              "question": "Prove that the square root of 2 is irrational.",
+              "solution": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Write p = 2k => 2q^2 = 4k^2 => q^2 = 2k^2, so q is even. Contradiction. Therefore sqrt(2) is irrational."
+            },
+            {
+              "id": "rm-2",
+              "question": "Show that between any two rational numbers there exists an irrational number.",
+              "solution": "Given rationals a < b, choose x = a + (b - a) / sqrt(2). Then x is irrational and lies between a and b."
+            }
+          ]
+        },
+        {
+          "id": "polynomials",
+          "type": "chapter",
+          "name": "Polynomials",
+          "summary": "Polynomial operations, zeroes, and algebraic identities.",
+          "topics": [
+            "Degree of Polynomial",
+            "Zeroes of Polynomial",
+            "Remainder Theorem",
+            "Factor Theorem"
+          ],
+          "theorems": [
+            "Remainder Theorem",
+            "Factor Theorem"
+          ],
+          "exercises": [
+            {
+              "id": "pm-1",
+              "question": "If p(x) is a polynomial with p(2)=0, show that (x-2) is a factor of p(x).",
+              "solution": "By the Factor Theorem, if p(2)=0 then (x-2) divides p(x)."
+            }
+          ]
+        },
+        {
+          "id": "pair-of-linear-equations",
+          "type": "chapter",
+          "name": "Pair of Linear Equations in Two Variables",
+          "summary": "Solve linear systems using substitution, elimination, and graphical methods.",
+          "topics": [
+            "Graphical Method",
+            "Substitution Method",
+            "Elimination Method",
+            "Applications in Word Problems"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "pl-1",
+              "question": "Solve the system x + y = 5 and 2x - y = 1.",
+              "solution": "Add equations to eliminate y: 3x = 6, so x = 2. Then y = 3."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science",
+      "type": "subject",
+      "name": "Science",
+      "description": "Class X science syllabus, including Physics, Chemistry, and Biology chapters.",
+      "children": [
+        {
+          "id": "physics",
+          "type": "subsubject",
+          "name": "Physics",
+          "description": "Class X physics concepts and numericals covering optics, electricity, and motion.",
+          "children": [
+            {
+              "id": "light-reflection-refraction",
+              "type": "chapter",
+              "name": "Light - Reflection and Refraction",
+              "summary": "Reflection, refraction, lenses, and mirrors with ray diagrams and laws of optics.",
+              "topics": [
+                "Laws of Reflection",
+                "Spherical Mirrors",
+                "Refraction",
+                "Lenses and Lens Formula"
+              ],
+              "theorems": [
+                "Law of Reflection",
+                "Snell's Law"
+              ],
+              "exercises": [
+                {
+                  "id": "ph-1",
+                  "question": "A concave mirror forms a real image at a distance equal to its focal length. Where is the object placed?",
+                  "solution": "For a concave mirror, when object distance u = f, the image forms at infinity. Therefore the object is at the focus."
+                }
+              ]
+            },
+            {
+              "id": "electricity",
+              "type": "chapter",
+              "name": "Electricity",
+              "summary": "Current, resistance, Ohm's law, series and parallel circuits, and heating effects.",
+              "topics": [
+                "Electric Current",
+                "Ohm's Law",
+                "Resistance",
+                "Series and Parallel Combinations"
+              ],
+              "theorems": [
+                "Ohm's Law"
+              ],
+              "exercises": [
+                {
+                  "id": "ph-2",
+                  "question": "Calculate the total resistance of three resistors 2Ω, 3Ω and 6Ω in parallel.",
+                  "solution": "1/R = 1/2 + 1/3 + 1/6 = 1. So R = 1Ω."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chemistry",
+          "type": "subsubject",
+          "name": "Chemistry",
+          "description": "Class X chemistry fundamentals: chemical reactions, periodicity, metals and non-metals.",
+          "children": [
+            {
+              "id": "chemical-reactions-equations",
+              "type": "chapter",
+              "name": "Chemical Reactions and Equations",
+              "summary": "Types of chemical reactions, balancing equations, and activity series.",
+              "topics": [
+                "Types of Reactions",
+                "Balancing Chemical Equations",
+                "Endothermic and Exothermic Reactions"
+              ],
+              "theorems": [],
+              "exercises": [
+                {
+                  "id": "ch-1",
+                  "question": "Balance the equation: Fe + O2 -> Fe2O3.",
+                  "solution": "4Fe + 3O2 -> 2Fe2O3."
+                }
+              ]
+            },
+            {
+              "id": "periodic-classification-elements",
+              "type": "chapter",
+              "name": "Periodic Classification of Elements",
+              "summary": "Modern periodic table, periodic trends, and element groups.",
+              "topics": [
+                "Periodic Properties",
+                "Atomic Number and Mass Number",
+                "Groups and Periods"
+              ],
+              "theorems": [],
+              "exercises": [
+                {
+                  "id": "ch-2",
+                  "question": "Explain why atomic radius decreases across a period.",
+                  "solution": "Across a period, nuclear charge increases while electron shielding stays roughly constant, pulling electrons closer and reducing atomic radius."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "biology",
+          "type": "subsubject",
+          "name": "Biology",
+          "description": "Class X biology syllabus covering life processes, control and coordination, and reproduction.",
+          "children": [
+            {
+              "id": "life-processes",
+              "type": "chapter",
+              "name": "Life Processes",
+              "summary": "Nutrition, respiration, transportation, and excretion in plants and animals.",
+              "topics": [
+                "Nutrition",
+                "Respiration",
+                "Transportation",
+                "Excretion"
+              ],
+              "theorems": [],
+              "exercises": [
+                {
+                  "id": "bio-1",
+                  "question": "Describe the process of transpiration in plants.",
+                  "solution": "Transpiration is the loss of water vapour through stomata. It helps in nutrient transport and cooling the plant."
+                }
+              ]
+            },
+            {
+              "id": "control-and-coordination",
+              "type": "chapter",
+              "name": "Control and Coordination",
+              "summary": "Nervous system, hormones, and plant responses.",
+              "topics": [
+                "Nervous System",
+                "Hormones",
+                "Plant Tropisms"
+              ],
+              "theorems": [],
+              "exercises": [
+                {
+                  "id": "bio-2",
+                  "question": "What is the role of the endocrine system in coordination?",
+                  "solution": "The endocrine system secretes hormones that regulate growth, metabolism, and homeostasis, acting alongside the nervous system."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "social-studies",
+      "type": "subject",
+      "name": "Social Studies",
+      "description": "Social Studies syllabus for Class X (History, Geography, Civics, Economics). Data not available in the current workspace.",
+      "children": []
+    }
+  ],
+  "ragEntries": [
+    {
+      "id": "mathematics",
+      "path": "Mathematics",
+      "content": "NCERT Class X mathematics with foundation topics, theorems, and solved exercises. Chapters: Real Numbers, Polynomials, Pair of Linear Equations in Two Variables."
+    },
+    {
+      "id": "real-numbers",
+      "path": "Mathematics > Real Numbers",
+      "content": "Number systems, Euclid's algorithm, and properties of real numbers. Topics: Euclid's Division Lemma, Fundamental Theorem of Arithmetic, Irrational Numbers, Decimal Representations. Exercise examples include proving sqrt 2 is irrational and finding an irrational number between two rationals."
+    },
+    {
+      "id": "polynomials",
+      "path": "Mathematics > Polynomials",
+      "content": "Polynomial operations, zeroes, and algebraic identities. Topics: Degree of Polynomial, Zeroes of Polynomial, Remainder Theorem, Factor Theorem. Includes factor theorem exercise with p(2)=0."
+    },
+    {
+      "id": "pair-of-linear-equations",
+      "path": "Mathematics > Pair of Linear Equations in Two Variables",
+      "content": "Solve linear systems using substitution, elimination, and graphical methods. Topics: Graphical Method, Substitution Method, Elimination Method, Applications in Word Problems. Example question solves x + y = 5 and 2x - y = 1."
+    },
+    {
+      "id": "science",
+      "path": "Science",
+      "content": "Class X science syllabus with Physics, Chemistry, and Biology chapters covering optics, electricity, chemical reactions, periodic classification and life processes."
+    },
+    {
+      "id": "light-reflection-refraction",
+      "path": "Science > Physics > Light - Reflection and Refraction",
+      "content": "Reflection, refraction, lenses, and mirrors with ray diagrams and laws of optics. Topics include Laws of Reflection, Spherical Mirrors, Refraction, Lenses and Lens Formula. Example exercise asks where an object is placed for a real image at focal length."
+    },
+    {
+      "id": "electricity",
+      "path": "Science > Physics > Electricity",
+      "content": "Current, resistance, Ohm's law, series and parallel circuits, and heating effects. Topics include Electric Current, Ohm's Law, Resistance, Series and Parallel Combinations. Exercise calculates equivalent parallel resistance."
+    },
+    {
+      "id": "chemical-reactions-equations",
+      "path": "Science > Chemistry > Chemical Reactions and Equations",
+      "content": "Types of chemical reactions, balancing equations, and activity series. Topics: Types of Reactions, Balancing Chemical Equations, Endothermic and Exothermic Reactions. Example exercise balances Fe + O2 -> Fe2O3."
+    },
+    {
+      "id": "periodic-classification-elements",
+      "path": "Science > Chemistry > Periodic Classification of Elements",
+      "content": "Modern periodic table, periodic trends, and element groups. Topics: Periodic Properties, Atomic Number and Mass Number, Groups and Periods. Example exercise explains why atomic radius decreases across a period."
+    },
+    {
+      "id": "life-processes",
+      "path": "Science > Biology > Life Processes",
+      "content": "Nutrition, respiration, transportation, and excretion in plants and animals. Topics include Nutrition, Respiration, Transportation, Excretion. Example exercise describes transpiration."
+    },
+    {
+      "id": "control-and-coordination",
+      "path": "Science > Biology > Control and Coordination",
+      "content": "Nervous system, hormones, and plant responses. Topics include Nervous System, Hormones, Plant Tropisms. Example exercise covers the role of the endocrine system."
+    }
+  ]
+}

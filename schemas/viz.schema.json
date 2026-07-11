@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Visualization Payload",
+  "type": "object",
+  "required": ["rendererType", "syllabusSource", "visualizationProperties"],
+  "properties": {
+    "rendererType": {
+      "type": "string",
+      "enum": ["COORDINATE_GRAPH", "GEOMETRY_2D_PROOF", "PHYSICS_OPTICS_RAY", "CHEM_MOLECULAR_BOND"]
+    },
+    "syllabusSource": {
+      "type": "string",
+      "enum": ["NCERT_2026_27", "RD_SHARMA", "RS_AGGARWAL"]
+    },
+    "visualizationProperties": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}
