@@ -4,7 +4,6 @@
   "lesson": 1,
   "title": "Coordinate Geometry — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Apply the distance formula to find distance between any two points in the coordinate plane",
     "Use the section formula to find the coordinates of a point dividing a line segment in a given ratio",
@@ -13,9 +12,11 @@
     "Connect coordinate geometry concepts to board exam and competitive exam problems",
     "Apply mid-point formula in various geometric contexts"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS9_COORDINATE_GEOMETRY", "MATH_CLASS9_LINEAR_EQUATIONS", "MATH_CLASS8_SQUARES_SQUARE_ROOTS"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS9_COORDINATE_GEOMETRY",
+    "MATH_CLASS9_LINEAR_EQUATIONS",
+    "MATH_CLASS8_SQUARES_SQUARE_ROOTS"
+  ],
   "concepts": [
     {
       "name": "The Coordinate Plane — Mapping the World",
@@ -63,9 +64,7 @@
       ]
     }
   ],
-
   "theorems": [],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -108,7 +107,6 @@
       "speed_mode": "Golden step: Write coordinates in a column, repeat the first. Multiply down-right, up-right, take half of difference. Quick method: (5×7 + 4×(-4) + 7×2) - (2×4 + 7×7 + (-4)×5) = (35 - 16 + 14) - (8 + 49 - 20) = 33 - 37 = -4. Area = | -4 |/2 = 2."
     }
   ],
-
   "exercises": {
     "exercise_7_1": {
       "title": "Exercise 7.1 — Distance Formula",
@@ -473,7 +471,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 6 — Coordinate Geometry",
     "topics": [
@@ -511,7 +508,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 6 — Coordinate Geometry",
     "topics": [
@@ -534,48 +530,120 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Coordinate Geometry contributes 6-10 marks (1-2 short answer + 1 long answer). Distance formula and section formula are the most tested topics.",
-    "pattern": {
-      "short_answer_1_mark": [
-        "Find distance between two points (asked in 2017, 2019, 2021, 2023, 2025)",
-        "Find the midpoint of a line segment (asked in 2018, 2020, 2022, 2024)",
-        "State the distance formula (asked in 2019, 2022, 2025)"
-      ],
-      "short_answer_2_marks": [
-        "Find coordinates using section formula (asked in 2017, 2020, 2023, 2026)",
-        "Find point on x/y axis equidistant from two points (asked in 2018, 2021, 2024)",
-        "Check collinearity using area formula (asked in 2019, 2022, 2025)"
-      ],
-      "long_answer_4_marks": [
-        "Find coordinates of vertices of parallelogram/rectangle using midpoint concept (asked in 2017, 2020, 2023, 2025)",
-        "Area of triangle and quadrilateral (asked in 2018, 2021, 2024)",
-        "Section formula combined with distance formula (asked in 2019, 2022, 2026)"
-      ]
-    },
-    "scoring_areas": [
-      "Distance formula — direct substitution, easiest marks",
-      "Section formula — memorize the formula correctly (m₂x₁ + m₁x₂)/(m₁+m₂)",
-      "Midpoint concept — the midpoint is the average of coordinates",
-      "Collinearity check — area = 0 is the fastest method",
-      "Area of triangle — use the determinant/coordinate method, not base×height"
+  "model_papers": {
+    "simple": [
+      {
+        "question": "Find the distance between the points A(3, 2) and B(7, 5).",
+        "answer": "AB = 5 units",
+        "steps": [
+          "d = √[(7-3)² + (5-2)²]",
+          "d = √[4² + 3²] = √[16 + 9]",
+          "d = √25 = 5 units"
+        ],
+        "hints": [
+          "Recognise the 3-4-5 Pythagorean triple from the horizontal and vertical differences."
+        ]
+      },
+      {
+        "question": "Find the coordinates of the point which divides the line segment joining P(2, -3) and Q(6, 5) internally in the ratio 3:1.",
+        "answer": "(5, 3)",
+        "steps": [
+          "Using section formula: x = (3×6 + 1×2)/(3+1) = (18+2)/4 = 5",
+          "y = (3×5 + 1×(-3))/(3+1) = (15-3)/4 = 3",
+          "Point = (5, 3)"
+        ],
+        "hints": [
+          "Section formula: P = ((mx₂ + nx₁)/(m+n), (my₂ + ny₁)/(m+n)) where the ratio is m:n from the first point."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Using distance formula with wrong sign: (x₂-x₁)² — it doesn't matter if you do (x₁-x₂)² since squaring eliminates sign, but be consistent",
-      "Section formula mix-up: P = ((m₁x₂ + m₂x₁)/(m₁+m₂), ...) where m₁ is from the first point — check order carefully",
-      "Forgetting absolute value in area formula — area is always positive",
-      "Not taking the half in area formula — Area = (1/2)|...| not |...|",
-      "Assuming a quadrilateral is a parallelogram without verifying midpoints of diagonals"
+    "medium": [
+      {
+        "question": "Find the point on the y-axis which is equidistant from A(3, 4) and B(-1, 2).",
+        "answer": "(0, 5)",
+        "steps": [
+          "Point on y-axis: P(0, y)",
+          "PA = PB → √[(0-3)² + (y-4)²] = √[(0+1)² + (y-2)²]",
+          "(0-3)² + (y-4)² = (0+1)² + (y-2)²",
+          "9 + y² - 8y + 16 = 1 + y² - 4y + 4",
+          "25 - 8y = 5 - 4y → 20 = 4y → y = 5",
+          "P(0, 5)"
+        ],
+        "hints": [
+          "Points on the y-axis have x-coordinate 0. Equate the squared distances to avoid square roots."
+        ]
+      },
+      {
+        "question": "Check whether the points A(2, 3), B(4, 0), and C(6, -3) are collinear using the area formula.",
+        "answer": "Yes, they are collinear",
+        "steps": [
+          "Area = ½ |x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)|",
+          "Area = ½ |2(0-(-3)) + 4((-3)-3) + 6(3-0)|",
+          "Area = ½ |2(3) + 4(-6) + 6(3)|",
+          "Area = ½ |6 - 24 + 18| = ½ |0| = 0",
+          "Area = 0, hence points are collinear"
+        ],
+        "hints": [
+          "Three points are collinear if the area of the triangle formed by them is zero."
+        ]
+      },
+      {
+        "question": "Three vertices of a parallelogram ABCD are A(1, 2), B(4, 5), and C(7, 2). Find the coordinates of the fourth vertex D.",
+        "answer": "D(4, -1)",
+        "steps": [
+          "In a parallelogram, diagonals bisect each other",
+          "Midpoint of AC = ((1+7)/2, (2+2)/2) = (4, 2)",
+          "Midpoint of BD = ((4+x)/2, (5+y)/2) = (4, 2)",
+          "(4+x)/2 = 4 → x = 4",
+          "(5+y)/2 = 2 → y = -1",
+          "D(4, -1)"
+        ],
+        "hints": [
+          "Use the property that the diagonals of a parallelogram bisect each other — equate the midpoints."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "question": "Find the area of the quadrilateral formed by the points P(0, 0), Q(4, 3), R(6, 7), and S(2, 5) taken in order.",
+        "answer": "Area = 13 sq units",
+        "steps": [
+          "Split into ∆PQR and ∆PRS (diagonal PR)",
+          "Area ∆PQR = ½ |0(3-7) + 4(7-0) + 6(0-3)| = ½ |0 + 28 - 18| = 5",
+          "Area ∆PRS = ½ |0(7-5) + 6(5-0) + 2(0-7)| = ½ |0 + 30 - 14| = 8",
+          "Total area = 5 + 8 = 13 sq units"
+        ],
+        "hints": [
+          "Divide the quadrilateral into two triangles along a diagonal and find the sum of their areas."
+        ]
+      },
+      {
+        "question": "If the centroid of a triangle with vertices A(a, b), B(b, c), and C(c, a) is at the origin, prove that a + b + c = 0.",
+        "answer": "a + b + c = 0 (proved)",
+        "steps": [
+          "Centroid G = ((a+b+c)/3, (b+c+a)/3)",
+          "G is at origin (0, 0)",
+          "So (a+b+c)/3 = 0 and (b+c+a)/3 = 0",
+          "Both give a + b + c = 0",
+          "Hence proved"
+        ],
+        "hints": [
+          "The centroid is the average of the three vertices' coordinates."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "The distance between (0,0) and (3,4) is:",
-        "options": ["5", "7", "25", "12"],
+        "options": [
+          "5",
+          "7",
+          "25",
+          "12"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "√[(3-0)² + (4-0)²] = √[9+16] = √25 = 5.",
@@ -589,7 +657,12 @@
       {
         "id": "q-s-2",
         "question": "The midpoint of (2,3) and (6,7) is:",
-        "options": ["(4,5)", "(8,10)", "(2,2)", "(3,4)"],
+        "options": [
+          "(4,5)",
+          "(8,10)",
+          "(2,2)",
+          "(3,4)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Midpoint = ((2+6)/2, (3+7)/2) = (4,5).",
@@ -603,7 +676,12 @@
       {
         "id": "q-s-3",
         "question": "The section formula gives coordinates of a point dividing a segment in ratio:",
-        "options": ["m:n", "m+n", "m-n", "m×n"],
+        "options": [
+          "m:n",
+          "m+n",
+          "m-n",
+          "m×n"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Section formula: P = ((mx₂ + nx₁)/(m+n), (my₂ + ny₁)/(m+n)) where ratio is m:n.",
@@ -617,7 +695,12 @@
       {
         "id": "q-s-4",
         "question": "If three points have area = 0 when plugged into the coordinate area formula, they are:",
-        "options": ["Collinear", "Vertices of a triangle", "Concyclic", "Equidistant"],
+        "options": [
+          "Collinear",
+          "Vertices of a triangle",
+          "Concyclic",
+          "Equidistant"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area = 0 means the three points lie on a single straight line — they are collinear.",
@@ -631,7 +714,12 @@
       {
         "id": "q-s-5",
         "question": "The distance formula is derived from which theorem?",
-        "options": ["Pythagoras Theorem", "Thales Theorem", "Angle Sum Theorem", "Fundamental Theorem"],
+        "options": [
+          "Pythagoras Theorem",
+          "Thales Theorem",
+          "Angle Sum Theorem",
+          "Fundamental Theorem"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "The distance formula d = √[(x₂-x₁)² + (y₂-y₁)²] is directly derived from Pythagoras Theorem applied to the right triangle formed by horizontal and vertical differences.",
@@ -645,7 +733,12 @@
       {
         "id": "q-s-6",
         "question": "The centroid of a triangle with vertices (x₁,y₁), (x₂,y₂), (x₃,y₃) is:",
-        "options": ["((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3)", "((x₁+x₂+x₃)/2, (y₁+y₂+y₃)/2)", "((x₁-x₂+x₃)/3, (y₁-y₂+y₃)/3)", "((x₁+x₂-x₃)/3, (y₁+y₂-y₃)/3)"],
+        "options": [
+          "((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3)",
+          "((x₁+x₂+x₃)/2, (y₁+y₂+y₃)/2)",
+          "((x₁-x₂+x₃)/3, (y₁-y₂+y₃)/3)",
+          "((x₁+x₂-x₃)/3, (y₁+y₂-y₃)/3)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "The centroid is the average of the coordinates: G = ((x₁+x₂+x₃)/3, (y₁+y₂+y₃)/3).",
@@ -659,7 +752,12 @@
       {
         "id": "q-s-7",
         "question": "If the point (0,0) is equidistant from (x,2) and (3,y), which relation holds?",
-        "options": ["x² + 4 = 9 + y²", "x² + y² = 13", "x + y = 5", "x² + y² = 5"],
+        "options": [
+          "x² + 4 = 9 + y²",
+          "x² + y² = 13",
+          "x + y = 5",
+          "x² + y² = 5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Distance from (0,0) to (x,2) = √(x²+4). Distance from (0,0) to (3,y) = √(9+y²). Equating: x²+4 = 9+y² → x² - y² = 5. Option 0 is equivalent: x²+4 = 9+y².",
@@ -673,7 +771,12 @@
       {
         "id": "q-s-8",
         "question": "What is the area of a triangle with vertices (0,0), (4,0), (0,3)?",
-        "options": ["6 sq units", "12 sq units", "5 sq units", "7 sq units"],
+        "options": [
+          "6 sq units",
+          "12 sq units",
+          "5 sq units",
+          "7 sq units"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area = (1/2)|0(0-3) + 4(3-0) + 0(0-0)| = (1/2)|0 + 12 + 0| = 6 sq units. Also, it's a right triangle with legs 4 and 3, so area = (1/2)×4×3 = 6.",
@@ -687,7 +790,12 @@
       {
         "id": "q-s-9",
         "question": "What is the x-coordinate of the point dividing (-1,2) and (4,7) in ratio 2:3?",
-        "options": ["1", "2", "-1", "3"],
+        "options": [
+          "1",
+          "2",
+          "-1",
+          "3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "x = (2×4 + 3×(-1))/(2+3) = (8-3)/5 = 1.",
@@ -701,7 +809,12 @@
       {
         "id": "q-s-10",
         "question": "The line x = 0 in the coordinate plane is called:",
-        "options": ["y-axis", "x-axis", "Origin", "Quadrant"],
+        "options": [
+          "y-axis",
+          "x-axis",
+          "Origin",
+          "Quadrant"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "x = 0 means all points with x-coordinate 0, which is the y-axis.",
@@ -713,12 +826,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-m-1",
         "question": "Find the point on the x-axis equidistant from (2,3) and (4,5).",
-        "options": ["(17, 0)", "(3, 0)", "(1, 0)", "(0, 0)"],
+        "options": [
+          "(17, 0)",
+          "(3, 0)",
+          "(1, 0)",
+          "(0, 0)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let P(x,0). (x-2)² + 9 = (x-4)² + 25 → x²-4x+4+9 = x²-8x+16+25 → -4x+13 = -8x+41 → 4x = 28 → x = 7. Actually let me recheck: (x-2)²+9 = (x-4)²+25 → x²-4x+4+9 = x²-8x+16+25 → -4x+13 = -8x+41 → 4x = 28 → x = 7. So P(7,0). Hmm, let me check option 0: (17, 0). Distance to (2,3): √(225+9) = √234. Distance to (4,5): √(169+25) = √194 ≠ √234. Let me recompute: Actually, the correct answer is x = 7. So P(7,0). Hmm, none of the options match (7,0) exactly. Option 0 is (17,0). Option 1 is (3,0). Let me recalculate: x²-4x+13 = x²-8x+41 → 4x = 28 → x = 7. So the point is (7,0). Since this is a multiple choice, (17, 0) must be a typo or different problem variant.",
@@ -733,7 +850,12 @@
       {
         "id": "q-m-2",
         "question": "If distance between (5,2) and (1,a) is 5, find a.",
-        "options": ["5 or -1", "3 or -7", "5 or -5", "1 or -1"],
+        "options": [
+          "5 or -1",
+          "3 or -7",
+          "5 or -5",
+          "1 or -1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "√[(1-5)² + (a-2)²] = 5 → 16 + (a-2)² = 25 → (a-2)² = 9 → a-2 = ±3 → a = 5 or a = -1.",
@@ -747,7 +869,12 @@
       {
         "id": "q-m-3",
         "question": "Find the ratio in which P(4,m) divides the segment joining A(2,3) and B(6,3).",
-        "options": ["1:1", "2:1", "3:1", "4:1"],
+        "options": [
+          "1:1",
+          "2:1",
+          "3:1",
+          "4:1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Both A and B have y = 3, so the segment is horizontal. P also has y = m. For P to lie on AB, m = 3. Using x-coordinate: 4 = (k×6 + 1×2)/(k+1) → 4k+4 = 6k+2 → 2 = 2k → k = 1. Ratio = 1:1. P is the midpoint.",
@@ -761,7 +888,12 @@
       {
         "id": "q-m-4",
         "question": "Find the area of ∆ABC with A(1,2), B(-3,4), C(2,-5).",
-        "options": ["11.5 sq units", "13 sq units", "10 sq units", "12 sq units"],
+        "options": [
+          "11.5 sq units",
+          "13 sq units",
+          "10 sq units",
+          "12 sq units"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area = (1/2)|1(4-(-5)) + (-3)(-5-2) + 2(2-4)| = (1/2)|1(9) + (-3)(-7) + 2(-2)| = (1/2)|9 + 21 - 4| = (1/2)|26| = 13. Wait, that gives 13, not 11.5. Let me recheck: 1(4-(-5)) = 1(9) = 9. (-3)(-5-2) = (-3)(-7) = 21. 2(2-4) = 2(-2) = -4. Sum = 9+21-4 = 26. Half = 13. So the area is 13 sq units. Option 1 says 13.",
@@ -776,7 +908,12 @@
       {
         "id": "q-m-5",
         "question": "If A(2,4), B(-1,3), C(3,k) are collinear, find k.",
-        "options": ["11/3", "3", "4", "5"],
+        "options": [
+          "11/3",
+          "3",
+          "4",
+          "5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area = 0 for collinear points. (1/2)|2(3-k) + (-1)(k-4) + 3(4-3)| = 0 → |2(3-k) - (k-4) + 3(1)| = 0 → |6-2k-k+4+3| = 0 → |13 - 3k| = 0 → 3k = 13 → k = 13/3 ≈ 4.33. None of the options match exactly. Let me recheck: 2(3-k) + (-1)(k-4) + 3(1) = 6-2k -k+4 +3 = 13-3k = 0 → k = 13/3 = 4.333. Hmm, option 0 is 11/3 ≈ 3.67. Let me check option 1: 3. If k=3: 2(0) + (-1)(-1) + 3(1) = 0+1+3 = 4 ≠ 0. Option 2: k=4: 2(-1) + (-1)(0) + 3 = -2+0+3 = 1 ≠ 0. Option 3: k=5: 2(-2) + (-1)(1) + 3 = -4-1+3 = -2 ≠ 0. Let me recheck my formula. Area = (1/2)|x₁(y₂-y₃)+x₂(y₃-y₁)+x₃(y₁-y₂)| = (1/2)|2(3-k) + (-1)(k-4) + 3(4-3)| = (1/2)|6-2k -k+4 + 3| = (1/2)|13-3k| = 0, so |13-3k| = 0, k = 13/3. The options don't include this. Let me check if I misread the points: A(2,4), B(-1,3), C(3,k). Perhaps the coordinates are different. Let me try with options: 11/3 = 3.67 → area = (1/2)|2(3-3.67)+(-1)(3.67-4)+3(4-3)| = (1/2)|2(-0.67)+(-1)(-0.33)+3| = (1/2)|-1.33+0.33+3| = (1/2)|2| = 1 ≠ 0. So 11/3 doesn't work either. There's an error in the options or coordinates. The correct analytical answer is k = 13/3."
@@ -785,7 +922,12 @@
       {
         "id": "q-m-6",
         "question": "Find the distance between the points (a cos θ, a sin θ) and (a cos φ, a sin φ).",
-        "options": ["2a sin((θ-φ)/2)", "2a cos((θ-φ)/2)", "a|θ-φ|", "a√(cos²θ + sin²φ)"],
+        "options": [
+          "2a sin((θ-φ)/2)",
+          "2a cos((θ-φ)/2)",
+          "a|θ-φ|",
+          "a√(cos²θ + sin²φ)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "d² = a²(cosθ-cosφ)² + a²(sinθ-sinφ)² = a²[cos²θ-2cosθcosφ+cos²φ + sin²θ-2sinθsinφ+sin²φ] = a²[2 - 2(cosθcosφ+sinθsinφ)] = a²[2 - 2cos(θ-φ)] = 4a²sin²((θ-φ)/2). So d = 2a|sin((θ-φ)/2)|.",
@@ -799,7 +941,12 @@
       {
         "id": "q-m-7",
         "question": "For what value of k are points (8,1), (k,-4), (2,-5) collinear?",
-        "options": ["3", "4", "5", "6"],
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "(1/2)|8(-4-(-5)) + k(-5-1) + 2(1-(-4))| = 0 → |8(1) + k(-6) + 2(5)| = 0 → |8 - 6k + 10| = 0 → |18 - 6k| = 0 → 6k = 18 → k = 3.",
@@ -813,7 +960,12 @@
       {
         "id": "q-m-8",
         "question": "Find the fourth vertex of a parallelogram ABCD with A(2,3), B(5,5), C(8,3).",
-        "options": ["D(5,1)", "D(11,5)", "D(5,5)", "D(2,1)"],
+        "options": [
+          "D(5,1)",
+          "D(11,5)",
+          "D(5,5)",
+          "D(2,1)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Diagonals bisect each other. Midpoint of AC = ((2+8)/2, (3+3)/2) = (5,3). This is also midpoint of BD. Let D(x,y): (x+5)/2 = 5 → x = 5. (y+5)/2 = 3 → y = 1. So D(5,1).",
@@ -827,7 +979,12 @@
       {
         "id": "q-m-9",
         "question": "If the centroid of triangle with vertices (3,-1), (1,3), (p,4) is at (2,2), find p.",
-        "options": ["2", "3", "1", "4"],
+        "options": [
+          "2",
+          "3",
+          "1",
+          "4"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Centroid = ((3+1+p)/3, (-1+3+4)/3) = ((4+p)/3, 6/3) = ((4+p)/3, 2). Given centroid = (2,2). So (4+p)/3 = 2 → 4+p = 6 → p = 2.",
@@ -841,7 +998,12 @@
       {
         "id": "q-m-10",
         "question": "The points A(2,1), B(-3,2), C(-1,-2) form a triangle. Which type?",
-        "options": ["Right-angled", "Equilateral", "Isosceles", "Scalene"],
+        "options": [
+          "Right-angled",
+          "Equilateral",
+          "Isosceles",
+          "Scalene"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "AB = √[(-3-2)²+(2-1)²] = √[25+1] = √26. BC = √[(-1+3)²+(-2-2)²] = √[4+16] = √20 = 2√5. CA = √[(-1-2)²+(-2-1)²] = √[9+9] = √18 = 3√2. Check Pythagoras: BC² + CA² = 20 + 18 = 38 ≠ AB² = 26. AB² + CA² = 26 + 18 = 44 ≠ BC² = 20. AB² + BC² = 26 + 20 = 46 ≠ CA² = 18. Hmm, none satisfy Pythagoras. Let me check if it's isosceles. All sides are different: √26, √20, √18. So it's scalene. Let me recheck with more precision: AB = √26 ≈ 5.099, BC = √20 = 4.472, CA = √18 = 4.243. All different → scalene.",
@@ -854,12 +1016,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-c-1",
         "question": "Find the area of the quadrilateral formed by the points (1,0), (3,5), (7,2), (5,-2).",
-        "options": ["22 sq units", "20 sq units", "24 sq units", "18 sq units"],
+        "options": [
+          "22 sq units",
+          "20 sq units",
+          "24 sq units",
+          "18 sq units"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Split into triangles: A(1,0), B(3,5), C(7,2), D(5,-2). Area ∆ABC = (1/2)|1(5-2) + 3(2-0) + 7(0-5)| = (1/2)|3 + 6 - 35| = (1/2)|-26| = 13. Area ∆ACD = (1/2)|1(2-(-2)) + 7((-2)-0) + 5(0-2)| = (1/2)|4 - 14 - 10| = (1/2)|-20| = 10. Total = 23. Hmm, that's 23 not 22. Let me use shoelace: (1,0), (3,5), (7,2), (5,-2), (1,0). Sum1 = 1×5 + 3×2 + 7×(-2) + 5×0 = 5+6-14+0 = -3. Sum2 = 0×3 + 5×7 + 2×5 + (-2)×1 = 0+35+10-2 = 43. Area = (1/2)|(-3) - 43| = (1/2)|-46| = 23. So area = 23 sq units. None of the options is 23 exactly. Option 0 is 22, closest. The intended answer might be 22 if the points are slightly different.",
@@ -893,7 +1059,12 @@
       {
         "id": "q-c-3",
         "question": "Find the ratio in which the line x - 3y = 0 divides the segment joining (-2,-5) and (6,3).",
-        "options": ["1:3 externally", "3:1 internally", "1:3 internally", "3:1 externally"],
+        "options": [
+          "1:3 externally",
+          "3:1 internally",
+          "1:3 internally",
+          "3:1 externally"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let the line divide the segment at P in ratio k:1. P = ((6k-2)/(k+1), (3k-5)/(k+1)). P lies on x-3y=0, so (6k-2)/(k+1) - 3(3k-5)/(k+1) = 0 → 6k-2 - 3(3k-5) = 0 → 6k-2-9k+15 = 0 → -3k+13 = 0 → k = 13/3. So ratio is 13:3 internally. Hmm, the options don't include 13:3. Let me recheck: the line x-3y=0 divides the segment. P = ((6k-2)/(k+1), (3k-5)/(k+1)). x-3y = 0 → (6k-2)/(k+1) - 3(3k-5)/(k+1) = 0 → 6k-2-9k+15 = 0 → -3k+13 = 0 → k = 13/3. Hmm, none of the options match. Maybe the points are different or I need to reconsider. Actually, option 0 says 1:3 externally. Let me check if it's external division. The line x=3y passes through (0,0). Points: A(-2,-5), B(6,3). Check if A and B are on opposite sides of line: A: -2-3(-5) = -2+15 = 13 > 0. B: 6-3(3) = 6-9 = -3 < 0. So the segment crosses the line, so division is internal. The ratio is 13:3 ≈ 4.33:1, which is not in the options. There might be an error in the problem/options.",
@@ -908,7 +1079,12 @@
       {
         "id": "q-c-4",
         "question": "If the midpoint of the segment joining (3,4) and (k,7) is (x,y) and 2x+2y+1=0, find k.",
-        "options": ["-15", "15", "-7", "7"],
+        "options": [
+          "-15",
+          "15",
+          "-7",
+          "7"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Midpoint = ((3+k)/2, (4+7)/2) = ((3+k)/2, 11/2) = (x,y). Given 2x+2y+1=0 → 2((3+k)/2) + 2(11/2) + 1 = 0 → (3+k) + 11 + 1 = 0 → k + 15 = 0 → k = -15.",
@@ -922,7 +1098,12 @@
       {
         "id": "q-c-5",
         "question": "If the points (2,-5), (k,-4), (2k+1, -1) and (2, 1) are vertices of a parallelogram taken in order, find k.",
-        "options": ["3", "2", "4", "-3"],
+        "options": [
+          "3",
+          "2",
+          "4",
+          "-3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "A(2,-5), B(k,-4), C(2k+1,-1), D(2,1). In a parallelogram, diagonals bisect. Midpoint of AC = ((2+2k+1)/2, (-5-1)/2) = ((2k+3)/2, -3). Midpoint of BD = ((k+2)/2, (-4+1)/2) = ((k+2)/2, -3/2). These should be equal. So (2k+3)/2 = (k+2)/2 → 2k+3 = k+2 → k = -1. And -3 = -3/2? This doesn't match. Let me recheck. Wait, I might have misassigned the vertices. The order is A(2,-5), B(k,-4), C(2k+1,-1), D(2,1). Midpoint of AC: ((2+2k+1)/2, (-5+(-1))/2) = ((2k+3)/2, -3). Midpoint of BD: ((k+2)/2, (-4+1)/2) = ((k+2)/2, -3/2). Equating: (2k+3)/2 = (k+2)/2 → 2k+3 = k+2 → k = -1. And -3 = -3/2? No. So perhaps the parallelogram has vertices in order A, B, C, D, then AB ∥ DC and BC ∥ AD. Let me try: Slope AB = (-4+5)/(k-2) = 1/(k-2). Slope DC = (-1-1)/(2k+1-2) = (-2)/(2k-1). For AB ∥ DC: 1/(k-2) = -2/(2k-1) → 2k-1 = -2k+4 → 4k = 5 → k = 5/4. That also doesn't match. Let me use the property that AB = DC in vector form: B - A = (k-2, 1). C - D = (2k+1-2, -1-1) = (2k-1, -2). Equating: k-2 = 2k-1 → k = -1. And 1 = -2 → impossible. So the order might be A(2,-5), B(k,-4), C(2,1), D(2k+1,-1). Let me try: A-C diagonal: ((2+2)/2, (-5+1)/2) = (2, -2). B-D: ((k+2k+1)/2, (-4+(-1))/2) = ((3k+1)/2, -5/2). Equating: (3k+1)/2 = 2 → 3k+1 = 4 → k = 1, and -5/2 = -2 → still doesn't match. The problem likely has a specific arrangement that leads to k = 3 when solved correctly."
@@ -931,7 +1112,12 @@
       {
         "id": "q-c-6",
         "question": "Find the area of the triangle formed by lines y=x, x=6, y=0.",
-        "options": ["18 sq units", "36 sq units", "9 sq units", "12 sq units"],
+        "options": [
+          "18 sq units",
+          "36 sq units",
+          "9 sq units",
+          "12 sq units"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Lines: y=x (diagonal through origin), x=6 (vertical), y=0 (horizontal). Intersection points: y=x and x=6 → (6,6). y=x and y=0 → (0,0). x=6 and y=0 → (6,0). So vertices: (0,0), (6,0), (6,6). Area = (1/2) × base × height = (1/2) × 6 × 6 = 18 sq units.",
@@ -959,7 +1145,12 @@
       {
         "id": "q-c-8",
         "question": "If the coordinates of the vertices of triangle ABC are A(-2,3), B(4,-3), C(4,5), find the length of the median through A.",
-        "options": ["5 units", "√65 units", "10 units", "√61 units"],
+        "options": [
+          "5 units",
+          "√65 units",
+          "10 units",
+          "√61 units"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Median through A goes from A to midpoint of BC. Midpoint M of B(4,-3) and C(4,5) = (4,1). Distance AM = √[(4+2)² + (1-3)²] = √[36+4] = √40 = 2√10 ≈ 6.32. Hmm, none match. Let me recheck: A(-2,3), B(4,-3), C(4,5). Midpoint of BC: ((4+4)/2, (-3+5)/2) = (4, 1). AM = √[(4-(-2))² + (1-3)²] = √[36+4] = √40 = 2√10. Option 0 is 5. Option 1: √65 ≈ 8.06. Option 2: 10. Option 3: √61 ≈ 7.81. None match √40 = 2√10 ≈ 6.32. There might be an error in the problem's coordinates or options."
@@ -968,7 +1159,12 @@
       {
         "id": "q-c-9",
         "question": "Find the circumcenter of triangle with vertices (0,0), (4,0), (0,6).",
-        "options": ["(2,3)", "(2,2)", "(3,2)", "(0,0)"],
+        "options": [
+          "(2,3)",
+          "(2,2)",
+          "(3,2)",
+          "(0,0)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "The triangle is right-angled at (0,0) since OA along x-axis and OB along y-axis. In a right triangle, the circumcenter is the midpoint of the hypotenuse. Hypotenuse connects (4,0) and (0,6). Midpoint = (2,3).",
@@ -982,7 +1178,12 @@
       {
         "id": "q-c-10",
         "question": "Find the area of the triangle whose sides are along lines 3x-4y=0, x=4, and the x-axis.",
-        "options": ["6 sq units", "8 sq units", "12 sq units", "24 sq units"],
+        "options": [
+          "6 sq units",
+          "8 sq units",
+          "12 sq units",
+          "24 sq units"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Intersection of 3x-4y=0 and x=4: 3(4)-4y=0 → 12-4y=0 → y=3. Point P(4,3). Intersection of 3x-4y=0 and y=0: 3x=0 → x=0. Point Q(0,0). Intersection of x=4 and y=0: R(4,0). Vertices: (0,0), (4,0), (4,3). This is a right triangle with base 4 and height 3. Area = (1/2)×4×3 = 6 sq units.",
@@ -995,7 +1196,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Dwanda Yoga (द्वन्द योग) — 'Duplex Method' for Squaring",
@@ -1029,7 +1229,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Coordinate Geometry — Complete Mind Map",
     "type": "hierarchical",
@@ -1083,56 +1282,182 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "How Coordinate Geometry Connects — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Coordinate Plane", "group": "foundation" },
-      { "id": "n2", "label": "Distance Formula", "group": "formula" },
-      { "id": "n3", "label": "Section Formula", "group": "formula" },
-      { "id": "n4", "label": "Midpoint Formula", "group": "formula" },
-      { "id": "n5", "label": "Area of Triangle", "group": "formula" },
-      { "id": "n6", "label": "Collinearity Check", "group": "application" },
-      { "id": "n7", "label": "Triangle Type", "group": "application" },
-      { "id": "n8", "label": "Quadrilateral Type", "group": "application" },
-      { "id": "n9", "label": "Board & Competitive Problems", "group": "goal" }
+      {
+        "id": "n1",
+        "label": "Coordinate Plane",
+        "group": "foundation"
+      },
+      {
+        "id": "n2",
+        "label": "Distance Formula",
+        "group": "formula"
+      },
+      {
+        "id": "n3",
+        "label": "Section Formula",
+        "group": "formula"
+      },
+      {
+        "id": "n4",
+        "label": "Midpoint Formula",
+        "group": "formula"
+      },
+      {
+        "id": "n5",
+        "label": "Area of Triangle",
+        "group": "formula"
+      },
+      {
+        "id": "n6",
+        "label": "Collinearity Check",
+        "group": "application"
+      },
+      {
+        "id": "n7",
+        "label": "Triangle Type",
+        "group": "application"
+      },
+      {
+        "id": "n8",
+        "label": "Quadrilateral Type",
+        "group": "application"
+      },
+      {
+        "id": "n9",
+        "label": "Board & Competitive Problems",
+        "group": "goal"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n1", "n3"], ["n1", "n5"],
-      ["n2", "n6"], ["n2", "n7"],
-      ["n3", "n4"],
-      ["n4", "n8"],
-      ["n5", "n6"],
-      ["n6", "n9"], ["n7", "n9"], ["n8", "n9"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n2",
+        "n7"
+      ],
+      [
+        "n3",
+        "n4"
+      ],
+      [
+        "n4",
+        "n8"
+      ],
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n6",
+        "n9"
+      ],
+      [
+        "n7",
+        "n9"
+      ],
+      [
+        "n8",
+        "n9"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "How to Find the Distance Between Two Points",
       "steps": [
-        { "order": 1, "action": "Identify coordinates: (x₁,y₁) and (x₂,y₂)", "next": 2 },
-        { "order": 2, "action": "Find horizontal difference: (x₂-x₁)", "next": 3 },
-        { "order": 3, "action": "Find vertical difference: (y₂-y₁)", "next": 4 },
-        { "order": 4, "action": "Square both differences", "next": 5 },
-        { "order": 5, "action": "Add the squares", "next": 6 },
-        { "order": 6, "action": "Take square root", "next": "END" }
+        {
+          "order": 1,
+          "action": "Identify coordinates: (x₁,y₁) and (x₂,y₂)",
+          "next": 2
+        },
+        {
+          "order": 2,
+          "action": "Find horizontal difference: (x₂-x₁)",
+          "next": 3
+        },
+        {
+          "order": 3,
+          "action": "Find vertical difference: (y₂-y₁)",
+          "next": 4
+        },
+        {
+          "order": 4,
+          "action": "Square both differences",
+          "next": 5
+        },
+        {
+          "order": 5,
+          "action": "Add the squares",
+          "next": 6
+        },
+        {
+          "order": 6,
+          "action": "Take square root",
+          "next": "END"
+        }
       ]
     },
     {
       "title": "How to Check if Three Points are Collinear",
       "steps": [
-        { "order": 1, "action": "Method 1: Use area formula", "next": 2 },
-        { "order": 2, "action": "Plug into (1/2)|x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)|", "next": 3 },
-        { "order": 3, "action": "Is result = 0?", "decision": true, "if_yes": 4, "if_no": 5 },
-        { "order": 4, "action": "Points are COLLINEAR", "next": "END" },
-        { "order": 5, "action": "Points are NOT collinear" },
-        { "order": 6, "action": "Method 2: Check slope AB = slope BC", "next": 7 },
-        { "order": 7, "action": "Slopes equal?", "decision": true, "if_yes": 4, "if_no": 5 }
+        {
+          "order": 1,
+          "action": "Method 1: Use area formula",
+          "next": 2
+        },
+        {
+          "order": 2,
+          "action": "Plug into (1/2)|x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)|",
+          "next": 3
+        },
+        {
+          "order": 3,
+          "action": "Is result = 0?",
+          "decision": true,
+          "if_yes": 4,
+          "if_no": 5
+        },
+        {
+          "order": 4,
+          "action": "Points are COLLINEAR",
+          "next": "END"
+        },
+        {
+          "order": 5,
+          "action": "Points are NOT collinear"
+        },
+        {
+          "order": 6,
+          "action": "Method 2: Check slope AB = slope BC",
+          "next": 7
+        },
+        {
+          "order": 7,
+          "action": "Slopes equal?",
+          "decision": true,
+          "if_yes": 4,
+          "if_no": 5
+        }
       ]
     }
   ],
-
   "visualizations": [
     {
       "rendererType": "COORDINATE_GRAPH",
@@ -1140,7 +1465,16 @@
       "visualizationProperties": {
         "title": "Distance Between Two Points",
         "type": "coordinate_graph",
-        "points": [[1, 2], [5, 5]],
+        "points": [
+          [
+            1,
+            2
+          ],
+          [
+            5,
+            5
+          ]
+        ],
         "showDistance": true,
         "showRightTriangle": true,
         "gridLines": true
@@ -1152,14 +1486,25 @@
       "visualizationProperties": {
         "title": "Section Formula Visualization",
         "type": "coordinate_graph",
-        "points": [[0, 0], [6, 9]],
-        "divisionRatio": [2, 1],
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            9
+          ]
+        ],
+        "divisionRatio": [
+          2,
+          1
+        ],
         "showDivision": true,
         "gridLines": true
       }
     }
   ],
-
   "common_misconceptions": [
     "The distance formula is always √[(x₂-x₁)² + (y₂-y₁)²] — THE ORDER DOES NOT MATTER because of squaring. (x₁-x₂)² = (x₂-x₁)².",
     "The section formula P = ((mx₂+nx₁)/(m+n), (my₂+ny₁)/(m+n)) — STUDENTS OFTEN CONFUSE which weight goes with which coordinate. Tip: the weight m is associated with the 'other' point B(x₂,y₂), not the first point A(x₁,y₁).",
@@ -1169,5 +1514,6 @@
     "In collinearity check, ANY three points with one coordinate same does NOT automatically mean collinearity — e.g., (1,2), (1,5), (3,2) has same x for first two but not collinear.",
     "Distance formula for vertical/horizontal lines — if x₂=x₁, the formula simplifies to |y₂-y₁|, and if y₂=y₁, it simplifies to |x₂-x₁|. Don't overcomplicate.",
     "The coordinate plane extends infinitely in all four directions — coordinates can be any real numbers, including negative and fractional values."
-  ]
+  ],
+  "chapterNumber": 6
 }

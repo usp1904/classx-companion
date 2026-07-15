@@ -4,7 +4,6 @@
   "lesson": 1,
   "title": "Triangles — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Apply the Basic Proportionality Theorem (Thales Theorem) and its converse to solve problems",
     "Prove and apply AA, SSS, SAS similarity criteria for triangles",
@@ -13,9 +12,11 @@
     "Solve board-level and competitive exam problems involving triangles with speed and accuracy",
     "Connect triangle concepts to real-life Indian applications like land measurement, construction, and navigation"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS9_TRIANGLES", "MATH_CLASS9_LINES_ANGLES", "MATH_CLASS8_POLYGONS"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS9_TRIANGLES",
+    "MATH_CLASS9_LINES_ANGLES",
+    "MATH_CLASS8_POLYGONS"
+  ],
   "concepts": [
     {
       "name": "Similar Figures — When Shapes Match Perfectly",
@@ -70,7 +71,6 @@
       ]
     }
   ],
-
   "theorems": [
     {
       "name": "Basic Proportionality Theorem (Thales Theorem)",
@@ -241,7 +241,6 @@
       ]
     }
   ],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -312,7 +311,6 @@
       "speed_mode": "Golden step: In a right triangle, altitude to hypotenuse = (product of legs)/(hypotenuse). So h = (5 × 12)/13 = 60/13 cm."
     }
   ],
-
   "exercises": {
     "exercise_6_1": {
       "title": "Exercise 6.1 — Similar Figures",
@@ -1032,7 +1030,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 4 — Triangles",
     "topics": [
@@ -1090,7 +1087,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 4 — Triangles",
     "topics": [
@@ -1134,49 +1130,118 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Triangles consistently contributes 8-12 marks (1-2 short answer + 1-2 long answer). Similarity and Pythagoras are the most tested topics.",
-    "pattern": {
-      "short_answer_1_mark": [
-        "Identify similarity criterion from figure (asked in 2017, 2019, 2021, 2024)",
-        "State BPT or its converse (asked in 2018, 2020, 2023, 2025)",
-        "Find ratio of areas given side ratio (asked in 2019, 2022, 2024)"
-      ],
-      "short_answer_2_marks": [
-        "Find unknown side using BPT (asked in 2017, 2020, 2022, 2025)",
-        "Apply Pythagoras theorem to find distance (asked in 2018, 2021, 2023, 2026)",
-        "Find altitude of equilateral/right triangle (asked in 2019, 2022, 2024)"
-      ],
-      "long_answer_4_marks": [
-        "Prove similarity and find unknown sides/angles (asked in 2017, 2020, 2023, 2025)",
-        "Prove Pythagoras theorem and its converse (asked in 2018, 2021, 2024)",
-        "Word problems involving ladder/pole/tree/kite (asked in 2019, 2022, 2025, 2026)"
-      ]
-    },
-    "scoring_areas": [
-      "BPT direct application — simplest and highest scoring, just substitute and solve",
-      "Similarity proof using AA — memorize the angle-chasing steps",
-      "Pythagoras word problems — identify the right triangle and which side is the hypotenuse",
-      "Area ratio problems — remember area ratio = (side ratio)²",
-      "Altitude to hypotenuse — PM² = QM × MR type problems follow a fixed pattern"
+  "model_papers": {
+    "simple": [
+      {
+        "question": "In ∆ABC, DE ∥ BC with D on AB and E on AC. If AD = 3 cm, DB = 6 cm, and AE = 4 cm, find EC.",
+        "answer": "EC = 8 cm",
+        "steps": [
+          "By BPT, AD/DB = AE/EC",
+          "3/6 = 4/EC",
+          "EC = 4 × 6/3 = 8 cm"
+        ],
+        "hints": [
+          "Apply the Basic Proportionality Theorem: a line parallel to one side divides the other two sides proportionally."
+        ]
+      },
+      {
+        "question": "Find the length of the hypotenuse of a right triangle whose legs are 9 cm and 12 cm.",
+        "answer": "Hypotenuse = 15 cm",
+        "steps": [
+          "By Pythagoras theorem: h² = 9² + 12²",
+          "h² = 81 + 144 = 225",
+          "h = √225 = 15 cm"
+        ],
+        "hints": [
+          "Recognise the 9-12-15 triple (3×3, 4×3, 5×3)."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Applying BPT when the line is not parallel — DE ∥ BC must be given or proved first",
-      "Forgetting to check the converse condition — AD/DB = AE/EC must be verified in exact order",
-      "Mixing up AA, SSS, SAS criteria — AA requires two angles, SSS requires three ratios, SAS requires two sides AND included angle",
-      "Forgetting that area ratio is SQUARE of side ratio",
-      "Not converting all measurements to the same unit in word problems",
-      "Applying Pythagoras to non-right triangles"
+    "medium": [
+      {
+        "question": "∆PQR has sides PQ = 10 cm, PR = 12 cm, QR = 14 cm. ∆XYZ has sides XY = 15 cm, XZ = 18 cm, YZ = 21 cm. Prove that ∆PQR ~ ∆XYZ and find the scale factor.",
+        "answer": "∆PQR ~ ∆XYZ by SSS, scale factor = 2/3",
+        "steps": [
+          "Arrange sides in order: PQ = 10, PR = 12, QR = 14 and XY = 15, XZ = 18, YZ = 21",
+          "Check ratios: PQ/XY = 10/15 = 2/3, PR/XZ = 12/18 = 2/3, QR/YZ = 14/21 = 2/3",
+          "All three ratios equal → SSS similarity criterion",
+          "Scale factor = 2/3 (∆PQR is smaller)"
+        ],
+        "hints": [
+          "For SSS similarity, all three corresponding side ratios must be equal."
+        ]
+      },
+      {
+        "question": "The areas of two similar triangles are 81 cm² and 144 cm². If a side of the larger triangle is 20 cm, find the corresponding side of the smaller triangle.",
+        "answer": "Side of smaller = 15 cm",
+        "steps": [
+          "Area ratio = (side ratio)²",
+          "81/144 = (s/20)²",
+          "s/20 = √(81/144) = 9/12 = 3/4",
+          "s = 20 × 3/4 = 15 cm"
+        ],
+        "hints": [
+          "Area ratio of similar triangles equals the square of the ratio of corresponding sides."
+        ]
+      },
+      {
+        "question": "In right ∆ABC, right-angled at B, a perpendicular BD is drawn from B to the hypotenuse AC. If AB = 6 cm and BC = 8 cm, find BD.",
+        "answer": "BD = 4.8 cm",
+        "steps": [
+          "Find AC: AC² = 6² + 8² = 36 + 64 = 100, so AC = 10 cm",
+          "Area of ∆ABC = ½ × AB × BC = ½ × 6 × 8 = 24 cm²",
+          "Also area = ½ × AC × BD = ½ × 10 × BD",
+          "So 5 × BD = 24, thus BD = 4.8 cm"
+        ],
+        "hints": [
+          "The area of a right triangle can be written in two ways using different base-height pairs."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "question": "In ∆ABC, AD is a median. E is the midpoint of AD. BE produced meets AC at F. Prove that AF = AC/3.",
+        "answer": "AF = AC/3 (proved)",
+        "steps": [
+          "Draw DG ∥ BF where G lies on AC",
+          "In ∆BCF, D is midpoint of BC and DG ∥ BF",
+          "By converse of BPT, G is midpoint of FC, so FG = GC",
+          "In ∆ADG, E is midpoint of AD and EF ∥ DG",
+          "So F is midpoint of AG, thus AF = FG",
+          "Hence AF = FG = GC, so AC = 3 × AF, i.e., AF = AC/3"
+        ],
+        "hints": [
+          "Introduce a construction line parallel to BF through D to apply the midpoint theorem."
+        ]
+      },
+      {
+        "question": "A right triangle has a hypotenuse of 13 cm and one leg is 7 cm longer than the other. Find the lengths of the legs.",
+        "answer": "Legs are 5 cm and 12 cm",
+        "steps": [
+          "Let the shorter leg = x cm, then longer leg = x + 7 cm",
+          "By Pythagoras: x² + (x + 7)² = 13²",
+          "x² + x² + 14x + 49 = 169",
+          "2x² + 14x - 120 = 0 → x² + 7x - 60 = 0",
+          "(x + 12)(x - 5) = 0, so x = 5 (positive)",
+          "Legs are 5 cm and 12 cm"
+        ],
+        "hints": [
+          "Set up a quadratic equation using Pythagoras and solve by factorisation."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "What is the ratio of the areas of two similar triangles with corresponding sides in the ratio 2:3?",
-        "options": ["4:9", "2:3", "8:27", "1:1"],
+        "options": [
+          "4:9",
+          "2:3",
+          "8:27",
+          "1:1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area ratio = (side ratio)² = (2/3)² = 4/9 = 4:9.",
@@ -1190,7 +1255,12 @@
       {
         "id": "q-s-2",
         "question": "In a right triangle with legs 3 and 4, the hypotenuse is:",
-        "options": ["5", "7", "12", "25"],
+        "options": [
+          "5",
+          "7",
+          "12",
+          "25"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "3² + 4² = 9 + 16 = 25. Hypotenuse = √25 = 5. This is the classic 3-4-5 right triangle used by carpenters worldwide.",
@@ -1204,7 +1274,12 @@
       {
         "id": "q-s-3",
         "question": "Two triangles are similar by AA criterion. What does AA stand for?",
-        "options": ["Angle-Angle", "Area-Angle", "Angle-Apex", "Adjacent-Angle"],
+        "options": [
+          "Angle-Angle",
+          "Area-Angle",
+          "Angle-Apex",
+          "Adjacent-Angle"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "AA stands for Angle-Angle. If two angles of one triangle equal two angles of another, the triangles are similar (the third angle automatically matches since sum = 180°).",
@@ -1218,7 +1293,12 @@
       {
         "id": "q-s-4",
         "question": "If ∆ABC ~ ∆DEF and AB = 4 cm, DE = 8 cm, the scale factor is:",
-        "options": ["1:2", "2:1", "1:4", "4:1"],
+        "options": [
+          "1:2",
+          "2:1",
+          "1:4",
+          "4:1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Scale factor = AB/DE = 4/8 = 1/2 = 1:2. ∆ABC is half the size of ∆DEF.",
@@ -1232,7 +1312,12 @@
       {
         "id": "q-s-5",
         "question": "Thales Theorem is also known as:",
-        "options": ["Basic Proportionality Theorem", "Pythagoras Theorem", "Midpoint Theorem", "Angle Sum Theorem"],
+        "options": [
+          "Basic Proportionality Theorem",
+          "Pythagoras Theorem",
+          "Midpoint Theorem",
+          "Angle Sum Theorem"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Thales Theorem states that a line parallel to one side of a triangle divides the other two sides proportionally. It is commonly called the Basic Proportionality Theorem (BPT).",
@@ -1246,7 +1331,12 @@
       {
         "id": "q-s-6",
         "question": "A 6 m pole casts a 4 m shadow. How tall is a tree casting a 12 m shadow at the same time?",
-        "options": ["18 m", "8 m", "24 m", "16 m"],
+        "options": [
+          "18 m",
+          "8 m",
+          "24 m",
+          "16 m"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "By similarity: 6/4 = h/12 → h = 6 × 12/4 = 18 m.",
@@ -1260,7 +1350,12 @@
       {
         "id": "q-s-7",
         "question": "Which of the following is NOT a similarity criterion?",
-        "options": ["AAA", "SAS", "ASS", "SSS"],
+        "options": [
+          "AAA",
+          "SAS",
+          "ASS",
+          "SSS"
+        ],
         "correct": 2,
         "explanation": {
           "correct": "ASS (Angle-Side-Side) is NOT a valid similarity criterion. The ambiguous case ASS does not guarantee similarity. Only AA, SSS, and SAS are valid criteria.",
@@ -1274,7 +1369,12 @@
       {
         "id": "q-s-8",
         "question": "In a 30-60-90 triangle, the side opposite 30° is 5 cm. The hypotenuse is:",
-        "options": ["10 cm", "5√3 cm", "5 cm", "5/√3 cm"],
+        "options": [
+          "10 cm",
+          "5√3 cm",
+          "5 cm",
+          "5/√3 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "In a 30-60-90 triangle, the side opposite 30° is half the hypotenuse. So hypotenuse = 2 × 5 = 10 cm.",
@@ -1288,7 +1388,12 @@
       {
         "id": "q-s-9",
         "question": "What is the length of the altitude of an equilateral triangle of side 6 cm?",
-        "options": ["3√3 cm", "6√3 cm", "3 cm", "12 cm"],
+        "options": [
+          "3√3 cm",
+          "6√3 cm",
+          "3 cm",
+          "12 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Altitude = (√3/2) × side = (√3/2) × 6 = 3√3 cm ≈ 5.2 cm.",
@@ -1302,7 +1407,12 @@
       {
         "id": "q-s-10",
         "question": "If the diagonals of a rhombus are 6 cm and 8 cm, the side is:",
-        "options": ["5 cm", "10 cm", "7 cm", "14 cm"],
+        "options": [
+          "5 cm",
+          "10 cm",
+          "7 cm",
+          "14 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Diagonals of a rhombus bisect at right angles. Half-diagonals = 3 cm and 4 cm. Side² = 3² + 4² = 25. Side = 5 cm.",
@@ -1314,12 +1424,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-m-1",
         "question": "In ∆ABC, DE ∥ BC with AD = 3 cm, DB = 4 cm, AE = 5 cm. Find AC.",
-        "options": ["11.67 cm", "8.75 cm", "6 cm", "15 cm"],
+        "options": [
+          "11.67 cm",
+          "8.75 cm",
+          "6 cm",
+          "15 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "By BPT: AD/DB = AE/EC → 3/4 = 5/EC → EC = 20/3 ≈ 6.67 cm. AC = AE + EC = 5 + 20/3 = 15/3 + 20/3 = 35/3 ≈ 11.67 cm.",
@@ -1333,7 +1447,12 @@
       {
         "id": "q-m-2",
         "question": "The areas of two similar triangles are 81 cm² and 144 cm². The ratio of their perimeters is:",
-        "options": ["3:4", "9:16", "9:12", "81:144"],
+        "options": [
+          "3:4",
+          "9:16",
+          "9:12",
+          "81:144"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area ratio = 81/144 = 9/16 = (3/4)². So side ratio = 3/4. Perimeter ratio = side ratio = 3:4.",
@@ -1347,7 +1466,12 @@
       {
         "id": "q-m-3",
         "question": "A 15 m ladder reaches 12 m up a wall. How far is the foot from the wall?",
-        "options": ["9 m", "3 m", "√(369) m", "27 m"],
+        "options": [
+          "9 m",
+          "3 m",
+          "√(369) m",
+          "27 m"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "15² = 12² + d² → d² = 225 - 144 = 81 → d = 9 m.",
@@ -1361,7 +1485,12 @@
       {
         "id": "q-m-4",
         "question": "In ∆PQR, ∠P = 90°, PM ⟂ QR, QM = 4 cm, MR = 9 cm. Find PM.",
-        "options": ["6 cm", "13 cm", "2 cm", "36 cm"],
+        "options": [
+          "6 cm",
+          "13 cm",
+          "2 cm",
+          "36 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "In a right triangle, altitude to hypotenuse satisfies PM² = QM × MR = 4 × 9 = 36. So PM = √36 = 6 cm.",
@@ -1375,7 +1504,12 @@
       {
         "id": "q-m-5",
         "question": "If ∆ABC ~ ∆PQR, AB:PQ = 3:5, and area(ABC) = 36 cm², find area(PQR).",
-        "options": ["100 cm²", "60 cm²", "25 cm²", "12 cm²"],
+        "options": [
+          "100 cm²",
+          "60 cm²",
+          "25 cm²",
+          "12 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "(side ratio)² = area ratio → (3/5)² = 36/area(PQR) → 9/25 = 36/area → area = 36 × 25/9 = 100 cm².",
@@ -1389,7 +1523,12 @@
       {
         "id": "q-m-6",
         "question": "The sides of a triangle are 7, 24, 25. Which type is it?",
-        "options": ["Right-angled", "Acute-angled", "Obtuse-angled", "Equilateral"],
+        "options": [
+          "Right-angled",
+          "Acute-angled",
+          "Obtuse-angled",
+          "Equilateral"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "7² + 24² = 49 + 576 = 625 = 25². So it satisfies Pythagoras theorem, making it a right triangle.",
@@ -1403,7 +1542,12 @@
       {
         "id": "q-m-7",
         "question": "In the figure, DE ∥ BC, AD = 4 cm, DB = 6 cm, DE = 5 cm. Find BC.",
-        "options": ["12.5 cm", "8.33 cm", "3.33 cm", "10 cm"],
+        "options": [
+          "12.5 cm",
+          "8.33 cm",
+          "3.33 cm",
+          "10 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Since DE ∥ BC, ∆ADE ~ ∆ABC (AA). So AD/AB = DE/BC. AB = AD + DB = 10 cm. 4/10 = 5/BC → BC = 50/4 = 12.5 cm.",
@@ -1417,7 +1561,12 @@
       {
         "id": "q-m-8",
         "question": "Two triangles have equal areas and are similar. What can you conclude?",
-        "options": ["They are congruent", "They have equal perimeters", "They are isosceles", "They are right triangles"],
+        "options": [
+          "They are congruent",
+          "They have equal perimeters",
+          "They are isosceles",
+          "They are right triangles"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If two similar triangles have equal areas, the ratio of areas = 1 = (side ratio)². So side ratio = 1, meaning all sides are equal. Hence, the triangles are congruent.",
@@ -1431,7 +1580,12 @@
       {
         "id": "q-m-9",
         "question": "A pole 6 m high casts a shadow 2√3 m long. The angle of elevation of the sun is:",
-        "options": ["60°", "30°", "45°", "90°"],
+        "options": [
+          "60°",
+          "30°",
+          "45°",
+          "90°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "tan θ = height/shadow = 6/(2√3) = 3/√3 = √3. tan 60° = √3, so θ = 60°.",
@@ -1445,7 +1599,12 @@
       {
         "id": "q-m-10",
         "question": "In a triangle, if a² + b² = c², the angle opposite side c is:",
-        "options": ["90°", "60°", "45°", "30°"],
+        "options": [
+          "90°",
+          "60°",
+          "45°",
+          "30°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "By the converse of Pythagoras theorem, if a² + b² = c², the triangle is right-angled with the right angle opposite the side of length c (the hypotenuse).",
@@ -1457,12 +1616,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-c-1",
         "question": "In ∆ABC, AD is the bisector of ∠A meeting BC at D. If AB = 8 cm, AC = 10 cm, BC = 12 cm, find BD and DC.",
-        "options": ["BD = 16/3, DC = 20/3", "BD = 5, DC = 7", "BD = 4, DC = 8", "BD = 6, DC = 6"],
+        "options": [
+          "BD = 16/3, DC = 20/3",
+          "BD = 5, DC = 7",
+          "BD = 4, DC = 8",
+          "BD = 6, DC = 6"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "By angle bisector theorem: BD/DC = AB/AC = 8/10 = 4/5. Let BD = 4k, DC = 5k. BD + DC = 12 → 9k = 12 → k = 4/3. BD = 4(4/3) = 16/3 cm, DC = 5(4/3) = 20/3 cm.",
@@ -1503,10 +1666,7 @@
         ],
         "correct": 0,
         "explanation": {
-          "correct": "In parallelogram ABCD, AB ∥ CD, AD ∥ BC. M is midpoint of CD.",
-          "In ∆BCM and ∆EDM: ∠BMC = ∠EMD (vert opp), ∠BCM = ∠EDM (alt int, BC ∥ AD), so ∆BCM ~ ∆EDM. So ED = BC = AD.",
-          "In ∆ABL and ∆CEL: AB ∥ CE, so ∠ABL = ∠CEL, ∠BAL = ∠ECL. So ∆ABL ~ ∆CEL.",
-          "Hence EL/BL = CE/AB = CD/AB + DE/AB = 1 + 1 = 2 (since CD=AB and DE=AB). So EL = 2BL. Proved.",
+          "correct": "In parallelogram ABCD, AB ∥ CD, AD ∥ BC. M is midpoint of CD. In ∆BCM and ∆EDM: ∠BMC = ∠EMD (vert opp), ∠BCM = ∠EDM (alt int, BC ∥ AD), so ∆BCM ~ ∆EDM. So ED = BC = AD. In ∆ABL and ∆CEL: AB ∥ CE, so ∠ABL = ∠CEL, ∠BAL = ∠ECL. So ∆ABL ~ ∆CEL. Hence EL/BL = CE/AB = CD/AB + DE/AB = 1 + 1 = 2. So EL = 2BL.",
           "wrong_options": {
             "1": "The ratio is 2:1 based on the parallel line properties and similarity.",
             "2": "EL = 3BL would require CE = 3AB, but CE = CD + DE = AB + AB = 2AB.",
@@ -1517,7 +1677,12 @@
       {
         "id": "q-c-4",
         "question": "ABC is a right triangle with ∠B = 90°. BD is the altitude to AC. If AD = 4 cm and DC = 9 cm, find BD.",
-        "options": ["6 cm", "5 cm", "√36 = 6 cm", "Both A and C"],
+        "options": [
+          "6 cm",
+          "5 cm",
+          "√36 = 6 cm",
+          "Both A and C"
+        ],
         "correct": 3,
         "explanation": {
           "correct": "In right triangle ABC with BD ⟂ AC: BD² = AD × DC = 4 × 9 = 36. So BD = 6 cm. Both option A (6 cm) and option C (√36 = 6 cm) are correct, so D is the right choice.",
@@ -1531,7 +1696,12 @@
       {
         "id": "q-c-5",
         "question": "If the perimeter of a triangle is 30 cm and its sides are in the ratio 3:4:5, find its area.",
-        "options": ["75 cm²", "37.5 cm²", "150 cm²", "45 cm²"],
+        "options": [
+          "75 cm²",
+          "37.5 cm²",
+          "150 cm²",
+          "45 cm²"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Sides = 3k:4k:5k. Perimeter = 12k = 30 → k = 2.5. So sides = 7.5, 10, 12.5. Check: 7.5² + 10² = 56.25 + 100 = 156.25 = 12.5². So it's a right triangle. Area = (1/2) × 7.5 × 10 = 37.5 cm².",
@@ -1564,7 +1734,12 @@
       {
         "id": "q-c-7",
         "question": "In a trapezium ABCD, AB ∥ CD and AD = BC. If AB = 10 cm, CD = 6 cm, and the distance between parallel sides is 4 cm, find the length of the equal sides AD and BC.",
-        "options": ["2√5 cm", "4 cm", "2√3 cm", "5 cm"],
+        "options": [
+          "2√5 cm",
+          "4 cm",
+          "2√3 cm",
+          "5 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Draw perpendiculars from C and D to AB at points E and F. Then AF = EB = (AB - CD)/2 = (10 - 6)/2 = 2 cm. Height = 4 cm. In right ∆ADF: AD² = AF² + DF² = 2² + 4² = 20. AD = √20 = 2√5 cm.",
@@ -1578,7 +1753,12 @@
       {
         "id": "q-c-8",
         "question": "∆ABC is right-angled at B. D and E are points on AB and AC such that DE ∥ BC. If AD = 3 cm, DB = 5 cm, and BC = 12 cm, find DE.",
-        "options": ["4.5 cm", "7.5 cm", "6 cm", "3 cm"],
+        "options": [
+          "4.5 cm",
+          "7.5 cm",
+          "6 cm",
+          "3 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Since DE ∥ BC, ∆ADE ~ ∆ABC (AA). AD/AB = DE/BC. AB = AD + DB = 8 cm. 3/8 = DE/12 → DE = 36/8 = 4.5 cm.",
@@ -1592,7 +1772,12 @@
       {
         "id": "q-c-9",
         "question": "A ladder 13 m long rests against a vertical wall. If the foot is pulled away 1 m from the wall, the top slides down 1 m. Find the initial distance of the foot from the wall.",
-        "options": ["5 m", "12 m", "7 m", "8 m"],
+        "options": [
+          "5 m",
+          "12 m",
+          "7 m",
+          "8 m"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let initial distance = x m, initial height = y m. By Pythagoras: x² + y² = 169. After pulling: (x+1)² + (y-1)² = 169. Expanding: x² + 2x + 1 + y² - 2y + 1 = 169 → (x² + y²) + 2x - 2y + 2 = 169 → 169 + 2x - 2y + 2 = 169 → 2x - 2y + 2 = 0 → y = x + 1. Substituting: x² + (x+1)² = 169 → 2x² + 2x + 1 = 169 → 2x² + 2x - 168 = 0 → x² + x - 84 = 0 → (x+9)(x-8) = 0 → x = 8 (reject -9) → Wait, let me recheck. Actually: 2x² + 2x + 1 - 169 = 0 → 2x² + 2x - 168 = 0 → x² + x - 84 = 0 → (x+9)(x-8) = 0. So x = 8. Then y = 9. Check: 8² + 9² = 64 + 81 = 145 ≠ 169. Hmm, let me redo. x² + y² = 169, (x+1)² + (y-1)² = 169. Subtract: [(x+1)²-x²] + [(y-1)²-y²] = 0. (x²+2x+1-x²) + (y²-2y+1-y²) = 0 → 2x+1-2y+1 = 0 → 2x-2y+2 = 0 → x-y+1 = 0 → y = x+1. Then x²+(x+1)² = 169 → x²+x²+2x+1 = 169 → 2x²+2x-168 = 0 → x²+x-84 = 0. x = [-1±√(1+336)]/2 = [-1±√337]/2 ≈ [-1±18.36]/2. x ≈ 8.68 or x ≈ -9.68. x ≈ 8.68 m. Initial distance ≈ 8.68 m. This is a JEE style problem; the answer 5 m is given in some variants where the ladder is 13 m and the top slides down from 12 m to 11 m when the foot moves from 5 m to 6 m. Check: 5² + 12² = 169, 6² + 11² = 36 + 121 = 157 ≠ 169. So that doesn't work either. The actual answer depends on the specific values; the valid solution gives x ≈ 8.68 m. For board exams, a cleaner version uses specific integer values."
@@ -1619,7 +1804,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Ekadhikena Purvena (एकाधिकेना पूर्वेण) — 'One more than the previous one'",
@@ -1640,7 +1824,10 @@
         {
           "problem": "Find 65² for a right triangle side calculation.",
           "explanation": "65 ends in 5. 6 × 7 = 42. Append 25 = 4225.",
-          "steps": ["Step 1: 6 × 7 = 42", "Step 2: Append 25 → 4225"],
+          "steps": [
+            "Step 1: 6 × 7 = 42",
+            "Step 2: Append 25 → 4225"
+          ],
           "regular_method": "65² = (60+5)² = 3600 + 600 + 25 = 4225"
         }
       ]
@@ -1661,7 +1848,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Triangles — Complete Mind Map",
     "type": "hierarchical",
@@ -1725,59 +1911,192 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "How Triangles Connect — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Similar Figures", "group": "foundation" },
-      { "id": "n2", "label": "BPT (Thales)", "group": "theorem" },
-      { "id": "n3", "label": "AA Similarity", "group": "criterion" },
-      { "id": "n4", "label": "SSS Similarity", "group": "criterion" },
-      { "id": "n5", "label": "SAS Similarity", "group": "criterion" },
-      { "id": "n6", "label": "Area Ratio", "group": "property" },
-      { "id": "n7", "label": "Pythagoras Theorem", "group": "theorem" },
-      { "id": "n8", "label": "Right Triangle Altitude", "group": "application" },
-      { "id": "n9", "label": "Board & Competitive Problems", "group": "goal" }
+      {
+        "id": "n1",
+        "label": "Similar Figures",
+        "group": "foundation"
+      },
+      {
+        "id": "n2",
+        "label": "BPT (Thales)",
+        "group": "theorem"
+      },
+      {
+        "id": "n3",
+        "label": "AA Similarity",
+        "group": "criterion"
+      },
+      {
+        "id": "n4",
+        "label": "SSS Similarity",
+        "group": "criterion"
+      },
+      {
+        "id": "n5",
+        "label": "SAS Similarity",
+        "group": "criterion"
+      },
+      {
+        "id": "n6",
+        "label": "Area Ratio",
+        "group": "property"
+      },
+      {
+        "id": "n7",
+        "label": "Pythagoras Theorem",
+        "group": "theorem"
+      },
+      {
+        "id": "n8",
+        "label": "Right Triangle Altitude",
+        "group": "application"
+      },
+      {
+        "id": "n9",
+        "label": "Board & Competitive Problems",
+        "group": "goal"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n2", "n3"], ["n2", "n4"], ["n2", "n5"],
-      ["n3", "n6"], ["n4", "n6"], ["n5", "n6"],
-      ["n6", "n9"],
-      ["n7", "n8"],
-      ["n3", "n7"],
-      ["n8", "n9"],
-      ["n7", "n9"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n2",
+        "n3"
+      ],
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n3",
+        "n6"
+      ],
+      [
+        "n4",
+        "n6"
+      ],
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n6",
+        "n9"
+      ],
+      [
+        "n7",
+        "n8"
+      ],
+      [
+        "n3",
+        "n7"
+      ],
+      [
+        "n8",
+        "n9"
+      ],
+      [
+        "n7",
+        "n9"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "How to Prove Two Triangles are Similar",
       "steps": [
-        { "order": 1, "action": "Identify the two triangles in the figure", "next": 2 },
-        { "order": 2, "action": "List what is given / what can be inferred", "next": 3 },
-        { "order": 3, "action": "Are two angles equal in both triangles?", "decision": true, "if_yes": 4, "if_no": 5 },
-        { "order": 4, "action": "Apply AA criterion → Triangles SIMILAR", "next": "END" },
-        { "order": 5, "action": "Are all three sides proportional?", "decision": true, "if_yes": 6, "if_no": 7 },
-        { "order": 6, "action": "Apply SSS criterion → Triangles SIMILAR", "next": "END" },
-        { "order": 7, "action": "Are two sides proportional AND included angle equal?", "decision": true, "if_yes": 8, "if_no": 9 },
-        { "order": 8, "action": "Apply SAS criterion → Triangles SIMILAR", "next": "END" },
-        { "order": 9, "action": "Triangles are NOT necessarily similar" }
+        {
+          "order": 1,
+          "action": "Identify the two triangles in the figure",
+          "next": 2
+        },
+        {
+          "order": 2,
+          "action": "List what is given / what can be inferred",
+          "next": 3
+        },
+        {
+          "order": 3,
+          "action": "Are two angles equal in both triangles?",
+          "decision": true,
+          "if_yes": 4,
+          "if_no": 5
+        },
+        {
+          "order": 4,
+          "action": "Apply AA criterion → Triangles SIMILAR",
+          "next": "END"
+        },
+        {
+          "order": 5,
+          "action": "Are all three sides proportional?",
+          "decision": true,
+          "if_yes": 6,
+          "if_no": 7
+        },
+        {
+          "order": 6,
+          "action": "Apply SSS criterion → Triangles SIMILAR",
+          "next": "END"
+        },
+        {
+          "order": 7,
+          "action": "Are two sides proportional AND included angle equal?",
+          "decision": true,
+          "if_yes": 8,
+          "if_no": 9
+        },
+        {
+          "order": 8,
+          "action": "Apply SAS criterion → Triangles SIMILAR",
+          "next": "END"
+        },
+        {
+          "order": 9,
+          "action": "Triangles are NOT necessarily similar"
+        }
       ]
     },
     {
       "title": "How to Solve a Pythagoras Word Problem",
       "steps": [
-        { "order": 1, "action": "Draw a diagram of the situation" },
-        { "order": 2, "action": "Identify the right triangle" },
-        { "order": 3, "action": "Label the hypotenuse (longest side, opposite the right angle)" },
-        { "order": 4, "action": "Apply a² + b² = c² (c = hypotenuse)" },
-        { "order": 5, "action": "Solve for the unknown side" },
-        { "order": 6, "action": "Check if answer is reasonable (positive, units correct)" }
+        {
+          "order": 1,
+          "action": "Draw a diagram of the situation"
+        },
+        {
+          "order": 2,
+          "action": "Identify the right triangle"
+        },
+        {
+          "order": 3,
+          "action": "Label the hypotenuse (longest side, opposite the right angle)"
+        },
+        {
+          "order": 4,
+          "action": "Apply a² + b² = c² (c = hypotenuse)"
+        },
+        {
+          "order": 5,
+          "action": "Solve for the unknown side"
+        },
+        {
+          "order": 6,
+          "action": "Check if answer is reasonable (positive, units correct)"
+        }
       ]
     }
   ],
-
   "visualizations": [
     {
       "rendererType": "COORDINATE_GRAPH",
@@ -1785,8 +2104,16 @@
       "visualizationProperties": {
         "title": "Right Triangle — Pythagoras Visualization",
         "type": "right_triangle",
-        "sides": [3, 4, 5],
-        "labels": ["a = 3", "b = 4", "c = 5"],
+        "sides": [
+          3,
+          4,
+          5
+        ],
+        "labels": [
+          "a = 3",
+          "b = 4",
+          "c = 5"
+        ],
         "showSquares": true
       }
     },
@@ -1797,14 +2124,45 @@
         "title": "Similar Triangles — AA Criterion",
         "type": "similar_triangles",
         "triangles": [
-          { "vertices": [[0,0], [4,0], [0,3]], "label": "∆ABC" },
-          { "vertices": [[0,0], [8,0], [0,6]], "label": "∆PQR" }
+          {
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                4,
+                0
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            "label": "∆ABC"
+          },
+          {
+            "vertices": [
+              [
+                0,
+                0
+              ],
+              [
+                8,
+                0
+              ],
+              [
+                0,
+                6
+              ]
+            ],
+            "label": "∆PQR"
+          }
         ],
         "showAngles": true
       }
     }
   ],
-
   "common_misconceptions": [
     "If two sides are proportional and one angle is equal, the triangles are similar — FALSE: The angle must be the INCLUDED angle (between the two proportional sides) for SAS. If it's not included, it's the ambiguous ASS case which does NOT guarantee similarity.",
     "All isosceles triangles are similar — FALSE: Isosceles triangles only have two equal sides. Their vertex angles can differ, so they are not all similar.",
@@ -1814,5 +2172,6 @@
     "Pythagoras theorem works for all triangles — FALSE: It only works for right triangles. For other triangles, use the Law of Cosines: a² = b² + c² - 2bc cos A.",
     "The longest side in a right triangle is always called the hypotenuse — TRUE, but students often call any long side the hypotenuse. The hypotenuse is specifically the side opposite the RIGHT ANGLE.",
     "In a right triangle, a² + b² = c² regardless of which side is c — FALSE: c MUST be the hypotenuse. If you label the hypotenuse as a or b, the formula changes."
-  ]
+  ],
+  "chapterNumber": 7
 }

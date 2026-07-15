@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generatedAt": "2026-07-11T14:24:41Z",
+    "generatedAt": "2026-07-15T13:45:49Z",
     "source": "data/syllabus.json",
     "notes": "Auto-generated syllabus tree from data/syllabus.json"
   },
@@ -27,24 +27,114 @@
             "Fundamental Theorem of Arithmetic"
           ],
           "exercises": [
-            { "id": "ex1.1-1", "exercise_label": "Exercise 1.1", "question": "Find HCF of 135 and 225" },
-            { "id": "ex1.1-2", "exercise_label": "Exercise 1.1", "question": "Find HCF of 196 and 38220" },
-            { "id": "ex1.1-3", "exercise_label": "Exercise 1.1", "question": "Find HCF of 867 and 255" },
-            { "id": "ex1.1-4", "exercise_label": "Exercise 1.1", "question": "Odd integer form 6q+1, 6q+3, 6q+5" },
-            { "id": "ex1.1-5", "exercise_label": "Exercise 1.1", "question": "Cube of integer form 9m, 9m+1, 9m+8" },
-            { "id": "ex1.2-1", "exercise_label": "Exercise 1.2", "question": "Prime factors of 140" },
-            { "id": "ex1.2-2", "exercise_label": "Exercise 1.2", "question": "Prime factors of 156" },
-            { "id": "ex1.2-3", "exercise_label": "Exercise 1.2", "question": "LCM and HCF of 12, 15, 21" },
-            { "id": "ex1.2-4", "exercise_label": "Exercise 1.2", "question": "LCM and HCF of 17, 23, 29" },
-            { "id": "ex1.2-5", "exercise_label": "Exercise 1.2", "question": "Can 4^n end with digit 0?" },
-            { "id": "ex1.2-6", "exercise_label": "Exercise 1.2", "question": "Composite number proof" },
-            { "id": "ex1.2-7", "exercise_label": "Exercise 1.2", "question": "LCM word problem - Sonia and Ravi" },
-            { "id": "ex1.3-1", "exercise_label": "Exercise 1.3", "question": "Prove sqrt(5) irrational" },
-            { "id": "ex1.3-2", "exercise_label": "Exercise 1.3", "question": "Prove 3+2√5 irrational" },
-            { "id": "ex1.3-3", "exercise_label": "Exercise 1.3", "question": "Prove 1/√2, 7√5, 6+√2 irrational" },
-            { "id": "ex1.4-1", "exercise_label": "Exercise 1.4", "question": "Classify 13/3125 decimal" },
-            { "id": "ex1.4-2", "exercise_label": "Exercise 1.4", "question": "Classify 17/8 decimal" },
-            { "id": "ex1.4-3", "exercise_label": "Exercise 1.4", "question": "Rational or irrational - decimals" }
+            {
+              "id": "ex1.1-1",
+              "exercise_label": "Exercise 1.1",
+              "question": "Use Euclid's division algorithm to find the HCF of 135 and 225.",
+              "solution": "225 = 135 × 1 + 90; 135 = 90 × 1 + 45; 90 = 45 × 2 + 0. HCF = 45."
+            },
+            {
+              "id": "ex1.1-2",
+              "exercise_label": "Exercise 1.1",
+              "question": "Use Euclid's division algorithm to find the HCF of 196 and 38220.",
+              "solution": "38220 = 196 × 195 + 0. HCF = 196."
+            },
+            {
+              "id": "ex1.1-3",
+              "exercise_label": "Exercise 1.1",
+              "question": "Use Euclid's division algorithm to find the HCF of 867 and 255.",
+              "solution": "867 = 255 × 3 + 102; 255 = 102 × 2 + 51; 102 = 51 × 2 + 0. HCF = 51."
+            },
+            {
+              "id": "ex1.1-4",
+              "exercise_label": "Exercise 1.1",
+              "question": "Show that any positive odd integer is of the form 6q+1, 6q+3, or 6q+5.",
+              "solution": "By Euclid's lemma, any integer = 6q+r, 0≤r<6. Only r=1,3,5 give odd numbers."
+            },
+            {
+              "id": "ex1.1-5",
+              "exercise_label": "Exercise 1.1",
+              "question": "Show that the cube of any positive integer is of the form 9m, 9m+1, or 9m+8.",
+              "solution": "Any integer = 3q+r, r=0,1,2. Cube each case: (3q)³=9(3q³), (3q+1)³=9(3q³+3q²+q)+1, (3q+2)³=9(3q³+6q²+4q)+8."
+            },
+            {
+              "id": "ex1.2-1",
+              "exercise_label": "Exercise 1.2",
+              "question": "Express 140 as a product of its prime factors.",
+              "solution": "140 = 2² × 5 × 7."
+            },
+            {
+              "id": "ex1.2-2",
+              "exercise_label": "Exercise 1.2",
+              "question": "Express 156 as a product of its prime factors.",
+              "solution": "156 = 2² × 3 × 13."
+            },
+            {
+              "id": "ex1.2-3",
+              "exercise_label": "Exercise 1.2",
+              "question": "Find LCM and HCF of 12, 15, 21 by prime factorization.",
+              "solution": "12=2²×3, 15=3×5, 21=3×7. HCF=3, LCM=2²×3×5×7=420."
+            },
+            {
+              "id": "ex1.2-4",
+              "exercise_label": "Exercise 1.2",
+              "question": "Find LCM and HCF of 17, 23, 29.",
+              "solution": "All prime. HCF=1, LCM=17×23×29=11339."
+            },
+            {
+              "id": "ex1.2-5",
+              "exercise_label": "Exercise 1.2",
+              "question": "Check whether 4ⁿ can end with digit 0 for any natural number n.",
+              "solution": "4ⁿ = 2²ⁿ. For a number to end in 0, it needs factor 5. 4ⁿ has no factor 5. So never."
+            },
+            {
+              "id": "ex1.2-6",
+              "exercise_label": "Exercise 1.2",
+              "question": "Explain why 7×11×13+13 and 7×6×5×4×3×2×1+5 are composite.",
+              "solution": "7×11×13+13 = 13(77+1) = 13×78 (composite). 7×6×5×4×3×2×1+5 = 5(1008+1) = 5×1009 (composite)."
+            },
+            {
+              "id": "ex1.2-7",
+              "exercise_label": "Exercise 1.2",
+              "question": "Sonia takes 18 min, Ravi 12 min per round. When will they meet again at start?",
+              "solution": "LCM(18,12) = 36. They meet after 36 minutes."
+            },
+            {
+              "id": "ex1.3-1",
+              "exercise_label": "Exercise 1.3",
+              "question": "Prove that √5 is irrational.",
+              "solution": "Assume √5 = p/q (coprime). Square: 5q² = p². So 5|p → p=5k → 5k² = q² → 5|q. Contradiction. ∴ √5 irrational."
+            },
+            {
+              "id": "ex1.3-2",
+              "exercise_label": "Exercise 1.3",
+              "question": "Prove that 3 + 2√5 is irrational.",
+              "solution": "Assume rational. Then 3+2√5 = a/b → √5 = (a-3b)/(2b) which would be rational. But √5 is irrational. Contradiction."
+            },
+            {
+              "id": "ex1.3-3",
+              "exercise_label": "Exercise 1.3",
+              "question": "Prove that 1/√2, 7√5, and 6+√2 are irrational.",
+              "solution": "Each can be rearranged to isolate a known irrational (√2 or √5), leading to contradiction."
+            },
+            {
+              "id": "ex1.4-1",
+              "exercise_label": "Exercise 1.4",
+              "question": "Classify 13/3125 without actual division.",
+              "solution": "3125 = 5⁵. Denominator has only 5. So terminating."
+            },
+            {
+              "id": "ex1.4-2",
+              "exercise_label": "Exercise 1.4",
+              "question": "Classify 17/8 without actual division.",
+              "solution": "8 = 2³. Only prime factor 2. So terminating."
+            },
+            {
+              "id": "ex1.4-3",
+              "exercise_label": "Exercise 1.4",
+              "question": "Decide if 43.123456789, 0.120120012000..., and 43.123456789 (repeating) are rational.",
+              "solution": "43.123456789 (terminating) → rational. 0.120120012000... (non-terminating non-recurring) → irrational. 43.123456789 (repeating) → rational."
+            }
           ]
         },
         {
@@ -65,7 +155,9 @@
           "exercises": [
             {
               "id": "pm-1",
-              "question": "If p(x) is a polynomial with p(2) = 0, show that (x - 2) is a factor of p(x)."
+              "exercise_label": null,
+              "question": "If p(x) is a polynomial with p(2) = 0, show that (x - 2) is a factor of p(x).",
+              "solution": "By the Factor Theorem, if p(2) = 0 then (x - 2) divides p(x)."
             }
           ]
         },
@@ -84,7 +176,9 @@
           "exercises": [
             {
               "id": "pl-1",
-              "question": "Solve the system x + y = 5 and 2x - y = 1."
+              "exercise_label": null,
+              "question": "Solve the system x + y = 5 and 2x - y = 1.",
+              "solution": "Add the equations to eliminate y: 3x = 6, so x = 2. Then y = 3."
             }
           ]
         },
@@ -105,7 +199,9 @@
           "exercises": [
             {
               "id": "qm-1",
-              "question": "Find the roots of x^2 - 5x + 6 = 0."
+              "exercise_label": null,
+              "question": "Find the roots of x^2 - 5x + 6 = 0.",
+              "solution": "Factor the quadratic: (x - 2)(x - 3) = 0, so the roots are x = 2 and x = 3."
             }
           ]
         },
@@ -123,7 +219,29 @@
           "exercises": [
             {
               "id": "ap-1",
-              "question": "Find the sum of the first 10 terms of the AP 3, 7, 11, ... ."
+              "exercise_label": null,
+              "question": "Find the sum of the first 10 terms of the AP 3, 7, 11, ... .",
+              "solution": "The common difference is 4. The 10th term is 3 + 9*4 = 39. Sum = 10/2 * (3 + 39) = 210."
+            }
+          ]
+        },
+        {
+          "id": "coordinate-geometry",
+          "type": "chapter",
+          "name": "Coordinate Geometry",
+          "summary": "Distance formula, section formula, and area of triangles in the coordinate plane.",
+          "topics": [
+            "Distance Formula",
+            "Section Formula",
+            "Area of a Triangle"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "cg-1",
+              "exercise_label": null,
+              "question": "Find the distance between (3, 4) and (7, 1).",
+              "solution": "Distance = sqrt((7-3)^2 + (1-4)^2) = sqrt(16 + 9) = 5."
             }
           ]
         },
@@ -144,63 +262,9 @@
           "exercises": [
             {
               "id": "tr-1",
-              "question": "If two triangles are similar and the ratio of corresponding sides is 2:3, what is the ratio of their areas?"
-            }
-          ]
-        },
-        {
-          "id": "coordinate-geometry",
-          "type": "chapter",
-          "name": "Coordinate Geometry",
-          "summary": "Distance formula, section formula, and area of triangles in the coordinate plane.",
-          "topics": [
-            "Distance Formula",
-            "Section Formula",
-            "Area of a Triangle"
-          ],
-          "theorems": [],
-          "exercises": [
-            {
-              "id": "cg-1",
-              "question": "Find the distance between (3, 4) and (7, 1)."
-            }
-          ]
-        },
-        {
-          "id": "introduction-to-trigonometry",
-          "type": "chapter",
-          "name": "Introduction to Trigonometry",
-          "summary": "Trigonometric ratios of acute angles and basic identities.",
-          "topics": [
-            "Sine, Cosine, Tangent",
-            "Reciprocal Ratios",
-            "Trigonometric Identities"
-          ],
-          "theorems": [
-            "sin^2(theta) + cos^2(theta) = 1"
-          ],
-          "exercises": [
-            {
-              "id": "trig-1",
-              "question": "If sin(theta) = 3/5 for an acute angle theta, find cos(theta)."
-            }
-          ]
-        },
-        {
-          "id": "applications-of-trigonometry",
-          "type": "chapter",
-          "name": "Some Applications of Trigonometry",
-          "summary": "Heights and distances, angles of elevation and depression.",
-          "topics": [
-            "Angle of Elevation",
-            "Angle of Depression",
-            "Height and Distance Problems"
-          ],
-          "theorems": [],
-          "exercises": [
-            {
-              "id": "trig-2",
-              "question": "From a point 20 m away from the base of a tower, the angle of elevation of its top is 30 degrees. Find the height of the tower."
+              "exercise_label": null,
+              "question": "If two triangles are similar and the ratio of corresponding sides is 2:3, what is the ratio of their areas?",
+              "solution": "The ratio of areas is the square of the ratio of sides, so 4:9."
             }
           ]
         },
@@ -220,25 +284,51 @@
           "exercises": [
             {
               "id": "cir-1",
-              "question": "If a tangent to a circle makes a right angle with the radius at the point of contact, what is the angle between the tangent and the radius?"
+              "exercise_label": null,
+              "question": "If a tangent to a circle makes a right angle with the radius at the point of contact, what is the angle between the tangent and the radius?",
+              "solution": "The angle between the tangent and the radius at the point of contact is 90 degrees."
             }
           ]
         },
         {
-          "id": "constructions",
+          "id": "introduction-to-trigonometry",
           "type": "chapter",
-          "name": "Constructions",
-          "summary": "Construction of triangles, bisectors, and tangents to circles.",
+          "name": "Introduction to Trigonometry",
+          "summary": "Trigonometric ratios of acute angles and basic identities.",
           "topics": [
-            "Triangle Construction",
-            "Angle Bisector",
-            "Circle Tangent"
+            "Sine, Cosine, Tangent",
+            "Reciprocal Ratios",
+            "Trigonometric Identities"
+          ],
+          "theorems": [
+            "sin^2(theta) + cos^2(theta) = 1"
+          ],
+          "exercises": [
+            {
+              "id": "trig-1",
+              "exercise_label": null,
+              "question": "If sin(theta) = 3/5 for an acute angle theta, find cos(theta).",
+              "solution": "cos(theta) = sqrt(1 - sin^2(theta)) = sqrt(1 - 9/25) = 4/5."
+            }
+          ]
+        },
+        {
+          "id": "applications-of-trigonometry",
+          "type": "chapter",
+          "name": "Some Applications of Trigonometry",
+          "summary": "Heights and distances, angles of elevation and depression.",
+          "topics": [
+            "Angle of Elevation",
+            "Angle of Depression",
+            "Height and Distance Problems"
           ],
           "theorems": [],
           "exercises": [
             {
-              "id": "cons-1",
-              "question": "Construct a triangle given two sides and the included angle."
+              "id": "trig-2",
+              "exercise_label": null,
+              "question": "From a point 20 m away from the base of a tower, the angle of elevation of its top is 30 degrees. Find the height of the tower.",
+              "solution": "Height = 20 * tan(30 degrees) = 20 / sqrt(3) ≈ 11.55 m."
             }
           ]
         },
@@ -256,7 +346,9 @@
           "exercises": [
             {
               "id": "arc-1",
-              "question": "Find the area of a sector of a circle of radius 7 cm and central angle 60 degrees."
+              "exercise_label": null,
+              "question": "Find the area of a sector of a circle of radius 7 cm and central angle 60 degrees.",
+              "solution": "Area = (60/360) * pi * 7^2 = (1/6) * 49pi ≈ 25.67 cm^2."
             }
           ]
         },
@@ -274,7 +366,9 @@
           "exercises": [
             {
               "id": "sa-1",
-              "question": "Calculate the volume of a cylinder with radius 3 cm and height 10 cm."
+              "exercise_label": null,
+              "question": "Calculate the volume of a cylinder with radius 3 cm and height 10 cm.",
+              "solution": "Volume = pi * r^2 * h = pi * 3^2 * 10 = 90pi cm^3."
             }
           ]
         },
@@ -292,7 +386,9 @@
           "exercises": [
             {
               "id": "stats-1",
-              "question": "Find the mean of the data set 12, 15, 17, 20, 25."
+              "exercise_label": null,
+              "question": "Find the mean of the data set 12, 15, 17, 20, 25.",
+              "solution": "Mean = (12 + 15 + 17 + 20 + 25) / 5 = 89 / 5 = 17.8."
             }
           ]
         },
@@ -310,7 +406,9 @@
           "exercises": [
             {
               "id": "prob-1",
-              "question": "If a coin is tossed twice, what is the probability of getting exactly one head?"
+              "exercise_label": null,
+              "question": "If a coin is tossed twice, what is the probability of getting exactly one head?",
+              "solution": "Outcomes: HH, HT, TH, TT. Exactly one head occurs in 2 of 4 cases, so probability = 1/2."
             }
           ]
         }
@@ -340,7 +438,9 @@
           "exercises": [
             {
               "id": "ph-1",
-              "question": "A concave mirror forms a real image at infinity. Where is the object placed?"
+              "exercise_label": null,
+              "question": "A concave mirror forms a real image at infinity. Where is the object placed?",
+              "solution": "When the object is at the focal point of a concave mirror, the reflected rays become parallel and the image forms at infinity."
             }
           ]
         },
@@ -359,7 +459,9 @@
           "exercises": [
             {
               "id": "ph-2",
-              "question": "Why does a rainbow appear after rain?"
+              "exercise_label": null,
+              "question": "Why does a rainbow appear after rain?",
+              "solution": "Rain drops act like prisms, dispersing sunlight into its component colours. Each colour refracts at a different angle, forming a rainbow."
             }
           ]
         },
@@ -380,7 +482,9 @@
           "exercises": [
             {
               "id": "ph-3",
-              "question": "Calculate the current through a 12 ohm resistor connected across a 24 V battery."
+              "exercise_label": null,
+              "question": "Calculate the current through a 12 ohm resistor connected across a 24 V battery.",
+              "solution": "Current = V / R = 24 / 12 = 2 A."
             }
           ]
         },
@@ -399,7 +503,9 @@
           "exercises": [
             {
               "id": "ph-4",
-              "question": "Describe the direction of the magnetic field around a current-carrying straight conductor."
+              "exercise_label": null,
+              "question": "Describe the direction of the magnetic field around a current-carrying straight conductor.",
+              "solution": "The magnetic field forms concentric circles around the conductor, with direction given by the right-hand thumb rule."
             }
           ]
         },
@@ -418,7 +524,9 @@
           "exercises": [
             {
               "id": "ph-5",
-              "question": "Name one renewable and one non-renewable source of energy."
+              "exercise_label": null,
+              "question": "Name one renewable and one non-renewable source of energy.",
+              "solution": "Solar energy is renewable; coal is non-renewable."
             }
           ]
         }
@@ -444,7 +552,9 @@
           "exercises": [
             {
               "id": "ch-1",
-              "question": "Balance the equation: Fe + O2 -> Fe2O3."
+              "exercise_label": null,
+              "question": "Balance the equation: Fe + O2 -> Fe2O3.",
+              "solution": "4Fe + 3O2 -> 2Fe2O3."
             }
           ]
         },
@@ -462,7 +572,9 @@
           "exercises": [
             {
               "id": "ch-2",
-              "question": "What is the pH of a neutral solution?"
+              "exercise_label": null,
+              "question": "What is the pH of a neutral solution?",
+              "solution": "The pH of a neutral solution is 7."
             }
           ]
         },
@@ -480,7 +592,9 @@
           "exercises": [
             {
               "id": "ch-3",
-              "question": "Why does sodium react vigorously with water?"
+              "exercise_label": null,
+              "question": "Why does sodium react vigorously with water?",
+              "solution": "Sodium is a highly reactive metal that displaces hydrogen from water, producing sodium hydroxide and hydrogen gas."
             }
           ]
         },
@@ -498,7 +612,9 @@
           "exercises": [
             {
               "id": "ch-4",
-              "question": "What is a homologous series?"
+              "exercise_label": null,
+              "question": "What is a homologous series?",
+              "solution": "A homologous series consists of organic compounds with the same functional group and similar chemical properties, differing by CH2 units."
             }
           ]
         },
@@ -516,7 +632,9 @@
           "exercises": [
             {
               "id": "ch-5",
-              "question": "Why does atomic radius decrease across a period?"
+              "exercise_label": null,
+              "question": "Why does atomic radius decrease across a period?",
+              "solution": "Atomic radius decreases across a period because the effective nuclear charge increases, pulling electrons closer."
             }
           ]
         }
@@ -543,7 +661,9 @@
           "exercises": [
             {
               "id": "bio-1",
-              "question": "Describe the role of stomata in transpiration."
+              "exercise_label": null,
+              "question": "Describe the role of stomata in transpiration.",
+              "solution": "Stomata are tiny openings on leaves that allow water vapour to escape during transpiration, helping transport nutrients and cool the plant."
             }
           ]
         },
@@ -561,7 +681,9 @@
           "exercises": [
             {
               "id": "bio-2",
-              "question": "How does the endocrine system contribute to coordination?"
+              "exercise_label": null,
+              "question": "How does the endocrine system contribute to coordination?",
+              "solution": "The endocrine system secretes hormones that regulate body functions and maintain internal balance, complementing the nervous system."
             }
           ]
         },
@@ -579,7 +701,9 @@
           "exercises": [
             {
               "id": "bio-3",
-              "question": "Give one advantage of sexual reproduction over asexual reproduction."
+              "exercise_label": null,
+              "question": "Give one advantage of sexual reproduction over asexual reproduction.",
+              "solution": "Sexual reproduction generates variation, which helps populations adapt to changing environments."
             }
           ]
         },
@@ -597,7 +721,9 @@
           "exercises": [
             {
               "id": "bio-4",
-              "question": "What does Mendel's law of segregation state?"
+              "exercise_label": null,
+              "question": "What does Mendel's law of segregation state?",
+              "solution": "It states that during gamete formation, the two alleles for a trait separate so that each gamete carries only one allele."
             }
           ]
         },
@@ -615,7 +741,9 @@
           "exercises": [
             {
               "id": "bio-5",
-              "question": "Why is water conservation important for ecosystems?"
+              "exercise_label": null,
+              "question": "Why is water conservation important for ecosystems?",
+              "solution": "Water conservation protects freshwater supplies for plants, animals, and people, and maintains healthy ecosystems."
             }
           ]
         }

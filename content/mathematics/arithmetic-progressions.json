@@ -4,7 +4,6 @@
   "lesson": 5,
   "title": "Arithmetic Progressions — Complete Learning Module",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Identify arithmetic progressions (AP) from given sequences",
     "Find the nth term of an AP using aₙ = a + (n-1)d",
@@ -13,9 +12,11 @@
     "Apply AP concepts to real-life Indian context problems",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive exam readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS7_PATTERNS", "MATH_CLASS8_LINEAR_EQUATIONS", "MATH_CLASS9_NUMBER_SYSTEMS"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS7_PATTERNS",
+    "MATH_CLASS8_LINEAR_EQUATIONS",
+    "MATH_CLASS9_NUMBER_SYSTEMS"
+  ],
   "concepts": [
     {
       "name": "Arithmetic Progression — The Pattern of Equal Steps",
@@ -62,9 +63,7 @@
       ]
     }
   ],
-
   "theorems": [],
-
   "worked_examples": [
     {
       "id": "we-ap-1",
@@ -114,7 +113,8 @@
         "= 12 [1600 + 3450]",
         "= 12 × 5050 = ₹60,600.",
         "",
-        "Alternative using last term:", "a₂₄ = 800 + 23×150 = 800 + 3450 = ₹4,250.",
+        "Alternative using last term:",
+        "a₂₄ = 800 + 23×150 = 800 + 3450 = ₹4,250.",
         "S₂₄ = 24/2 (800 + 4250) = 12 × 5050 = ₹60,600.",
         "",
         "Ravi saves ₹2,450 in the 12th month and ₹60,600 in total over 2 years."
@@ -142,7 +142,6 @@
       "competitive_shortcut": "The means are evenly spaced between 2 and 14. The gap between consecutive terms = (14-2)/(5-1) = 12/4 = 3. So terms: 2, 5, 8, 11, 14."
     }
   ],
-
   "exercises": {
     "exercise_5_1": {
       "title": "Exercise 5.1 — Identifying APs and Common Difference",
@@ -437,7 +436,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 5 — Arithmetic Progressions",
     "topics": [
@@ -485,7 +483,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 5 — Arithmetic Progressions",
     "topics": [
@@ -532,46 +529,112 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Arithmetic Progressions consistently contributes 6-8 marks. nth term problems and sum of n terms are the most common questions (1-2 marks each). Word problems featuring real-life scenarios appear frequently in the long answer section.",
-    "pattern": {
-      "short_answer_1_mark": [
-        "Find the common difference given first two terms (asked in 2018, 2021, 2024)",
-        "State the formula for nth term or sum (asked in 2019, 2022, 2025)"
-      ],
-      "short_answer_2_marks": [
-        "Find the nth term given a and d (asked in 2020, 2022, 2024)",
-        "Find the number of terms in an AP (asked in 2017, 2021, 2023, 2026)",
-        "Check if a number is a term of a given AP (asked in 2019, 2023)"
-      ],
-      "long_answer_4_marks": [
-        "Word problem: production/savings forming AP (asked in 2018, 2021, 2024)",
-        "Find sum given two terms (asked in 2019, 2022, 2025)",
-        "Find AP given sum of n terms formula (asked in 2020, 2023, 2026)"
-      ]
-    },
-    "scoring_areas": [
-      "nth term formula — direct substitution, easy full marks",
-      "Sum formula — use Sₙ = n/2(a+l) when last term is known for simplicity",
-      "Word problems — identify a and d from description, set up equation, solve",
-      "Given two terms — form two equations, solve for a and d"
+  "model_papers": {
+    "simple": [
+      {
+        "id": "mp-ap-s-1",
+        "question": "Find the 10th term of the AP: 3, 7, 11, 15, ...",
+        "answer": "39",
+        "steps": [
+          "First term a = 3, common difference d = 7 - 3 = 4",
+          "nth term formula: aₙ = a + (n - 1)d",
+          "a₁₀ = 3 + (10 - 1) × 4 = 3 + 36 = 39"
+        ],
+        "hints": [
+          "Identify a (first term) and d (difference between consecutive terms), then apply aₙ = a + (n-1)d."
+        ]
+      },
+      {
+        "id": "mp-ap-s-2",
+        "question": "Find the sum of the first 20 natural numbers.",
+        "answer": "210",
+        "steps": [
+          "Sequence: 1, 2, 3, ..., 20. This is an AP with a = 1, d = 1, n = 20",
+          "Sum formula: Sₙ = n/2[2a + (n-1)d]",
+          "S₂₀ = 20/2[2(1) + (19)1] = 10[2 + 19] = 10 × 21 = 210"
+        ],
+        "hints": [
+          "Use Sₙ = n/2(a + l) where l is the last term: S₂₀ = 20/2(1 + 20) = 10 × 21 = 210."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Using the wrong n in formulas: aₙ = a + (n-1)d, NOT a + nd",
-      "Sign errors with negative common difference",
-      "Forgetting to divide by 2 in sum formula: Sₙ = n/2[2a+(n-1)d], not n[2a+(n-1)d]",
-      "In word problems, not checking if n is a positive integer",
-      "Confusing aₙ (nth term) with Sₙ (sum of n terms)"
+    "medium": [
+      {
+        "id": "mp-ap-m-1",
+        "question": "The nth term of an AP is given by aₙ = 3 + 2n. Find the common difference and the first term.",
+        "answer": "a = 5, d = 2",
+        "steps": [
+          "a₁ = 3 + 2(1) = 5 (first term)",
+          "a₂ = 3 + 2(2) = 7 (second term)",
+          "d = a₂ - a₁ = 7 - 5 = 2",
+          "Alternatively, in aₙ = An + B, d = A = 2 and a = A + B = 2 + 3 = 5"
+        ],
+        "hints": [
+          "For a linear expression aₙ = An + B, the common difference is A and first term is A + B."
+        ]
+      },
+      {
+        "id": "mp-ap-m-2",
+        "question": "How many terms of the AP 24, 21, 18, ... must be taken so that the sum is 78?",
+        "answer": "4 terms or 13 terms",
+        "steps": [
+          "a = 24, d = -3, Sₙ = 78",
+          "Sₙ = n/2[2(24) + (n-1)(-3)] = 78",
+          "n/2[48 - 3n + 3] = 78 → n/2[51 - 3n] = 78",
+          "n(51 - 3n) = 156 → 51n - 3n² = 156 → 3n² - 51n + 156 = 0",
+          "Divide by 3: n² - 17n + 52 = 0 → (n - 4)(n - 13) = 0",
+          "n = 4 or n = 13 (both valid)"
+        ],
+        "hints": [
+          "Substitute in the sum formula to get a quadratic in n. Both roots may be valid."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "id": "mp-ap-c-1",
+        "question": "The ratio of the sum of n terms of two APs is (7n + 1) : (4n + 27). Find the ratio of their 9th terms.",
+        "answer": "56 : 71",
+        "steps": [
+          "For two APs with sum ratio S₁ₙ/S₂ₙ = (7n+1)/(4n+27)",
+          "Replace n by (2n-1) to get the nth term ratio",
+          "a₁ₙ/a₂ₙ = [7(2n-1)+1] / [4(2n-1)+27]",
+          "= (14n - 7 + 1) / (8n - 4 + 27) = (14n - 6) / (8n + 23)",
+          "For 9th term, n = 9: (14×9 - 6) / (8×9 + 23) = (126 - 6) / (72 + 23) = 120/95 = 24/19"
+        ],
+        "hints": [
+          "Replace n by (2n-1) in the sum ratio to obtain the nth term ratio, then substitute the required term number."
+        ]
+      },
+      {
+        "id": "mp-ap-c-2",
+        "question": "A manufacturer produced 600 TV sets in the 3rd year and 700 TV sets in the 7th year. Assuming uniform increase each year, find the production in the 1st year and the total production in 10 years.",
+        "answer": "550 sets in 1st year, 6625 sets total in 10 years",
+        "steps": [
+          "Production forms an AP with a₃ = 600 and a₇ = 700",
+          "a₃ = a + 2d = 600, a₇ = a + 6d = 700",
+          "Subtract: (a+6d) - (a+2d) = 700 - 600 → 4d = 100 → d = 25",
+          "a + 50 = 600 → a = 550 (production in 1st year)",
+          "a₁₀ = 550 + 9 × 25 = 550 + 225 = 775",
+          "S₁₀ = 10/2(550 + 775) = 5 × 1325 = 6625 sets"
+        ],
+        "hints": [
+          "'Uniform increase' means AP. Form two equations using given terms, solve for a and d."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-as-1",
         "question": "What is the common difference of the AP 3, 7, 11, 15, ...?",
-        "options": ["4", "3", "7", "11"],
+        "options": [
+          "4",
+          "3",
+          "7",
+          "11"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "d = 7 - 3 = 4. Each term is 4 more than the previous.",
@@ -585,7 +648,12 @@
       {
         "id": "q-as-2",
         "question": "What is the nth term formula of an AP with first term a and common difference d?",
-        "options": ["a + (n-1)d", "a + nd", "a + (n+1)d", "2a + (n-1)d"],
+        "options": [
+          "a + (n-1)d",
+          "a + nd",
+          "a + (n+1)d",
+          "2a + (n-1)d"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "aₙ = a + (n-1)d. For n=1, a₁ = a + 0d = a. For n=2, a₂ = a + d.",
@@ -599,7 +667,12 @@
       {
         "id": "q-as-3",
         "question": "Find the 10th term of the AP: 2, 5, 8, 11, ...",
-        "options": ["29", "30", "28", "27"],
+        "options": [
+          "29",
+          "30",
+          "28",
+          "27"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a=2, d=3, n=10. a₁₀ = 2 + 9×3 = 2 + 27 = 29.",
@@ -613,7 +686,12 @@
       {
         "id": "q-as-4",
         "question": "What is the sum of first n terms of an AP?",
-        "options": ["n/2[2a + (n-1)d]", "n[2a + (n-1)d]", "n/2[a + (n-1)d]", "n[a + (n-1)d]"],
+        "options": [
+          "n/2[2a + (n-1)d]",
+          "n[2a + (n-1)d]",
+          "n/2[a + (n-1)d]",
+          "n[a + (n-1)d]"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Sₙ = n/2[2a + (n-1)d]. Alternatively, Sₙ = n/2(a + l) where l is the last term.",
@@ -627,7 +705,12 @@
       {
         "id": "q-as-5",
         "question": "Which of the following is an AP?",
-        "options": ["1, 4, 9, 16, ...", "1, 3, 5, 7, ...", "1, 2, 4, 8, ...", "1, 4, 7, 11, ..."],
+        "options": [
+          "1, 4, 9, 16, ...",
+          "1, 3, 5, 7, ...",
+          "1, 2, 4, 8, ...",
+          "1, 4, 7, 11, ..."
+        ],
         "correct": 1,
         "explanation": {
           "correct": "1, 3, 5, 7, ... has constant difference d=2. It is an AP.",
@@ -641,7 +724,12 @@
       {
         "id": "q-as-6",
         "question": "The common difference of the AP -5, -1, 3, 7, ... is:",
-        "options": ["4", "-4", "5", "1"],
+        "options": [
+          "4",
+          "-4",
+          "5",
+          "1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "d = -1 - (-5) = 4. Also 3 - (-1) = 4, 7 - 3 = 4.",
@@ -655,7 +743,12 @@
       {
         "id": "q-as-7",
         "question": "If a = 10 and d = -2, then a₅ = ?",
-        "options": ["2", "0", "4", "-2"],
+        "options": [
+          "2",
+          "0",
+          "4",
+          "-2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a₅ = 10 + 4(-2) = 10 - 8 = 2.",
@@ -669,7 +762,12 @@
       {
         "id": "q-as-8",
         "question": "The sum of first 10 natural numbers (1+2+3+...+10) is:",
-        "options": ["55", "50", "45", "60"],
+        "options": [
+          "55",
+          "50",
+          "45",
+          "60"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "This is an AP with a=1, d=1, n=10. S₁₀ = 10/2[2+9×1] = 5×11 = 55.",
@@ -683,7 +781,12 @@
       {
         "id": "q-as-9",
         "question": "Which term of the AP 21, 18, 15, ... is 0?",
-        "options": ["8th", "7th", "6th", "9th"],
+        "options": [
+          "8th",
+          "7th",
+          "6th",
+          "9th"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a=21, d=-3, aₙ=0. 21+(n-1)(-3)=0 → 21-3n+3=0 → 24-3n=0 → n=8.",
@@ -697,7 +800,12 @@
       {
         "id": "q-as-10",
         "question": "The 10th term of an AP is 52 and the 14th term is 68. The common difference is:",
-        "options": ["4", "2", "8", "16"],
+        "options": [
+          "4",
+          "2",
+          "8",
+          "16"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a₁₄ - a₁₀ = 4d = 68-52 = 16 → d = 4.",
@@ -709,12 +817,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-am-1",
         "question": "Find the number of terms in the AP: 7, 13, 19, ..., 205.",
-        "options": ["34", "33", "35", "32"],
+        "options": [
+          "34",
+          "33",
+          "35",
+          "32"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a=7, d=6, aₙ=205. 7+(n-1)6=205 → 6(n-1)=198 → n-1=33 → n=34.",
@@ -728,7 +840,12 @@
       {
         "id": "q-am-2",
         "question": "The sum of first 15 terms of an AP is 600. If the first term is 5, find the common difference.",
-        "options": ["5", "10", "7", "3"],
+        "options": [
+          "5",
+          "10",
+          "7",
+          "3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "S₁₅ = 15/2[2(5) + 14d] = 600 → 7.5[10+14d]=600 → 10+14d=80 → 14d=70 → d=5.",
@@ -742,7 +859,12 @@
       {
         "id": "q-am-3",
         "question": "How many two-digit numbers are divisible by 3?",
-        "options": ["30", "33", "29", "31"],
+        "options": [
+          "30",
+          "33",
+          "29",
+          "31"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "First two-digit multiple of 3 = 12. Last = 99. AP: 12, 15, 18, ..., 99. a=12, d=3, aₙ=99. 12+(n-1)3=99 → 3(n-1)=87 → n-1=29 → n=30.",
@@ -756,7 +878,12 @@
       {
         "id": "q-am-4",
         "question": "If the nth term of an AP is 3 + 2n, find the common difference.",
-        "options": ["2", "3", "5", "1"],
+        "options": [
+          "2",
+          "3",
+          "5",
+          "1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "aₙ = 3+2n. a₁=3+2=5, a₂=3+4=7. d=7-5=2. Alternatively, for aₙ=An+B, d=A=2.",
@@ -770,7 +897,12 @@
       {
         "id": "q-am-5",
         "question": "The 5th term of an AP is 20 and the 9th term is 32. Find the 15th term.",
-        "options": ["50", "44", "56", "48"],
+        "options": [
+          "50",
+          "44",
+          "56",
+          "48"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a₅=a+4d=20, a₉=a+8d=32. Subtract: 4d=12 → d=3. a+12=20 → a=8. a₁₅=8+14×3=8+42=50.",
@@ -784,7 +916,12 @@
       {
         "id": "q-am-6",
         "question": "The sum of n terms of an AP is Sₙ = 5n² + 3n. Find the 10th term.",
-        "options": ["98", "88", "108", "78"],
+        "options": [
+          "98",
+          "88",
+          "108",
+          "78"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a₁₀ = S₁₀ - S₉. S₁₀=500+30=530. S₉=5(81)+27=405+27=432. a₁₀=530-432=98.",
@@ -798,7 +935,12 @@
       {
         "id": "q-am-7",
         "question": "Insert 3 arithmetic means between 3 and 11.",
-        "options": ["5, 7, 9", "4, 7, 10", "6, 7, 8", "5, 8, 11"],
+        "options": [
+          "5, 7, 9",
+          "4, 7, 10",
+          "6, 7, 8",
+          "5, 8, 11"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a=3, last=11, total terms=5. a₅=3+4d=11 → 4d=8 → d=2. Means: 3+2=5, 5+2=7, 7+2=9. Sequence: 3,5,7,9,11.",
@@ -812,7 +954,12 @@
       {
         "id": "q-am-8",
         "question": "A library charges fine of ₹5 for first day, ₹8 for second, ₹11 for third, increasing by ₹3 each day. How much fine for the 10th day?",
-        "options": ["₹32", "₹30", "₹35", "₹29"],
+        "options": [
+          "₹32",
+          "₹30",
+          "₹35",
+          "₹29"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "AP: a=5, d=3, n=10. a₁₀ = 5 + 9×3 = 5+27 = ₹32.",
@@ -826,7 +973,12 @@
       {
         "id": "q-am-9",
         "question": "Find the sum of all multiples of 5 between 1 and 100.",
-        "options": ["1050", "950", "1000", "1100"],
+        "options": [
+          "1050",
+          "950",
+          "1000",
+          "1100"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Multiples: 5,10,...,95,100. a=5, d=5, l=100. n=100/5=20. S₂₀ = 20/2(5+100) = 10×105 = 1050.",
@@ -840,7 +992,12 @@
       {
         "id": "q-am-10",
         "question": "If 2x, x+10, 3x+2 are in AP, find x.",
-        "options": ["6", "5", "4", "8"],
+        "options": [
+          "6",
+          "5",
+          "4",
+          "8"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "For AP: 2(x+10) = 2x + (3x+2) → 2x+20 = 5x+2 → 20-2 = 5x-2x → 18=3x → x=6. Terms: 12, 16, 20 — AP with d=4.",
@@ -852,12 +1009,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-ac-1",
         "question": "If the sum of first p terms of an AP is q and the sum of first q terms is p, find the sum of first (p+q) terms.",
-        "options": ["-(p+q)", "p+q", "0", "pq"],
+        "options": [
+          "-(p+q)",
+          "p+q",
+          "0",
+          "pq"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Sₚ = p/2[2a+(p-1)d] = q and S_q = q/2[2a+(q-1)d] = p. Subtract and simplify to get Sₚ₊_q = -(p+q). This is a standard result.",
@@ -871,7 +1032,12 @@
       {
         "id": "q-ac-2",
         "question": "The ratio of the sum of n terms of two APs is (3n+5):(4n+3). Find the ratio of their 9th terms.",
-        "options": ["32:39", "3:4", "11:14", "8:9"],
+        "options": [
+          "32:39",
+          "3:4",
+          "11:14",
+          "8:9"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Replace n by (2n-1): (3(2n-1)+5)/(4(2n-1)+3) = (6n-3+5)/(8n-4+3) = (6n+2)/(8n-1). For n=9: (54+2)/(72-1) = 56/71 = 32:39 (when simplified... 56:71, check: multiply by... hmm). (6(9)+2)/(8(9)-1) = (54+2)/(72-1) = 56/71. 56/71 ≠ 32/39. Let me recalculate: 3(17)+5 = 51+5=56, 4(17)+3 = 68+3=71. Ratio = 56:71. That doesn't match any option. Let me recompute: replace n by (2n-1). Ratio of nth terms = (3(2n-1)+5)/(4(2n-1)+3) = (6n-3+5)/(8n-4+3) = (6n+2)/(8n-1). For n=9: (54+2)/(72-1) = 56/71. None match. Actually the standard formula: if sum ratio = (an+b)/(cn+d), then nth term ratio = (a(2n-1)+b)/(c(2n-1)+d). Here (3(2n-1)+5)/(4(2n-1)+3). For n=9: (3×17+5)/(4×17+3) = (51+5)/(68+3) = 56/71. Not matching options. Perhaps the problem means find the ratio for the 9th term, using a different formula: if S₁ₙ/S₂ₙ = (3n+5)/(4n+3), then a₁ₙ/a₂ₙ = (3(2n-1)+5)/(4(2n-1)+3). At n=9: (51+5)/(68+3) = 56/71. Not matching any. Let me check option 0: 32/39 = 0.8205; 56/71 = 0.7887. Hmm.",
@@ -881,7 +1047,12 @@
       {
         "id": "q-ac-3",
         "question": "The sum of three numbers in AP is 15. The sum of their squares is 83. Find the numbers.",
-        "options": ["3, 5, 7", "5, 5, 5", "1, 5, 9", "2, 5, 8"],
+        "options": [
+          "3, 5, 7",
+          "5, 5, 5",
+          "1, 5, 9",
+          "2, 5, 8"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let numbers be a-d, a, a+d. Sum=3a=15 → a=5. Sum of squares = (a-d)²+a²+(a+d)² = 3a²+2d² = 75+2d² = 83 → 2d²=8 → d²=4 → d=±2. Numbers: 3,5,7 or 7,5,3.",
@@ -895,7 +1066,12 @@
       {
         "id": "q-ac-4",
         "question": "If a, b, c are in AP, then which of the following is also in AP?",
-        "options": ["b+c, c+a, a+b", "a², b², c²", "1/a, 1/b, 1/c", "a-b, b-c, c-a"],
+        "options": [
+          "b+c, c+a, a+b",
+          "a², b², c²",
+          "1/a, 1/b, 1/c",
+          "a-b, b-c, c-a"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If a,b,c are in AP: 2b = a+c. Check (c+a)-(b+c) = a-b; (a+b)-(c+a) = b-c. Since 2b=a+c, b-a = c-b, so a-b = -(b-a) = -(c-b) = b-c. So (b+c),(c+a),(a+b) are in AP with d = a-b = b-c.",
@@ -909,7 +1085,12 @@
       {
         "id": "q-ac-5",
         "question": "Solve the equation: 1 + 4 + 7 + 10 + ... + x = 287. Find x.",
-        "options": ["40", "43", "37", "46"],
+        "options": [
+          "40",
+          "43",
+          "37",
+          "46"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "AP: a=1, d=3, Sₙ=287, last term=x. n/2[2+(n-1)3]=287 → n(3n-1)/2=287 → 3n²-n-574=0. D=1+6888=6889=83². n=(1+83)/6=84/6=14. x = a₁₄ = 1+13×3 = 1+39 = 40.",
@@ -923,7 +1104,12 @@
       {
         "id": "q-ac-6",
         "question": "If the sum of n terms of an AP is cn², find the common difference.",
-        "options": ["2c", "c", "c/2", "4c"],
+        "options": [
+          "2c",
+          "c",
+          "c/2",
+          "4c"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Sₙ = cn². S₁ = c = a. S₂ = 4c = a+(a+d) = 2a+d = 2c+d → d=2c. Or: aₙ = Sₙ-Sₙ₋₁ = cn²-c(n-1)² = c(2n-1). Then d = a₂-a₁ = 3c-c = 2c.",
@@ -937,7 +1123,12 @@
       {
         "id": "q-ac-7",
         "question": "A piece of equipment costs ₹1,00,000. Its value depreciates by ₹5,000 every year. After how many years will its value be ₹65,000?",
-        "options": ["7 years", "8 years", "6 years", "9 years"],
+        "options": [
+          "7 years",
+          "8 years",
+          "6 years",
+          "9 years"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Value after n years forms AP: a=100000, d=-5000. aₙ = 100000+(n-1)(-5000) = 100000-5000n+5000 = 105000-5000n = 65000 → 5000n = 40000 → n = 8. Wait, check: after 1 year: 95000, after 2: 90000, ... after 8: 100000-7×5000=100000-35000=65000. So after 7 years (the 8th year value).",
@@ -951,7 +1142,12 @@
       {
         "id": "q-ac-8",
         "question": "If Sₙ = 3n² + 5n, find a₁₂.",
-        "options": ["80", "74", "86", "68"],
+        "options": [
+          "80",
+          "74",
+          "86",
+          "68"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a₁₂ = S₁₂ - S₁₁ = 3(144)+5(12) - [3(121)+5(11)] = 432+60 - (363+55) = 492 - 418 = 74. Hmm, 74 is option 1, not 80. Let me confirm: S₁₂=3(144)+60=432+60=492. S₁₁=3(121)+55=363+55=418. a₁₂=492-418=74.",
@@ -966,7 +1162,12 @@
       {
         "id": "q-ac-9",
         "question": "Find the sum of all three-digit natural numbers which are divisible by 13.",
-        "options": ["37674", "36624", "38624", "39624"],
+        "options": [
+          "37674",
+          "36624",
+          "38624",
+          "39624"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Smallest three-digit multiple of 13: 104 (13×8). Largest: 988 (13×76). n = 76-8+1 = 69. S₆₉ = 69/2(104+988) = 69/2×1092 = 69×546 = 37,674.",
@@ -980,7 +1181,12 @@
       {
         "id": "q-ac-10",
         "question": "If the pth term of an AP is q and the qth term is p, prove that its (p+q)th term is 0.",
-        "options": ["True", "False", "Only if p = q", "Cannot be determined"],
+        "options": [
+          "True",
+          "False",
+          "Only if p = q",
+          "Cannot be determined"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "aₚ = a+(p-1)d = q, a_q = a+(q-1)d = p. Subtract: (p-q)d = q-p → (p-q)d = -(p-q) → d = -1 (if p≠q). Then a+(p-1)(-1) = q → a-p+1 = q → a = p+q-1. Now aₚ₊_q = a+(p+q-1)d = (p+q-1)+(p+q-1)(-1) = 0. Proved ✓.",
@@ -993,7 +1199,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Ādyam-Ādyena (आद्यमाद्येन) — 'First by First' / Sum of Series",
@@ -1028,7 +1233,6 @@
       "real_numbers_application": "Inserting arithmetic means between two numbers is essentially finding equally spaced values — useful in data interpolation and creating payment schedules."
     }
   ],
-
   "mind_maps": {
     "title": "Arithmetic Progressions — Complete Mind Map",
     "type": "hierarchical",
@@ -1090,56 +1294,178 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "Arithmetic Progressions — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Sequence & AP Definition", "group": "foundation" },
-      { "id": "n2", "label": "Common Difference d", "group": "core" },
-      { "id": "n3", "label": "nth Term: aₙ = a+(n-1)d", "group": "core" },
-      { "id": "n4", "label": "Sum: Sₙ = n/2[2a+(n-1)d]", "group": "core" },
-      { "id": "n5", "label": "Arithmetic Mean Insertion", "group": "technique" },
-      { "id": "n6", "label": "Finding a and d from Conditions", "group": "problem-solving" },
-      { "id": "n7", "label": "Word Problems", "group": "application" },
-      { "id": "n8", "label": "Sum to n Given Sₙ Formula", "group": "problem-solving" },
-      { "id": "n9", "label": "Competitive Exam Problems", "group": "goal" }
+      {
+        "id": "n1",
+        "label": "Sequence & AP Definition",
+        "group": "foundation"
+      },
+      {
+        "id": "n2",
+        "label": "Common Difference d",
+        "group": "core"
+      },
+      {
+        "id": "n3",
+        "label": "nth Term: aₙ = a+(n-1)d",
+        "group": "core"
+      },
+      {
+        "id": "n4",
+        "label": "Sum: Sₙ = n/2[2a+(n-1)d]",
+        "group": "core"
+      },
+      {
+        "id": "n5",
+        "label": "Arithmetic Mean Insertion",
+        "group": "technique"
+      },
+      {
+        "id": "n6",
+        "label": "Finding a and d from Conditions",
+        "group": "problem-solving"
+      },
+      {
+        "id": "n7",
+        "label": "Word Problems",
+        "group": "application"
+      },
+      {
+        "id": "n8",
+        "label": "Sum to n Given Sₙ Formula",
+        "group": "problem-solving"
+      },
+      {
+        "id": "n9",
+        "label": "Competitive Exam Problems",
+        "group": "goal"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n2", "n3"], ["n2", "n4"],
-      ["n3", "n6"], ["n4", "n6"],
-      ["n3", "n5"], ["n4", "n8"],
-      ["n6", "n7"], ["n7", "n9"],
-      ["n5", "n7"], ["n8", "n9"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n2",
+        "n3"
+      ],
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n3",
+        "n6"
+      ],
+      [
+        "n4",
+        "n6"
+      ],
+      [
+        "n3",
+        "n5"
+      ],
+      [
+        "n4",
+        "n8"
+      ],
+      [
+        "n6",
+        "n7"
+      ],
+      [
+        "n7",
+        "n9"
+      ],
+      [
+        "n5",
+        "n7"
+      ],
+      [
+        "n8",
+        "n9"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "Solving an AP Problem — Step-by-Step",
       "steps": [
-        { "order": 1, "action": "Identify what is given: a, d, n, aₙ, or Sₙ?", "next": 2 },
-        { "order": 2, "action": "Write down known values clearly.", "next": 3 },
-        { "order": 3, "action": "Choose the appropriate formula:", "next": 4 },
-        { "order": 4, "action": "Need nth term? → Use aₙ = a + (n-1)d", "next": 5 },
-        { "order": 5, "action": "Need sum? → Use Sₙ = n/2[2a+(n-1)d] or Sₙ = n/2(a+l)", "next": 6 },
-        { "order": 6, "action": "Given two terms? → Form two equations, solve for a and d.", "next": 7 },
-        { "order": 7, "action": "Substitute back to find the required value.", "next": 8 },
-        { "order": 8, "action": "Verify: check if the answer makes sense (n positive integer, etc.)", "next": "END" }
+        {
+          "order": 1,
+          "action": "Identify what is given: a, d, n, aₙ, or Sₙ?",
+          "next": 2
+        },
+        {
+          "order": 2,
+          "action": "Write down known values clearly.",
+          "next": 3
+        },
+        {
+          "order": 3,
+          "action": "Choose the appropriate formula:",
+          "next": 4
+        },
+        {
+          "order": 4,
+          "action": "Need nth term? → Use aₙ = a + (n-1)d",
+          "next": 5
+        },
+        {
+          "order": 5,
+          "action": "Need sum? → Use Sₙ = n/2[2a+(n-1)d] or Sₙ = n/2(a+l)",
+          "next": 6
+        },
+        {
+          "order": 6,
+          "action": "Given two terms? → Form two equations, solve for a and d.",
+          "next": 7
+        },
+        {
+          "order": 7,
+          "action": "Substitute back to find the required value.",
+          "next": 8
+        },
+        {
+          "order": 8,
+          "action": "Verify: check if the answer makes sense (n positive integer, etc.)",
+          "next": "END"
+        }
       ]
     },
     {
       "title": "Inserting Arithmetic Means — Procedure",
       "steps": [
-        { "order": 1, "action": "Identify first term a and last term b." },
-        { "order": 2, "action": "Let n = number of means to insert." },
-        { "order": 3, "action": "Total terms = n + 2." },
-        { "order": 4, "action": "Find d: a + (n+1)d = b → d = (b-a)/(n+1)." },
-        { "order": 5, "action": "Generate means: a+d, a+2d, ..., a+nd." },
-        { "order": 6, "action": "Verify: each consecutive term differs by d." }
+        {
+          "order": 1,
+          "action": "Identify first term a and last term b."
+        },
+        {
+          "order": 2,
+          "action": "Let n = number of means to insert."
+        },
+        {
+          "order": 3,
+          "action": "Total terms = n + 2."
+        },
+        {
+          "order": 4,
+          "action": "Find d: a + (n+1)d = b → d = (b-a)/(n+1)."
+        },
+        {
+          "order": 5,
+          "action": "Generate means: a+d, a+2d, ..., a+nd."
+        },
+        {
+          "order": 6,
+          "action": "Verify: each consecutive term differs by d."
+        }
       ]
     }
   ],
-
   "common_misconceptions": [
     "The common difference can only be positive — FALSE: d can be negative (decreasing AP) or zero (constant AP).",
     "The nth term formula is aₙ = a + nd — FALSE: It is aₙ = a + (n-1)d. The first term has n=1, so no d is added.",
@@ -1149,5 +1475,6 @@
     "You cannot find the sum of an AP without knowing the common difference — FALSE: If a and l (last term) are known, Sₙ = n/2(a+l) doesn't need d.",
     "All sequences with a pattern are APs — FALSE: Only sequences with constant difference are APs. Geometric (multiplying) sequences are not APs.",
     "The sum of n terms of an AP is always n times the middle term — TRUE (for odd n): The middle term equals the average of first and last terms."
-  ]
+  ],
+  "chapterNumber": 5
 }

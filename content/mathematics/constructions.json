@@ -534,36 +534,104 @@
     ]
   },
 
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Constructions contributes 4-5 marks (1 long answer question of 4-5 marks). The chapter appears in the board exam every year without fail.",
-    "pattern": {
-      "long_answer_4_marks": [
-        "Divide a line segment in a given ratio (asked in 2017, 2020, 2023)",
-        "Construct a triangle similar to given triangle with scale factor m/n (asked in 2018, 2021, 2024, 2026)",
-        "Construct tangents to a circle from an external point (asked in 2019, 2022, 2025)",
-        "Construct tangents inclined at a given angle (asked in 2020, 2023)"
-      ],
-      "short_answer_1_mark": [
-        "Justification questions — why does the construction work (asked in 2021, 2024)",
-        "Length of tangent calculation (asked in 2022, 2025)",
-        "Angle between tangents (asked in 2023, 2026)"
-      ]
-    },
-    "scoring_areas": [
-      "Always write clear, numbered steps in construction — no shortcuts in board exams",
-      "Justification is worth 1-2 marks — always state which theorem (BPT or Tangent-Radius) is used",
-      "Label all points clearly in the diagram — many students lose marks for unlabeled diagrams",
-      "For scale factor problems, check if m/n > 1 (enlargement) or m/n < 1 (reduction) — this determines construction approach",
-      "Length calculation of tangent = √(OP² - r²) — a formula that gets 1 mark easily"
+  "model_papers": {
+    "simple": [
+      {
+        "id": "mp-cons-s-1",
+        "question": "Draw a line segment AB of length 10 cm. Divide it internally in the ratio 3:4. Write the steps of construction and measure the two parts.",
+        "answer": "The segment is divided at point P such that AP:PB = 3:4. AP ≈ 4.29 cm, PB ≈ 5.71 cm.",
+        "steps": [
+          "Draw AB = 10 cm.",
+          "Draw ray AX making an acute angle with AB.",
+          "On AX, mark 7 equal arcs (3+4): A₁, A₂, ..., A₇ such that AA₁ = A₁A₂ = ... = A₆A₇.",
+          "Join A₇ to B.",
+          "Draw a line through A₃ parallel to A₇B meeting AB at P.",
+          "AP:PB = 3:4. AP = (3/7) × 10 = 4.29 cm, PB = (4/7) × 10 = 5.71 cm."
+        ],
+        "hints": ["Number of arcs = sum of ratio terms.", "The parallel line uses Basic Proportionality Theorem."]
+      },
+      {
+        "id": "mp-cons-s-2",
+        "question": "Draw a circle of radius 3 cm. Take a point P at a distance of 7 cm from its center. Construct a pair of tangents from P to the circle. Measure the length of one tangent.",
+        "answer": "Length of each tangent = √(49 - 9) = √40 = 2√10 ≈ 6.32 cm.",
+        "steps": [
+          "Draw circle with center O and radius 3 cm.",
+          "Mark point P such that OP = 7 cm.",
+          "Find the midpoint M of OP by drawing perpendicular bisector.",
+          "Draw a circle with center M and radius MO = MP.",
+          "Mark intersection points T₁ and T₂ of the two circles.",
+          "Join PT₁ and PT₂. These are the required tangents.",
+          "Length PT₁ = √(OP² - r²) = √(49 - 9) = √40 = 2√10 ≈ 6.32 cm."
+        ],
+        "hints": ["The angle in a semicircle is 90°, giving the right angle needed.", "Use the formula PT = √(OP² - r²) to verify the length."]
+      }
     ],
-    "common_mistakes": [
-      "Not drawing the initial triangle to exact measurements before constructing the similar triangle",
-      "Count of arcs wrong — arcs should equal the larger of numerator or denominator, not their sum for similar triangles",
-      "Confusing the arc number for division of line segment (sum of ratio terms) vs similar triangle construction (denominator of scale factor)",
-      "Forgetting to extend sides when scale factor > 1",
-      "Not showing the justification — even if steps are correct, marks are deducted without justification",
-      "Drawing arcs of unequal length on the auxiliary ray",
-      "Not labeling T₁ and T₂ (tangency points) in tangent construction"
+    "medium": [
+      {
+        "id": "mp-cons-m-1",
+        "question": "Draw a triangle ABC with BC = 6 cm, AB = 5 cm, and ∠ABC = 60°. Then construct a triangle whose sides are 4/3 times the corresponding sides of ΔABC. Justify the construction.",
+        "answer": "ΔA'BC' is the required triangle with scale factor 4/3. BC' = 8 cm, A'B = 6.67 cm.",
+        "steps": [
+          "Construct ΔABC: draw BC = 6 cm, at B make 60°, cut BA = 5 cm, join AC.",
+          "Draw ray BX making acute angle with BC on side opposite to A.",
+          "Mark 3 equal arcs on BX: B₁, B₂, B₃.",
+          "Extend BX to B₄ (since numerator 4 > denominator 3).",
+          "Join B₃ to C.",
+          "Through B₄, draw B₄C' ∥ B₃C extending BC beyond C to meet at C'.",
+          "Through C', draw C'A' ∥ CA extending BA beyond A to meet at A'.",
+          "ΔA'BC' is the required triangle. Justification: By BPT, BC'/BC = BB₄/BB₃ = 4/3."
+        ],
+        "hints": ["Scale factor > 1 means the new triangle is larger — extend the sides.", "Number of arcs on ray = denominator (3); parallel through numerator (4th arc)."]
+      },
+      {
+        "id": "mp-cons-m-2",
+        "question": "Draw a pair of tangents to a circle of radius 4 cm which are inclined to each other at an angle of 75°. Write the steps of construction.",
+        "answer": "Tangents PA and PB constructed with ∠APB = 75°. Length of each tangent ≈ 3.06 cm.",
+        "steps": [
+          "Draw circle with center O and radius 4 cm.",
+          "Draw radius OA.",
+          "At O, construct an angle of 105° (since 180° - 75° = 105°) with OA to get ray OB.",
+          "Draw tangents at A and B perpendicular to OA and OB respectively.",
+          "Let the tangents intersect at point P.",
+          "PA and PB are the required tangents inclined at 75°.",
+          "Justification: ∠OAP = ∠OBP = 90°, ∠AOB = 105°, so ∠APB = 360° - 90° - 90° - 105° = 75°."
+        ],
+        "hints": ["Angle between tangents + angle between radii = 180°.", "Use the property of quadrilateral OAPB."]
+      }
+    ],
+    "complex": [
+      {
+        "id": "mp-cons-c-1",
+        "question": "Draw a circle of radius 5 cm. Take two points P and Q at distances 8 cm and 12 cm respectively from the center, on the same side of the center. Construct tangents from both points to the circle. Without measuring by scale, determine mathematically which set of tangents is longer and by how much.",
+        "answer": "From P: PT = √(64 - 25) = √39 ≈ 6.24 cm. From Q: QT = √(144 - 25) = √119 ≈ 10.91 cm. Tangents from Q are longer by √119 - √39 ≈ 4.67 cm.",
+        "steps": [
+          "Draw circle with center O and radius 5 cm.",
+          "Mark P on the same side such that OP = 8 cm.",
+          "Mark Q further out such that OQ = 12 cm.",
+          "Construct tangents from P: find midpoint M₁ of OP, draw circle(M₁, M₁O) intersecting original circle at T₁, T₂. Join PT₁, PT₂.",
+          "Construct tangents from Q: find midpoint M₂ of OQ, draw circle(M₂, M₂O) intersecting original circle at T₃, T₄. Join QT₃, QT₄.",
+          "Length PT = √(OP² - r²) = √(64 - 25) = √39 cm.",
+          "Length QT = √(OQ² - r²) = √(144 - 25) = √119 cm.",
+          "Since √119 > √39, tangents from Q are longer by √119 - √39 cm ≈ 4.67 cm."
+        ],
+        "hints": ["The length formula PT = √(OP² - r²) depends only on OP, not direction.", "Compare squares: OP² - r² vs OQ² - r² — the farther point gives longer tangents."]
+      },
+      {
+        "id": "mp-cons-c-2",
+        "question": "Construct a right triangle with legs 6 cm and 8 cm. Construct a triangle similar to it with scale factor 2/3. Verify using Pythagoras theorem that the new triangle is also right-angled.",
+        "answer": "New triangle sides: 4 cm, 5.33 cm, 6.67 cm. Check: 4² + 5.33² = 16 + 28.44 = 44.44 ≈ 6.67² ✓",
+        "steps": [
+          "Construct right ΔABC with ∠B = 90°, AB = 6 cm, BC = 8 cm. AC = √(36 + 64) = 10 cm.",
+          "Draw ray BX making acute angle with BC on side opposite to A.",
+          "Mark 3 equal arcs: B₁, B₂, B₃.",
+          "Join B₃ to C.",
+          "Through B₂ (since numerator = 2), draw B₂C' ∥ B₃C meeting BC at C'.",
+          "Through C', draw C'A' ∥ CA meeting BA at A'.",
+          "ΔA'BC' is the required triangle. Sides: A'B = (2/3) × 6 = 4 cm, BC' = (2/3) × 8 = 16/3 ≈ 5.33 cm, A'C' = (2/3) × 10 = 20/3 ≈ 6.67 cm.",
+          "Verification: 4² + (16/3)² = 16 + 256/9 = (144 + 256)/9 = 400/9 = (20/3)². Hence right-angled at B."
+        ],
+        "hints": ["Scale factor 2/3 < 1, so the new triangle is smaller than the original.", "Similar triangles preserve angles — a right triangle stays right-angled after similarity transformation."]
+      }
     ]
   },
 

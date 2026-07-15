@@ -4,7 +4,6 @@
   "lesson": 1,
   "title": "Real Numbers — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Apply Euclid's Division Algorithm to find HCF of any two positive integers",
     "Explain the Fundamental Theorem of Arithmetic and use it to find LCM and HCF",
@@ -14,9 +13,11 @@
     "Connect every concept to real-life applications in the Indian context",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive exam readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS9_NUMBER_SYSTEMS", "MATH_CLASS6_FRACTIONS", "MATH_CLASS9_LINEAR_EQUATIONS_ONE_VAR"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS9_NUMBER_SYSTEMS",
+    "MATH_CLASS6_FRACTIONS",
+    "MATH_CLASS9_LINEAR_EQUATIONS_ONE_VAR"
+  ],
   "concepts": [
     {
       "name": "Natural Numbers, Whole Numbers, Integers, Rational Numbers, Irrational Numbers — The Number Family",
@@ -81,7 +82,6 @@
       ]
     }
   ],
-
   "theorems": [
     {
       "name": "Euclid's Division Lemma",
@@ -176,7 +176,6 @@
       ]
     }
   ],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -257,7 +256,6 @@
       "speed_mode": "Golden step: Simplify first, then check denominator's prime factors. Only 2 and 5 are allowed for terminating decimals."
     }
   ],
-
   "exercises": {
     "exercise_1_1": {
       "title": "Exercise 1.1 — Euclid's Division Algorithm",
@@ -554,7 +552,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 1 — Real Numbers",
     "topics": [
@@ -609,7 +606,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 1 — Real Numbers",
     "topics": [
@@ -640,45 +636,114 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Real Numbers consistently contributes 4-8 marks (1-2 short answer + 1 long answer).",
-    "pattern": {
-      "short_answer_1_mark": [
-        "Find HCF/LCM using prime factorization (asked in 8 of last 10 years)",
-        "Check if 6ⁿ ends with 0 (asked in 2018, 2021, 2023)",
-        "Find HCF using Euclid's algorithm (asked in 2019, 2022)"
-      ],
-      "short_answer_2_marks": [
-        "Show that decimal expansion terminates or not (asked in 2020, 2022, 2024)",
-        "Express as product of primes (asked in 2017, 2021, 2025)"
-      ],
-      "long_answer_4_marks": [
-        "Prove √3 is irrational (asked in 2018, 2021, 2024, 2026)",
-        "HCF/LCM word problems (asked in 2019, 2023)",
-        "Prove 2 + 3√5 is irrational (asked in 2020, 2022, 2025)"
-      ]
-    },
-    "scoring_areas": [
-      "Irrationality proofs — predictable pattern, easy full marks if steps are memorized",
-      "HCF/LCM via prime factorization — never skip the factorization step in board exam",
-      "Decimal expansion classification — always simplify the fraction first",
-      "HCF/LCM word problems — identify keyword: 'maximum' → HCF, 'simultaneously/again' → LCM"
+  "model_papers": {
+    "simple": [
+      {
+        "id": "mp-rn-s-1",
+        "question": "Find the HCF of 96 and 404 by prime factorization method. Hence find their LCM.",
+        "answer": "HCF = 4, LCM = 9696",
+        "steps": [
+          "Prime factorize 96 = 2⁵ × 3",
+          "Prime factorize 404 = 2² × 101",
+          "HCF = product of lowest powers of common primes = 2² = 4",
+          "LCM = product of highest powers of all primes = 2⁵ × 3 × 101 = 32 × 303 = 9696",
+          "Verification: HCF × LCM = 4 × 9696 = 38784 = 96 × 404 ✓"
+        ],
+        "hints": [
+          "For HCF take lowest power of each common prime; for LCM take highest power of every prime present."
+        ]
+      },
+      {
+        "id": "mp-rn-s-2",
+        "question": "Check whether 15ⁿ can end with digit 0 for any natural number n.",
+        "answer": "No, 15ⁿ cannot end with 0.",
+        "steps": [
+          "A number ending with 0 must be divisible by 10 = 2 × 5",
+          "15ⁿ = (3 × 5)ⁿ = 3ⁿ × 5ⁿ",
+          "The prime factorization has only 3 and 5 — no factor 2",
+          "Since a factor 2 is missing, 15ⁿ can never end with 0"
+        ],
+        "hints": [
+          "For a number to end in 0, it must have both 2 and 5 as prime factors."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Forgetting to check if fraction is in simplest form before checking denominator",
-      "Saying √4 is irrational (it equals 2, which is rational)",
-      "Not using 'coprime' assumption in irrationality proofs",
-      "Confusing HCF (lowest power of common primes) with LCM (highest power of all primes)"
+    "medium": [
+      {
+        "id": "mp-rn-m-1",
+        "question": "Prove that 3 + 2√5 is irrational.",
+        "answer": "3 + 2√5 is irrational",
+        "steps": [
+          "Assume 3 + 2√5 = p/q where p, q are coprime integers, q ≠ 0",
+          "Rearrange: 2√5 = p/q - 3 = (p - 3q)/q",
+          "So √5 = (p - 3q)/(2q), which is rational as it is a ratio of integers",
+          "But √5 is known to be irrational — contradiction",
+          "Hence our assumption is false, so 3 + 2√5 is irrational"
+        ],
+        "hints": [
+          "Use the fact that √5 is irrational and the sum of a rational and irrational is irrational."
+        ]
+      },
+      {
+        "id": "mp-rn-m-2",
+        "question": "Without actual division, determine whether 987/10500 has a terminating or non-terminating decimal expansion.",
+        "answer": "Non-terminating recurring decimal expansion",
+        "steps": [
+          "Simplify the fraction: HCF(987, 10500) = 21, so 987/10500 = 47/500",
+          "Factorize denominator: 500 = 5³ × 2²",
+          "Denominator has only 2 and 5 as prime factors",
+          "Hence the decimal expansion is TERMINATING"
+        ],
+        "hints": [
+          "Simplify first, then check if denominator has only 2 and/or 5 as prime factors."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "id": "mp-rn-c-1",
+        "question": "Prove that √p + √q is irrational, where p and q are distinct primes.",
+        "answer": "√p + √q is irrational",
+        "steps": [
+          "Assume √p + √q = r, where r is rational",
+          "Square both sides: p + q + 2√(pq) = r²",
+          "Rearrange: 2√(pq) = r² - p - q, so √(pq) = (r² - p - q)/2, which is rational",
+          "Since p and q are distinct primes, pq is not a perfect square, so √(pq) is irrational",
+          "A rational cannot equal an irrational — contradiction",
+          "Therefore √p + √q is irrational"
+        ],
+        "hints": [
+          "Square both sides and isolate the surd term. Use that product of distinct primes is never a perfect square."
+        ]
+      },
+      {
+        "id": "mp-rn-c-2",
+        "question": "Find the largest number which divides 245 and 1029 leaving remainder 5 in each case.",
+        "answer": "16",
+        "steps": [
+          "Required number divides (245 - 5) = 240 and (1029 - 5) = 1024 exactly",
+          "We need HCF(240, 1024)",
+          "Prime factors: 240 = 2⁴ × 3 × 5, 1024 = 2¹⁰",
+          "HCF = 2⁴ = 16",
+          "Verification: 245 ÷ 16 gives quotient 15, remainder 5 ✓; 1029 ÷ 16 gives quotient 64, remainder 5 ✓"
+        ],
+        "hints": [
+          "Subtract the remainder from each number first, then find HCF of the resulting numbers."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "What is the HCF of 12 and 18?",
-        "options": ["2", "3", "6", "9"],
+        "options": [
+          "2",
+          "3",
+          "6",
+          "9"
+        ],
         "correct": 2,
         "explanation": {
           "correct": "HCF(12, 18) = 6. Prime factors: 12 = 2² × 3, 18 = 2 × 3². Common primes: 2 (lowest power 1) × 3 (lowest power 1) = 6.",
@@ -692,7 +757,12 @@
       {
         "id": "q-s-2",
         "question": "Which of the following is a rational number?",
-        "options": ["√2", "√3", "√9", "√5"],
+        "options": [
+          "√2",
+          "√3",
+          "√9",
+          "√5"
+        ],
         "correct": 2,
         "explanation": {
           "correct": "√9 = 3, which can be written as 3/1, hence rational.",
@@ -706,7 +776,12 @@
       {
         "id": "q-s-3",
         "question": "What is the LCM of 4 and 6?",
-        "options": ["12", "24", "2", "4"],
+        "options": [
+          "12",
+          "24",
+          "2",
+          "4"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "LCM(4,6) = 12. Multiples of 4: 4,8,12,16,... Multiples of 6: 6,12,18,... Smallest common = 12.",
@@ -720,7 +795,12 @@
       {
         "id": "q-s-4",
         "question": "Express 36 as a product of prime factors.",
-        "options": ["2² × 3²", "2³ × 3", "2 × 3³", "2² × 3"],
+        "options": [
+          "2² × 3²",
+          "2³ × 3",
+          "2 × 3³",
+          "2² × 3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "36 = 6 × 6 = 2 × 3 × 2 × 3 = 2² × 3².",
@@ -734,7 +814,12 @@
       {
         "id": "q-s-5",
         "question": "The decimal expansion of 1/4 is:",
-        "options": ["Terminating", "Non-terminating recurring", "Non-terminating non-recurring", "Cannot be determined"],
+        "options": [
+          "Terminating",
+          "Non-terminating recurring",
+          "Non-terminating non-recurring",
+          "Cannot be determined"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "1/4 = 0.25. Denominator 4 = 2², has only 2 as prime factor, so terminating.",
@@ -748,7 +833,12 @@
       {
         "id": "q-s-6",
         "question": "Which of these is a composite number?",
-        "options": ["2", "3", "5", "9"],
+        "options": [
+          "2",
+          "3",
+          "5",
+          "9"
+        ],
         "correct": 3,
         "explanation": {
           "correct": "9 = 3 × 3, so it has factors other than 1 and itself, making it composite.",
@@ -762,7 +852,12 @@
       {
         "id": "q-s-7",
         "question": "What is the GCF (HCF) of two prime numbers?",
-        "options": ["1", "Their product", "The larger number", "The smaller number"],
+        "options": [
+          "1",
+          "Their product",
+          "The larger number",
+          "The smaller number"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Two different prime numbers share no common prime factor, so HCF = 1.",
@@ -776,7 +871,12 @@
       {
         "id": "q-s-8",
         "question": "Is 0 a rational number?",
-        "options": ["Yes", "No", "Only when positive", "Cannot be determined"],
+        "options": [
+          "Yes",
+          "No",
+          "Only when positive",
+          "Cannot be determined"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Yes, 0 = 0/1 = 0/2 = ... can be written as p/q where p=0, q≠0. Hence rational.",
@@ -789,7 +889,12 @@
       {
         "id": "q-s-9",
         "question": "Find the HCF of 455 and 42 using Euclid's algorithm.",
-        "options": ["7", "1", "21", "14"],
+        "options": [
+          "7",
+          "1",
+          "21",
+          "14"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "455 = 42 × 10 + 35; 42 = 35 × 1 + 7; 35 = 7 × 5 + 0. HCF = 7.",
@@ -803,7 +908,12 @@
       {
         "id": "q-s-10",
         "question": "Every integer is also a:",
-        "options": ["Rational number", "Irrational number", "Natural number", "Whole number"],
+        "options": [
+          "Rational number",
+          "Irrational number",
+          "Natural number",
+          "Whole number"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Every integer 'n' can be written as n/1, so it's rational.",
@@ -815,12 +925,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-m-1",
         "question": "If HCF(252, 540) = 36, find LCM(252, 540).",
-        "options": ["3780", "7560", "1890", "15120"],
+        "options": [
+          "3780",
+          "7560",
+          "1890",
+          "15120"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Using a × b = LCM × HCF: 252 × 540 = LCM × 36. LCM = (252 × 540)/36 = 136080/36 = 3780.",
@@ -834,7 +948,12 @@
       {
         "id": "q-m-2",
         "question": "The decimal expansion of 33/2²×5 will terminate after how many decimal places?",
-        "options": ["1", "2", "3", "4"],
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Denominator = 4 × 5 = 20 = 2² × 5¹. The highest power among 2 and 5 is 2. So the decimal terminates after 2 decimal places. 33/20 = 1.65.",
@@ -867,7 +986,12 @@
       {
         "id": "q-m-4",
         "question": "Two bells ring at intervals of 12 and 15 minutes. If they ring together at 8:00 AM, at what time will they ring together again?",
-        "options": ["9:00 AM", "10:00 AM", "9:30 AM", "8:30 AM"],
+        "options": [
+          "9:00 AM",
+          "10:00 AM",
+          "9:30 AM",
+          "8:30 AM"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "LCM(12, 15) = 60 minutes = 1 hour. 8:00 AM + 1 hour = 9:00 AM.",
@@ -881,7 +1005,12 @@
       {
         "id": "q-m-5",
         "question": "If p and q are positive integers such that p = a³b² and q = a²b³, where a, b are primes, then LCM(p,q) = ?",
-        "options": ["a³b³", "a²b²", "a⁵b⁵", "a⁶b⁶"],
+        "options": [
+          "a³b³",
+          "a²b²",
+          "a⁵b⁵",
+          "a⁶b⁶"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "LCM takes highest powers: a³ (from p) and b³ (from q). So LCM = a³b³.",
@@ -895,7 +1024,12 @@
       {
         "id": "q-m-6",
         "question": "13000/5200 when expressed in simplest form gives denominator:",
-        "options": ["52", "2²×5²", "2×5", "13"],
+        "options": [
+          "52",
+          "2²×5²",
+          "2×5",
+          "13"
+        ],
         "correct": 2,
         "explanation": {
           "correct": "13000/5200 = 130/52 = 65/26 = 5/2. Denominator = 2 = 2¹ × 5⁰. So denominator in simplest form is 2 or equivalently 2×5⁰ = 2¹.",
@@ -909,7 +1043,12 @@
       {
         "id": "q-m-7",
         "question": "Can the number 6ⁿ, n being a natural number, end with digit 5?",
-        "options": ["Yes, for some n", "No, never", "Only when n is odd", "Only when n is even"],
+        "options": [
+          "Yes, for some n",
+          "No, never",
+          "Only when n is odd",
+          "Only when n is even"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "6ⁿ = (2×3)ⁿ = 2ⁿ × 3ⁿ. For a number to end in 5, it must have 5 as a prime factor. 6ⁿ has only 2 and 3 as prime factors, so it can never end in 5.",
@@ -923,7 +1062,12 @@
       {
         "id": "q-m-8",
         "question": "Which of the following has a non-terminating recurring decimal expansion?",
-        "options": ["15/1600", "23/8", "35/50", "27/80"],
+        "options": [
+          "15/1600",
+          "23/8",
+          "35/50",
+          "27/80"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "15/1600 = 3/320 (simplest form). 320 = 2⁶ × 5, which should give terminating. Wait — let me recheck. Actually 320 = 2⁶ × 5¹, so it should terminate. Let me re-evaluate.\n\nActually checking each:\n15/1600 = 3/320 = 3/(2⁶×5) → terminating after 6 decimal places.\n23/8 = 23/2³ → terminating.\n35/50 = 7/10 → terminating.\n27/80 = 27/(2⁴×5) → terminating.\n\nHmm, all seem terminating. The key: check denominator after simplification. If only 2s and 5s → terminating. If any other prime → non-terminating recurring.",
@@ -938,7 +1082,12 @@
       {
         "id": "q-m-9",
         "question": "A sweet seller has 420 kaju barfis and 130 badam barfis. He wants to stack them in such a way that each stack has the same number, and they take up the least area. What is the number of barfis in each stack?",
-        "options": ["10", "20", "15", "30"],
+        "options": [
+          "10",
+          "20",
+          "15",
+          "30"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "HCF(420, 130) = 10. Using Euclid: 420 = 130 × 3 + 30; 130 = 30 × 4 + 10; 30 = 10 × 3 + 0. So each stack has 10 barfis.",
@@ -952,7 +1101,12 @@
       {
         "id": "q-m-10",
         "question": "Simplify: (√2 + √3)(√5 - √3)",
-        "options": ["√10 + √15 - √6 - 3", "√10 - √6 + √15 - 3", "√10 - √6 + √15 + 3", "√10 + √6 - √15 - 3"],
+        "options": [
+          "√10 + √15 - √6 - 3",
+          "√10 - √6 + √15 - 3",
+          "√10 - √6 + √15 + 3",
+          "√10 + √6 - √15 - 3"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Using FOIL: (√2)(√5) + (√2)(-√3) + (√3)(√5) + (√3)(-√3) = √10 - √6 + √15 - 3.",
@@ -964,12 +1118,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-c-1",
         "question": "Find the HCF of 2240, 8400, and 1440 using the Euclidean algorithm.",
-        "options": ["80", "160", "40", "120"],
+        "options": [
+          "80",
+          "160",
+          "40",
+          "120"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "First find HCF(2240, 8400): 8400 = 2240×3 + 1680; 2240 = 1680×1 + 560; 1680 = 560×3 + 0. So HCF(2240,8400) = 560. Then find HCF(560, 1440): 1440 = 560×2 + 320; 560 = 320×1 + 240; 320 = 240×1 + 80; 240 = 80×3 + 0. So final HCF = 80.",
@@ -1002,7 +1160,12 @@
       {
         "id": "q-c-3",
         "question": "If the HCF of 231 and 396 is expressible as 231x - 63 × 5, find x.",
-        "options": ["2", "7", "-2", "3"],
+        "options": [
+          "2",
+          "7",
+          "-2",
+          "3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "HCF(231, 396): 396 = 231×1 + 165; 231 = 165×1 + 66; 165 = 66×2 + 33; 66 = 33×2 + 0. HCF = 33.\nGiven: 33 = 231x - 315\nTherefore 231x = 33 + 315 = 348\nx = 348/231 = 348÷3/231÷3 = 116/77 =... \nActually check: 231 × 2 - 63 × 5 = 462 - 315 = 147. Not 33.\n231 × (-2) - 315 = -462 - 315 = -777. No.\n231 × 7 - 315 = 1617 - 315 = 1302. No.\n231 × 3 - 315 = 693 - 315 = 378. No.\n\nLet me reconsider: 231x - 315 = 33 → 231x = 348 → x = 348/231 = 116/77 ≈ 1.5.\nThis doesn't give an integer. Let me recheck...\n\nHmm, perhaps the HCF is different. Let me recompute:\n396 = 231 × 1 + 165\n231 = 165 × 1 + 66\n165 = 66 × 2 + 33\n66 = 33 × 2 + 0\nHCF = 33. ✓\n\n231x - 63×5 = 33\n231x - 315 = 33\n231x = 348\nx = 348/231 = 1.506...\n\nWait, maybe the HCF is expressed differently. Let me trace back:\n33 = 165 - 66 × 2\n165 = 396 - 231\n66 = 231 - 165 = 231 - (396 - 231) = 2 × 231 - 396\nSo: 33 = (396 - 231) - 2(2×231 - 396) = 396 - 231 - 4×231 + 2×396 = 3×396 - 5×231\n\nSo 33 = 3×396 - 5×231. Hmm, that's different from what the question states. Let me work with what's given:\n33 = 231x - 315 → 231x = 348 → x = 348/231\n\nThe question might have a typo, but x=2 gives 231×2-315=147, not 33. x=-2 gives -462-315=-777.\n\nI think the answer should actually be checked differently: 33 = 231x - 63×5\n33 + 315 = 231x\n348 = 231x\nx = 348/231 = 1.506...\n\nThis doesn't give an integer. The original values might differ in the actual problem. For the purpose of this quiz, the intended approach is:\nFind HCF first, then solve linear equation."
@@ -1011,7 +1174,12 @@
       {
         "id": "q-c-4",
         "question": "If p is a prime number, then for any integer a, a^p - a is divisible by p. This is known as:",
-        "options": ["Fermat's Little Theorem", "Euclid's Theorem", "Gauss's Lemma", "Fundamental Theorem of Arithmetic"],
+        "options": [
+          "Fermat's Little Theorem",
+          "Euclid's Theorem",
+          "Gauss's Lemma",
+          "Fundamental Theorem of Arithmetic"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Fermat's Little Theorem states: If p is prime and a is any integer, then a^p ≡ a (mod p), i.e., a^p - a is divisible by p. This is a foundational result in number theory used in RSA encryption.",
@@ -1025,7 +1193,12 @@
       {
         "id": "q-c-5",
         "question": "Find the value of: 1/(1+√2) + 1/(√2+√3) + 1/(√3+√4) + ... + 1/(√99+√100)",
-        "options": ["9", "10", "100", "√100 - 1"],
+        "options": [
+          "9",
+          "10",
+          "100",
+          "√100 - 1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Rationalize each term: 1/(√n+√(n+1)) = (√(n+1)-√n)/((n+1)-n) = √(n+1)-√n.\nSo the sum telescopes: (√2-√1) + (√3-√2) + (√4-√3) + ... + (√100-√99) = √100 - √1 = 10 - 1 = 9.",
@@ -1039,7 +1212,12 @@
       {
         "id": "q-c-6",
         "question": "The product of three consecutive integers is always divisible by:",
-        "options": ["6", "4", "7", "5"],
+        "options": [
+          "6",
+          "4",
+          "7",
+          "5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Among any three consecutive integers: at least one is even (divisible by 2), and exactly one is divisible by 3. So the product is divisible by 2 × 3 = 6.",
@@ -1067,7 +1245,12 @@
       {
         "id": "q-c-8",
         "question": "n² - 1 is divisible by 8, if n is:",
-        "options": ["An even integer", "An odd integer", "A prime number", "A composite number"],
+        "options": [
+          "An even integer",
+          "An odd integer",
+          "A prime number",
+          "A composite number"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "If n is odd, n = 2k+1. Then n²-1 = (2k+1)²-1 = 4k²+4k = 4k(k+1). Since k(k+1) is product of consecutive integers (hence even), the total is divisible by 8. For even n, n²-1 is odd, not divisible by 2.",
@@ -1081,7 +1264,12 @@
       {
         "id": "q-c-9",
         "question": "Which of the following numbers is irrational? (i) (2+√3)(2-√3) (ii) (√3+√2)² (iii) (√2+1)³ - (√2-1)³",
-        "options": ["Only (ii)", "Both (ii) and (iii)", "Only (iii)", "None is irrational"],
+        "options": [
+          "Only (ii)",
+          "Both (ii) and (iii)",
+          "Only (iii)",
+          "None is irrational"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "(i) (2+√3)(2-√3) = 4-3 = 1 → rational.\n(ii) (√3+√2)² = 3+2+2√6 = 5+2√6 → irrational.\n(iii) (√2+1)³-(√2-1)³ = [(√2+1)-(√2-1)] × [(√2+1)²+(√2+1)(√2-1)+(√2-1)²] = 2 × [(2+1+2√2)+(2-1)+(2+1-2√2)] = 2 × [3+2√2+1+3-2√2] = 2 × 7 = 14 → rational.",
@@ -1095,7 +1283,12 @@
       {
         "id": "q-c-10",
         "question": "Find the number of trailing zeroes in 100!",
-        "options": ["20", "24", "22", "18"],
+        "options": [
+          "20",
+          "24",
+          "22",
+          "18"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Trailing zeroes are determined by the number of factors of 10 = factors of (2×5). Since there are always more 2s than 5s, count the number of 5s in prime factorization of 100!:\nfloor(100/5) + floor(100/25) + floor(100/125) = 20 + 4 + 0 = 24.",
@@ -1108,7 +1301,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Nikhilam Sutra (निखिलम्) — 'All from 9 and last from 10'",
@@ -1160,7 +1352,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Real Numbers — Complete Mind Map",
     "type": "hierarchical",
@@ -1223,60 +1414,182 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "How Real Numbers Connect — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Euclid's Lemma", "group": "foundation" },
-      { "id": "n2", "label": "HCF via Algorithm", "group": "algorithm" },
-      { "id": "n3", "label": "Prime Factorization", "group": "foundation" },
-      { "id": "n4", "label": "LCM", "group": "application" },
-      { "id": "n5", "label": "Decimal Expansions", "group": "application" },
-      { "id": "n6", "label": "Irrationality Proofs", "group": "proof" },
-      { "id": "n7", "label": "Real Number Operations", "group": "application" },
-      { "id": "n8", "label": "Rationalization", "group": "technique" },
-      { "id": "n9", "label": "Competitive Exam Problems", "group": "goal" }
+      {
+        "id": "n1",
+        "label": "Euclid's Lemma",
+        "group": "foundation"
+      },
+      {
+        "id": "n2",
+        "label": "HCF via Algorithm",
+        "group": "algorithm"
+      },
+      {
+        "id": "n3",
+        "label": "Prime Factorization",
+        "group": "foundation"
+      },
+      {
+        "id": "n4",
+        "label": "LCM",
+        "group": "application"
+      },
+      {
+        "id": "n5",
+        "label": "Decimal Expansions",
+        "group": "application"
+      },
+      {
+        "id": "n6",
+        "label": "Irrationality Proofs",
+        "group": "proof"
+      },
+      {
+        "id": "n7",
+        "label": "Real Number Operations",
+        "group": "application"
+      },
+      {
+        "id": "n8",
+        "label": "Rationalization",
+        "group": "technique"
+      },
+      {
+        "id": "n9",
+        "label": "Competitive Exam Problems",
+        "group": "goal"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n2", "n9"],
-      ["n3", "n4"], ["n3", "n5"],
-      ["n3", "n9"],
-      ["n5", "n6"],
-      ["n6", "n7"],
-      ["n7", "n8"],
-      ["n4", "n9"],
-      ["n8", "n9"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n2",
+        "n9"
+      ],
+      [
+        "n3",
+        "n4"
+      ],
+      [
+        "n3",
+        "n5"
+      ],
+      [
+        "n3",
+        "n9"
+      ],
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n6",
+        "n7"
+      ],
+      [
+        "n7",
+        "n8"
+      ],
+      [
+        "n4",
+        "n9"
+      ],
+      [
+        "n8",
+        "n9"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "How to Find HCF: Decision Flowchart",
       "steps": [
-        { "order": 1, "action": "Are both numbers small (≤ 100)?", "decision": true, "if_yes": 2, "if_no": 4 },
-        { "order": 2, "action": "Use prime factorization method", "next": 3 },
-        { "order": 3, "action": "HCF = product of common primes with lowest powers", "next": "END" },
-        { "order": 4, "action": "Use Euclid's Division Algorithm", "next": 5 },
-        { "order": 5, "action": "Apply lemma: a = bq + r (0 ≤ r < b)", "next": 6 },
-        { "order": 6, "action": "Is r = 0?", "decision": true, "if_yes": 7, "if_no": 8 },
-        { "order": 7, "action": "HCF = b (the last divisor)", "next": "END" },
-        { "order": 8, "action": "Set a = b, b = r, go to step 5", "next": 5 }
+        {
+          "order": 1,
+          "action": "Are both numbers small (≤ 100)?",
+          "decision": true,
+          "if_yes": 2,
+          "if_no": 4
+        },
+        {
+          "order": 2,
+          "action": "Use prime factorization method",
+          "next": 3
+        },
+        {
+          "order": 3,
+          "action": "HCF = product of common primes with lowest powers",
+          "next": "END"
+        },
+        {
+          "order": 4,
+          "action": "Use Euclid's Division Algorithm",
+          "next": 5
+        },
+        {
+          "order": 5,
+          "action": "Apply lemma: a = bq + r (0 ≤ r < b)",
+          "next": 6
+        },
+        {
+          "order": 6,
+          "action": "Is r = 0?",
+          "decision": true,
+          "if_yes": 7,
+          "if_no": 8
+        },
+        {
+          "order": 7,
+          "action": "HCF = b (the last divisor)",
+          "next": "END"
+        },
+        {
+          "order": 8,
+          "action": "Set a = b, b = r, go to step 5",
+          "next": 5
+        }
       ]
     },
     {
       "title": "Irrationality Proof Template",
       "steps": [
-        { "order": 1, "action": "Assume number is rational: let it = p/q" },
-        { "order": 2, "action": "Assume p, q are coprime (no common factor)" },
-        { "order": 3, "action": "Square both sides (if needed) and rearrange" },
-        { "order": 4, "action": "Show that a prime divides p² → divides p" },
-        { "order": 5, "action": "Show the same prime divides q² → divides q" },
-        { "order": 6, "action": "CONTRADICTION: p and q can't both be divisible by the prime" },
-        { "order": 7, "action": "Therefore, the number is irrational" }
+        {
+          "order": 1,
+          "action": "Assume number is rational: let it = p/q"
+        },
+        {
+          "order": 2,
+          "action": "Assume p, q are coprime (no common factor)"
+        },
+        {
+          "order": 3,
+          "action": "Square both sides (if needed) and rearrange"
+        },
+        {
+          "order": 4,
+          "action": "Show that a prime divides p² → divides p"
+        },
+        {
+          "order": 5,
+          "action": "Show the same prime divides q² → divides q"
+        },
+        {
+          "order": 6,
+          "action": "CONTRADICTION: p and q can't both be divisible by the prime"
+        },
+        {
+          "order": 7,
+          "action": "Therefore, the number is irrational"
+        }
       ]
     }
   ],
-
   "visualizations": [
     {
       "rendererType": "COORDINATE_GRAPH",
@@ -1284,21 +1597,55 @@
       "visualizationProperties": {
         "title": "Number Line: Real Numbers Classification",
         "type": "number_line",
-        "range": [-10, 10],
+        "range": [
+          -10,
+          10
+        ],
         "markers": [
-          { "position": -8, "label": "-8 (Integer)", "color": "blue" },
-          { "position": -3.5, "label": "-3.5 (Rational)", "color": "green" },
-          { "position": 0, "label": "0 (Whole)", "color": "blue" },
-          { "position": 1.414, "label": "√2 (Irrational)", "color": "red" },
-          { "position": 3, "label": "3 (Natural)", "color": "blue" },
-          { "position": 3.141, "label": "π (Irrational)", "color": "red" },
-          { "position": 5, "label": "5 (Natural)", "color": "blue" },
-          { "position": 9.5, "label": "9.5 (Rational)", "color": "green" }
+          {
+            "position": -8,
+            "label": "-8 (Integer)",
+            "color": "blue"
+          },
+          {
+            "position": -3.5,
+            "label": "-3.5 (Rational)",
+            "color": "green"
+          },
+          {
+            "position": 0,
+            "label": "0 (Whole)",
+            "color": "blue"
+          },
+          {
+            "position": 1.414,
+            "label": "√2 (Irrational)",
+            "color": "red"
+          },
+          {
+            "position": 3,
+            "label": "3 (Natural)",
+            "color": "blue"
+          },
+          {
+            "position": 3.141,
+            "label": "π (Irrational)",
+            "color": "red"
+          },
+          {
+            "position": 5,
+            "label": "5 (Natural)",
+            "color": "blue"
+          },
+          {
+            "position": 9.5,
+            "label": "9.5 (Rational)",
+            "color": "green"
+          }
         ]
       }
     }
   ],
-
   "common_misconceptions": [
     "Every number with a decimal point is rational — FALSE: π = 3.1415... is irrational because it's non-terminating non-recurring.",
     "√4 is irrational — FALSE: √4 = 2, which is rational. Only square roots of non-perfect squares are irrational.",
@@ -1308,5 +1655,6 @@
     "Irrational means 'imaginary' or 'doesn't exist' — FALSE: √2 exists as the diagonal of a unit square. It just cannot be expressed as a ratio of integers.",
     "The product of two irrationals is always irrational — FALSE: √2 × √2 = 2, which is rational.",
     "The sum of two irrationals is always irrational — FALSE: (2+√3) + (2-√3) = 4, which is rational."
-  ]
+  ],
+  "chapterNumber": 1
 }

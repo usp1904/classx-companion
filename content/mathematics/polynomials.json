@@ -4,7 +4,6 @@
   "lesson": 2,
   "title": "Polynomials — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Determine the degree, zeroes, and coefficients of any polynomial",
     "Apply the Remainder Theorem to find remainders without long division",
@@ -14,9 +13,11 @@
     "Connect polynomial concepts to real-life applications in the Indian context",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive exam readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS9_POLYNOMIALS_BASIC", "MATH_CLASS8_ALGEBRAIC_EXPRESSIONS", "MATH_CLASS7_LINEAR_EQUATIONS"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS9_POLYNOMIALS_BASIC",
+    "MATH_CLASS8_ALGEBRAIC_EXPRESSIONS",
+    "MATH_CLASS7_LINEAR_EQUATIONS"
+  ],
   "concepts": [
     {
       "name": "What is a Polynomial? — Degree, Terms, and Standard Form",
@@ -70,7 +71,6 @@
       ]
     }
   ],
-
   "theorems": [
     {
       "name": "Remainder Theorem",
@@ -155,7 +155,6 @@
       ]
     }
   ],
-
   "worked_examples": [
     {
       "id": "we-poly-1",
@@ -229,7 +228,6 @@
       "speed_mode": "Golden step: Align terms by degree. If any degree is missing, add it with coefficient 0. Always check: degree(remainder) < degree(divisor)."
     }
   ],
-
   "exercises": {
     "exercise_2_1": {
       "title": "Exercise 2.1 — Polynomial Basics and Zeroes",
@@ -479,7 +477,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 2 — Polynomials",
     "topics": [
@@ -523,7 +520,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 2 — Polynomials",
     "topics": [
@@ -567,46 +563,112 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Polynomials consistently contributes 4-8 marks. Key focus areas: Factor Theorem applications, relationship between zeroes and coefficients, and finding polynomials with given conditions.",
-    "pattern": {
-      "short_answer_1_mark": [
-        "Find the degree of a given polynomial (asked in 2018, 2020, 2023)",
-        "State the Remainder Theorem (asked in 2019, 2021, 2024)",
-        "Find the number of zeroes from a graph (asked in 2022, 2025)"
-      ],
-      "short_answer_2_marks": [
-        "Find remainders using Remainder Theorem (asked in 2017, 2020, 2022, 2024)",
-        "Check if a linear expression is a factor using Factor Theorem (asked in 2018, 2021, 2023)"
-      ],
-      "long_answer_4_marks": [
-        "Factorize cubic polynomials using Factor Theorem (asked in 2019, 2022, 2025)",
-        "Find a quadratic polynomial given sum and product of zeroes (asked in 2018, 2021, 2024)",
-        "Verify relationship between zeroes and coefficients (asked in 2020, 2023, 2026)"
-      ]
-    },
-    "scoring_areas": [
-      "Factor Theorem — always tested; show p(a) = 0 step clearly for full marks",
-      "Relationships between zeroes and coefficients — formula-based, easy marks",
-      "Finding quadratic from sum/product — straightforward substitution",
-      "Remainder Theorem — plug and compute; double-check arithmetic"
+  "model_papers": {
+    "simple": [
+      {
+        "id": "mp-poly-s-1",
+        "question": "Find the zeroes of the quadratic polynomial x² - 3.",
+        "answer": "x = √3 and x = -√3",
+        "steps": [
+          "Set x² - 3 = 0",
+          "x² = 3",
+          "x = ±√3",
+          "Thus zeroes are √3 and -√3"
+        ],
+        "hints": [
+          "Bring the constant term to the RHS and take square root on both sides."
+        ]
+      },
+      {
+        "id": "mp-poly-s-2",
+        "question": "Find a quadratic polynomial whose sum and product of zeroes are -3 and 2 respectively.",
+        "answer": "x² + 3x + 2",
+        "steps": [
+          "Standard form: x² - (sum of zeroes)x + (product of zeroes)",
+          "Sum = -3, Product = 2",
+          "Polynomial = x² - (-3)x + 2 = x² + 3x + 2",
+          "Verification: zeroes are -1 and -2; sum = -3 ✓, product = 2 ✓"
+        ],
+        "hints": [
+          "Use the formula p(x) = k[x² - (α+β)x + αβ]. Take k = 1 for simplest form."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Forgetting that the divisor must be of the form (x - a) for Remainder Theorem — adjust signs correctly",
-      "Writing sum of zeroes = -b (forgetting the division by a)",
-      "Not arranging polynomials in descending powers before division",
-      "Confusing the Factor Theorem direction: if p(a) = 0, then (x-a) is factor, NOT (x+a)",
-      "Stopping the division when remainder degree is still ≥ divisor degree"
+    "medium": [
+      {
+        "id": "mp-poly-m-1",
+        "question": "If α and β are zeroes of x² - 4x + 1, find the value of α²β + αβ².",
+        "answer": "4",
+        "steps": [
+          "From the polynomial: α + β = 4, αβ = 1",
+          "α²β + αβ² = αβ(α + β)",
+          "= 1 × 4 = 4"
+        ],
+        "hints": [
+          "Factor α²β + αβ² as αβ(α + β), then use sum and product of zeroes."
+        ]
+      },
+      {
+        "id": "mp-poly-m-2",
+        "question": "Find all zeroes of x³ - 3x² - x + 3.",
+        "answer": "1, -1, 3",
+        "steps": [
+          "Constant term = 3. Try factors: ±1, ±3",
+          "p(1) = 1 - 3 - 1 + 3 = 0, so (x - 1) is a factor",
+          "Divide: (x³ - 3x² - x + 3) ÷ (x - 1) = x² - 2x - 3",
+          "Factor: x² - 2x - 3 = (x - 3)(x + 1)",
+          "Zeroes: x = 1, x = 3, x = -1"
+        ],
+        "hints": [
+          "Try x = 1 first — if p(1) = 0, (x-1) is a factor. Then factor the quotient quadratic."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "id": "mp-poly-c-1",
+        "question": "If α and β are zeroes of x² - 6x + k such that 3α + 2β = 20, find the value of k.",
+        "answer": "k = -16",
+        "steps": [
+          "Given α + β = 6 and αβ = k",
+          "Also 3α + 2β = 20",
+          "From α + β = 6, we have β = 6 - α",
+          "Substitute: 3α + 2(6 - α) = 20 → 3α + 12 - 2α = 20 → α = 8",
+          "Then β = 6 - 8 = -2",
+          "k = αβ = 8 × (-2) = -16"
+        ],
+        "hints": [
+          "Use the sum of zeroes to express one zero in terms of the other, then use the given condition."
+        ]
+      },
+      {
+        "id": "mp-poly-c-2",
+        "question": "Find all zeroes of x⁴ - 5x² + 4.",
+        "answer": "1, -1, 2, -2",
+        "steps": [
+          "Let y = x². Then equation becomes y² - 5y + 4 = 0",
+          "Factor: (y - 1)(y - 4) = 0 → y = 1 or y = 4",
+          "x² = 1 → x = ±1",
+          "x² = 4 → x = ±2",
+          "All zeroes: 1, -1, 2, -2"
+        ],
+        "hints": [
+          "Substitute y = x² to reduce the quartic to a quadratic in y, then solve for x."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-ps-1",
         "question": "What is the degree of the polynomial 3x⁵ - 2x³ + 7?",
-        "options": ["3", "5", "7", "2"],
+        "options": [
+          "3",
+          "5",
+          "7",
+          "2"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Degree = 5, because the highest exponent of x is 5 (in term 3x⁵).",
@@ -620,7 +682,12 @@
       {
         "id": "q-ps-2",
         "question": "Which of the following is a polynomial?",
-        "options": ["x² + 2x + 1", "x + 1/x", "√x + 5", "2ˣ + 3"],
+        "options": [
+          "x² + 2x + 1",
+          "x + 1/x",
+          "√x + 5",
+          "2ˣ + 3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "x² + 2x + 1 has only whole number exponents (2, 1, 0) → polynomial.",
@@ -634,7 +701,12 @@
       {
         "id": "q-ps-3",
         "question": "What is the remainder when x² - 3x + 2 is divided by (x - 1)?",
-        "options": ["0", "1", "-1", "2"],
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "By Remainder Theorem, remainder = p(1) = 1 - 3 + 2 = 0.",
@@ -648,7 +720,12 @@
       {
         "id": "q-ps-4",
         "question": "If p(2) = 0 for a polynomial p(x), which of these is a factor?",
-        "options": ["(x - 2)", "(x + 2)", "(2 - x)", "Both A and C"],
+        "options": [
+          "(x - 2)",
+          "(x + 2)",
+          "(2 - x)",
+          "Both A and C"
+        ],
         "correct": 3,
         "explanation": {
           "correct": "By Factor Theorem, if p(2) = 0, then (x - 2) is a factor. Since (2 - x) = -(x - 2), it differs only by a constant factor, so it's also considered a factor.",
@@ -662,7 +739,12 @@
       {
         "id": "q-ps-5",
         "question": "For a quadratic ax² + bx + c, the sum of zeroes equals:",
-        "options": ["-b/a", "b/a", "-c/a", "c/a"],
+        "options": [
+          "-b/a",
+          "b/a",
+          "-c/a",
+          "c/a"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Sum of zeroes = -b/a. For example, x² - 5x + 6 has zeroes 2 and 3, sum = 5 = -(-5)/1.",
@@ -676,7 +758,12 @@
       {
         "id": "q-ps-6",
         "question": "How many zeroes does a quadratic polynomial have at most?",
-        "options": ["0", "1", "2", "3"],
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
         "correct": 2,
         "explanation": {
           "correct": "A quadratic polynomial has degree 2, so it can have at most 2 zeroes.",
@@ -690,7 +777,12 @@
       {
         "id": "q-ps-7",
         "question": "What type of graph does a quadratic polynomial produce?",
-        "options": ["Straight line", "Parabola", "Hyperbola", "Circle"],
+        "options": [
+          "Straight line",
+          "Parabola",
+          "Hyperbola",
+          "Circle"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "A quadratic polynomial ax² + bx + c gives a parabola as its graph, opening upward if a > 0, downward if a < 0.",
@@ -704,7 +796,12 @@
       {
         "id": "q-ps-8",
         "question": "A polynomial of degree n has at most how many zeroes?",
-        "options": ["n", "n - 1", "n + 1", "2n"],
+        "options": [
+          "n",
+          "n - 1",
+          "n + 1",
+          "2n"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "A polynomial of degree n can have at most n real zeroes. This is the Fundamental Theorem of Algebra.",
@@ -718,7 +815,12 @@
       {
         "id": "q-ps-9",
         "question": "If sum of zeroes = 5 and product = 6, then the quadratic is:",
-        "options": ["x² - 5x + 6", "x² + 5x + 6", "x² - 5x - 6", "x² + 5x - 6"],
+        "options": [
+          "x² - 5x + 6",
+          "x² + 5x + 6",
+          "x² - 5x - 6",
+          "x² + 5x - 6"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Formula: x² - (sum)x + (product) = x² - 5x + 6.",
@@ -732,7 +834,12 @@
       {
         "id": "q-ps-10",
         "question": "What is the value of p(0) for p(x) = 2x³ - 4x + 7?",
-        "options": ["7", "0", "-4", "2"],
+        "options": [
+          "7",
+          "0",
+          "-4",
+          "2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "p(0) = 2(0)³ - 4(0) + 7 = 0 - 0 + 7 = 7. p(0) always equals the constant term.",
@@ -744,12 +851,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-pm-1",
         "question": "If (x - 2) is a factor of x³ - kx² + 3x - 6, find k.",
-        "options": ["2", "1", "0", "-1"],
+        "options": [
+          "2",
+          "1",
+          "0",
+          "-1"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "If (x-2) is a factor, p(2) = 0. p(2) = 8 - 4k + 6 - 6 = 8 - 4k = 0 → k = 2. Wait — 8 - 4k = 0 → 4k = 8 → k = 2. Let me check: p(2) = 8 - k(4) + 6 - 6 = 8 - 4k → k = 2.",
@@ -764,7 +875,12 @@
       {
         "id": "q-pm-2",
         "question": "The sum of zeroes of x² + 7x + 12 is:",
-        "options": ["7", "-7", "12", "-12"],
+        "options": [
+          "7",
+          "-7",
+          "12",
+          "-12"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Sum = -b/a = -7/1 = -7. The zeroes are -3 and -4, sum = -7.",
@@ -778,7 +894,12 @@
       {
         "id": "q-pm-3",
         "question": "Find the remainder when x³ + 3x² + 3x + 1 is divided by x - 1/2.",
-        "options": ["27/8", "1/8", "0", "8/27"],
+        "options": [
+          "27/8",
+          "1/8",
+          "0",
+          "8/27"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "p(x) = x³ + 3x² + 3x + 1 = (x+1)³. p(1/2) = (1.5)³ = 27/8.",
@@ -792,7 +913,12 @@
       {
         "id": "q-pm-4",
         "question": "For which value of k does the polynomial x² - 2x + k have zeroes that differ by 2?",
-        "options": ["0", "1", "2", "3"],
+        "options": [
+          "0",
+          "1",
+          "2",
+          "3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let zeroes be α and α+2. Sum = 2α + 2 = 2 → α = 0. So zeroes are 0 and 2. Product = 0 × 2 = 0 = k. Therefore k = 0.",
@@ -806,7 +932,12 @@
       {
         "id": "q-pm-5",
         "question": "If α and β are zeroes of x² - 2x - 8, find α² + β².",
-        "options": ["20", "4", "-12", "8"],
+        "options": [
+          "20",
+          "4",
+          "-12",
+          "8"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "α+β = 2, αβ = -8. α² + β² = (α+β)² - 2αβ = 4 - 2(-8) = 4 + 16 = 20.",
@@ -820,7 +951,12 @@
       {
         "id": "q-pm-6",
         "question": "One zero of x³ - 6x² + 11x - 6 is 1. Find the other zeroes.",
-        "options": ["2 and 3", "2 and -3", "-2 and -3", "2 and 1"],
+        "options": [
+          "2 and 3",
+          "2 and -3",
+          "-2 and -3",
+          "2 and 1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Since x=1 is a zero, divide by (x-1): x³-6x²+11x-6 ÷ (x-1) = x²-5x+6 = (x-2)(x-3). Other zeroes: 2 and 3.",
@@ -834,16 +970,26 @@
       {
         "id": "q-pm-7",
         "question": "Find k if one zero of 3x² - 8x + (2k+1) is 7 times the other.",
-        "options": ["2", "3", "4", "5"],
+        "options": [
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
         "correct": 0,
         "explanation": {
-          "correct": "Let zeroes be α and 7α. Sum = 8α = 8/3 → α = 1/3. So zeroes are 1/3 and 7/3. Product = (1/3)(7/3) = 7/9 = (2k+1)/3. 7/9 = (2k+1)/3 → 7/3 = 2k+1 → 4/3 = 2k → k = 2/3? Wait: 7/9 = (2k+1)/3 → Multiply: 21 = 9(2k+1) → 21 = 18k + 9 → 18k = 12 → k = 2/3. Hmm, not an integer. Let me recheck: (2k+1)/3 = 7/9 → 2k+1 = 7/3 → 2k = 4/3 → k = 2/3. But 2/3 is not an option. Let me check the sum: α + 7α = 8/3 → α = 1/3. Product: α×7α = 7α² = 7/9 = c/a = (2k+1)/3. So (2k+1)/3 = 7/9 → 2k+1 = 7/3 → 2k = 4/3 → k = 2/3." 
+          "correct": "Let zeroes be α and 7α. Sum = 8α = 8/3 → α = 1/3. So zeroes are 1/3 and 7/3. Product = (1/3)(7/3) = 7/9 = (2k+1)/3. 7/9 = (2k+1)/3 → 7/3 = 2k+1 → 4/3 = 2k → k = 2/3? Wait: 7/9 = (2k+1)/3 → Multiply: 21 = 9(2k+1) → 21 = 18k + 9 → 18k = 12 → k = 2/3. Hmm, not an integer. Let me recheck: (2k+1)/3 = 7/9 → 2k+1 = 7/3 → 2k = 4/3 → k = 2/3. But 2/3 is not an option. Let me check the sum: α + 7α = 8/3 → α = 1/3. Product: α×7α = 7α² = 7/9 = c/a = (2k+1)/3. So (2k+1)/3 = 7/9 → 2k+1 = 7/3 → 2k = 4/3 → k = 2/3."
         }
       },
       {
         "id": "q-pm-8",
         "question": "Divide 2x² + 3x + 1 by x + 2. What is the quotient?",
-        "options": ["2x - 1", "2x + 7", "2x + 1", "2x - 7"],
+        "options": [
+          "2x - 1",
+          "2x + 7",
+          "2x + 1",
+          "2x - 7"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Long division: 2x² + 3x + 1 ÷ (x+2). First term: 2x² ÷ x = 2x. Multiply: 2x(x+2) = 2x² + 4x. Subtract: (2x²+3x+1) - (2x²+4x) = -x + 1. Next term: -x ÷ x = -1. Multiply: -1(x+2) = -x-2. Subtract: (-x+1) - (-x-2) = 3. Quotient = 2x - 1, Remainder = 3.",
@@ -857,7 +1003,12 @@
       {
         "id": "q-pm-9",
         "question": "If the product of zeroes of ax² - 6x - 6 is 4, find a.",
-        "options": ["-3/2", "-2/3", "3/2", "2/3"],
+        "options": [
+          "-3/2",
+          "-2/3",
+          "3/2",
+          "2/3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Product = c/a = -6/a = 4 → -6 = 4a → a = -6/4 = -3/2.",
@@ -871,7 +1022,12 @@
       {
         "id": "q-pm-10",
         "question": "If α and β are zeroes of x² - x - 2, find α/β + β/α.",
-        "options": ["-5/2", "5/2", "-2/5", "2/5"],
+        "options": [
+          "-5/2",
+          "5/2",
+          "-2/5",
+          "2/5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "α+β = 1, αβ = -2. α/β + β/α = (α²+β²)/(αβ) = [(α+β)² - 2αβ]/(αβ) = [1 - 2(-2)]/(-2) = (1+4)/(-2) = -5/2.",
@@ -883,12 +1039,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-pc-1",
         "question": "If α, β, γ are zeroes of x³ - 6x² + 11x - 6, find the value of αβ + βγ + γα.",
-        "options": ["6", "11", "-6", "-11"],
+        "options": [
+          "6",
+          "11",
+          "-6",
+          "-11"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "For cubic ax³+bx²+cx+d: αβ+βγ+γα = c/a = 11/1 = 11. Verification: zeroes are 1,2,3; 1×2+2×3+3×1 = 2+6+3 = 11.",
@@ -902,7 +1062,12 @@
       {
         "id": "q-pc-2",
         "question": "Find all zeroes of 2x³ + x² - 5x + 2 if one zero is 1.",
-        "options": ["1, -2, 1/2", "1, 2, -1/2", "1, -2, -1/2", "1, 2, 1/2"],
+        "options": [
+          "1, -2, 1/2",
+          "1, 2, -1/2",
+          "1, -2, -1/2",
+          "1, 2, 1/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Since x=1 is a zero, divide by (x-1): (2x³+x²-5x+2)÷(x-1)=2x²+3x-2. Factor: (2x-1)(x+2)=0. Zeroes: x=1/2 and x=-2. So all zeroes: 1, -2, 1/2.",
@@ -916,7 +1081,12 @@
       {
         "id": "q-pc-3",
         "question": "If the sum of squares of zeroes of x² - (k+2)x + (k+1) is 10, find k.",
-        "options": ["5 or -3", "3 or -5", "7 or -1", "1 or -7"],
+        "options": [
+          "5 or -3",
+          "3 or -5",
+          "7 or -1",
+          "1 or -7"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "α+β = k+2, αβ = k+1. α²+β² = (α+β)² - 2αβ = (k+2)² - 2(k+1) = k²+4k+4-2k-2 = k²+2k+2 = 10. So k²+2k-8=0 → (k+4)(k-2)=0. Wait: k²+2k-8=0 → (k+4)(k-2)=0 → k=-4 or k=2. These aren't in the options. Let me recheck: α²+β² = 10. (k+2)² - 2(k+1) = 10. k²+4k+4-2k-2 = 10. k²+2k+2 = 10. k²+2k-8 = 0. k = [-2 ± √(4+32)]/2 = [-2 ± 6]/2 = 2 or -4. My answer doesn't match any option. Let me re-examine the problem... The question says k+2 and k+1. Let me re-read: x² - (k+2)x + (k+1) = 0. So sum = k+2. α²+β² = (k+2)² - 2(k+1) = k²+4k+4-2k-2 = k²+2k+2 = 10. k²+2k-8=0. (k+4)(k-2)=0. k=-4 or 2. None of the options match. Perhaps I should check option 0: 5 or -3 gives α²+β² = 25+10+2=37 or 9-6+2=5. Not 10. There might be a mismatch. Let me proceed with k=-4 or 2 as the mathematically correct answer.",
@@ -931,7 +1101,12 @@
       {
         "id": "q-pc-4",
         "question": "Simplify: (x + 1)(x + 2)(x + 3)(x + 4) - 3. Hint: group (x+1)(x+4) and (x+2)(x+3).",
-        "options": ["(x² + 5x + 5)(x² + 5x + 7)", "(x² + 5x + 7)(x² + 5x + 9)", "(x² + 5x + 5)²", "(x² + 5x + 6)(x² + 5x + 8) - 3"],
+        "options": [
+          "(x² + 5x + 5)(x² + 5x + 7)",
+          "(x² + 5x + 7)(x² + 5x + 9)",
+          "(x² + 5x + 5)²",
+          "(x² + 5x + 6)(x² + 5x + 8) - 3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "(x+1)(x+4) = x²+5x+4, (x+2)(x+3) = x²+5x+6. Let y = x²+5x. Then expression = (y+4)(y+6)-3 = y²+10y+24-3 = y²+10y+21 = (y+3)(y+7) = (x²+5x+3)(x²+5x+7).",
@@ -945,7 +1120,12 @@
       {
         "id": "q-pc-5",
         "question": "If α, β are zeroes of x² - 3x + 1, find the value of α³ + β³.",
-        "options": ["18", "9", "27", "36"],
+        "options": [
+          "18",
+          "9",
+          "27",
+          "36"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "α+β = 3, αβ = 1. α³+β³ = (α+β)³ - 3αβ(α+β) = 27 - 3(1)(3) = 27 - 9 = 18.",
@@ -959,7 +1139,12 @@
       {
         "id": "q-pc-6",
         "question": "Find the polynomial whose zeroes are 1/(α+β) and 1/(αβ) where α, β are zeroes of x² - 5x + 6.",
-        "options": ["6x² - 5x + 1", "x² - 5x + 6", "6x² + 5x + 1", "x² + 5x + 6"],
+        "options": [
+          "6x² - 5x + 1",
+          "x² - 5x + 6",
+          "6x² + 5x + 1",
+          "x² + 5x + 6"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "α+β = 5, αβ = 6. New zeroes: 1/5 and 1/6. Sum = 1/5 + 1/6 = 11/30. Product = 1/30. Polynomial: x² - (11/30)x + 1/30 → multiply by 30: 30x² - 11x + 1. That doesn't match. Wait: α, β are zeroes of x²-5x+6, so zeroes are 2 and 3. α+β=5, αβ=6. New zeroes: 1/5 and 1/6. Polynomial: x² - (1/5+1/6)x + (1/5)(1/6) = x² - (11/30)x + 1/30 = (30x² - 11x + 1)/30. So 30x² - 11x + 1. None of the options match this. Let me try option 0: 6x² - 5x + 1. Zeroes: [5 ± √(25-24)]/12 = [5 ± 1]/12 = 1/2 and 1/3. These are 0.5 and 0.333..., not 0.2 and 0.166... Hmm. I think there might be an issue. Let me proceed.",
@@ -974,7 +1159,12 @@
       {
         "id": "q-pc-7",
         "question": "If x + 1 is a factor of 2x³ + ax² + 2bx + 1 and 2x - 1 is a factor of 3x³ + bx² + ax - 3, find a + b.",
-        "options": ["3", "2", "1", "0"],
+        "options": [
+          "3",
+          "2",
+          "1",
+          "0"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If x+1 is factor of first, p(-1)=0: 2(-1)³ + a(1) + 2b(-1) + 1 = 0 → -2 + a - 2b + 1 = 0 → a - 2b = 1. If 2x-1 is factor of second, q(1/2)=0: 3(1/8) + b(1/4) + a(1/2) - 3 = 0 → 3/8 + b/4 + a/2 - 3 = 0 → multiply by 8: 3 + 2b + 4a - 24 = 0 → 4a + 2b = 21 → 2a + b = 10.5. This doesn't give integer. Let me recheck: 2x³ + ax² + 2bx + 1. p(-1) = -2 + a - 2b + 1 = a - 2b - 1 = 0 → a - 2b = 1. Second: 3x³ + bx² + ax - 3. q(1/2) = 3/8 + b/4 + a/2 - 3 = 0 → multiply 8: 3 + 2b + 4a - 24 = 0 → 4a + 2b = 21. Solving: a - 2b = 1 and 4a + 2b = 21. Add: 5a = 22 → a = 4.4, b = 1.7. Not giving integer a+b = 6.1. Hmm, perhaps the options don't match exactly. Let me try a=3, b=1: a-2b=3-2=1 ✓; 4a+2b=12+2=14≠21. No. a=2,b=0.5: a-2b=2-1=1 ✓; 4a+2b=8+1=9≠21. No."
@@ -983,7 +1173,12 @@
       {
         "id": "q-pc-8",
         "question": "If α, β, γ are zeroes of x³ - 3x² + x + 1, find 1/α + 1/β + 1/γ.",
-        "options": ["-1", "1", "3", "-3"],
+        "options": [
+          "-1",
+          "1",
+          "3",
+          "-3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "For cubic ax³+bx²+cx+d: α+β+γ = -b/a = 3, αβ+βγ+γα = c/a = 1, αβγ = -d/a = -1. 1/α+1/β+1/γ = (βγ+αγ+αβ)/(αβγ) = 1/(-1) = -1.",
@@ -997,7 +1192,12 @@
       {
         "id": "q-pc-9",
         "question": "If x² - 11x + 30 = (x + a)(x + b) and a > b, find 2a + b.",
-        "options": ["17", "16", "15", "14"],
+        "options": [
+          "17",
+          "16",
+          "15",
+          "14"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "x² - 11x + 30 = (x-5)(x-6) = (x+(-5))(x+(-6)). So a = -5, b = -6. Wait, a > b means -5 > -6. 2a + b = 2(-5) + (-6) = -10 - 6 = -16. That's not in the options. Perhaps they want positive factors: x² - 11x + 30 = (x-5)(x-6), so a=-5, b=-6, 2a+b=-16. Or if we reverse: if x² - 11x + 30 = (x+a)(x+b), then a+b = -11 and ab = 30. So a,b are -5 and -6. 2a+b with a>b: a=-5, b=-6 → -16. Not in options. Maybe the signs: perhaps they mean (x+a)(x+b) with a,b positive? Then x²-11x+30 = (x-5)(x-6) = (x+(-5))(x+(-6)). None of the options match -16."
@@ -1006,7 +1206,12 @@
       {
         "id": "q-pc-10",
         "question": "Find the value of k for which the polynomial x⁴ - 2x³ + 3x² - kx + 1 is exactly divisible by x - 1.",
-        "options": ["3", "2", "1", "0"],
+        "options": [
+          "3",
+          "2",
+          "1",
+          "0"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If divisible by (x-1), then p(1) = 0. p(1) = 1 - 2 + 3 - k + 1 = 3 - k = 0 → k = 3.",
@@ -1019,7 +1224,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Paravartya Yojayet (परावर्त्य योजयेत्) — 'Transpose and Apply' for Polynomial Division",
@@ -1076,7 +1280,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Polynomials — Complete Mind Map",
     "type": "hierarchical",
@@ -1136,55 +1339,173 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "How Polynomial Concepts Connect — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Polynomial Definition", "group": "foundation" },
-      { "id": "n2", "label": "Degree & Classification", "group": "basics" },
-      { "id": "n3", "label": "Zeroes of Polynomial", "group": "core" },
-      { "id": "n4", "label": "Remainder Theorem", "group": "theorem" },
-      { "id": "n5", "label": "Factor Theorem", "group": "theorem" },
-      { "id": "n6", "label": "Long Division Algorithm", "group": "algorithm" },
-      { "id": "n7", "label": "Zero-Coef Relationship", "group": "core" },
-      { "id": "n8", "label": "Factorization", "group": "application" },
-      { "id": "n9", "label": "Graphs & Applications", "group": "application" },
-      { "id": "n10", "label": "Word Problems", "group": "goal" }
+      {
+        "id": "n1",
+        "label": "Polynomial Definition",
+        "group": "foundation"
+      },
+      {
+        "id": "n2",
+        "label": "Degree & Classification",
+        "group": "basics"
+      },
+      {
+        "id": "n3",
+        "label": "Zeroes of Polynomial",
+        "group": "core"
+      },
+      {
+        "id": "n4",
+        "label": "Remainder Theorem",
+        "group": "theorem"
+      },
+      {
+        "id": "n5",
+        "label": "Factor Theorem",
+        "group": "theorem"
+      },
+      {
+        "id": "n6",
+        "label": "Long Division Algorithm",
+        "group": "algorithm"
+      },
+      {
+        "id": "n7",
+        "label": "Zero-Coef Relationship",
+        "group": "core"
+      },
+      {
+        "id": "n8",
+        "label": "Factorization",
+        "group": "application"
+      },
+      {
+        "id": "n9",
+        "label": "Graphs & Applications",
+        "group": "application"
+      },
+      {
+        "id": "n10",
+        "label": "Word Problems",
+        "group": "goal"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n1", "n3"],
-      ["n3", "n4"], ["n4", "n5"],
-      ["n5", "n8"],
-      ["n3", "n7"], ["n7", "n10"],
-      ["n6", "n8"], ["n8", "n9"],
-      ["n3", "n6"], ["n9", "n10"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n3",
+        "n4"
+      ],
+      [
+        "n4",
+        "n5"
+      ],
+      [
+        "n5",
+        "n8"
+      ],
+      [
+        "n3",
+        "n7"
+      ],
+      [
+        "n7",
+        "n10"
+      ],
+      [
+        "n6",
+        "n8"
+      ],
+      [
+        "n8",
+        "n9"
+      ],
+      [
+        "n3",
+        "n6"
+      ],
+      [
+        "n9",
+        "n10"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "How to Factorize a Cubic Polynomial",
       "steps": [
-        { "order": 1, "action": "Identify constant term. List its factors (± values).", "next": 2 },
-        { "order": 2, "action": "Try each factor 'a': compute p(a). Is p(a) = 0?", "decision": true, "if_yes": 3, "if_no": 5 },
-        { "order": 3, "action": "(x - a) is a factor. Divide p(x) by (x - a) using synthetic/long division.", "next": 4 },
-        { "order": 4, "action": "Factorize the resulting quadratic (splitting middle term or formula).", "next": "END" },
-        { "order": 5, "action": "Try next factor from list. Are all factors exhausted?", "decision": true, "if_yes": 6, "if_no": 2 },
-        { "order": 6, "action": "The cubic may have no rational factors. Use other methods (grouping, etc.)", "next": "END" }
+        {
+          "order": 1,
+          "action": "Identify constant term. List its factors (± values).",
+          "next": 2
+        },
+        {
+          "order": 2,
+          "action": "Try each factor 'a': compute p(a). Is p(a) = 0?",
+          "decision": true,
+          "if_yes": 3,
+          "if_no": 5
+        },
+        {
+          "order": 3,
+          "action": "(x - a) is a factor. Divide p(x) by (x - a) using synthetic/long division.",
+          "next": 4
+        },
+        {
+          "order": 4,
+          "action": "Factorize the resulting quadratic (splitting middle term or formula).",
+          "next": "END"
+        },
+        {
+          "order": 5,
+          "action": "Try next factor from list. Are all factors exhausted?",
+          "decision": true,
+          "if_yes": 6,
+          "if_no": 2
+        },
+        {
+          "order": 6,
+          "action": "The cubic may have no rational factors. Use other methods (grouping, etc.)",
+          "next": "END"
+        }
       ]
     },
     {
       "title": "Remainder Theorem Problem-Solving Template",
       "steps": [
-        { "order": 1, "action": "Identify divisor: write it in the form (x - a)" },
-        { "order": 2, "action": "Note the value of 'a' (watch sign: x+5 = x-(-5), so a=-5)" },
-        { "order": 3, "action": "Substitute x = a into the polynomial p(x)" },
-        { "order": 4, "action": "Simplify and compute p(a)" },
-        { "order": 5, "action": "p(a) is the remainder. If p(a)=0, divisor is a factor." }
+        {
+          "order": 1,
+          "action": "Identify divisor: write it in the form (x - a)"
+        },
+        {
+          "order": 2,
+          "action": "Note the value of 'a' (watch sign: x+5 = x-(-5), so a=-5)"
+        },
+        {
+          "order": 3,
+          "action": "Substitute x = a into the polynomial p(x)"
+        },
+        {
+          "order": 4,
+          "action": "Simplify and compute p(a)"
+        },
+        {
+          "order": 5,
+          "action": "p(a) is the remainder. If p(a)=0, divisor is a factor."
+        }
       ]
     }
   ],
-
   "common_misconceptions": [
     "Any expression with x is a polynomial — FALSE: x + 1/x has x⁻¹ (negative exponent), √x has x^(1/2) (fractional exponent). Only whole number exponents allowed.",
     "The degree of a polynomial is the number of terms — FALSE: Degree is the highest exponent, not the count of terms. x² + 1 has degree 2 but only 2 terms.",
@@ -1194,5 +1515,6 @@
     "The sum of zeroes of ax² + bx + c is b/a — FALSE: It is -b/a. The negative sign is crucial. x² - 5x + 6 has sum = 5 = -(-5)/1.",
     "Synthetic division works for any divisor — FALSE: It only works for linear divisors (x - a). For quadratic or higher divisors, use long division.",
     "If (x - a) is a factor, then p(a) = 0 is true, but the converse is also the same statement — CORRECT: Factor Theorem says both directions."
-  ]
+  ],
+  "chapterNumber": 2
 }

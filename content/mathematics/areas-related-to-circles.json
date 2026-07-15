@@ -4,7 +4,6 @@
   "lesson": 1,
   "title": "Areas Related to Circles — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Calculate the area of a circle, sector, and segment of a circle with precision",
     "Apply formulas for combinations of plane figures involving circles, squares, rectangles, and triangles",
@@ -13,9 +12,12 @@
     "Derive and apply the relationship between arc length, sector area, and central angle",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive exam readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS7_CIRCLES_BASICS", "MATH_CLASS7_PERIMETER_AREA", "MATH_CLASS8_MENSURATION", "MATH_CLASS9_MENSURATION"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS7_CIRCLES_BASICS",
+    "MATH_CLASS7_PERIMETER_AREA",
+    "MATH_CLASS8_MENSURATION",
+    "MATH_CLASS9_MENSURATION"
+  ],
   "concepts": [
     {
       "name": "Area of a Circle",
@@ -66,7 +68,6 @@
       ]
     }
   ],
-
   "important_formulae": [
     {
       "name": "Area of a Circle",
@@ -99,7 +100,6 @@
       "usage": "Careful: perimeter ≠ circumference. For a sector, the two radii are also boundaries."
     }
   ],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -203,7 +203,6 @@
       "competitive_shortcut": "For JEE, remember that the area of a circular ring = π(R+r)(R-r). This factorization saves time."
     }
   ],
-
   "exercises": {
     "exercise_1": {
       "title": "Exercise — Area of Circle, Sector, and Segment (NCERT Ex 12.1 / Ex 11.1 in new edition)",
@@ -568,7 +567,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 13 — Areas Related to Circles",
     "topics": [
@@ -611,7 +609,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 13 — Areas Related to Circles",
     "topics": [
@@ -649,46 +646,121 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Areas Related to Circles contributes 4-8 marks (1-2 short answer + 1 long answer). This is a high-scoring chapter with predictable question patterns.",
-    "pattern": {
-      "short_answer_1_2_marks": [
-        "Find area of sector/segment with given radius and angle (asked in 2017, 2019, 2021, 2023, 2025)",
-        "Arc length calculation (asked in 2018, 2020, 2022, 2024)",
-        "Area of quadrant/quandrant problems with minute hand (asked in 2019, 2022, 2026)"
-      ],
-      "long_answer_4_5_marks": [
-        "Combination of figures: square with circles/semicircles (asked in 2017, 2020, 2023, 2025)",
-        "Area of remaining portion after cutting out shapes (asked in 2018, 2021, 2024)",
-        "Race track / circular ring problems (asked in 2019, 2022, 2026)",
-        "Designs on circular table covers (asked in 2020, 2023)"
-      ]
-    },
-    "scoring_areas": [
-      "Sector area formula — direct application, easy 2 marks",
-      "Segment area — remember to subtract triangle from sector",
-      "Combination problems — break into simple shapes, calculate separately",
-      "Always specify which π value is used (22/7 or 3.14)",
-      "Word problems — identify radius vs diameter correctly"
+  "model_papers": {
+    "simple": [
+      {
+        "id": "mp-arc-s-1",
+        "question": "Find the area of a sector of a circle with radius 14 cm and central angle 45°. Also find the perimeter of the sector.",
+        "answer": "Area = (45/360) × (22/7) × 14² = (1/8) × 616 = 77 cm². Perimeter = 2r + arc length = 28 + (45/360) × 2 × (22/7) × 14 = 28 + 11 = 39 cm.",
+        "steps": [
+          "Given r = 14 cm, θ = 45°.",
+          "Area of sector = (θ/360) × πr² = (45/360) × (22/7) × 196 = (1/8) × 616 = 77 cm².",
+          "Arc length = (θ/360) × 2πr = (1/8) × 2 × (22/7) × 14 = (1/8) × 88 = 11 cm.",
+          "Perimeter of sector = 2r + arc length = 28 + 11 = 39 cm."
+        ],
+        "hints": [
+          "45° is 1/8 of a full circle. Use that directly.",
+          "Perimeter of a sector includes both radii plus the arc."
+        ]
+      },
+      {
+        "id": "mp-arc-s-2",
+        "question": "A chord of a circle of radius 10 cm subtends a right angle at the center. Find the area of the corresponding minor segment.",
+        "answer": "Area of minor segment = sector area - triangle area = 78.5 - 50 = 28.5 cm².",
+        "steps": [
+          "Given r = 10 cm, θ = 90°.",
+          "Area of sector = (90/360) × 3.14 × 100 = (1/4) × 314 = 78.5 cm².",
+          "The triangle is right-angled isosceles with legs = r = 10 cm.",
+          "Area of triangle = (1/2) × 10 × 10 = 50 cm².",
+          "Area of minor segment = 78.5 - 50 = 28.5 cm²."
+        ],
+        "hints": [
+          "When θ = 90°, the triangle area is simply (1/2)r².",
+          "Segment = sector - triangle. Major segment = circle - minor segment."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Using diameter instead of radius in area formula (forgetting to divide by 2)",
-      "Not converting angle to fraction properly (θ/360 vs 360/θ)",
-      "Forgetting that the triangle in segment formula is isosceles with sides = radii",
-      "Adding areas instead of subtracting (or vice versa) in combination figures",
-      "Using π = 22/7 when radius is not a multiple of 7 — gives unwieldy fractions",
-      "Confusing perimeter of sector (2r + arc length) with arc length only",
-      "Not converting units consistently in mixed-unit problems"
+    "medium": [
+      {
+        "id": "mp-arc-m-1",
+        "question": "The minute hand of a clock is 14 cm long. Find the area swept by the minute hand between 8:10 AM and 8:40 AM.",
+        "answer": "In 30 minutes, angle swept = 180°. Area = (180/360) × (22/7) × 14² = (1/2) × 616 = 308 cm².",
+        "steps": [
+          "Length of minute hand = radius r = 14 cm.",
+          "From 8:10 to 8:40 is 30 minutes.",
+          "Angle swept in 30 minutes = (30/60) × 360° = 180°.",
+          "Area swept = Area of sector with θ = 180° = (180/360) × πr² = (1/2) × (22/7) × 196.",
+          "= (1/2) × 616 = 308 cm²."
+        ],
+        "hints": [
+          "The minute hand moves 360° in 60 minutes, so 6° per minute.",
+          "A semicircle (180°) is half the circle area."
+        ]
+      },
+      {
+        "id": "mp-arc-m-2",
+        "question": "A square of side 12 cm has four quarter-circles drawn inside it with each vertex as center and radius 6 cm. Find the area of the region enclosed by the four quarter-circles.",
+        "answer": "Area enclosed = area of square - area of 4 quarter-circles = 144 - 113.04 = 30.96 cm².",
+        "steps": [
+          "Given square side = 12 cm. Radius of each quarter-circle = 6 cm.",
+          "Area of square = 12² = 144 cm².",
+          "Four quarter-circles = one full circle of radius 6 cm.",
+          "Area of circle = πr² = 3.14 × 36 = 113.04 cm².",
+          "Area enclosed by quarter-circles = 144 - 113.04 = 30.96 cm²."
+        ],
+        "hints": [
+          "Four quarter-circles with equal radii combine to one full circle.",
+          "The enclosure is the part of the square NOT covered by the quarter-circles."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "id": "mp-arc-c-1",
+        "question": "A circular park of radius 28 m has a 3.5 m wide path running around it on the outside. Find the area of the path. Also find the cost of fencing the outer boundary of the path at ₹85 per metre.",
+        "answer": "Path area = π(R² - r²) = (22/7)(31.5² - 28²) = (22/7)(992.25 - 784) = (22/7) × 208.25 = 654.5 m². Cost of fencing = 2πR × 85 = 2 × (22/7) × 31.5 × 85 = 198 × 85 = ₹16,830.",
+        "steps": [
+          "Given inner radius r = 28 m, path width = 3.5 m, outer radius R = 28 + 3.5 = 31.5 m.",
+          "Area of path = π(R² - r²) = (22/7)(31.5² - 28²).",
+          "31.5² = 992.25, 28² = 784. Difference = 208.25.",
+          "Area = (22/7) × 208.25 = 22 × 29.75 = 654.5 m².",
+          "Outer circumference = 2πR = 2 × (22/7) × 31.5 = 198 m.",
+          "Cost of fencing = 198 × 85 = ₹16,830."
+        ],
+        "hints": [
+          "Use the identity R² - r² = (R + r)(R - r) for faster calculation.",
+          "Fencing is along the outer boundary only — use outer circumference."
+        ]
+      },
+      {
+        "id": "mp-arc-c-2",
+        "question": "In the figure (not drawn), ABCD is a square of side 21 cm. A semicircle is drawn on side AB as diameter, and a quadrant of a circle is drawn with vertex C as center with radius equal to the side. Find the area of the region common to both the semicircle and the quadrant.",
+        "answer": "Area common to both = area of semicircle on AB + area of quadrant(C) - area of square = 173.25 + 346.5 - 441 = 78.75 cm².",
+        "steps": [
+          "Square side = 21 cm.",
+          "Semicircle on AB: radius = 21/2 = 10.5 cm, area = (1/2) × (22/7) × (10.5)² = (1/2) × 346.5 = 173.25 cm².",
+          "Quadrant with center C, radius = 21 cm: area = (1/4) × (22/7) × 21² = (1/4) × 1386 = 346.5 cm².",
+          "Area of square = 21² = 441 cm².",
+          "Area common to both curved regions = semicircle area + quadrant area - square area = 173.25 + 346.5 - 441 = 78.75 cm²."
+        ],
+        "hints": [
+          "Use the inclusion-exclusion principle for overlapping areas.",
+          "Draw the figure to identify which parts overlap with the square."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "What is the area of a circle of radius 7 cm?",
-        "options": ["154 cm²", "44 cm²", "22 cm²", "308 cm²"],
+        "options": [
+          "154 cm²",
+          "44 cm²",
+          "22 cm²",
+          "308 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area = πr² = (22/7) × 7² = (22/7) × 49 = 22 × 7 = 154 cm².",
@@ -702,7 +774,12 @@
       {
         "id": "q-s-2",
         "question": "The area of a sector of a circle with angle 90° is what fraction of the whole circle?",
-        "options": ["1/4", "1/2", "1/3", "1/8"],
+        "options": [
+          "1/4",
+          "1/2",
+          "1/3",
+          "1/8"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "90°/360° = 1/4. A sector with 90° is one-fourth of the circle.",
@@ -716,7 +793,12 @@
       {
         "id": "q-s-3",
         "question": "The formula for the area of a sector of angle θ is:",
-        "options": ["(θ/360) × πr²", "(θ/360) × 2πr", "πr²", "θ × πr²"],
+        "options": [
+          "(θ/360) × πr²",
+          "(θ/360) × 2πr",
+          "πr²",
+          "θ × πr²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area of sector = (θ/360) × πr², where θ is the central angle in degrees.",
@@ -730,7 +812,12 @@
       {
         "id": "q-s-4",
         "question": "What is the area of a semicircle of radius r?",
-        "options": ["πr²/2", "πr²", "2πr", "πr²/4"],
+        "options": [
+          "πr²/2",
+          "πr²",
+          "2πr",
+          "πr²/4"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Semicircle = half of circle. Area = (1/2) × πr² = πr²/2.",
@@ -744,7 +831,12 @@
       {
         "id": "q-s-5",
         "question": "The perimeter of a sector of radius r and angle θ consists of:",
-        "options": ["2 radii + arc length", "Only arc length", "Radius + arc length", "2 arc lengths"],
+        "options": [
+          "2 radii + arc length",
+          "Only arc length",
+          "Radius + arc length",
+          "2 arc lengths"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Perimeter of sector = 2r + arc length. It includes the two straight sides (radii) and the curved arc.",
@@ -758,7 +850,12 @@
       {
         "id": "q-s-6",
         "question": "Find the area of a circle whose circumference is 88 cm.",
-        "options": ["616 cm²", "88 cm²", "154 cm²", "308 cm²"],
+        "options": [
+          "616 cm²",
+          "88 cm²",
+          "154 cm²",
+          "308 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "C = 2πr = 88 → r = 88/(2 × 22/7) = 88 × 7/44 = 14 cm. Area = π × 14² = (22/7) × 196 = 22 × 28 = 616 cm².",
@@ -772,7 +869,12 @@
       {
         "id": "q-s-7",
         "question": "The angle of a quadrant is:",
-        "options": ["90°", "180°", "45°", "60°"],
+        "options": [
+          "90°",
+          "180°",
+          "45°",
+          "60°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "A quadrant is one-fourth of a circle, so angle = 360°/4 = 90°.",
@@ -786,7 +888,12 @@
       {
         "id": "q-s-8",
         "question": "A minor segment is the region between a chord and the:",
-        "options": ["Minor arc", "Major arc", "Radius", "Diameter"],
+        "options": [
+          "Minor arc",
+          "Major arc",
+          "Radius",
+          "Diameter"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "A minor segment is bounded by a chord and the minor arc (the smaller arc).",
@@ -800,7 +907,12 @@
       {
         "id": "q-s-9",
         "question": "What is the area of a ring (annulus) with outer radius R and inner radius r?",
-        "options": ["π(R² - r²)", "π(R - r)²", "π(R² + r²)", "2π(R - r)"],
+        "options": [
+          "π(R² - r²)",
+          "π(R - r)²",
+          "π(R² + r²)",
+          "2π(R - r)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area of ring = Area of outer circle - Area of inner circle = πR² - πr² = π(R² - r²).",
@@ -814,7 +926,12 @@
       {
         "id": "q-s-10",
         "question": "Two circles of radii 5 cm and 3 cm. The area of the ring (annulus) is:",
-        "options": ["16π cm²", "2π cm²", "8π cm²", "34π cm²"],
+        "options": [
+          "16π cm²",
+          "2π cm²",
+          "8π cm²",
+          "34π cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area = π(5² - 3²) = π(25 - 9) = 16π cm².",
@@ -826,12 +943,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-m-1",
         "question": "The minute hand of a clock is 10 cm long. Find the area swept by it between 9:00 AM and 9:30 AM.",
-        "options": ["157 cm²", "78.5 cm²", "314 cm²", "39.25 cm²"],
+        "options": [
+          "157 cm²",
+          "78.5 cm²",
+          "314 cm²",
+          "39.25 cm²"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "From 9:00 to 9:30 is 30 minutes. Minute hand moves 180° in 30 minutes. Area = (180/360) × π × 10² = (1/2) × 3.14 × 100 = 157 cm². Wait, that gives 157 cm².\n\nLet me recalculate: (1/2) × π × 100 = 50π = 50 × 3.14 = 157 cm².\nSo answer is 157 cm², which is option 0.",
@@ -846,7 +967,12 @@
       {
         "id": "q-m-2",
         "question": "A chord of a circle of radius 10 cm subtends a right angle at the center. Find the area of the corresponding segment.",
-        "options": ["28.5 cm²", "78.5 cm²", "50 cm²", "100 cm²"],
+        "options": [
+          "28.5 cm²",
+          "78.5 cm²",
+          "50 cm²",
+          "100 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Sector area (θ=90°): (1/4) × π × 100 = 78.5 cm². Triangle area: (1/2) × 10 × 10 = 50 cm². Segment = 78.5 - 50 = 28.5 cm².",
@@ -860,7 +986,12 @@
       {
         "id": "q-m-3",
         "question": "If the perimeter of a sector is 25 cm and the radius is 7 cm, find the angle of the sector.",
-        "options": ["90°", "60°", "45°", "30°"],
+        "options": [
+          "90°",
+          "60°",
+          "45°",
+          "30°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Perimeter = 2r + arc length = 14 + arc = 25. Arc length = 11 cm. Arc = (θ/360) × 2πr = (θ/360) × 44 = 11. So θ/360 = 11/44 = 1/4. θ = 90°.",
@@ -874,7 +1005,12 @@
       {
         "id": "q-m-4",
         "question": "A circular park of radius 20 m has a path of width 5 m running around it on the outside. Find the area of the path.",
-        "options": ["225π m²", "400π m²", "625π m²", "200π m²"],
+        "options": [
+          "225π m²",
+          "400π m²",
+          "625π m²",
+          "200π m²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Outer radius = 20 + 5 = 25 m. Path area = π(25² - 20²) = π(625 - 400) = 225π m².",
@@ -888,7 +1024,12 @@
       {
         "id": "q-m-5",
         "question": "The area of a sector is 77 cm² and the radius is 14 cm. Find the angle of the sector.",
-        "options": ["45°", "60°", "90°", "30°"],
+        "options": [
+          "45°",
+          "60°",
+          "90°",
+          "30°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area = (θ/360) × πr² = (θ/360) × (22/7) × 196 = (θ/360) × 22 × 28 = (θ/360) × 616 = 77. So θ/360 = 77/616 = 1/8. θ = 45°.",
@@ -902,7 +1043,12 @@
       {
         "id": "q-m-6",
         "question": "The length of an arc of a sector of angle 40° is 22 cm. Find the radius of the circle.",
-        "options": ["31.5 cm", "21 cm", "63 cm", "15.75 cm"],
+        "options": [
+          "31.5 cm",
+          "21 cm",
+          "63 cm",
+          "15.75 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Arc = (40/360) × 2πr = (1/9) × 2 × (22/7) × r = 22. (44r)/(63) = 22. 44r = 1386. r = 31.5 cm.",
@@ -916,7 +1062,12 @@
       {
         "id": "q-m-7",
         "question": "A square of side 7 cm has four circles of equal radius drawn at its four corners touching each other. Find the area of the region enclosed between the circles.",
-        "options": ["10.5 cm²", "42 cm²", "21 cm²", "7 cm²"],
+        "options": [
+          "10.5 cm²",
+          "42 cm²",
+          "21 cm²",
+          "7 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Each circle radius = 7/2 = 3.5 cm. Area of square = 49 cm². Area of 4 quarter circles = Area of 1 full circle = π(3.5)² = 38.5 cm². Area between circles = 49 - 38.5 = 10.5 cm².",
@@ -930,7 +1081,12 @@
       {
         "id": "q-m-8",
         "question": "Find the area of a sector of a circle of radius 7 cm whose central angle is 30°.",
-        "options": ["12.83 cm²", "25.67 cm²", "6.42 cm²", "51.33 cm²"],
+        "options": [
+          "12.83 cm²",
+          "25.67 cm²",
+          "6.42 cm²",
+          "51.33 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area = (30/360) × (22/7) × 49 = (1/12) × 154 = 12.83 cm².",
@@ -944,7 +1100,12 @@
       {
         "id": "q-m-9",
         "question": "A circular arc of length 22 cm subtends an angle of 60° at the center. Find the radius of the circle.",
-        "options": ["21 cm", "14 cm", "7 cm", "28 cm"],
+        "options": [
+          "21 cm",
+          "14 cm",
+          "7 cm",
+          "28 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Arc = (60/360) × 2πr = (1/6) × 2 × (22/7) × r = 22. (44r)/(42) = 22. 44r = 924. r = 21 cm.",
@@ -958,7 +1119,12 @@
       {
         "id": "q-m-10",
         "question": "The area of a segment of a circle of radius 7 cm with central angle 120° is:",
-        "options": ["40.05 cm²", "88.44 cm²", "51.33 cm²", "25.67 cm²"],
+        "options": [
+          "40.05 cm²",
+          "88.44 cm²",
+          "51.33 cm²",
+          "25.67 cm²"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Let me check: Sector area = (120/360) × (22/7) × 49 = (1/3) × 154 = 51.33 cm². Triangle area = (1/2) × 49 × sin 120° = 24.5 × √3/2 = 21.22 cm². Segment = 51.33 - 21.22 = 30.11 cm². Hmm, none of the options match exactly.\n\nWait, using π = 3.14: Sector = (1/3) × 3.14 × 49 = 51.29 cm². Triangle = (1/2) × 49 × sin 120° = 24.5 × 0.866 = 21.22 cm². Segment = 51.29 - 21.22 = 30.07 cm².\n\nLet me recalculate with exact values: πr² = 154. Sector = 154/3 = 51.33. Triangle with θ=120°: area = (r²/2) × sin 120° = (49/2) × (√3/2) = 49√3/4 = 49 × 1.732/4 = 84.87/4 = 21.22.\nSegment = 51.33 - 21.22 = 30.11.\n\nHmm, none of the options seem correct with this calculation. Let me reconsider — perhaps the question is for a different angle or uses sin 60° differently.\n\nActually, when θ = 120°, the triangle is formed by two radii 7 cm apart at 120°. The area = (1/2)ab sin C = (1/2)(7)(7)(sin 120°) = (49/2)(√3/2) = 49√3/4 ≈ 21.22.\n\nI must have miscalculated. Let me look at the options: 40.05, 88.44, 51.33, 25.67. The segment for 120° should be bigger than for 60° (which is approx 17.8 cm² for r=14). For r=7, θ=120°, the segment is about 30 cm², so none match exactly.\n\nLet me try: if r=14, θ=60°, segment ≈ 17.8 cm². For r=7, θ=120°: segment ≈ 30 cm². \n\nActually, let me check option 0 = 40.05. That matches what I got for r=21, θ=60° earlier from the NCERT exercise. Let me think... the options may map to different parameters.\n\nFor the purpose of this quiz, I'll match the most reasonable answer based on the problem. Let me recalculate with more care:\n\nr=7, θ=120°\nSector = (120/360) × π × 49 = (1/3) × 22/7 × 49 = (1/3) × 22 × 7 = 154/3 = 51.33 cm²\nTriangle = (1/2) × 7² × sin 120° = (49/2) × (√3/2) = 49√3/4 = 49 × 1.732/4 = 21.22 cm²\nSegment = 51.33 - 21.22 = 30.11 cm²\n\nHmm, none match. This seems like an issue with the options. I'll revise the question to match option 1 (88.44), which is the answer for r=12, θ=120° as I computed earlier in worked_examples.",
@@ -971,12 +1137,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-c-1",
         "question": "A circular field of radius 35 m has a 7 m wide road running around it. Find the cost of gravelling the road at ₹55 per m².",
-        "options": ["₹93170", "₹84700", "₹254100", "₹177870"],
+        "options": [
+          "₹93170",
+          "₹84700",
+          "₹254100",
+          "₹177870"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Outer radius R = 35 + 7 = 42 m. Road area = π(42² - 35²) = (22/7)(1764 - 1225) = (22/7) × 539 = 22 × 77 = 1694 m². Cost = 1694 × 55 = ₹93170.",
@@ -990,7 +1160,12 @@
       {
         "id": "q-c-2",
         "question": "In the given figure, ABCD is a square of side 14 cm. Semicircles are drawn on each side. Find the area of the shaded region (the flower-like shape in the center).",
-        "options": ["112 cm²", "84 cm²", "98 cm²", "154 cm²"],
+        "options": [
+          "112 cm²",
+          "84 cm²",
+          "98 cm²",
+          "154 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Area of 4 semicircles = 4 × (1/2)π(7)² = 2π × 49 = 98π/7 × 7 = 308 cm² (using π=22/7). Area of square = 196 cm². Shaded (flower) = 308 - 196 = 112 cm².",
@@ -1004,7 +1179,12 @@
       {
         "id": "q-c-3",
         "question": "A chord of a circle of radius 15 cm subtends an angle of 60° at the center. Find the area of the corresponding segment. (√3 = 1.73)",
-        "options": ["20.44 cm²", "117.75 cm²", "97.31 cm²", "706.5 cm²"],
+        "options": [
+          "20.44 cm²",
+          "117.75 cm²",
+          "97.31 cm²",
+          "706.5 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Sector = (60/360) × 3.14 × 225 = (1/6) × 706.5 = 117.75 cm². Triangle = (1/2) × 225 × sin 60° = 112.5 × 0.866 = 97.31 cm² (or 225√3/4 = 225×1.73/4 = 97.31). Segment = 117.75 - 97.31 = 20.44 cm².",
@@ -1018,7 +1198,12 @@
       {
         "id": "q-c-4",
         "question": "The minute hand of a clock is 7 cm long. Find the area described by the minute hand between 8:15 AM and 8:45 AM.",
-        "options": ["77 cm²", "38.5 cm²", "154 cm²", "115.5 cm²"],
+        "options": [
+          "77 cm²",
+          "38.5 cm²",
+          "154 cm²",
+          "115.5 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "From 8:15 to 8:45 is 30 minutes = 180°. Area = (180/360) × (22/7) × 49 = (1/2) × 154 = 77 cm².",
@@ -1032,7 +1217,12 @@
       {
         "id": "q-c-5",
         "question": "Find the area of the shaded region where a circle of radius 7 cm is inscribed in a square.",
-        "options": ["42 cm²", "154 cm²", "196 cm²", "56 cm²"],
+        "options": [
+          "42 cm²",
+          "154 cm²",
+          "196 cm²",
+          "56 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Square side = diameter of circle = 14 cm. Square area = 196 cm². Circle area = 154 cm². Area between square and circle (shaded corners) = 196 - 154 = 42 cm².",
@@ -1046,7 +1236,12 @@
       {
         "id": "q-c-6",
         "question": "A round table cover of radius 28 cm has six equal designs formed by equilateral triangles inscribed in the circle. Find the area of each design.",
-        "options": ["77.47 cm²", "231 cm²", "40.05 cm²", "154 cm²"],
+        "options": [
+          "77.47 cm²",
+          "231 cm²",
+          "40.05 cm²",
+          "154 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Each design corresponds to one-sixth of the circle. Area of sector (60°) = (1/6) × (22/7) × 28² = (1/6) × 2464 = 410.67 cm². Area of equilateral triangle of side 28 cm = (√3/4) × 784 = 196√3 ≈ 333.2 cm². Each design (segment) = 410.67 - 333.2 = 77.47 cm².",
@@ -1060,7 +1255,12 @@
       {
         "id": "q-c-7",
         "question": "A uniform wire of length 88 cm is bent into the form of a circle. Find the area enclosed by the wire. If the same wire is bent into a square, which has larger area?",
-        "options": ["Circle: 616 cm², Circle has larger area", "Circle: 616 cm², Square has larger area", "Circle: 154 cm², Circle has larger area", "Circle: 154 cm², Square has larger area"],
+        "options": [
+          "Circle: 616 cm², Circle has larger area",
+          "Circle: 616 cm², Square has larger area",
+          "Circle: 154 cm², Circle has larger area",
+          "Circle: 154 cm², Square has larger area"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Wire length = Circumference = 88 = 2πr → r = 14 cm. Circle area = π × 14² = 616 cm². Square side = 88/4 = 22 cm, area = 484 cm². Circle area (616) > Square area (484). For a given perimeter, the circle encloses the maximum area.",
@@ -1074,7 +1274,12 @@
       {
         "id": "q-c-8",
         "question": "The area of a sector is one-fifth of the area of the circle. Find the central angle of the sector.",
-        "options": ["72°", "60°", "45°", "90°"],
+        "options": [
+          "72°",
+          "60°",
+          "45°",
+          "90°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If sector area = (1/5) of circle area, then θ/360 = 1/5. θ = 360/5 = 72°.",
@@ -1088,7 +1293,12 @@
       {
         "id": "q-c-9",
         "question": "AB and CD are two mutually perpendicular diameters of a circle of radius R. Find the area of the region common to both semicircles drawn on AB and CD as diameters.",
-        "options": ["R²(π/2 - 1)", "R²(π - 2)", "R²(π - 1)", "R²(π/2 - 1/2)"],
+        "options": [
+          "R²(π/2 - 1)",
+          "R²(π - 2)",
+          "R²(π - 1)",
+          "R²(π/2 - 1/2)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Two perpendicular diameters divide the circle into 4 quadrants. Two semicircles on these diameters overlap in the central region. The common area = area of 4 petals (each petal is a segment of angle 90°). Each petal area = (πR²/4 - R²/2) = R²(π/4 - 1/2). Total = 4R²(π/4 - 1/2) = R²(π - 2). Hmm, that gives option 1. But let me reconsider.\n\nActually, the region common to BOTH semicircles simultaneously is the intersection of two semicircular discs. This forms a lens-shaped region. The area = 2 × (sector of 90° - triangle) = 2 × (πR²/4 - R²/2) = πR²/2 - R² = R²(π/2 - 1).",
@@ -1102,7 +1312,12 @@
       {
         "id": "q-c-10",
         "question": "A lawn is in the form of a rectangle with semicircles at both ends. The total area is 4746 m² and the width is 42 m. Find the length of the rectangular portion.",
-        "options": ["80 m", "70 m", "90 m", "60 m"],
+        "options": [
+          "80 m",
+          "70 m",
+          "90 m",
+          "60 m"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Width = 42 m = diameter of semicircles. Radius = 21 m. Area of two semicircles = πr² = (22/7) × 441 = 1386 m². Remaining area = 4746 - 1386 = 3360 m² = length × width = l × 42. l = 3360/42 = 80 m.",
@@ -1115,7 +1330,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Squaring Numbers Ending in 5 — for Quick Area Calculations",
@@ -1150,7 +1364,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Areas Related to Circles — Complete Mind Map",
     "type": "hierarchical",
@@ -1210,47 +1423,154 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "Areas Related to Circles — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Circle (πr²)", "group": "basic" },
-      { "id": "n2", "label": "Sector (θ/360)πr²", "group": "derived" },
-      { "id": "n3", "label": "Segment: Sector - Triangle", "group": "derived" },
-      { "id": "n4", "label": "Annulus: π(R² - r²)", "group": "derived" },
-      { "id": "n5", "label": "Triangle Area (1/2)r² sinθ", "group": "support" },
-      { "id": "n6", "label": "Arc Length (θ/360)2πr", "group": "support" },
-      { "id": "n7", "label": "Combination Figures", "group": "application" },
-      { "id": "n8", "label": "Real-world Problems", "group": "application" }
+      {
+        "id": "n1",
+        "label": "Circle (πr²)",
+        "group": "basic"
+      },
+      {
+        "id": "n2",
+        "label": "Sector (θ/360)πr²",
+        "group": "derived"
+      },
+      {
+        "id": "n3",
+        "label": "Segment: Sector - Triangle",
+        "group": "derived"
+      },
+      {
+        "id": "n4",
+        "label": "Annulus: π(R² - r²)",
+        "group": "derived"
+      },
+      {
+        "id": "n5",
+        "label": "Triangle Area (1/2)r² sinθ",
+        "group": "support"
+      },
+      {
+        "id": "n6",
+        "label": "Arc Length (θ/360)2πr",
+        "group": "support"
+      },
+      {
+        "id": "n7",
+        "label": "Combination Figures",
+        "group": "application"
+      },
+      {
+        "id": "n8",
+        "label": "Real-world Problems",
+        "group": "application"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n1", "n3"], ["n1", "n4"],
-      ["n2", "n3"], ["n3", "n5"],
-      ["n2", "n6"],
-      ["n2", "n7"], ["n3", "n7"], ["n4", "n7"],
-      ["n7", "n8"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n2",
+        "n3"
+      ],
+      [
+        "n3",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n2",
+        "n7"
+      ],
+      [
+        "n3",
+        "n7"
+      ],
+      [
+        "n4",
+        "n7"
+      ],
+      [
+        "n7",
+        "n8"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "Problem-Solving Flow: Which Area Formula to Use?",
       "steps": [
-        { "order": 1, "action": "Identify the shape: Is it a standard circle?", "decision": true, "if_yes": 2, "if_no": 3 },
-        { "order": 2, "action": "Use A = πr²", "next": "END" },
-        { "order": 3, "action": "Is it a sector (wedge shape)?", "decision": true, "if_yes": 4, "if_no": 5 },
-        { "order": 4, "action": "A = (θ/360)πr²", "next": "END" },
-        { "order": 5, "action": "Is it a segment (chord + arc)?", "decision": true, "if_yes": 6, "if_no": 7 },
-        { "order": 6, "action": "A = Sector area - Triangle area (use (1/2)r² sinθ)", "next": "END" },
-        { "order": 7, "action": "Is it a ring/annulus?", "decision": true, "if_yes": 8, "if_no": 9 },
-        { "order": 8, "action": "A = π(R² - r²)", "next": "END" },
-        { "order": 9, "action": "Combination: Break into known shapes, sum/difference as needed", "next": "END" }
+        {
+          "order": 1,
+          "action": "Identify the shape: Is it a standard circle?",
+          "decision": true,
+          "if_yes": 2,
+          "if_no": 3
+        },
+        {
+          "order": 2,
+          "action": "Use A = πr²",
+          "next": "END"
+        },
+        {
+          "order": 3,
+          "action": "Is it a sector (wedge shape)?",
+          "decision": true,
+          "if_yes": 4,
+          "if_no": 5
+        },
+        {
+          "order": 4,
+          "action": "A = (θ/360)πr²",
+          "next": "END"
+        },
+        {
+          "order": 5,
+          "action": "Is it a segment (chord + arc)?",
+          "decision": true,
+          "if_yes": 6,
+          "if_no": 7
+        },
+        {
+          "order": 6,
+          "action": "A = Sector area - Triangle area (use (1/2)r² sinθ)",
+          "next": "END"
+        },
+        {
+          "order": 7,
+          "action": "Is it a ring/annulus?",
+          "decision": true,
+          "if_yes": 8,
+          "if_no": 9
+        },
+        {
+          "order": 8,
+          "action": "A = π(R² - r²)",
+          "next": "END"
+        },
+        {
+          "order": 9,
+          "action": "Combination: Break into known shapes, sum/difference as needed",
+          "next": "END"
+        }
       ]
     }
   ],
-
   "visualizations": [],
-
   "common_misconceptions": [
     "The area of a semicircle is πr² — FALSE: A semicircle is half a circle, so area = πr²/2. The circumference of a semicircle = πr + 2r (the curved part + the diameter), not just πr.",
     "The perimeter of a sector is just the arc length — FALSE: The perimeter of a sector includes two radii plus the arc length: P = 2r + (θ/360) × 2πr.",
@@ -1262,5 +1582,6 @@
     "A sector with θ = 60° always has area 1/6 of the circle regardless of the radius — CORRECT: The fraction depends only on θ, not on r.",
     "The length of an arc is always less than the corresponding chord length — FALSE: The arc is curved and is actually LONGER than the straight chord connecting the same endpoints. Arc > chord for any non-zero angle.",
     "For θ = 180°, there is no triangle in the segment — CORRECT: When the chord is a diameter (θ = 180°), the three points (center and two endpoints of diameter) are collinear, so the triangle area is zero, and the segment = semicircle."
-  ]
+  ],
+  "chapterNumber": 11
 }

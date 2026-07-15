@@ -37,7 +37,7 @@ const NAV_ITEMS = [
   { id:'exercises',     icon:'📝', label:'Exercises' },
   { id:'rd-sharma',     icon:'📖', label:'RD Sharma' },
   { id:'rs-aggarwal',   icon:'📖', label:'RS Aggarwal' },
-  { id:'past-papers',   icon:'📋', label:'Past Papers' },
+  { id:'model-papers',  icon:'📋', label:'Model Papers' },
   { id:'quizzes',       icon:'🧪', label:'Practice Quizzes' },
   { id:'vedic-math',    icon:'⚡', label:'Vedic Math' },
   { id:'mind-maps',     icon:'🧠', label:'Mind Maps' },
@@ -226,27 +226,39 @@ function ExtensionView({ title, data }) {
   );
 }
 
-/* ───────── PAST PAPERS ───────── */
-function PastPapers({ lesson }) {
-  const pp = lesson?.past_papers;
-  if (!pp) return null;
+/* ───────── MODEL PAPERS ───────── */
+function ModelPapers({ lesson }) {
+  const mp = lesson?.model_papers;
+  if (!mp) return null;
+  const tiers = [
+    { id:'simple', label:'Simple', color:'green' },
+    { id:'medium', label:'Medium', color:'amber' },
+    { id:'complex', label:'Complex', color:'red' },
+  ];
   return div({className:'card'},
     div({className:'card-header'},
-      h2(null, '📋 Past 10 Years Paper Pattern Analysis'),
-      p(null, pp.analysis_summary||'CBSE Class X board exam pattern analysis'),
+      h2(null, '📋 Model Papers — 3-Tier Practice'),
+      p(null, 'Original problems with step-by-step solutions for board & competitive exam prep'),
     ),
-    pp.pattern ? Object.entries(pp.pattern).map(([key, items]) => div({key, className:'paper-section'},
-      h3(null, key.split('_').join(' ').toUpperCase()),
-      ul({className:'paper-list'}, items.map((item, i) => li({key:i}, item)))
-    )) : null,
-    pp.scoring_areas?.length ? div({className:'paper-section'},
-      h3(null, '🎯 Scoring Areas'),
-      div(null, pp.scoring_areas.map((a,i) => span({key:i,className:'scoring-tag cyan'}, a)))
-    ) : null,
-    pp.common_mistakes?.length ? div({className:'paper-section'},
-      h3(null, '❌ Common Mistakes to Avoid'),
-      ul({className:'paper-list'}, pp.common_mistakes.map((m,i) => li({key:i,style:{borderLeftColor:'var(--neonRed)'}}, m)))
-    ) : null,
+    tiers.map(tier => {
+      const items = mp[tier.id] || [];
+      if (!items.length) return null;
+      return div({key:tier.id, className:'paper-section'},
+        h3({style:{color:'var(--neon'+tier.color.charAt(0).toUpperCase()+tier.color.slice(1)+')'}},
+          '▸ '+tier.label+' ('+items.length+' problems)'
+        ),
+        items.map((item, i) => div({key:i, style:{padding:'10px 14px',marginBottom:8,background:'var(--bg2)',borderRadius:8}},
+          div({style:{fontWeight:600,fontSize:13,marginBottom:4}}, (i+1)+'. '+item.question),
+          item.steps?.length ? div({style:{fontSize:12,color:'var(--textDim)',marginBottom:4}},
+            item.steps.map((s, j) => div({key:j}, '→ '+s))
+          ) : null,
+          item.answer ? div({style:{fontSize:12,color:'var(--neonGreen)',fontWeight:600}}, '✅ '+item.answer) : null,
+          item.hints?.length ? div({style:{fontSize:11,color:'var(--neonCyan)',marginTop:4,fontStyle:'italic'}},
+            '💡 '+item.hints.join(' | ')
+          ) : null,
+        ))
+      );
+    })
   );
 }
 
@@ -575,7 +587,7 @@ function App() {
       case 'exercises':   return h(Exercises, {lesson});
       case 'rd-sharma':   return h(ExtensionView, {title:'📖 RD Sharma Extensions', data:lesson.rd_sharma_extensions});
       case 'rs-aggarwal': return h(ExtensionView, {title:'📖 RS Aggarwal Extensions', data:lesson.rs_aggarwal_extensions});
-      case 'past-papers': return h(PastPapers, {lesson});
+      case 'model-papers': return h(ModelPapers, {lesson});
       case 'quizzes':     return h(Quizzes, {lesson});
       case 'vedic-math':  return h(VedicMath, {lesson});
       case 'mind-maps':   return h(MindMaps, {lesson});

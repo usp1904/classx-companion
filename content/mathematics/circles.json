@@ -4,7 +4,6 @@
   "lesson": 10,
   "title": "Circles — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Define a tangent to a circle and prove its uniqueness at a point",
     "Prove and apply the Tangent-Radius perpendicular theorem",
@@ -14,9 +13,11 @@
     "Connect circle theorems to real-life applications in Indian context",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS9_CIRCLES_BASIC", "MATH_CLASS8_GEOMETRY", "MATH_CLASS9_TRIANGLES"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS9_CIRCLES_BASIC",
+    "MATH_CLASS8_GEOMETRY",
+    "MATH_CLASS9_TRIANGLES"
+  ],
   "concepts": [
     {
       "name": "Tangent to a Circle — The Line That Just Touches",
@@ -67,7 +68,6 @@
       ]
     }
   ],
-
   "theorems": [
     {
       "name": "Tangent-Radius Perpendicular Theorem",
@@ -152,7 +152,6 @@
       ]
     }
   ],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -219,7 +218,6 @@
       "speed_mode": "Golden step: When a circle touches all sides of a quadrilateral, tangents from each vertex are equal in pairs. This is a standard board exam 4-mark question."
     }
   ],
-
   "exercises": {
     "exercise_10_1": {
       "title": "Exercise 10.1 — Tangent Basics",
@@ -228,7 +226,9 @@
         {
           "id": "ex10.1-1",
           "question": "How many tangents can a circle have?",
-          "solution": ["A circle can have infinitely many tangents — one at each point on its circumference."],
+          "solution": [
+            "A circle can have infinitely many tangents — one at each point on its circumference."
+          ],
           "final_answer": "Infinitely many",
           "concept_insight": "At every point on the circumference, there is exactly one tangent perpendicular to the radius at that point."
         },
@@ -334,7 +334,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 8 — Circles (Note: chapter numbering varies by edition; verify against your copy)",
     "topics": [
@@ -373,7 +372,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 10 — Circles",
     "topics": [
@@ -398,70 +396,167 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Circles consistently contributes 4-6 marks (1-2 short answer + 1 long answer).",
-    "pattern": {
-      "short_answer_1_mark": [
-        "Number of tangents from a point inside/on/outside a circle (asked in 2017, 2020, 2023)",
-        "Tangent length and radius relationship (asked in 2018, 2021, 2024)"
-      ],
-      "short_answer_2_marks": [
-        "Find tangent length using Pythagoras (asked in 2019, 2022, 2025)",
-        "Find radius given tangent length and distance from center"
-      ],
-      "long_answer_4_marks": [
-        "Prove that tangents from an external point are equal (asked in 2018, 2020, 2023, 2026)",
-        "Quadrilateral circumscribed around a circle — side length proof (asked in 2019, 2021, 2024)",
-        "Concentric circles and tangent chord problem (asked in 2022, 2025)"
-      ]
-    },
-    "scoring_areas": [
-      "Equal tangents theorem proof — easy full marks, memorize the RHS congruence steps",
-      "Tangent-Radius theorem with Pythagoras — identify the right triangle first",
-      "Quadrilateral tangent sums — use the 'opposite sides equal' property"
+  "model_papers": {
+    "simple": [
+      {
+        "question": "Find the length of the tangent drawn from a point 17 cm away from the center of a circle of radius 8 cm.",
+        "answer": "Tangent length = 15 cm",
+        "steps": [
+          "Let O be centre, P external point, T point of tangency",
+          "OT = 8 cm (radius), OP = 17 cm",
+          "OT ⟂ PT (Tangent-Radius theorem)",
+          "PT² = OP² - OT² = 17² - 8² = 289 - 64 = 225",
+          "PT = √225 = 15 cm"
+        ],
+        "hints": [
+          "The radius to the point of tangency is perpendicular to the tangent, forming a right triangle."
+        ]
+      },
+      {
+        "question": "A tangent PQ touches a circle at point Q. If O is the centre and ∠OPQ = 30°, find ∠POQ.",
+        "answer": "∠POQ = 60°",
+        "steps": [
+          "OQ ⟂ PQ (Tangent-Radius theorem), so ∠OQP = 90°",
+          "In ∆OPQ: ∠OPQ + ∠OQP + ∠POQ = 180°",
+          "30° + 90° + ∠POQ = 180°",
+          "∠POQ = 60°"
+        ],
+        "hints": [
+          "Use the angle sum property of a triangle after applying the Tangent-Radius theorem."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Forgetting to state OT ⟂ PT before using Pythagoras",
-      "Confusing which triangle is right-angled",
-      "Not establishing RHS congruence properly in the equal tangents proof"
+    "medium": [
+      {
+        "question": "Two tangents TP and TQ are drawn from an external point T to a circle with centre O. If ∠PTQ = 50°, find ∠POQ.",
+        "answer": "∠POQ = 130°",
+        "steps": [
+          "OP ⟂ TP and OQ ⟂ TQ (Tangent-Radius theorem)",
+          "∠OPT = ∠OQT = 90°",
+          "In quadrilateral OPTQ: sum of angles = 360°",
+          "∠POQ + 90° + 50° + 90° = 360°",
+          "∠POQ = 360° - 230° = 130°"
+        ],
+        "hints": [
+          "The quadrilateral formed by the centre, tangency points, and external point has two right angles."
+        ]
+      },
+      {
+        "question": "A circle touches all sides of a quadrilateral ABCD. If AB = 9 cm, BC = 8 cm, and CD = 5 cm, find AD.",
+        "answer": "AD = 6 cm",
+        "steps": [
+          "For a circle inscribed in a quadrilateral, AB + CD = AD + BC",
+          "9 + 5 = AD + 8",
+          "14 = AD + 8",
+          "AD = 6 cm"
+        ],
+        "hints": [
+          "In a circumscribed quadrilateral, the sums of lengths of opposite sides are equal."
+        ]
+      },
+      {
+        "question": "Two concentric circles have radii 10 cm and 6 cm. Find the length of the chord of the larger circle which touches the smaller circle.",
+        "answer": "Chord length = 16 cm",
+        "steps": [
+          "Let O be the common centre, chord AB of larger touches smaller at T",
+          "OT ⟂ AB and OT = 6 cm (radius of smaller)",
+          "OA = 10 cm (radius of larger)",
+          "AT² = OA² - OT² = 100 - 36 = 64, so AT = 8 cm",
+          "Since OT ⟂ AB, T is midpoint of AB",
+          "AB = 2 × AT = 16 cm"
+        ],
+        "hints": [
+          "The perpendicular from the centre to a chord bisects the chord."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "question": "From an external point P, a tangent PT of length 10 cm is drawn to a circle. If a secant PAB intersects the circle at A and B with PA = 5 cm, find AB.",
+        "answer": "AB = 15 cm",
+        "steps": [
+          "By Tangent-Secant Power Theorem: PT² = PA × PB",
+          "10² = 5 × PB",
+          "100 = 5 × PB → PB = 20 cm",
+          "AB = PB - PA = 20 - 5 = 15 cm"
+        ],
+        "hints": [
+          "Apply the power of a point theorem: tangent length² = external part × whole secant."
+        ]
+      },
+      {
+        "question": "Two circles of radii 8 cm and 5 cm have their centres 15 cm apart. Find the length of the direct common tangent.",
+        "answer": "Length = 6√6 cm",
+        "steps": [
+          "Direct common tangent formula: L = √(d² - (r₁ - r₂)²)",
+          "L = √(15² - (8-5)²)",
+          "L = √(225 - 9) = √216 = 6√6 cm"
+        ],
+        "hints": [
+          "For direct common tangents, subtract the radii; for transverse, add them under the square root."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "How many tangents can be drawn from a point inside a circle?",
-        "options": ["0", "1", "2", "Infinite"],
+        "options": [
+          "0",
+          "1",
+          "2",
+          "Infinite"
+        ],
         "correct": 0,
         "explanation": "From a point inside a circle, no tangent can be drawn. Any line through an interior point will cut the circle at two points (secant)."
       },
       {
         "id": "q-s-2",
         "question": "A tangent to a circle makes an angle of ___° with the radius at the point of contact.",
-        "options": ["45°", "60°", "90°", "180°"],
+        "options": [
+          "45°",
+          "60°",
+          "90°",
+          "180°"
+        ],
         "correct": 2,
         "explanation": "The Tangent-Radius theorem states the radius is perpendicular (90°) to the tangent at the point of contact."
       },
       {
         "id": "q-s-3",
         "question": "How many parallel tangents can a circle have at most?",
-        "options": ["1", "2", "3", "4"],
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
         "correct": 1,
         "explanation": "A circle can have at most two parallel tangents — one at each end of a diameter."
       },
       {
         "id": "q-s-4",
         "question": "If the distance from the center to an external point is 10 cm and the radius is 6 cm, the tangent length is:",
-        "options": ["6 cm", "8 cm", "10 cm", "12 cm"],
+        "options": [
+          "6 cm",
+          "8 cm",
+          "10 cm",
+          "12 cm"
+        ],
         "correct": 1,
         "explanation": "Tangent length = √(10² - 6²) = √(100 - 36) = √64 = 8 cm."
       },
       {
         "id": "q-s-5",
         "question": "The lengths of two tangents from the same external point are:",
-        "options": ["Always equal", "Always different", "Equal only for isosceles triangle", "Cannot determine"],
+        "options": [
+          "Always equal",
+          "Always different",
+          "Equal only for isosceles triangle",
+          "Cannot determine"
+        ],
         "correct": 0,
         "explanation": "The Equal Tangents Theorem states that tangents from an external point are always equal in length."
       }
@@ -470,35 +565,60 @@
       {
         "id": "q-m-1",
         "question": "Two tangents TP and TQ are drawn from point T to a circle. If ∠PTQ = 60°, find ∠POQ (O is center).",
-        "options": ["60°", "90°", "120°", "180°"],
+        "options": [
+          "60°",
+          "90°",
+          "120°",
+          "180°"
+        ],
         "correct": 2,
         "explanation": "In quadrilateral OPTQ: ∠OPT = ∠OQT = 90° (radius ⟂ tangent). Sum = 360°. So ∠POQ + 90° + 60° + 90° = 360° → ∠POQ = 120°."
       },
       {
         "id": "q-m-2",
         "question": "In a quadrilateral ABCD circumscribing a circle, AB = 8, BC = 7, CD = 5. Find AD.",
-        "options": ["4", "6", "8", "10"],
+        "options": [
+          "4",
+          "6",
+          "8",
+          "10"
+        ],
         "correct": 1,
         "explanation": "AB + CD = AD + BC → 8 + 5 = AD + 7 → 13 = AD + 7 → AD = 6."
       },
       {
         "id": "q-m-3",
         "question": "A chord of a larger circle (radius 13 cm) touches a smaller concentric circle (radius 5 cm). Find the chord length.",
-        "options": ["12 cm", "24 cm", "10 cm", "20 cm"],
+        "options": [
+          "12 cm",
+          "24 cm",
+          "10 cm",
+          "20 cm"
+        ],
         "correct": 1,
         "explanation": "Half-chord = √(13² - 5²) = √(169 - 25) = √144 = 12. Full chord = 24 cm."
       },
       {
         "id": "q-m-4",
         "question": "If PT is tangent, PAB is secant, PT = 12, PA = 9, find AB.",
-        "options": ["4", "5", "7", "16"],
+        "options": [
+          "4",
+          "5",
+          "7",
+          "16"
+        ],
         "correct": 2,
         "explanation": "PT² = PA × PB → 144 = 9 × PB → PB = 16. AB = PB - PA = 16 - 9 = 7."
       },
       {
         "id": "q-m-5",
         "question": "From point P outside a circle, a tangent PT = 15 cm is drawn. If the distance from P to center is 17 cm, find radius.",
-        "options": ["6 cm", "8 cm", "10 cm", "12 cm"],
+        "options": [
+          "6 cm",
+          "8 cm",
+          "10 cm",
+          "12 cm"
+        ],
         "correct": 1,
         "explanation": "r² = d² - t² = 17² - 15² = 289 - 225 = 64 → r = 8 cm."
       }
@@ -507,7 +627,12 @@
       {
         "id": "q-c-1",
         "question": "From an external point P, a tangent PT and a secant PAB are drawn to a circle. If PT = 8 cm and PA = 4 cm, find the length of chord AB.",
-        "options": ["12 cm", "8 cm", "16 cm", "10 cm"],
+        "options": [
+          "12 cm",
+          "8 cm",
+          "16 cm",
+          "10 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "PT² = PA × PB → 64 = 4 × PB → PB = 16. AB = PB - PA = 16 - 4 = 12 cm.",
@@ -521,7 +646,12 @@
       {
         "id": "q-c-2",
         "question": "Two circles of radii 7 cm and 5 cm have their centers 20 cm apart. Find the length of the transverse common tangent.",
-        "options": ["√351 cm", "√400 cm", "√276 cm", "√224 cm"],
+        "options": [
+          "√351 cm",
+          "√400 cm",
+          "√276 cm",
+          "√224 cm"
+        ],
         "correct": 2,
         "explanation": {
           "correct": "Length = √(d² - (r₁+r₂)²) = √(400 - 144) = √256 = 16. Wait, let me recalculate: r₁+r₂ = 12, d² = 400. Transverse tangent = √(400 - 12²) = √(400-144) = √256 = 16. So answer is √256 = 16. Option √276 is close but incorrect. Direct common = √(d² - (r₁-r₂)²) = √(400-4) = √396."
@@ -529,7 +659,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Vedic Method: Equal Tangents Using Symmetry (Samasya Puraka)",
@@ -542,7 +671,7 @@
           "steps": [
             "Vedic insight: By symmetry, quadrilateral OPTQ is kite-shaped with two right angles at P and Q.",
             "Sum of angles in quadrilateral = 360°, so ∠PTQ = 360° - 90° - 90° - 120° = 60°.",
-            "Vedic shortcut: ∠PTQ = 180° - ∠POQ = 180° - 120° = 60°." 
+            "Vedic shortcut: ∠PTQ = 180° - ∠POQ = 180° - 120° = 60°."
           ],
           "regular_method": "Same, but Vedic approach skips the quadrilateral angle-sum step by using the 'supplementary angles' property directly."
         },
@@ -592,7 +721,6 @@
       ]
     }
   ],
-
   "common_misconceptions": [
     "Students think a tangent can cross the circle — but a tangent touches at exactly one point and does not enter the circle. A line that crosses is a secant.",
     "Students believe the radius is always perpendicular to the entire line, not just at the point of tangency. The radius is perpendicular to the tangent only at the point of contact.",
@@ -602,7 +730,6 @@
     "Students misuse the Tangent-Secant Theorem: the angle between tangent and chord equals angle in the alternate segment, but they confuse which segment is 'alternate'. Draw the chord and identify the opposite segment.",
     "In concentric circle problems, students forget that the radius to the chord bisects it. Always draw the perpendicular from center to chord first."
   ],
-
   "mind_maps": {
     "title": "Circles — Complete Mind Map",
     "root": "🔵 Circles (NCERT Ch 10)",
@@ -668,64 +795,229 @@
       }
     ]
   },
-
   "concept_maps": {
     "nodes": [
-      { "id": "circ", "label": "Circle", "group": "foundation" },
-      { "id": "rad", "label": "Radius", "group": "foundation" },
-      { "id": "tan", "label": "Tangent", "group": "core" },
-      { "id": "sec", "label": "Secant", "group": "core" },
-      { "id": "rt", "label": "Tangent ⟂ Radius", "group": "theorem" },
-      { "id": "et", "label": "Equal Tangents", "group": "theorem" },
-      { "id": "as", "label": "Alternate Segment", "group": "theorem" },
-      { "id": "tp", "label": "Tangent Power Theorem", "group": "application" },
-      { "id": "cq", "label": "Circumscribed Quadrilateral", "group": "application" },
-      { "id": "cl", "label": "Chord Length (Concentric)", "group": "application" },
-      { "id": "ct", "label": "Common Tangents", "group": "application" },
-      { "id": "cons", "label": "Constructions", "group": "application" }
+      {
+        "id": "circ",
+        "label": "Circle",
+        "group": "foundation"
+      },
+      {
+        "id": "rad",
+        "label": "Radius",
+        "group": "foundation"
+      },
+      {
+        "id": "tan",
+        "label": "Tangent",
+        "group": "core"
+      },
+      {
+        "id": "sec",
+        "label": "Secant",
+        "group": "core"
+      },
+      {
+        "id": "rt",
+        "label": "Tangent ⟂ Radius",
+        "group": "theorem"
+      },
+      {
+        "id": "et",
+        "label": "Equal Tangents",
+        "group": "theorem"
+      },
+      {
+        "id": "as",
+        "label": "Alternate Segment",
+        "group": "theorem"
+      },
+      {
+        "id": "tp",
+        "label": "Tangent Power Theorem",
+        "group": "application"
+      },
+      {
+        "id": "cq",
+        "label": "Circumscribed Quadrilateral",
+        "group": "application"
+      },
+      {
+        "id": "cl",
+        "label": "Chord Length (Concentric)",
+        "group": "application"
+      },
+      {
+        "id": "ct",
+        "label": "Common Tangents",
+        "group": "application"
+      },
+      {
+        "id": "cons",
+        "label": "Constructions",
+        "group": "application"
+      }
     ],
     "edges": [
-      ["circ", "rad"],
-      ["circ", "tan"],
-      ["circ", "sec"],
-      ["rad", "rt"],
-      ["tan", "rt"],
-      ["tan", "et"],
-      ["tan", "as"],
-      ["sec", "as"],
-      ["as", "tp"],
-      ["et", "cq"],
-      ["rt", "cl"],
-      ["tan", "ct"],
-      ["rt", "cons"]
+      [
+        "circ",
+        "rad"
+      ],
+      [
+        "circ",
+        "tan"
+      ],
+      [
+        "circ",
+        "sec"
+      ],
+      [
+        "rad",
+        "rt"
+      ],
+      [
+        "tan",
+        "rt"
+      ],
+      [
+        "tan",
+        "et"
+      ],
+      [
+        "tan",
+        "as"
+      ],
+      [
+        "sec",
+        "as"
+      ],
+      [
+        "as",
+        "tp"
+      ],
+      [
+        "et",
+        "cq"
+      ],
+      [
+        "rt",
+        "cl"
+      ],
+      [
+        "tan",
+        "ct"
+      ],
+      [
+        "rt",
+        "cons"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "How to Solve Any Tangent Problem",
       "steps": [
-        { "order": 1, "action": "Identify: Does the problem involve a tangent to a circle?", "decision": true, "if_yes": 2, "if_no": "END" },
-        { "order": 2, "action": "Draw radius to point of tangency. Mark 90° angle.", "decision": false },
-        { "order": 3, "action": "Do you have a right triangle? (radius, tangent segment, distance to center)", "decision": true, "if_yes": 4, "if_no": 5 },
-        { "order": 4, "action": "Apply Pythagoras: d² = r² + t². Solve for missing side.", "decision": false, "if_yes": "END", "if_no": "END" },
-        { "order": 5, "action": "Are there two tangents from same external point?", "decision": true, "if_yes": 6, "if_no": 7 },
-        { "order": 6, "action": "Apply Equal Tangents Theorem: lengths are equal. Check quadrilateral angle sum.", "decision": false, "if_yes": "END", "if_no": "END" },
-        { "order": 7, "action": "Is there a tangent and a secant from same point?", "decision": true, "if_yes": 8, "if_no": 9 },
-        { "order": 8, "action": "Apply Tangent-Secant Power: PT² = PA × PB. Solve for missing segment.", "decision": false, "if_yes": "END", "if_no": "END" },
-        { "order": 9, "action": "Is it a tangent-chord angle problem?", "decision": true, "if_yes": 10, "if_no": 11 },
-        { "order": 10, "action": "Apply Alternate Segment Theorem: angle = angle in opposite segment.", "decision": false, "next": "END" },
-        { "order": 11, "action": "Check: concentric circles with tangent chord? Use half-chord = √(R²-r²).", "decision": false, "next": "END" }
+        {
+          "order": 1,
+          "action": "Identify: Does the problem involve a tangent to a circle?",
+          "decision": true,
+          "if_yes": 2,
+          "if_no": "END"
+        },
+        {
+          "order": 2,
+          "action": "Draw radius to point of tangency. Mark 90° angle.",
+          "decision": false
+        },
+        {
+          "order": 3,
+          "action": "Do you have a right triangle? (radius, tangent segment, distance to center)",
+          "decision": true,
+          "if_yes": 4,
+          "if_no": 5
+        },
+        {
+          "order": 4,
+          "action": "Apply Pythagoras: d² = r² + t². Solve for missing side.",
+          "decision": false,
+          "if_yes": "END",
+          "if_no": "END"
+        },
+        {
+          "order": 5,
+          "action": "Are there two tangents from same external point?",
+          "decision": true,
+          "if_yes": 6,
+          "if_no": 7
+        },
+        {
+          "order": 6,
+          "action": "Apply Equal Tangents Theorem: lengths are equal. Check quadrilateral angle sum.",
+          "decision": false,
+          "if_yes": "END",
+          "if_no": "END"
+        },
+        {
+          "order": 7,
+          "action": "Is there a tangent and a secant from same point?",
+          "decision": true,
+          "if_yes": 8,
+          "if_no": 9
+        },
+        {
+          "order": 8,
+          "action": "Apply Tangent-Secant Power: PT² = PA × PB. Solve for missing segment.",
+          "decision": false,
+          "if_yes": "END",
+          "if_no": "END"
+        },
+        {
+          "order": 9,
+          "action": "Is it a tangent-chord angle problem?",
+          "decision": true,
+          "if_yes": 10,
+          "if_no": 11
+        },
+        {
+          "order": 10,
+          "action": "Apply Alternate Segment Theorem: angle = angle in opposite segment.",
+          "decision": false,
+          "next": "END"
+        },
+        {
+          "order": 11,
+          "action": "Check: concentric circles with tangent chord? Use half-chord = √(R²-r²).",
+          "decision": false,
+          "next": "END"
+        }
       ]
     },
     {
       "title": "Circumscribed Quadrilateral — Finding Missing Side",
       "steps": [
-        { "order": 1, "action": "Given: quadrilateral ABCD circumscribes a circle. Sides AB, BC, CD known. Find AD.", "decision": false },
-        { "order": 2, "action": "Apply: AB + CD = AD + BC (property of circumscribed quadrilateral)", "decision": false },
-        { "order": 3, "action": "Substitute known values: AD = AB + CD - BC", "decision": false },
-        { "order": 4, "action": "Calculate and verify: compute result", "decision": false, "next": "END" }
+        {
+          "order": 1,
+          "action": "Given: quadrilateral ABCD circumscribes a circle. Sides AB, BC, CD known. Find AD.",
+          "decision": false
+        },
+        {
+          "order": 2,
+          "action": "Apply: AB + CD = AD + BC (property of circumscribed quadrilateral)",
+          "decision": false
+        },
+        {
+          "order": 3,
+          "action": "Substitute known values: AD = AB + CD - BC",
+          "decision": false
+        },
+        {
+          "order": 4,
+          "action": "Calculate and verify: compute result",
+          "decision": false,
+          "next": "END"
+        }
       ]
     }
-  ]
+  ],
+  "chapterNumber": 8
 }

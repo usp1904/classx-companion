@@ -4,7 +4,6 @@
   "lesson": 3,
   "title": "Pair of Linear Equations in Two Variables — Complete Learning Module",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Solve systems of linear equations using graphical, substitution, and elimination methods",
     "Determine whether a system is consistent, inconsistent, or dependent",
@@ -14,9 +13,11 @@
     "Connect to Indian context scenarios like GST calculation, ration distribution, and fare systems",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive exam readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS7_SIMPLE_EQUATIONS", "MATH_CLASS8_LINEAR_EQUATIONS_ONE_VAR", "MATH_CLASS9_LINEAR_EQUATIONS_TWO_VAR"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS7_SIMPLE_EQUATIONS",
+    "MATH_CLASS8_LINEAR_EQUATIONS_ONE_VAR",
+    "MATH_CLASS9_LINEAR_EQUATIONS_TWO_VAR"
+  ],
   "concepts": [
     {
       "name": "Linear Equations in Two Variables — The Basics",
@@ -81,9 +82,7 @@
       ]
     }
   ],
-
   "theorems": [],
-
   "worked_examples": [
     {
       "id": "we-lin-1",
@@ -168,7 +167,6 @@
       "competitive_shortcut": "Solve mentally: If 7 years ago his age was double, and today he is 5 years older, then 7 years ago he was 5 years older too. So if he was 2 × her age, and the difference is 5, her past age = 5. Present = 12. His present = 17."
     }
   ],
-
   "exercises": {
     "exercise_3_1": {
       "title": "Exercise 3.1 — Graphical Method",
@@ -482,7 +480,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 3 — Pair of Linear Equations in Two Variables",
     "topics": [
@@ -528,7 +525,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 3 — Linear Equations in Two Variables",
     "topics": [
@@ -571,45 +567,117 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): This chapter contributes 6-10 marks. Word problems dominate the long-answer section. Elimination and substitution methods are equally tested.",
-    "pattern": {
-      "short_answer_1_mark": [
-        "State the condition for consistent/inconsistent system (asked in 2018, 2021, 2024)",
-        "Find the value of k for which the system has no solution (asked in 2019, 2022, 2025)"
-      ],
-      "short_answer_2_marks": [
-        "Solve a pair of linear equations by substitution/elimination (asked in 2020, 2022, 2024)",
-        "Check graphically if system is consistent (asked in 2017, 2021, 2023)"
-      ],
-      "long_answer_4_marks": [
-        "Solve word problems (age, numbers, fractions, boat-stream) — every year without fail",
-        "Solve equations reducible to linear form (asked in 2019, 2022, 2025)",
-        "Find unknown coefficients given conditions on the system (asked in 2020, 2023, 2026)"
-      ]
-    },
-    "scoring_areas": [
-      "Word problems — define variables clearly, write equations correctly, solve step-by-step for full marks",
-      "Elimination method — easy to check; always verify your answer",
-      "Consistency conditions — memorize ratio rules; direct formula application",
-      "Parameter finding — equate ratios appropriately for no-solution/infinite-solution cases"
+  "model_papers": {
+    "simple": [
+      {
+        "id": "mp-ple-s-1",
+        "question": "Solve by substitution: x + y = 8 and x - y = 2.",
+        "answer": "x = 5, y = 3",
+        "steps": [
+          "From x - y = 2, we get x = y + 2",
+          "Substitute into x + y = 8: (y + 2) + y = 8 → 2y + 2 = 8 → 2y = 6 → y = 3",
+          "Then x = 3 + 2 = 5",
+          "Verification: 5 + 3 = 8 ✓, 5 - 3 = 2 ✓"
+        ],
+        "hints": [
+          "Isolate one variable from the simpler equation, then substitute into the other."
+        ]
+      },
+      {
+        "id": "mp-ple-s-2",
+        "question": "Check whether the pair 2x + 3y = 7 and 4x + 6y = 14 is consistent. If yes, how many solutions does it have?",
+        "answer": "Consistent with infinitely many solutions",
+        "steps": [
+          "Compare ratios: a₁/a₂ = 2/4 = 1/2, b₁/b₂ = 3/6 = 1/2, c₁/c₂ = 7/14 = 1/2",
+          "Since a₁/a₂ = b₁/b₂ = c₁/c₂, the lines are coincident",
+          "The system has infinitely many solutions (dependent system)"
+        ],
+        "hints": [
+          "Check if one equation is a multiple of the other. All three ratios being equal means coincident lines."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Forgetting to define variables in word problems (deducted for missing step)",
-      "Inconsistent units (e.g., mixing rupees and paise without conversion)",
-      "Writing the wrong sign when moving terms in elimination method",
-      "Confusing unique vs infinite solution conditions: a₁/a₂ = b₁/b₂ = c₁/c₂ is INFINITE, not unique",
-      "In age problems: using present ages where past/future ages are needed"
+    "medium": [
+      {
+        "id": "mp-ple-m-1",
+        "question": "Solve by elimination: 3x + 2y = 11 and 2x + 3y = 4.",
+        "answer": "x = 5, y = -2",
+        "steps": [
+          "Multiply (1) by 2: 6x + 4y = 22",
+          "Multiply (2) by 3: 6x + 9y = 12",
+          "Subtract: (6x + 4y) - (6x + 9y) = 22 - 12 → -5y = 10 → y = -2",
+          "Substitute in (1): 3x + 2(-2) = 11 → 3x = 15 → x = 5",
+          "Verification: 3(5) + 2(-2) = 15 - 4 = 11 ✓, 2(5) + 3(-2) = 10 - 6 = 4 ✓"
+        ],
+        "hints": [
+          "Multiply each equation by suitable numbers so that coefficients of one variable become equal, then subtract."
+        ]
+      },
+      {
+        "id": "mp-ple-m-2",
+        "question": "The sum of digits of a two-digit number is 9. Nine times this number is twice the number formed by reversing the digits. Find the number.",
+        "answer": "18",
+        "steps": [
+          "Let tens digit = x, units digit = y. Number = 10x + y",
+          "Sum of digits: x + y = 9",
+          "Reversed number = 10y + x. Given: 9(10x + y) = 2(10y + x)",
+          "Simplify: 90x + 9y = 20y + 2x → 88x = 11y → 8x = y",
+          "Substitute in x + y = 9: x + 8x = 9 → 9x = 9 → x = 1, y = 8",
+          "The number is 18"
+        ],
+        "hints": [
+          "A two-digit number = 10x + y. The reversed number = 10y + x. Form two equations and solve."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "id": "mp-ple-c-1",
+        "question": "Solve using a suitable method: 37x + 43y = 123 and 43x + 37y = 117.",
+        "answer": "x = 1, y = 2",
+        "steps": [
+          "Add both equations: (37x+43y) + (43x+37y) = 123+117 → 80x + 80y = 240 → x + y = 3",
+          "Subtract (2)-(1): (43x+37y)-(37x+43y) = 117-123 → 6x - 6y = -6 → x - y = -1",
+          "Now solve: x + y = 3 and x - y = -1",
+          "Adding: 2x = 2 → x = 1",
+          "Then y = 3 - 1 = 2",
+          "Verification: 37(1)+43(2)=37+86=123 ✓, 43(1)+37(2)=43+74=117 ✓"
+        ],
+        "hints": [
+          "For symmetric equations where coefficients swap, add and subtract the equations to eliminate variables."
+        ]
+      },
+      {
+        "id": "mp-ple-c-2",
+        "question": "A motorboat whose speed in still water is 18 km/h takes 1 hour more to go 24 km upstream than to return downstream. Find the speed of the stream.",
+        "answer": "6 km/h",
+        "steps": [
+          "Let speed of stream = x km/h",
+          "Upstream speed = 18 - x, downstream speed = 18 + x",
+          "Time upstream = 24/(18-x), time downstream = 24/(18+x)",
+          "Difference: 24/(18-x) - 24/(18+x) = 1",
+          "Multiply by (18-x)(18+x): 24(18+x) - 24(18-x) = (18)² - x²",
+          "432 + 24x - 432 + 24x = 324 - x² → 48x = 324 - x²",
+          "x² + 48x - 324 = 0 → (x+54)(x-6) = 0 → x = 6 (reject x = -54)",
+          "Speed of stream = 6 km/h"
+        ],
+        "hints": [
+          "Time = Distance/Speed. Upstream takes longer so subtract downstream time from upstream time."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-ls-1",
         "question": "How many solutions does a pair of intersecting lines have?",
-        "options": ["One", "Two", "Infinite", "None"],
+        "options": [
+          "One",
+          "Two",
+          "Infinite",
+          "None"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Intersecting lines cross at exactly one point → one unique solution.",
@@ -623,7 +691,12 @@
       {
         "id": "q-ls-2",
         "question": "Solve: x + y = 10 and x - y = 2. What is x?",
-        "options": ["6", "4", "8", "5"],
+        "options": [
+          "6",
+          "4",
+          "8",
+          "5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Adding: 2x = 12 → x = 6. Then y = 4. Verification: 6 + 4 = 10 ✓, 6 - 4 = 2 ✓",
@@ -637,7 +710,12 @@
       {
         "id": "q-ls-3",
         "question": "Which pair has infinitely many solutions?",
-        "options": ["x + y = 2, 2x + 2y = 4", "x + y = 2, x - y = 0", "x + y = 2, x + y = 4", "x + y = 2, 2x - y = 1"],
+        "options": [
+          "x + y = 2, 2x + 2y = 4",
+          "x + y = 2, x - y = 0",
+          "x + y = 2, x + y = 4",
+          "x + y = 2, 2x - y = 1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "2x + 2y = 4 is just 2 times x + y = 2. They are the same line → infinite solutions.",
@@ -651,7 +729,12 @@
       {
         "id": "q-ls-4",
         "question": "The graph of a pair of parallel lines represents:",
-        "options": ["No solution", "Unique solution", "Infinite solutions", "Two solutions"],
+        "options": [
+          "No solution",
+          "Unique solution",
+          "Infinite solutions",
+          "Two solutions"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Parallel lines never meet, so there is no common point → no solution (inconsistent system).",
@@ -665,7 +748,12 @@
       {
         "id": "q-ls-5",
         "question": "In substitution method, we first:",
-        "options": ["Isolate one variable", "Add the equations", "Multiply by a constant", "Draw a graph"],
+        "options": [
+          "Isolate one variable",
+          "Add the equations",
+          "Multiply by a constant",
+          "Draw a graph"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "In substitution, we first isolate one variable from one equation, then substitute into the other.",
@@ -679,7 +767,12 @@
       {
         "id": "q-ls-6",
         "question": "For a unique solution, the two lines must be:",
-        "options": ["Intersecting", "Parallel", "Coincident", "None of these"],
+        "options": [
+          "Intersecting",
+          "Parallel",
+          "Coincident",
+          "None of these"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Intersecting lines cross at exactly one point, giving a unique solution.",
@@ -693,7 +786,12 @@
       {
         "id": "q-ls-7",
         "question": "If a₁/a₂ = b₁/b₂ ≠ c₁/c₂, the system is:",
-        "options": ["Inconsistent", "Consistent with unique solution", "Consistent with infinite solutions", "Dependent"],
+        "options": [
+          "Inconsistent",
+          "Consistent with unique solution",
+          "Consistent with infinite solutions",
+          "Dependent"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "a₁/a₂ = b₁/b₂ ≠ c₁/c₂ means parallel lines → no solution → inconsistent system.",
@@ -707,7 +805,12 @@
       {
         "id": "q-ls-8",
         "question": "Solve: 2x + y = 7 and x - y = 2.",
-        "options": ["x = 3, y = 1", "x = 2, y = 3", "x = 1, y = 5", "x = 4, y = -1"],
+        "options": [
+          "x = 3, y = 1",
+          "x = 2, y = 3",
+          "x = 1, y = 5",
+          "x = 4, y = -1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Adding: (2x+y)+(x-y) = 7+2 → 3x = 9 → x = 3. Then y = 7-2(3) = 1. Verification: 3-1=2 ✓.",
@@ -721,7 +824,12 @@
       {
         "id": "q-ls-9",
         "question": "A system with no solution is called:",
-        "options": ["Inconsistent", "Consistent", "Dependent", "Equivalent"],
+        "options": [
+          "Inconsistent",
+          "Consistent",
+          "Dependent",
+          "Equivalent"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "A system with no solution is called inconsistent. The lines are parallel.",
@@ -735,7 +843,12 @@
       {
         "id": "q-ls-10",
         "question": "What is the value of y in x + 2y = 5 and 3x + y = 10?",
-        "options": ["1", "2", "3", "4"],
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "From (1): x = 5-2y. Substitute in (2): 3(5-2y)+y = 10 → 15-6y+y = 10 → 15-5y = 10 → 5y = 5 → y = 1. x = 5-2=3. Verification: 3+2=5 ✓, 9+1=10 ✓",
@@ -747,12 +860,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-lm-1",
         "question": "For what value of k does x + ky = 4 and 2x + 4y = 12 have no solution?",
-        "options": ["2", "1", "3", "4"],
+        "options": [
+          "2",
+          "1",
+          "3",
+          "4"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "For no solution: a₁/a₂ = b₁/b₂ ≠ c₁/c₂. 1/2 = k/4 ≠ 4/12 = 1/3. So k/4 = 1/2 → k = 2. Also check 1/2 ≠ 1/3 ✓. So k = 2.",
@@ -766,7 +883,12 @@
       {
         "id": "q-lm-2",
         "question": "Solve by elimination: 3x + 2y = 13 and 2x + 3y = 12.",
-        "options": ["x = 3, y = 2", "x = 2, y = 3", "x = 4, y = 0.5", "x = 1, y = 5"],
+        "options": [
+          "x = 3, y = 2",
+          "x = 2, y = 3",
+          "x = 4, y = 0.5",
+          "x = 1, y = 5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Multiply (1) by 2: 6x+4y=26; (2) by 3: 6x+9y=36. Subtract: -5y = -10 → y=2. Then 3x+4=13 → 3x=9 → x=3. Verification: 3(3)+2(2)=9+4=13 ✓, 2(3)+3(2)=6+6=12 ✓",
@@ -780,7 +902,12 @@
       {
         "id": "q-lm-3",
         "question": "The sum of two numbers is 35 and their difference is 5. Find the numbers.",
-        "options": ["20 and 15", "25 and 10", "18 and 17", "22 and 13"],
+        "options": [
+          "20 and 15",
+          "25 and 10",
+          "18 and 17",
+          "22 and 13"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "x+y=35, x-y=5. Adding: 2x=40 → x=20, y=15. Verification: 20+15=35 ✓, 20-15=5 ✓",
@@ -794,7 +921,12 @@
       {
         "id": "q-lm-4",
         "question": "5 pencils and 7 pens cost ₹50. 7 pencils and 5 pens cost ₹46. Cost of one pen is:",
-        "options": ["₹5", "₹4", "₹6", "₹3"],
+        "options": [
+          "₹5",
+          "₹4",
+          "₹6",
+          "₹3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let pencil = ₹x, pen = ₹y. 5x+7y=50, 7x+5y=46. Add: 12x+12y=96 → x+y=8. Subtract 2nd-1st: 2x-2y=-4 → x-y=-2. Solving: 2x=6 → x=3, y=5. Pen costs ₹5.",
@@ -808,7 +940,12 @@
       {
         "id": "q-lm-5",
         "question": "A fraction becomes 4/5 when 1 is added to numerator and 1 is subtracted from denominator. It becomes 3/4 when numerator is halved. Find the fraction.",
-        "options": ["5/7", "3/5", "4/7", "7/9"],
+        "options": [
+          "5/7",
+          "3/5",
+          "4/7",
+          "7/9"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let fraction = x/y. Condition 1: (x+1)/(y-1)=4/5 → 5x+5=4y-4 → 5x-4y=-9. Condition 2: (x/2)/y=3/4 → x/(2y)=3/4 → 4x=6y → 2x=3y → x=3y/2. Substituting: 5(3y/2)-4y=-9 → 15y/2-8y/2=-9 → 7y/2=-9 → y=-18/7. Hmm, negative. Let me recheck condition 2: 'numerator is halved' → x/2 over y = x/(2y) = 3/4 → 4x = 6y → x=3y/2. Let me try solving: from x=3y/2 and 5x-4y=-9 → 5(3y/2)-4y=-9 → 15y/2-8y/2=-9 → 7y/2=-9 → y=-18/7. That gives negative. Let me try option 0: 5/7. Check: (5+1)/(7-1)=6/6=1, not 4/5. Let me work differently...",
@@ -818,7 +955,12 @@
       {
         "id": "q-lm-6",
         "question": "Solve: 2x + 3y = 7 and 3x + 2y = 8. What is x + y?",
-        "options": ["3", "4", "5", "15"],
+        "options": [
+          "3",
+          "4",
+          "5",
+          "15"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Add: 5x+5y=15 → x+y=3. Then subtract: (3x+2y)-(2x+3y)=8-7 → x-y=1. Solving: x=2, y=1. x+y=3.",
@@ -832,7 +974,12 @@
       {
         "id": "q-lm-7",
         "question": "If 3x - 5y = 1 and 2x + y = 5, what is 5x - 4y?",
-        "options": ["6", "7", "8", "9"],
+        "options": [
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "From (2): y=5-2x. Substitute in (1): 3x-5(5-2x)=1 → 3x-25+10x=1 → 13x=26 → x=2, y=1. 5x-4y=10-4=6.",
@@ -846,7 +993,12 @@
       {
         "id": "q-lm-8",
         "question": "The system x + y = 4, 2x + 2y = 8 has:",
-        "options": ["Infinite solutions", "No solution", "Unique solution", "Two solutions"],
+        "options": [
+          "Infinite solutions",
+          "No solution",
+          "Unique solution",
+          "Two solutions"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Second equation is just 2 times the first. They are the same line → infinite solutions. Consistency check: 1/2=1/2=4/8=1/2 ✓",
@@ -860,7 +1012,12 @@
       {
         "id": "q-lm-9",
         "question": "A two-digit number is 4 times the sum of its digits. The number is:",
-        "options": ["12, 24, 36, 48", "10, 20, 30", "11, 22, 33", "13, 26, 39"],
+        "options": [
+          "12, 24, 36, 48",
+          "10, 20, 30",
+          "11, 22, 33",
+          "13, 26, 39"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let tens digit=x, units=y. Number=10x+y. Given: 10x+y=4(x+y) → 10x+y=4x+4y → 6x=3y → y=2x. Possible: x=1,y=2→12; x=2,y=4→24; x=3,y=6→36; x=4,y=8→48. All are 4 times sum of digits.",
@@ -874,7 +1031,12 @@
       {
         "id": "q-lm-10",
         "question": "Solve 2/x + 3/y = 13 and 5/x - 4/y = -2. Then 1/x + 1/y = ?",
-        "options": ["2.5", "3.5", "4", "5"],
+        "options": [
+          "2.5",
+          "3.5",
+          "4",
+          "5"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Let u=1/x, v=1/y. 2u+3v=13, 5u-4v=-2. Multiply 1st by 4: 8u+12v=52; 2nd by 3: 15u-12v=-6. Add: 23u=46 → u=2. From 1st: 4+3v=13 → 3v=9 → v=3. 1/x+1/y = u+v = 2+3 = 5.",
@@ -887,12 +1049,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-lc-1",
         "question": "Find the value of k for which the system x + 2y = 5, 3x + ky - 15 = 0 has no solution.",
-        "options": ["6", "3", "9", "-6"],
+        "options": [
+          "6",
+          "3",
+          "9",
+          "-6"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "In standard form: x+2y-5=0, 3x+ky-15=0. For no solution: a₁/a₂ = b₁/b₂ ≠ c₁/c₂. 1/3 = 2/k ≠ -5/-15 = 1/3. So 2/k = 1/3 → k=6. Also check: 1/3 = 1/3 (equal), so no solution at k=6.",
@@ -906,7 +1072,12 @@
       {
         "id": "q-lc-2",
         "question": "A boat goes 30 km upstream and 44 km downstream in 10 hours. It goes 40 km upstream and 55 km downstream in 13 hours. Find the speed of the boat in still water (km/h).",
-        "options": ["8", "10", "12", "6"],
+        "options": [
+          "8",
+          "10",
+          "12",
+          "6"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let speed in still water=x, stream=y. Upstream=x-y, downstream=x+y. 30/(x-y)+44/(x+y)=10 and 40/(x-y)+55/(x+y)=13. Let u=1/(x-y), v=1/(x+y). 30u+44v=10, 40u+55v=13. Multiply 1st by 4: 120u+176v=40; 2nd by 3: 120u+165v=39. Subtract: 11v=1 → v=1/11 → x+y=11. Then 30u+4=10 → 30u=6 → u=1/5 → x-y=5. Solving: x=8, y=3. Boat speed=8 km/h.",
@@ -920,7 +1091,12 @@
       {
         "id": "q-lc-3",
         "question": "Solve for x and y: (x+y)/xy = 5/6 and (x-y)/xy = 1/6.",
-        "options": ["x=2, y=3", "x=3, y=2", "x=1, y=6", "x=6, y=1"],
+        "options": [
+          "x=2, y=3",
+          "x=3, y=2",
+          "x=1, y=6",
+          "x=6, y=1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "First equation: (x+y)/(xy) = 5/6 → 1/y + 1/x = 5/6. Second: (x-y)/(xy) = 1/6 → 1/y - 1/x = 1/6. Adding: 2/y = 1 → y=2. Subtracting: 2/x = 4/6 → 2/x = 2/3 → x=3. Verification: (3+2)/(6)=5/6 ✓, (3-2)/(6)=1/6 ✓",
@@ -934,7 +1110,12 @@
       {
         "id": "q-lc-4",
         "question": "The age of a father is equal to the sum of the ages of his three children. 20 years later, his age will be half the sum of their ages. Find the father's present age.",
-        "options": ["40", "50", "60", "45"],
+        "options": [
+          "40",
+          "50",
+          "60",
+          "45"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let father's age = F, sum of children's ages = S. F = S. 20 years later: F+20 = (1/2)(S+60) [each child ages 20, so sum increases by 60]. So F+20 = (1/2)(F+60) → 2F+40 = F+60 → F = 20+40 = 40. Hmm, let me redo: F+20 = (1/2)(S+60) → 2F+40 = S+60 = F+60 → F = 20. Wait: 2F+40 = F+60 → F = 20. That gives age 20 which seems too young. Let me recheck: Father's age = sum of children's ages now. 20 years later, father = F+20, sum of children's ages = S+60. Given: F+20 = (1/2)(S+60) → but S=F, so F+20 = (1/2)(F+60) → 2F+40 = F+60 → F=20. A 20-year-old having 3 children is possible but the sum of their ages being 20 suggests... actually F=20, S=20. Makes sense as a math problem. But the options: 40,50,60,45. Hmm, maybe the interpretation is different. Let me try: 40 → S=40, 20 years later: 60 = (1/2)(40+60)=50. No. 50: S=50, 20 years later: 70=(1/2)(50+60)=55. No.",
@@ -944,7 +1125,12 @@
       {
         "id": "q-lc-5",
         "question": "If the system 3x + 4y = 7 and 6x + (2k-1)y = 14 has infinitely many solutions, find k.",
-        "options": ["4.5", "4", "5", "3.5"],
+        "options": [
+          "4.5",
+          "4",
+          "5",
+          "3.5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "For infinite solutions: a₁/a₂ = b₁/b₂ = c₁/c₂. 3/6 = 1/2 = 4/(2k-1) = 7/14 = 1/2. So 4/(2k-1) = 1/2 → 2k-1 = 8 → 2k = 9 → k = 4.5.",
@@ -958,7 +1144,12 @@
       {
         "id": "q-lc-6",
         "question": "Solve: x + y = a + b and ax - by = a² - b².",
-        "options": ["x=a, y=b", "x=b, y=a", "x=a+b, y=0", "x=a-b, y=2b"],
+        "options": [
+          "x=a, y=b",
+          "x=b, y=a",
+          "x=a+b, y=0",
+          "x=a-b, y=2b"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "From (1): y = a+b-x. Substitute in (2): ax - b(a+b-x) = a²-b² → ax - ab - b² + bx = a²-b² → x(a+b) - ab - b² = a² - b² → x(a+b) = a² + ab → x(a+b) = a(a+b) → x = a. Then y = a+b-a = b.",
@@ -972,7 +1163,12 @@
       {
         "id": "q-lc-7",
         "question": "The coordinates of the vertices of a triangle are A(x₁, y₁), B(x₂, y₂), C(x₃, y₃). The midpoints of AB and AC are (2, 3) and (3, 4) respectively. Find A.",
-        "options": ["(1, 2)", "(2, 3)", "(4, 5)", "(3, 2)"],
+        "options": [
+          "(1, 2)",
+          "(2, 3)",
+          "(4, 5)",
+          "(3, 2)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Midpoint of AB: ((x₁+x₂)/2, (y₁+y₂)/2) = (2, 3). Midpoint of AC: ((x₁+x₃)/2, (y₁+y₃)/2) = (3, 4). So x₁+x₂=4, y₁+y₂=6; x₁+x₃=6, y₁+y₃=8. We need x₂,y₂,x₃,y₃ in terms of x₁,y₁. There's not enough info to find uniquely, but if we assume B and C are symmetric about A... Actually we need more constraints. The simple approach: if midpoint of AB=(2,3), then A could be (1,2) and B=(3,4). Then midpoint of AC: ((1+x₃)/2, (2+y₃)/2)=(3,4) → x₃=5, y₃=6. So A=(1,2), B=(3,4), C=(5,6). This works.",
@@ -986,7 +1182,12 @@
       {
         "id": "q-lc-8",
         "question": "If (x/a) + (y/b) = a + b and (x/a²) + (y/b²) = a + b, then x = ?",
-        "options": ["a²", "b²", "ab", "a"],
+        "options": [
+          "a²",
+          "b²",
+          "ab",
+          "a"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let p=x/a, q=y/b. Then (1): p+q=a+b. (2): p/a + q/b = a+b. Multiply (2) by ab: bp + aq = ab(a+b). From (1): p=a+b-q. Substitute: b(a+b-q)+aq = ab(a+b) → b(a+b) - bq + aq = ab(a+b) → q(a-b) = ab(a+b) - b(a+b) = (a+b)(ab-b) = b(a+b)(a-1). This is getting complex. Let me try direct: from (1): x/a + y/b = a+b. Multiply by ab: bx + ay = ab(a+b). From (2): x/a² + y/b² = a+b. Multiply by a²b²: b²x + a²y = a²b²(a+b). Solve for x by eliminating y: multiply eq1 by a: abx + a²y = a²b(a+b). Subtract from eq2: (b²x - abx) + (a²y - a²y) = a²b²(a+b) - a²b(a+b) → xb(b-a) = a²b(a+b)(b-1). Hmm, not clean. Let me try to check with simple values: a=1, b=2. Then (1): x/1 + y/2 = 3 → 2x+y=6. (2): x/1 + y/4 = 3 → 4x+y=12. Subtracting: 2x=6 → x=3. So x=3=a²+b? No, a²=1. Hmm. Let me try a=2, b=3: (1): x/2+y/3=5 → 3x+2y=30. (2): x/4+y/9=5 → 9x+4y=180. Multiply (1) by 2: 6x+4y=60. Subtract from (2): 3x=120 → x=40. a²=4, b²=9, ab=6, a=2. None match. So my earlier substitution is wrong.",
@@ -996,7 +1197,12 @@
       {
         "id": "q-lc-9",
         "question": "If 2ˣ + 3ʸ = 17 and 2ˣ⁺² - 3ʸ⁺¹ = 5, find x + y.",
-        "options": ["3", "4", "5", "6"],
+        "options": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let u=2ˣ, v=3ʸ. Then (1): u+v=17. (2): 2ˣ⁺² - 3ʸ⁺¹ = 4·2ˣ - 3·3ʸ = 4u - 3v = 5. Solving: u+v=17, 4u-3v=5. Multiply (1) by 3: 3u+3v=51. Add to (2): 7u=56 → u=8, v=9. So 2ˣ=8 → x=3, 3ʸ=9 → y=2. x+y = 5.",
@@ -1011,7 +1217,12 @@
       {
         "id": "q-lc-10",
         "question": "A fraction becomes 1/2 when 2 is added to numerator and 1 is subtracted from denominator. It becomes 3/5 when 1 is added to numerator and 2 is subtracted from denominator. Find the fraction.",
-        "options": ["5/9", "3/7", "4/9", "2/5"],
+        "options": [
+          "5/9",
+          "3/7",
+          "4/9",
+          "2/5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Let fraction = x/y. Condition 1: (x+2)/(y-1)=1/2 → 2x+4=y-1 → 2x - y = -5 → y = 2x+5. Condition 2: (x+1)/(y-2)=3/5 → 5x+5 = 3y-6 → 3y - 5x = 11. Substitute y: 3(2x+5)-5x=11 → 6x+15-5x=11 → x = -4. That gives negative. Let me recheck: (x+2)/(y-1)=1/2 → 2x+4 = y-1 → y = 2x+5. (x+1)/(y-2)=3/5 → 5x+5 = 3y-6 → 3y-5x=11. 3(2x+5)-5x=11 → 6x+15-5x=11 → x=-4. This gives a negative fraction. Maybe I made a sign error. Let me check x=5/9: (5/9+2)/(y-1)=1/2 → (23/9)/(y-1)=1/2 → 46/9=y-1 → y=55/9. Then condition 2: (5/9+1)/(55/9-2) = (14/9)/(55/9-18/9) = (14/9)/(37/9) = 14/37 ≠ 3/5. Let me try 3/7: (3/7+2)/(y-1) = (17/7)/(y-1)=1/2 → y-1=34/7 → y=41/7. Condition 2: (3/7+1)/(41/7-2) = (10/7)/(27/7) = 10/27 ≠ 3/5.",
@@ -1020,7 +1231,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Anurupye Śūnyamanyat (अनुरूप्ये शून्यमन्यत्) — 'If one is in proportion, the other is zero'",
@@ -1067,7 +1277,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Pair of Linear Equations — Complete Mind Map",
     "type": "hierarchical",
@@ -1128,56 +1337,192 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "Linear Equations — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Linear Equations Form", "group": "foundation" },
-      { "id": "n2", "label": "Graphical Method", "group": "method" },
-      { "id": "n3", "label": "Substitution Method", "group": "method" },
-      { "id": "n4", "label": "Elimination Method", "group": "method" },
-      { "id": "n5", "label": "Cross-Multiplication", "group": "method" },
-      { "id": "n6", "label": "Consistency Analysis", "group": "analysis" },
-      { "id": "n7", "label": "Word Problem Formation", "group": "application" },
-      { "id": "n8", "label": "Reducible Equations", "group": "technique" },
-      { "id": "n9", "label": "Competitive Problem Solving", "group": "goal" }
+      {
+        "id": "n1",
+        "label": "Linear Equations Form",
+        "group": "foundation"
+      },
+      {
+        "id": "n2",
+        "label": "Graphical Method",
+        "group": "method"
+      },
+      {
+        "id": "n3",
+        "label": "Substitution Method",
+        "group": "method"
+      },
+      {
+        "id": "n4",
+        "label": "Elimination Method",
+        "group": "method"
+      },
+      {
+        "id": "n5",
+        "label": "Cross-Multiplication",
+        "group": "method"
+      },
+      {
+        "id": "n6",
+        "label": "Consistency Analysis",
+        "group": "analysis"
+      },
+      {
+        "id": "n7",
+        "label": "Word Problem Formation",
+        "group": "application"
+      },
+      {
+        "id": "n8",
+        "label": "Reducible Equations",
+        "group": "technique"
+      },
+      {
+        "id": "n9",
+        "label": "Competitive Problem Solving",
+        "group": "goal"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n1", "n3"], ["n1", "n4"], ["n1", "n5"],
-      ["n2", "n6"], ["n3", "n6"], ["n4", "n6"], ["n5", "n6"],
-      ["n6", "n7"], ["n7", "n9"],
-      ["n1", "n8"], ["n8", "n9"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n1",
+        "n5"
+      ],
+      [
+        "n2",
+        "n6"
+      ],
+      [
+        "n3",
+        "n6"
+      ],
+      [
+        "n4",
+        "n6"
+      ],
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n6",
+        "n7"
+      ],
+      [
+        "n7",
+        "n9"
+      ],
+      [
+        "n1",
+        "n8"
+      ],
+      [
+        "n8",
+        "n9"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "Which Method to Use? — Decision Flowchart",
       "steps": [
-        { "order": 1, "action": "Are the equations in the form ax+by=c with small coefficients?", "decision": true, "if_yes": 2, "if_no": 5 },
-        { "order": 2, "action": "Is one variable's coefficient 1 or -1?", "decision": true, "if_yes": 3, "if_no": 4 },
-        { "order": 3, "action": "Use SUBSTITUTION METHOD — isolate the variable with coefficient 1", "next": "END" },
-        { "order": 4, "action": "Use ELIMINATION METHOD — equate coefficients of one variable", "next": "END" },
-        { "order": 5, "action": "Are equations complex with large coefficients?", "decision": true, "if_yes": 6, "if_no": 7 },
-        { "order": 6, "action": "Use CROSS-MULTIPLICATION formula", "next": "END" },
-        { "order": 7, "action": "Check if reducible (1/x, 1/y type). If yes, substitute first.", "next": 8 },
-        { "order": 8, "action": "Use standard substitution/elimination after reduction", "next": "END" }
+        {
+          "order": 1,
+          "action": "Are the equations in the form ax+by=c with small coefficients?",
+          "decision": true,
+          "if_yes": 2,
+          "if_no": 5
+        },
+        {
+          "order": 2,
+          "action": "Is one variable's coefficient 1 or -1?",
+          "decision": true,
+          "if_yes": 3,
+          "if_no": 4
+        },
+        {
+          "order": 3,
+          "action": "Use SUBSTITUTION METHOD — isolate the variable with coefficient 1",
+          "next": "END"
+        },
+        {
+          "order": 4,
+          "action": "Use ELIMINATION METHOD — equate coefficients of one variable",
+          "next": "END"
+        },
+        {
+          "order": 5,
+          "action": "Are equations complex with large coefficients?",
+          "decision": true,
+          "if_yes": 6,
+          "if_no": 7
+        },
+        {
+          "order": 6,
+          "action": "Use CROSS-MULTIPLICATION formula",
+          "next": "END"
+        },
+        {
+          "order": 7,
+          "action": "Check if reducible (1/x, 1/y type). If yes, substitute first.",
+          "next": 8
+        },
+        {
+          "order": 8,
+          "action": "Use standard substitution/elimination after reduction",
+          "next": "END"
+        }
       ]
     },
     {
       "title": "Word Problem Solving Template",
       "steps": [
-        { "order": 1, "action": "Read the problem carefully. Identify the two unknown quantities." },
-        { "order": 2, "action": "Assign variables: Let first unknown = x, second unknown = y." },
-        { "order": 3, "action": "Translate the first condition into an equation in x, y." },
-        { "order": 4, "action": "Translate the second condition into another equation in x, y." },
-        { "order": 5, "action": "Solve the pair using any convenient method." },
-        { "order": 6, "action": "Check if the answer makes sense in the problem context." },
-        { "order": 7, "action": "Write the answer as a complete sentence." }
+        {
+          "order": 1,
+          "action": "Read the problem carefully. Identify the two unknown quantities."
+        },
+        {
+          "order": 2,
+          "action": "Assign variables: Let first unknown = x, second unknown = y."
+        },
+        {
+          "order": 3,
+          "action": "Translate the first condition into an equation in x, y."
+        },
+        {
+          "order": 4,
+          "action": "Translate the second condition into another equation in x, y."
+        },
+        {
+          "order": 5,
+          "action": "Solve the pair using any convenient method."
+        },
+        {
+          "order": 6,
+          "action": "Check if the answer makes sense in the problem context."
+        },
+        {
+          "order": 7,
+          "action": "Write the answer as a complete sentence."
+        }
       ]
     }
   ],
-
   "common_misconceptions": [
     "A pair of linear equations always has a unique solution — FALSE: They can have no solution (parallel) or infinite solutions (coincident).",
     "If a₁/a₂ = b₁/b₂, the system always has no solution — FALSE: Check c₁/c₂ too. If a₁/a₂ = b₁/b₂ = c₁/c₂, there are infinite solutions.",
@@ -1187,5 +1532,6 @@
     "The graphical method is not useful because it's approximate — FALSE: It gives a visual understanding and is exact if done precisely. Use graph paper for accuracy.",
     "Cross-multiplication formula works for all systems — TRUE: It always works (provided a₁b₂ - a₂b₁ ≠ 0), but it's fastest for systems with large coefficients.",
     "If both equations have all coefficients non-zero, the solution must be non-zero — FALSE: The solution can be (0,0) if both equations are homogeneous (RHS = 0)."
-  ]
+  ],
+  "chapterNumber": 3
 }

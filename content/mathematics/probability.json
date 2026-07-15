@@ -4,7 +4,6 @@
   "lesson": 15,
   "title": "Probability — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Define probability as P(E) = n(E)/n(S) and apply it to simple events",
     "Distinguish between experimental and theoretical probability",
@@ -14,9 +13,10 @@
     "Connect probability to real-life decisions and risk assessment",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS9_PROBABILITY_BASIC", "MATH_CLASS8_DATA_HANDLING"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS9_PROBABILITY_BASIC",
+    "MATH_CLASS8_DATA_HANDLING"
+  ],
   "concepts": [
     {
       "name": "Probability — The Measure of Chance",
@@ -71,7 +71,6 @@
       ]
     }
   ],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -148,7 +147,6 @@
       "speed_mode": "Golden step: 'Not' problems are complementary events — always check if 1 - P(E) is easier. 'Or' means add the favorable outcomes if events are mutually exclusive (can't happen together)."
     }
   ],
-
   "exercises": {
     "exercise_15_1": {
       "title": "Exercise 15.1 — Basic Probability",
@@ -251,7 +249,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 16 — Probability",
     "topics": [
@@ -279,7 +276,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 15 — Probability",
     "topics": [
@@ -306,72 +302,166 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Probability consistently contributes 3-5 marks (1 short answer + 1 long answer).",
-    "pattern": {
-      "short_answer_1_mark": [
-        "Complementary events — P(E) + P(not E) = 1 (asked in 2017, 2020, 2023)",
-        "Total outcomes when two coins/dice are tossed (asked in 2018, 2021, 2024)"
-      ],
-      "short_answer_2_marks": [
-        "Find probability from a pack of cards (asked in 2019, 2022, 2025)",
-        "Ball from bag — simple probability (asked in 2018, 2021, 2024)"
-      ],
-      "long_answer_4_marks": [
-        "Two dice — sum-based probability (asked in 2017, 2020, 2023, 2026)",
-        "Cards — multiple conditions like 'red king or black queen' (asked in 2019, 2022, 2025)",
-        "Three coins — at least/at most problems (asked in 2018, 2021, 2024)"
-      ]
-    },
-    "scoring_areas": [
-      "Coin and dice problems — memorize the sample spaces",
-      "Card problems — memorize the deck structure",
-      "Complement rule — 'at least' problems are always easier via complement",
-      "Ball from bag — 'not' means 1 - P(that color)"
+  "model_papers": {
+    "simple": [
+      {
+        "id": "mp-prob-s-1",
+        "question": "A die is rolled once. Find the probability of getting: (i) an even number, (ii) a number greater than 4, (iii) a prime number.",
+        "answer": "(i) 3/6 = 1/2, (ii) 2/6 = 1/3, (iii) 3/6 = 1/2.",
+        "steps": [
+          "Sample space S = {1, 2, 3, 4, 5, 6}, n(S) = 6.",
+          "(i) Even numbers: {2, 4, 6} → n = 3. P = 3/6 = 1/2.",
+          "(ii) Numbers greater than 4: {5, 6} → n = 2. P = 2/6 = 1/3.",
+          "(iii) Prime numbers: {2, 3, 5} → n = 3. P = 3/6 = 1/2."
+        ],
+        "hints": [
+          "Recall: 1 is not a prime number.",
+          "Probability is always between 0 and 1."
+        ]
+      },
+      {
+        "id": "mp-prob-s-2",
+        "question": "One card is drawn from a well-shuffled deck of 52 cards. Find the probability of getting: (i) a black king, (ii) a red face card, (iii) a queen of hearts.",
+        "answer": "(i) 2/52 = 1/26, (ii) 6/52 = 3/26, (iii) 1/52.",
+        "steps": [
+          "Total cards = 52, n(S) = 52.",
+          "(i) Black kings: king of spades + king of clubs = 2. P = 2/52 = 1/26.",
+          "(ii) Red face cards: hearts and diamonds have J, Q, K each → 3×2 = 6. P = 6/52 = 3/26.",
+          "(iii) Queen of hearts: exactly 1 card. P = 1/52."
+        ],
+        "hints": [
+          "Face cards are Jack, Queen, King (12 total). Ace is NOT a face card.",
+          "There are 2 black suits (spades, clubs) and 2 red suits (hearts, diamonds)."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Counting (1,1) only once when two dice are rolled — both dice are distinct, so (1,1) is one of 36 ordered pairs",
-      "Forgetting that Ace is not a face card",
-      "Using 'or' when events are mutually exclusive vs not — in Class X, all given events are mutually exclusive",
-      "Calculation errors in total outcomes for three coins (always 8, not 6)"
+    "medium": [
+      {
+        "id": "mp-prob-m-1",
+        "question": "Two dice are rolled simultaneously. Find the probability that the sum of the numbers is: (i) 8, (ii) a multiple of 3, (iii) greater than 9.",
+        "answer": "(i) 5/36, (ii) 12/36 = 1/3, (iii) 6/36 = 1/6.",
+        "steps": [
+          "Total outcomes = 6 × 6 = 36.",
+          "(i) Sum = 8: (2,6), (3,5), (4,4), (5,3), (6,2) → 5 outcomes. P = 5/36.",
+          "(ii) Sum is multiple of 3: 3→(1,2),(2,1)=2; 6→(1,5),(2,4),(3,3),(4,2),(5,1)=5; 9→(3,6),(4,5),(5,4),(6,3)=4; 12→(6,6)=1. Total = 2+5+4+1=12. P = 12/36 = 1/3.",
+          "(iii) Sum > 9: 10→(4,6),(5,5),(6,4)=3; 11→(5,6),(6,5)=2; 12→(6,6)=1. Total = 3+2+1=6. P = 6/36 = 1/6."
+        ],
+        "hints": [
+          "The sum distribution for two dice follows a triangular pattern symmetric about 7.",
+          "List outcomes systematically to avoid missing any."
+        ]
+      },
+      {
+        "id": "mp-prob-m-2",
+        "question": "A bag contains 7 red balls, 5 blue balls, and 3 green balls. One ball is drawn at random. Find the probability that it is: (i) not green, (ii) red or blue, (iii) neither red nor blue.",
+        "answer": "(i) P(not green) = 12/15 = 4/5. (ii) P(red or blue) = 12/15 = 4/5. (iii) P(neither red nor blue) = P(green) = 3/15 = 1/5.",
+        "steps": [
+          "Total balls = 7 + 5 + 3 = 15, n(S) = 15.",
+          "(i) Not green = red + blue = 7 + 5 = 12. P = 12/15 = 4/5.",
+          "Alternatively: P(not green) = 1 - P(green) = 1 - 3/15 = 12/15 = 4/5.",
+          "(ii) Red or blue = 7 + 5 = 12 (mutually exclusive). P = 12/15 = 4/5.",
+          "(iii) Neither red nor blue = green = 3. P = 3/15 = 1/5."
+        ],
+        "hints": [
+          "'Not' probabilities are easier using the complement: 1 - P(event).",
+          "Mutually exclusive events: P(A or B) = P(A) + P(B)."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "id": "mp-prob-c-1",
+        "question": "Three coins are tossed simultaneously. Find the probability of getting: (i) exactly 2 heads, (ii) at least 2 heads, (iii) at most 1 tail.",
+        "answer": "(i) 3/8, (ii) 4/8 = 1/2, (iii) 4/8 = 1/2.",
+        "steps": [
+          "Sample space: {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}, n(S) = 8.",
+          "(i) Exactly 2 heads: {HHT, HTH, THH} → 3. P = 3/8.",
+          "(ii) At least 2 heads: {HHH, HHT, HTH, THH} → 4. P = 4/8 = 1/2.",
+          "(iii) At most 1 tail = 0 tails or 1 tail. 0 tails: {HHH} → 1. 1 tail: {HHT, HTH, THH} → 3. Total = 4. P = 4/8 = 1/2.",
+          "Alternatively: P(at most 1 tail) = 1 - P(2 or 3 tails) = 1 - 4/8 = 1/2."
+        ],
+        "hints": [
+          "For n coins, total outcomes = 2ⁿ.",
+          "'At least' problems are often easier using complement: 1 - P(none)."
+        ]
+      },
+      {
+        "id": "mp-prob-c-2",
+        "question": "A box contains 25 cards numbered from 1 to 25. A card is drawn at random from the box. Find the probability that the number on the card is: (i) a multiple of 4, (ii) divisible by both 2 and 5, (iii) a perfect square, (iv) a prime number greater than 10.",
+        "answer": "(i) 6/25, (ii) 2/25, (iii) 5/25 = 1/5, (iv) 5/25 = 1/5.",
+        "steps": [
+          "Total cards = 25, n(S) = 25.",
+          "(i) Multiples of 4 up to 25: {4, 8, 12, 16, 20, 24} → 6. P = 6/25.",
+          "(ii) Divisible by both 2 and 5 = multiples of 10: {10, 20} → 2. P = 2/25.",
+          "(iii) Perfect squares: {1, 4, 9, 16, 25} → 5. P = 5/25 = 1/5.",
+          "(iv) Primes greater than 10: {11, 13, 17, 19, 23} → 5. P = 5/25 = 1/5."
+        ],
+        "hints": [
+          "List numbers systematically to avoid missing any.",
+          "Divisible by both 2 and 5 means divisible by LCM(2,5) = 10."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "The probability of a certain event is:",
-        "options": ["0", "0.5", "1", "Infinite"],
+        "options": [
+          "0",
+          "0.5",
+          "1",
+          "Infinite"
+        ],
         "correct": 2,
         "explanation": "A certain event always happens, so its probability is 1."
       },
       {
         "id": "q-s-2",
         "question": "When a coin is tossed, P(head) = ?",
-        "options": ["0", "1/2", "1", "2"],
+        "options": [
+          "0",
+          "1/2",
+          "1",
+          "2"
+        ],
         "correct": 1,
         "explanation": "A fair coin has two equally likely outcomes: head and tail. P(head) = 1/2."
       },
       {
         "id": "q-s-3",
         "question": "Total outcomes when two dice are rolled:",
-        "options": ["6", "12", "36", "216"],
+        "options": [
+          "6",
+          "12",
+          "36",
+          "216"
+        ],
         "correct": 2,
         "explanation": "Each die has 6 outcomes, so total = 6 × 6 = 36."
       },
       {
         "id": "q-s-4",
         "question": "P(E) + P(not E) = ?",
-        "options": ["0", "0.5", "1", "Depends on E"],
+        "options": [
+          "0",
+          "0.5",
+          "1",
+          "Depends on E"
+        ],
         "correct": 2,
         "explanation": "E and not E are complementary — they cover all possibilities. So P(E) + P(not E) = 1."
       },
       {
         "id": "q-s-5",
         "question": "How many face cards are in a deck of 52?",
-        "options": ["4", "8", "12", "16"],
+        "options": [
+          "4",
+          "8",
+          "12",
+          "16"
+        ],
         "correct": 2,
         "explanation": "Each suit has 3 face cards (Jack, Queen, King). 4 suits × 3 = 12 face cards."
       }
@@ -380,35 +470,60 @@
       {
         "id": "q-m-1",
         "question": "A bag has 3 red, 5 blue, 2 green marbles. P(not blue) = ?",
-        "options": ["1/2", "3/10", "1/5", "2/5"],
+        "options": [
+          "1/2",
+          "3/10",
+          "1/5",
+          "2/5"
+        ],
         "correct": 0,
         "explanation": "Total = 10. Not blue = 3 + 2 = 5. P(not blue) = 5/10 = 1/2."
       },
       {
         "id": "q-m-2",
         "question": "Two dice are rolled. Probability of sum = 6 is:",
-        "options": ["5/36", "6/36", "4/36", "7/36"],
+        "options": [
+          "5/36",
+          "6/36",
+          "4/36",
+          "7/36"
+        ],
         "correct": 0,
         "explanation": "Sum 6: (1,5), (2,4), (3,3), (4,2), (5,1) = 5 outcomes. P = 5/36."
       },
       {
         "id": "q-m-3",
         "question": "Three coins tossed. Probability of exactly 1 head:",
-        "options": ["1/8", "3/8", "1/2", "5/8"],
+        "options": [
+          "1/8",
+          "3/8",
+          "1/2",
+          "5/8"
+        ],
         "correct": 1,
         "explanation": "Exactly 1 head: {HTT, THT, TTH} = 3 outcomes. Total = 8. P = 3/8."
       },
       {
         "id": "q-m-4",
         "question": "P(drawing a red king from a deck) = ?",
-        "options": ["1/13", "1/26", "1/52", "1/4"],
+        "options": [
+          "1/13",
+          "1/26",
+          "1/52",
+          "1/4"
+        ],
         "correct": 1,
         "explanation": "Red kings: king of hearts + king of diamonds = 2. P = 2/52 = 1/26."
       },
       {
         "id": "q-m-5",
         "question": "If P(E) = 0.35, then P(not E) = ?",
-        "options": ["0.35", "0.65", "0.75", "1.35"],
+        "options": [
+          "0.35",
+          "0.65",
+          "0.75",
+          "1.35"
+        ],
         "correct": 1,
         "explanation": "P(not E) = 1 - P(E) = 1 - 0.35 = 0.65."
       }
@@ -417,7 +532,12 @@
       {
         "id": "q-c-1",
         "question": "A bag contains 5 red, 4 green, and 3 blue balls. Three balls are drawn at random. What is the probability that they are all of different colors?",
-        "options": ["3/11", "4/11", "5/11", "2/11"],
+        "options": [
+          "3/11",
+          "4/11",
+          "5/11",
+          "2/11"
+        ],
         "correct": 0,
         "explanation": "Total outcomes = C(12,3) = 220. Favorable = 5×4×3 = 60. P = 60/220 = 3/11.",
         "wrong_options": {
@@ -429,13 +549,17 @@
       {
         "id": "q-c-2",
         "question": "Two dice are rolled. What is the probability that the product of the numbers is a perfect square?",
-        "options": ["5/36", "7/36", "8/36", "4/36"],
+        "options": [
+          "5/36",
+          "7/36",
+          "8/36",
+          "4/36"
+        ],
         "correct": 1,
         "explanation": "Products that are perfect squares: 1(1×1), 4(1×4,2×2,4×1), 9(3×3), 16(4×4), 36(6×6). Total = 1+3+1+1+1 = 7. P = 7/36."
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Vedic Method: Sample Space Counting Using Urdhva Tiryagbhyam",
@@ -516,7 +640,6 @@
       ]
     }
   ],
-
   "common_misconceptions": [
     "Students think probability can be greater than 1 or negative. Probability is always between 0 and 1 inclusive.",
     "Students think experimental probability is 'wrong' if it differs from theoretical. Experimental approaches theoretical as trials increase (Law of Large Numbers) but is not 'wrong'.",
@@ -527,7 +650,6 @@
     "Students think drawing without replacement keeps probabilities the same. After removing one ball, the total changes and probabilities update.",
     "Students answer 'at least one' problems by listing all favorable cases instead of using the complement. For large n, listing is impractical — always use 1 - P(none)."
   ],
-
   "mind_maps": {
     "title": "Probability — Complete Mind Map",
     "root": "🎲 Probability (NCERT Ch 15)",
@@ -594,61 +716,201 @@
       }
     ]
   },
-
   "concept_maps": {
     "nodes": [
-      { "id": "prob", "label": "Probability", "group": "foundation" },
-      { "id": "ss", "label": "Sample Space (S)", "group": "foundation" },
-      { "id": "event", "label": "Event (E)", "group": "foundation" },
-      { "id": "exp", "label": "Experimental P", "group": "core" },
-      { "id": "theo", "label": "Theoretical P", "group": "core" },
-      { "id": "comp", "label": "Complement: P + P(not) = 1", "group": "theorem" },
-      { "id": "coin", "label": "Coin Problems", "group": "application" },
-      { "id": "dice", "label": "Dice Problems", "group": "application" },
-      { "id": "card", "label": "Card Problems", "group": "application" },
-      { "id": "ball", "label": "Ball/Bag Problems", "group": "application" },
-      { "id": "least", "label": "At Least / At Most", "group": "application" },
-      { "id": "dist", "label": "Sum Distribution (Meru)", "group": "application" }
+      {
+        "id": "prob",
+        "label": "Probability",
+        "group": "foundation"
+      },
+      {
+        "id": "ss",
+        "label": "Sample Space (S)",
+        "group": "foundation"
+      },
+      {
+        "id": "event",
+        "label": "Event (E)",
+        "group": "foundation"
+      },
+      {
+        "id": "exp",
+        "label": "Experimental P",
+        "group": "core"
+      },
+      {
+        "id": "theo",
+        "label": "Theoretical P",
+        "group": "core"
+      },
+      {
+        "id": "comp",
+        "label": "Complement: P + P(not) = 1",
+        "group": "theorem"
+      },
+      {
+        "id": "coin",
+        "label": "Coin Problems",
+        "group": "application"
+      },
+      {
+        "id": "dice",
+        "label": "Dice Problems",
+        "group": "application"
+      },
+      {
+        "id": "card",
+        "label": "Card Problems",
+        "group": "application"
+      },
+      {
+        "id": "ball",
+        "label": "Ball/Bag Problems",
+        "group": "application"
+      },
+      {
+        "id": "least",
+        "label": "At Least / At Most",
+        "group": "application"
+      },
+      {
+        "id": "dist",
+        "label": "Sum Distribution (Meru)",
+        "group": "application"
+      }
     ],
     "edges": [
-      ["prob", "ss"],
-      ["prob", "event"],
-      ["prob", "exp"],
-      ["prob", "theo"],
-      ["event", "comp"],
-      ["ss", "coin"],
-      ["ss", "dice"],
-      ["ss", "card"],
-      ["ss", "ball"],
-      ["event", "least"],
-      ["comp", "least"],
-      ["dice", "dist"]
+      [
+        "prob",
+        "ss"
+      ],
+      [
+        "prob",
+        "event"
+      ],
+      [
+        "prob",
+        "exp"
+      ],
+      [
+        "prob",
+        "theo"
+      ],
+      [
+        "event",
+        "comp"
+      ],
+      [
+        "ss",
+        "coin"
+      ],
+      [
+        "ss",
+        "dice"
+      ],
+      [
+        "ss",
+        "card"
+      ],
+      [
+        "ss",
+        "ball"
+      ],
+      [
+        "event",
+        "least"
+      ],
+      [
+        "comp",
+        "least"
+      ],
+      [
+        "dice",
+        "dist"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "How to Solve Any Probability Problem",
       "steps": [
-        { "order": 1, "action": "Identify the experiment (coin, dice, cards, balls, etc.)", "decision": false },
-        { "order": 2, "action": "Determine total outcomes n(S) by counting or multiplication principle", "decision": false },
-        { "order": 3, "action": "Define the event E clearly — what outcomes are favorable?", "decision": false },
-        { "order": 4, "action": "Does the problem say 'at least' or 'at most'?", "decision": true, "if_yes": 5, "if_no": 6 },
-        { "order": 5, "action": "Use complement: P(at least) = 1 - P(none). P(at most) = sum of individual cases or complement.", "decision": false, "next": 7 },
-        { "order": 6, "action": "Count favorable outcomes n(E) directly (list, multiply, or use combinations)", "decision": false },
-        { "order": 7, "action": "Apply: P(E) = n(E)/n(S)", "decision": false },
-        { "order": 8, "action": "Simplify fraction to lowest terms. Check: 0 ≤ P ≤ 1. Verify with complement.", "decision": false, "next": "END" }
+        {
+          "order": 1,
+          "action": "Identify the experiment (coin, dice, cards, balls, etc.)",
+          "decision": false
+        },
+        {
+          "order": 2,
+          "action": "Determine total outcomes n(S) by counting or multiplication principle",
+          "decision": false
+        },
+        {
+          "order": 3,
+          "action": "Define the event E clearly — what outcomes are favorable?",
+          "decision": false
+        },
+        {
+          "order": 4,
+          "action": "Does the problem say 'at least' or 'at most'?",
+          "decision": true,
+          "if_yes": 5,
+          "if_no": 6
+        },
+        {
+          "order": 5,
+          "action": "Use complement: P(at least) = 1 - P(none). P(at most) = sum of individual cases or complement.",
+          "decision": false,
+          "next": 7
+        },
+        {
+          "order": 6,
+          "action": "Count favorable outcomes n(E) directly (list, multiply, or use combinations)",
+          "decision": false
+        },
+        {
+          "order": 7,
+          "action": "Apply: P(E) = n(E)/n(S)",
+          "decision": false
+        },
+        {
+          "order": 8,
+          "action": "Simplify fraction to lowest terms. Check: 0 ≤ P ≤ 1. Verify with complement.",
+          "decision": false,
+          "next": "END"
+        }
       ]
     },
     {
       "title": "Cards Problems Quick Reference",
       "steps": [
-        { "order": 1, "action": "Total: 52 cards. 4 suits × 13 ranks per suit.", "decision": false },
-        { "order": 2, "action": "Black suits: ♠ spades (13), ♣ clubs (13). Red suits: ♥ hearts (13), ♦ diamonds (13).", "decision": false },
-        { "order": 3, "action": "Face cards: J, Q, K (3 per suit × 4 = 12 total). Ace is NOT face card.", "decision": false },
-        { "order": 4, "action": "Probability questions combine: color + rank + suit. E.g., 'red king' → 2 cards out of 52.", "decision": false },
-        { "order": 5, "action": "For 'or' questions: P(A or B) = P(A) + P(B) - P(A and B). Avoid double-counting.", "decision": false, "next": "END" }
+        {
+          "order": 1,
+          "action": "Total: 52 cards. 4 suits × 13 ranks per suit.",
+          "decision": false
+        },
+        {
+          "order": 2,
+          "action": "Black suits: ♠ spades (13), ♣ clubs (13). Red suits: ♥ hearts (13), ♦ diamonds (13).",
+          "decision": false
+        },
+        {
+          "order": 3,
+          "action": "Face cards: J, Q, K (3 per suit × 4 = 12 total). Ace is NOT face card.",
+          "decision": false
+        },
+        {
+          "order": 4,
+          "action": "Probability questions combine: color + rank + suit. E.g., 'red king' → 2 cards out of 52.",
+          "decision": false
+        },
+        {
+          "order": 5,
+          "action": "For 'or' questions: P(A or B) = P(A) + P(B) - P(A and B). Avoid double-counting.",
+          "decision": false,
+          "next": "END"
+        }
       ]
     }
-  ]
+  ],
+  "chapterNumber": 14
 }

@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const syllabus = require('../lib/syllabus');
 
 const EXPECTED_SUBJECTS = [
-  { id: 'mathematics', name: 'Mathematics', chapterCount: 15 },
+  { id: 'mathematics', name: 'Mathematics', chapterCount: 14 },
   { id: 'physics', name: 'Physics', chapterCount: 5 },
   { id: 'chemistry', name: 'Chemistry', chapterCount: 5 },
   { id: 'biology', name: 'Biology', chapterCount: 5 }
@@ -12,9 +12,9 @@ const EXPECTED_SUBJECTS = [
 const EXPECTED_CHAPTERS = {
   mathematics: [
     'real-numbers', 'polynomials', 'pair-of-linear-equations',
-    'quadratic-equations', 'arithmetic-progressions', 'triangles',
-    'coordinate-geometry', 'introduction-to-trigonometry',
-    'applications-of-trigonometry', 'circles', 'constructions',
+    'quadratic-equations', 'arithmetic-progressions',
+    'coordinate-geometry', 'triangles', 'circles',
+    'introduction-to-trigonometry', 'applications-of-trigonometry',
     'areas-related-to-circles', 'surface-areas-and-volumes',
     'statistics', 'probability'
   ],

@@ -4,7 +4,6 @@
   "lesson": 1,
   "title": "Surface Areas and Volumes — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Calculate the total surface area and volume of combinations of solids (cuboid, cylinder, cone, sphere, hemisphere)",
     "Solve problems involving conversion of solids from one shape to another (e.g., sphere melted into cylinders)",
@@ -13,9 +12,12 @@
     "Determine the number of smaller solids that can be made from a larger solid by melting/remolding",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive exam readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS8_MENSURATION", "MATH_CLASS9_MENSURATION", "MATH_CLASS7_PERIMETER_AREA", "MATH_CLASS9_CIRCLES"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS8_MENSURATION",
+    "MATH_CLASS9_MENSURATION",
+    "MATH_CLASS7_PERIMETER_AREA",
+    "MATH_CLASS9_CIRCLES"
+  ],
   "concepts": [
     {
       "name": "Surface Area of a Combination of Solids",
@@ -66,7 +68,6 @@
       ]
     }
   ],
-
   "important_formulae": [
     {
       "name": "Surface Area and Volume of Standard Solids",
@@ -87,9 +88,7 @@
       "usage": "Assume no material is wasted unless stated otherwise."
     }
   ],
-
   "theorems": [],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -199,7 +198,6 @@
       "competitive_shortcut": "For a capsule: TSA = 2πr(2r + h_cyl). Since total length = 2r + h_cyl, TSA = 2πr × total_length."
     }
   ],
-
   "exercises": {
     "exercise_1": {
       "title": "Exercise — Surface Area of Combined Solids (NCERT Ex 13.1 / Ex 12.1 in new edition)",
@@ -568,7 +566,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 14 — Surface Areas and Volumes",
     "topics": [
@@ -612,7 +609,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 14 — Surface Areas and Volumes",
     "topics": [
@@ -656,46 +652,121 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Surface Areas and Volumes contributes 5-8 marks (1-2 short answer + 1 long answer of 4-5 marks). It is one of the highest-scoring chapters in mensuration.",
-    "pattern": {
-      "short_answer_1_2_marks": [
-        "Volume of a combination of solids (asked in 2017, 2019, 2021, 2023, 2025)",
-        "Surface area of combined solid (asked in 2018, 2020, 2022, 2024)",
-        "CSA/TSA of frustum (asked in 2019, 2021, 2023)"
-      ],
-      "long_answer_4_5_marks": [
-        "Conversion of solids — melting and recasting (asked in 2017, 2020, 2022, 2025)",
-        "Frustum volume and surface area with cost calculation (asked in 2018, 2021, 2024)",
-        "Number of smaller solids from a larger solid (asked in 2019, 2023, 2026)",
-        "Water flow and tank filling problems (asked in 2020, 2023)"
-      ]
-    },
-    "scoring_areas": [
-      "Volume conservation — easiest 4 marks if you equate volumes correctly",
-      "Frustum formulas — direct substitution, no derivation needed in board exam",
-      "Combined solids — identify components, add/subtract correctly",
-      "Always convert units (cm³ to L, m³ to cm³) carefully",
-      "Mention 'volume remains constant' in melting/recasting problems"
+  "model_papers": {
+    "simple": [
+      {
+        "id": "mp-sav-s-1",
+        "question": "A solid is in the shape of a cone placed on top of a hemisphere. The radius of each is 4 cm and the total height of the solid is 16 cm. Find the volume of the solid.",
+        "answer": "Total volume = (2/3)π(4)³ + (1/3)π(4)²(12) = 133.97 + 200.96 = 334.93 cm³.",
+        "steps": [
+          "Given r = 4 cm. Hemisphere height = 4 cm. Cone height = 16 - 4 = 12 cm.",
+          "Volume of hemisphere = (2/3)πr³ = (2/3) × 3.14 × 64 = 133.97 cm³.",
+          "Volume of cone = (1/3)πr²h = (1/3) × 3.14 × 16 × 12 = 200.96 cm³.",
+          "Total volume = 133.97 + 200.96 = 334.93 cm³."
+        ],
+        "hints": [
+          "Hemisphere height equals its radius.",
+          "Subtract hemisphere height from total to get cone height."
+        ]
+      },
+      {
+        "id": "mp-sav-s-2",
+        "question": "How many spherical balls of radius 1.2 cm can be made from a solid cube of side 6 cm? Assume no wastage.",
+        "answer": "Number = volume of cube / volume of one ball = 216 / 7.23456 ≈ 29.86, so 29 full balls.",
+        "steps": [
+          "Volume of cube = 6³ = 216 cm³.",
+          "Volume of one spherical ball = (4/3)πr³ = (4/3) × 3.14 × (1.2)³ = (4/3) × 3.14 × 1.728 = 7.23456 cm³.",
+          "Number of balls = 216 / 7.23456 ≈ 29.86.",
+          "Therefore, 29 full balls can be made (the remaining material is insufficient)."
+        ],
+        "hints": [
+          "Volume remains constant when melting and recasting.",
+          "Number must be a whole number — take the floor value."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Using diameter instead of radius in formulas",
-      "Forgetting to adjust height when a shape has multiple components (e.g., total height of cone+hemisphere includes both heights)",
-      "Adding the joined surfaces in surface area calculation (they are internal, not visible)",
-      "Not converting cm³ to litres (÷1000) for capacity problems",
-      "Using wrong frustum formula: CSA = π(R+r)l, NOT π(R-r)l",
-      "For hemispherical shells vs solid hemispheres — TSA of solid hemisphere = 3πr², CSA = 2πr²",
-      "Not accounting for wastage in melting problems (assume no wastage unless specified)"
+    "medium": [
+      {
+        "id": "mp-sav-m-1",
+        "question": "A metallic sphere of radius 9 cm is melted and recast into a cylinder of radius 6 cm. Find the height of the cylinder.",
+        "answer": "Height of cylinder = (4/3)π(9)³ / (π × 36) = 972π / 36π = 27 cm.",
+        "steps": [
+          "Given sphere radius R = 9 cm. Cylinder radius r = 6 cm.",
+          "Volume of sphere = (4/3)πR³ = (4/3)π × 729 = 972π cm³.",
+          "Volume of cylinder = πr²h = π × 36 × h = 36πh.",
+          "Volume conserved: 36πh = 972π → h = 972 / 36 = 27 cm."
+        ],
+        "hints": [
+          "Cancel π on both sides to simplify.",
+          "Equate volumes directly — no material is lost."
+        ]
+      },
+      {
+        "id": "mp-sav-m-2",
+        "question": "A bucket is in the form of a frustum of a cone with top radius 15 cm, bottom radius 8 cm, and height 35 cm. Find the volume of water the bucket can hold in litres.",
+        "answer": "Volume = (π × 35/3)(15² + 15×8 + 8²) = (110/3)(225 + 120 + 64) = (110/3) × 409 = 14996.67 cm³ ≈ 15 litres.",
+        "steps": [
+          "Given R = 15 cm, r = 8 cm, h = 35 cm.",
+          "Volume of frustum = (πh/3)(R² + Rr + r²).",
+          "= (22/7 × 35/3)(225 + 120 + 64) = (110/3) × 409.",
+          "= 44990/3 = 14996.67 cm³.",
+          "Capacity in litres = 14996.67 / 1000 ≈ 15 L."
+        ],
+        "hints": [
+          "Use π = 22/7 since numbers are multiples of 7.",
+          "Remember 1 litre = 1000 cm³ for conversion."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "id": "mp-sav-c-1",
+        "question": "A solid toy is made by mounting a cone on top of a hemisphere. The common radius is 3.5 cm. The total height of the toy is 17.5 cm. Find the total surface area of the toy. Also find the cost of painting its entire surface at ₹0.80 per cm².",
+        "answer": "TSA = CSA of cone + CSA of hemisphere = 158.73 + 77 = 235.73 cm². Cost = 235.73 × 0.80 = ₹188.58.",
+        "steps": [
+          "Given r = 3.5 cm, total height = 17.5 cm. Hemisphere height = r = 3.5 cm.",
+          "Cone height = 17.5 - 3.5 = 14 cm.",
+          "Slant height of cone l = √(r² + h²) = √(12.25 + 196) = √208.25 ≈ 14.43 cm.",
+          "CSA of cone = πrl = (22/7) × 3.5 × 14.43 = 158.73 cm².",
+          "CSA of hemisphere = 2πr² = 2 × (22/7) × 12.25 = 77 cm².",
+          "Total surface area = 158.73 + 77 = 235.73 cm².",
+          "Cost of painting = 235.73 × 0.80 = ₹188.58."
+        ],
+        "hints": [
+          "For combined solids TSA, do NOT include the common circular faces.",
+          "Use exact fractions where possible to minimize rounding errors."
+        ]
+      },
+      {
+        "id": "mp-sav-c-2",
+        "question": "A cylindrical tank of diameter 14 m and height 12 m is completely filled with water. Water is drained through a pipe of diameter 7 cm at a speed of 4 m/s. How long will it take to empty the tank completely? Give your answer in hours.",
+        "answer": "Time = volume of tank / volume flow rate = 1848 m³ / 0.0154 m³/s = 120000 s ≈ 33.33 hours.",
+        "steps": [
+          "Tank: radius R = 7 m, height H = 12 m. Volume = πR²H = (22/7) × 49 × 12 = 1848 m³.",
+          "Pipe: diameter = 7 cm = 0.07 m, radius = 0.035 m.",
+          "Cross-sectional area of pipe = πr² = (22/7) × (0.035)² = (22/7) × 0.001225 = 0.00385 m².",
+          "Speed of water = 4 m/s. Volume flow rate = area × speed = 0.00385 × 4 = 0.0154 m³/s.",
+          "Time = total volume / flow rate = 1848 / 0.0154 = 120000 seconds.",
+          "In hours: 120000 / 3600 = 33.33 hours ≈ 33 hours 20 minutes."
+        ],
+        "hints": [
+          "Ensure consistent units — convert all lengths to metres.",
+          "Volumetric flow rate = cross-sectional area × flow speed."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "What is the volume of a sphere of radius r?",
-        "options": ["(4/3)πr³", "4πr²", "πr³", "(2/3)πr³"],
+        "options": [
+          "(4/3)πr³",
+          "4πr²",
+          "πr³",
+          "(2/3)πr³"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Volume of sphere = (4/3)πr³. This is one of the most important formulas in mensuration.",
@@ -709,7 +780,12 @@
       {
         "id": "q-s-2",
         "question": "The curved surface area of a cylinder is:",
-        "options": ["2πrh", "2πr(r+h)", "πr²h", "πrl"],
+        "options": [
+          "2πrh",
+          "2πr(r+h)",
+          "πr²h",
+          "πrl"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "CSA of cylinder = 2πrh (the lateral surface area excluding top and bottom).",
@@ -723,7 +799,12 @@
       {
         "id": "q-s-3",
         "question": "A solid hemisphere has total surface area of:",
-        "options": ["3πr²", "2πr²", "4πr²", "πr²"],
+        "options": [
+          "3πr²",
+          "2πr²",
+          "4πr²",
+          "πr²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "TSA of solid hemisphere = CSA (2πr²) + base area (πr²) = 3πr².",
@@ -737,7 +818,12 @@
       {
         "id": "q-s-4",
         "question": "Volume of a cone is:",
-        "options": ["(1/3)πr²h", "πr²h", "(1/2)πr²h", "πrl"],
+        "options": [
+          "(1/3)πr²h",
+          "πr²h",
+          "(1/2)πr²h",
+          "πrl"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Volume of cone = (1/3)πr²h. It is one-third of the volume of a cylinder of same base and height.",
@@ -751,7 +837,12 @@
       {
         "id": "q-s-5",
         "question": "The volume of a cuboid of dimensions l, b, h is:",
-        "options": ["lbh", "2(lb+bh+hl)", "l+b+h", "l²bh"],
+        "options": [
+          "lbh",
+          "2(lb+bh+hl)",
+          "l+b+h",
+          "l²bh"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Volume of cuboid = length × breadth × height = lbh.",
@@ -765,7 +856,12 @@
       {
         "id": "q-s-6",
         "question": "Slant height of a cone is given by:",
-        "options": ["√(r² + h²)", "r + h", "2πr", "√(r² - h²)"],
+        "options": [
+          "√(r² + h²)",
+          "r + h",
+          "2πr",
+          "√(r² - h²)"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Slant height l = √(r² + h²) using Pythagoras theorem on the right triangle formed by radius, height, and slant height.",
@@ -779,7 +875,12 @@
       {
         "id": "q-s-7",
         "question": "1 litre = how many cubic centimeters?",
-        "options": ["1000 cm³", "100 cm³", "10000 cm³", "1 cm³"],
+        "options": [
+          "1000 cm³",
+          "100 cm³",
+          "10000 cm³",
+          "1 cm³"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "1 litre = 1000 cm³ = 1000 millilitres. This conversion is essential for capacity problems.",
@@ -793,7 +894,12 @@
       {
         "id": "q-s-8",
         "question": "When a solid is melted and recast, which quantity remains constant?",
-        "options": ["Volume", "Surface area", "Shape", "Weight per unit area"],
+        "options": [
+          "Volume",
+          "Surface area",
+          "Shape",
+          "Weight per unit area"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Volume remains constant during melting and recasting (assuming no material loss). Surface area usually changes.",
@@ -807,7 +913,12 @@
       {
         "id": "q-s-9",
         "question": "How many faces of a cube are visible when a hemisphere is mounted on one face?",
-        "options": ["5", "6", "4", "3"],
+        "options": [
+          "5",
+          "6",
+          "4",
+          "3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "The face on which the hemisphere is mounted becomes hidden. So 6 - 1 = 5 faces of the cube are visible.",
@@ -821,7 +932,12 @@
       {
         "id": "q-s-10",
         "question": "The volume of a frustum of a cone depends on:",
-        "options": ["R, r, and h", "Only R and r", "Only h", "Only l"],
+        "options": [
+          "R, r, and h",
+          "Only R and r",
+          "Only h",
+          "Only l"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Frustum volume = (πh/3)(R² + Rr + r²). It depends on both radii R, r and height h.",
@@ -833,12 +949,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-m-1",
         "question": "A cone of height 12 cm and base radius 5 cm is placed on top of a hemisphere of radius 5 cm. Find the total height of the solid.",
-        "options": ["17 cm", "12 cm", "10 cm", "22 cm"],
+        "options": [
+          "17 cm",
+          "12 cm",
+          "10 cm",
+          "22 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Total height = height of cone + height of hemisphere = 12 + 5 = 17 cm.",
@@ -852,7 +972,12 @@
       {
         "id": "q-m-2",
         "question": "A sphere of radius 6 cm is melted to form a cylinder of radius 4 cm. Find the height of the cylinder.",
-        "options": ["18 cm", "9 cm", "12 cm", "24 cm"],
+        "options": [
+          "18 cm",
+          "9 cm",
+          "12 cm",
+          "24 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Volume of sphere = (4/3)π(6)³ = 288π. Volume of cylinder = π(4)²h = 16πh. Equating: 16πh = 288π → h = 18 cm.",
@@ -866,7 +991,12 @@
       {
         "id": "q-m-3",
         "question": "The curved surface area of a frustum of cone with radii 7 cm and 14 cm, and slant height 10 cm is:",
-        "options": ["660 cm²", "330 cm²", "880 cm²", "440 cm²"],
+        "options": [
+          "660 cm²",
+          "330 cm²",
+          "880 cm²",
+          "440 cm²"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "CSA = π(R+r)l = (22/7)(14+7)(10) = (22/7)(21)(10) = 22 × 3 × 10 = 660 cm².",
@@ -880,7 +1010,12 @@
       {
         "id": "q-m-4",
         "question": "A cylindrical tank of radius 7 m and height 10 m is filled with water. How many litres of water does it contain?",
-        "options": ["1540000 L", "1540 L", "15400 L", "154000 L"],
+        "options": [
+          "1540000 L",
+          "1540 L",
+          "15400 L",
+          "154000 L"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Volume = πr²h = (22/7) × 49 × 10 = 1540 m³. 1 m³ = 1000 L. So 1540 × 1000 = 1540000 L.",
@@ -894,7 +1029,12 @@
       {
         "id": "q-m-5",
         "question": "Three cubes of sides 3 cm, 4 cm, and 5 cm are melted to form a new cube. Find the side of the new cube.",
-        "options": ["6 cm", "7 cm", "8 cm", "12 cm"],
+        "options": [
+          "6 cm",
+          "7 cm",
+          "8 cm",
+          "12 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Total volume = 3³ + 4³ + 5³ = 27 + 64 + 125 = 216 cm³. Side of new cube = ∛216 = 6 cm.",
@@ -908,7 +1048,12 @@
       {
         "id": "q-m-6",
         "question": "A conical tent of height 8 m and base radius 6 m has canvas area:",
-        "options": ["188.57 m²", "301.71 m²", "150.86 m²", "226.29 m²"],
+        "options": [
+          "188.57 m²",
+          "301.71 m²",
+          "150.86 m²",
+          "226.29 m²"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "Slant height l = √(r² + h²) = √(36 + 64) = √100 = 10 m. Canvas area = CSA of cone = πrl = 3.14 × 6 × 10 = 188.4 m². But using π = 22/7: (22/7) × 6 × 10 = 1320/7 = 188.57 m². Hmm, that gives 188.57.\n\nWait, option 1 is 301.71. Let me recalculate. CSA = πrl = (22/7)(6)(10) = 1320/7 = 188.57. So option 0 is correct.\n\nBut wait — a conical tent might also have a floor. But the question says 'canvas area' which typically means only the curved surface. So 188.57 is correct.",
@@ -923,7 +1068,12 @@
       {
         "id": "q-m-7",
         "question": "A solid cylinder of radius 7 cm and height 14 cm is melted to form a sphere. Find the radius of the sphere.",
-        "options": ["7 cm", "10.5 cm", "3.5 cm", "14 cm"],
+        "options": [
+          "7 cm",
+          "10.5 cm",
+          "3.5 cm",
+          "14 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Cylinder volume = π(7)²(14) = 686π. Sphere volume = (4/3)πR³ = 686π. R³ = 686 × 3/4 = 514.5. R = ∛514.5 ≈ 8.01 cm. Hmm, that doesn't give 7.\n\nLet me recalculate: πr²h = π × 49 × 14 = 686π. (4/3)πR³ = 686π. R³ = 686 × 3/4 = 2058/4 = 514.5. R = ∛514.5 ≈ 8.01 cm.\n\nNone of the options match exactly. Let me try different values: if r = 7 cm, h = 7 cm: V = π × 49 × 7 = 343π. R³ = 343 × 3/4 = 257.25, R ≈ 6.36 cm.\n\nIf r = 7, h = 28: V = 1372π, R³ = 1029, R ≈ 10.09 cm.\n\nFor R = 7: V_sphere = (4/3)π(343) = 1372π/3 = 457.33π. Cylinder would need h = 457.33/49 = 9.33 cm.\n\nThis problem's options don't match. Let me adjust the problem to give a clean answer.\n\nIf h = 28/3 × 7 = ... Actually, for R = 7: (4/3)π×343 = 1372π/3 = π×49×h → h = 1372/(3×49) = 28/3 ≈ 9.33 cm.\n\nOK, this doesn't work cleanly. Let me reconsider and choose the best option.",
@@ -938,7 +1088,12 @@
       {
         "id": "q-m-8",
         "question": "The vertical height of a bucket (frustum of cone) is 24 cm and the radii are 15 cm and 5 cm. Find the slant height.",
-        "options": ["26 cm", "20 cm", "24 cm", "√650 cm"],
+        "options": [
+          "26 cm",
+          "20 cm",
+          "24 cm",
+          "√650 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "l = √(h² + (R-r)²) = √(24² + (15-5)²) = √(576 + 100) = √676 = 26 cm.",
@@ -952,7 +1107,12 @@
       {
         "id": "q-m-9",
         "question": "How many spherical balls of radius 1 cm can be made from a solid sphere of radius 4 cm?",
-        "options": ["64", "16", "4", "32"],
+        "options": [
+          "64",
+          "16",
+          "4",
+          "32"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Number = Volume of large sphere / Volume of small sphere = (4/3)π(4)³ / [(4/3)π(1)³] = 64/1 = 64.",
@@ -966,7 +1126,12 @@
       {
         "id": "q-m-10",
         "question": "CSA of a cone is 550 cm² and the slant height is 25 cm. Find the radius.",
-        "options": ["7 cm", "14 cm", "21 cm", "3.5 cm"],
+        "options": [
+          "7 cm",
+          "14 cm",
+          "21 cm",
+          "3.5 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "CSA = πrl = 550. (22/7) × r × 25 = 550. r = 550 × 7/(22 × 25) = 3850/550 = 7 cm.",
@@ -978,12 +1143,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-c-1",
         "question": "A sphere of radius 9 cm is melted and recast into a wire of radius 0.3 cm. Find the length of the wire.",
-        "options": ["108 m", "108 cm", "9 m", "36 m"],
+        "options": [
+          "108 m",
+          "108 cm",
+          "9 m",
+          "36 m"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Volume of sphere = (4/3)π(9)³ = 972π cm³. Wire is a cylinder of radius 0.3 cm. Volume = π(0.3)²h = 0.09πh. Equating: 0.09πh = 972π → h = 972/0.09 = 10800 cm = 108 m.",
@@ -1011,7 +1180,12 @@
       {
         "id": "q-c-3",
         "question": "A solid consists of a cone and a hemisphere of equal radius. The height of the cone is 6 cm and the radius is 3 cm. Find the volume of the solid.",
-        "options": ["(72π) cm³", "(54π) cm³", "(36π) cm³", "(90π) cm³"],
+        "options": [
+          "(72π) cm³",
+          "(54π) cm³",
+          "(36π) cm³",
+          "(90π) cm³"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Cone volume = (1/3)π(3)²(6) = 18π. Hemisphere volume = (2/3)π(3)³ = 18π. Total = 18π + 18π = 36π cm³. Hmm, that's 36π = option 2.\n\nLet me recalculate: (1/3)π × 9 × 6 = 18π. (2/3)π × 27 = 18π. Total = 36π cm³ = option 2.",
@@ -1026,7 +1200,12 @@
       {
         "id": "q-c-4",
         "question": "The radii of the ends of a bucket (frustum of cone) are 14 cm and 7 cm. Its height is 30 cm. Find the capacity in litres.",
-        "options": ["10.78 L", "5.39 L", "21.56 L", "15.4 L"],
+        "options": [
+          "10.78 L",
+          "5.39 L",
+          "21.56 L",
+          "15.4 L"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "V = (πh/3)(R² + Rr + r²) = (22/7 × 30/3)(196 + 98 + 49) = (220/7)(343) = 220 × 49 = 10780 cm³ = 10.78 L.",
@@ -1040,7 +1219,12 @@
       {
         "id": "q-c-5",
         "question": "A metallic cone of radius 12 cm and height 18 cm is melted to form a sphere. Find the radius of the sphere.",
-        "options": ["9.52 cm", "12 cm", "6 cm", "10.5 cm"],
+        "options": [
+          "9.52 cm",
+          "12 cm",
+          "6 cm",
+          "10.5 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Cone volume = (1/3)π(12)²(18) = (1/3)π × 144 × 18 = 864π. Sphere volume = (4/3)πR³ = 864π. R³ = 864 × 3/4 = 648. R = ∛648 ≈ 8.65 cm. Hmm, that doesn't match any option.\n\nLet me recompute: (1/3) × 144 × 18 = 864. (4/3)R³ = 864 → R³ = 864 × 3/4 = 648. R = ∛648 = ∛(216 × 3) = 6∛3 ≈ 6 × 1.442 = 8.65 cm.\n\nNone of the options match this. Let me reconsider the problem values.\n\nIf R = 9.52: R³ ≈ 863, close to 864. So 9.52 would mean R³ ≈ 862. So option 0 might be the intended answer (9.52 ≈ ∛864 × 3/4... wait, let me check: 9.52³ = 9.52 × 9.52 × 9.52 = 90.63 × 9.52 = 862.8 ≈ 863. Close to 864 but not exact.\n\nHmm, let me check: 864 × 3/4 = 648. ∛648 ≈ 8.65. That's quite different from 9.52.\n\nMaybe the problem used different dimensions. If h = 24: V = (1/3)π(144)(24) = 1152π. R³ = 1152 × 3/4 = 864, R = ∛864 ≈ 9.52. Yes! So if h = 24 instead of 18, the answer would be 9.52 cm.\n\nSince 9.52 is option 0, it seems the intended height was 24 cm or there's a different intended value.",
@@ -1055,7 +1239,12 @@
       {
         "id": "q-c-6",
         "question": "Water flows at 5 m/s through a pipe of diameter 14 cm into a rectangular tank of dimensions 50 m × 44 m. Find the time taken for the water level to rise by 21 cm.",
-        "options": ["30 min", "15 min", "45 min", "60 min"],
+        "options": [
+          "30 min",
+          "15 min",
+          "45 min",
+          "60 min"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Pipe area = πr² = (22/7)(0.07)² = 0.0154 m². Flow rate = Area × speed = 0.0154 × 5 = 0.077 m³/s. Volume needed = 50 × 44 × 0.21 = 462 m³. Time = 462/0.077 = 6000 s = 100 min. Hmm, 100 min is not in options.\n\nLet me recompute: pipe radius = 7 cm = 0.07 m. Area = π(0.07)² = 0.0154 m². Speed = 5 m/s. Volume flow = 0.0154 × 5 = 0.077 m³/s. Tank volume = 50 × 44 × 0.21 = 462 m³. Time = 462/0.077 = 6000 s = 100 min.\n\nNone of the options match. Let me try different assumptions or check for unit errors.\n\nMaybe the pipe diameter is 14 cm = 0.14 m, radius = 0.07 m. Area = 22/7 × 0.07² = 22/7 × 0.0049 = 0.0154 m². Flow = 0.0154 × 5 = 0.077 m³/s. That's correct.\n\n50 × 44 × 0.21 = 462 m³. 462/0.077 = 6000 s = 100 min.\n\nMaybe the tank is 50 m × 44 m × ... or the speed is different. If speed = 10 m/s: flow = 0.154 m³/s, time = 462/0.154 = 3000 s = 50 min. Not matching either.\n\nLet me try: if d = 7 cm (r = 3.5 cm): area = 0.00385 m², flow = 0.01925 m³/s, time = 462/0.01925 = 24000 s = 400 min.\n\nIf the tank is 5 m × 4.4 m instead: V = 5 × 4.4 × 0.21 = 4.62 m³. Time = 4.62/0.077 = 60 s = 1 min. Not matching.\n\nI may have misread the dimensions. Let me adjust the question. \n\nGiven the options (30, 15, 45, 60), let me work backwards:\nIf time = 30 min = 1800 s: total volume = 0.077 × 1800 = 138.6 m³. Height rise = 138.6/(50×44) = 0.063 m = 6.3 cm. So if the required rise was 6.3 cm, time = 30 min.\n\nFor the purpose of this quiz, I'll use 30 min as the closest intended answer, assuming the pipe diameter or flow rate was different.",
@@ -1070,7 +1259,12 @@
       {
         "id": "q-c-7",
         "question": "A cone of height 24 cm and slant height 25 cm has a hemispherical top of same radius. Find the volume of the solid.",
-        "options": ["(3264π)/3 cm³", "3264π cm³", "1088π cm³", "832π cm³"],
+        "options": [
+          "(3264π)/3 cm³",
+          "3264π cm³",
+          "1088π cm³",
+          "832π cm³"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Slant height l = 25, h = 24. r = √(l² - h²) = √(625 - 576) = √49 = 7 cm. Cone V = (1/3)π(49)(24) = 392π. Hemisphere V = (2/3)π(343) = 686π/3. Total = 392π + 686π/3 = (1176π + 686π)/3 = 1862π/3 = not matching.\n\nWait, let me recalculate: 392 = 1176/3. So 1176π/3 + 686π/3 = 1862π/3. But option 0 says 3264π/3.\n\nLet me check: maybe it's a cone with a hemisphere on base, so we add: cone + hemisphere = (1/3)πr²h + (2/3)πr³ = (π/3)(r²h + 2r³) = (π/3)(49×24 + 2×343) = (π/3)(1176 + 686) = 1862π/3.\n\nHmm, 1862 ≠ 3264. Let me double-check the numbers.\n\nMaybe the cone height is different. If h = 24, l = 25, r = 7. V_cone = (1/3)π×49×24 = 392π = 1176π/3. V_hemisphere = (2/3)π×343 = 686π/3. Total = 1862π/3.\n\nLet me see: 3264/3 = 1088. So 3264π/3 = 1088π. But 392π + (2/3)π×343 = 392π + 228.67π = 620.67π. Not 1088.\n\nWait, 2/3 × 343 = 228.67. 392 + 228.67 = 620.67. Not 1088.\n\nOK, this doesn't match. Let me consider that maybe it's cone + hemisphere where hemisphere radius differs, or the numbers are different.\n\nFor the purpose of the quiz, I'll take the answer as given and note that this format tests the approach rather than exact arithmetic.",
@@ -1085,7 +1279,12 @@
       {
         "id": "q-c-8",
         "question": "A cylindrical pipe of radius 1.5 cm and length 7 m is melted to form a cuboid of dimensions 11 cm × 3 cm × 3 cm. How many such cuboids can be made?",
-        "options": ["500", "50", "100", "200"],
+        "options": [
+          "500",
+          "50",
+          "100",
+          "200"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Pipe volume = πr²h = (22/7)(1.5)²(700) [7 m = 700 cm] = (22/7)(2.25)(700) = 22 × 2.25 × 100 = 4950 cm³. Cuboid volume = 11 × 3 × 3 = 99 cm³. Number = 4950/99 = 50.",
@@ -1100,7 +1299,12 @@
       {
         "id": "q-c-9",
         "question": "The surface area of a sphere is 616 cm². Find its volume.",
-        "options": ["1437.33 cm³", "616 cm³", "718.67 cm³", "2874.67 cm³"],
+        "options": [
+          "1437.33 cm³",
+          "616 cm³",
+          "718.67 cm³",
+          "2874.67 cm³"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "SA = 4πr² = 616. r² = 616/(4π) = 616 × 7/(4 × 22) = 616 × 7/88 = 4312/88 = 49. r = 7 cm. Volume = (4/3)π(7)³ = (4/3) × (22/7) × 343 = (4/3) × 22 × 49 = (4/3) × 1078 = 4312/3 = 1437.33 cm³.",
@@ -1114,7 +1318,12 @@
       {
         "id": "q-c-10",
         "question": "From a solid cylinder of height 12 cm and base diameter 10 cm, a conical cavity of same height and same base is hollowed out. Find the volume of the remaining solid.",
-        "options": ["314.29 cm³", "628.57 cm³", "942.86 cm³", "471.43 cm³"],
+        "options": [
+          "314.29 cm³",
+          "628.57 cm³",
+          "942.86 cm³",
+          "471.43 cm³"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "r = 5 cm, h = 12 cm. Cylinder V = πr²h = (22/7)(25)(12) = 942.86 cm³. Cone V = (1/3)πr²h = 314.29 cm³. Remaining = 942.86 - 314.29 = 628.57 cm³. That's 2/3 of the cylinder volume.",
@@ -1128,7 +1337,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Quick Squaring of Numbers Ending in 5 for Radius Calculations",
@@ -1166,7 +1374,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Surface Areas and Volumes — Complete Mind Map",
     "type": "hierarchical",
@@ -1220,51 +1427,140 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "Surface Areas and Volumes — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Basic Solids", "group": "foundation" },
-      { "id": "n2", "label": "Surface Area Formulas", "group": "formula" },
-      { "id": "n3", "label": "Volume Formulas", "group": "formula" },
-      { "id": "n4", "label": "Combined Solids", "group": "application" },
-      { "id": "n5", "label": "Frustum of Cone", "group": "application" },
-      { "id": "n6", "label": "Volume Conservation", "group": "principle" },
-      { "id": "n7", "label": "Real-world Problems", "group": "goal" }
+      {
+        "id": "n1",
+        "label": "Basic Solids",
+        "group": "foundation"
+      },
+      {
+        "id": "n2",
+        "label": "Surface Area Formulas",
+        "group": "formula"
+      },
+      {
+        "id": "n3",
+        "label": "Volume Formulas",
+        "group": "formula"
+      },
+      {
+        "id": "n4",
+        "label": "Combined Solids",
+        "group": "application"
+      },
+      {
+        "id": "n5",
+        "label": "Frustum of Cone",
+        "group": "application"
+      },
+      {
+        "id": "n6",
+        "label": "Volume Conservation",
+        "group": "principle"
+      },
+      {
+        "id": "n7",
+        "label": "Real-world Problems",
+        "group": "goal"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n1", "n3"],
-      ["n2", "n4"], ["n3", "n4"],
-      ["n1", "n5"],
-      ["n3", "n6"],
-      ["n4", "n7"], ["n5", "n7"], ["n6", "n7"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n3",
+        "n4"
+      ],
+      [
+        "n1",
+        "n5"
+      ],
+      [
+        "n3",
+        "n6"
+      ],
+      [
+        "n4",
+        "n7"
+      ],
+      [
+        "n5",
+        "n7"
+      ],
+      [
+        "n6",
+        "n7"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "Solving Combined Solid Problems",
       "steps": [
-        { "order": 1, "action": "Identify all component shapes in the combined solid", "next": 2 },
-        { "order": 2, "action": "For each component, note radius/height/dimensions", "next": 3 },
-        { "order": 3, "action": "Are we finding Volume or Surface Area?", "decision": true, "if_yes": 4, "if_no": 5 },
-        { "order": 4, "action": "Volume: Sum volumes of all components", "next": "END" },
-        { "order": 5, "action": "TSA: Add VISIBLE surface areas only. Do NOT add joined surfaces.", "next": "END" }
+        {
+          "order": 1,
+          "action": "Identify all component shapes in the combined solid",
+          "next": 2
+        },
+        {
+          "order": 2,
+          "action": "For each component, note radius/height/dimensions",
+          "next": 3
+        },
+        {
+          "order": 3,
+          "action": "Are we finding Volume or Surface Area?",
+          "decision": true,
+          "if_yes": 4,
+          "if_no": 5
+        },
+        {
+          "order": 4,
+          "action": "Volume: Sum volumes of all components",
+          "next": "END"
+        },
+        {
+          "order": 5,
+          "action": "TSA: Add VISIBLE surface areas only. Do NOT add joined surfaces.",
+          "next": "END"
+        }
       ]
     },
     {
       "title": "Melting & Recasting Flow",
       "steps": [
-        { "order": 1, "action": "Find volume of original solid (V₁)" },
-        { "order": 2, "action": "Find volume of one new solid (V₂)" },
-        { "order": 3, "action": "Number = V₁ / V₂ (if all identical)" },
-        { "order": 4, "action": "If new shape dimensions unknown: V₁ = V₂, solve for unknown" }
+        {
+          "order": 1,
+          "action": "Find volume of original solid (V₁)"
+        },
+        {
+          "order": 2,
+          "action": "Find volume of one new solid (V₂)"
+        },
+        {
+          "order": 3,
+          "action": "Number = V₁ / V₂ (if all identical)"
+        },
+        {
+          "order": 4,
+          "action": "If new shape dimensions unknown: V₁ = V₂, solve for unknown"
+        }
       ]
     }
   ],
-
   "visualizations": [],
-
   "common_misconceptions": [
     "The TSA of a solid hemisphere is 2πr² — FALSE: TSA of solid hemisphere = CSA (2πr²) + base (πr²) = 3πr². 2πr² is only the curved surface area.",
     "When a cone is placed on a hemisphere of same radius, the total height is the sum of the cone height and the hemisphere diameter — FALSE: The height of a hemisphere equals its radius, not diameter. Total height = cone height + radius of hemisphere.",
@@ -1274,5 +1570,6 @@
     "The volume of a cone is half the volume of a cylinder of same base and height — FALSE: The cone volume is exactly one-third (1/3) of the cylinder volume, not half.",
     "In a frustum, the curved surface area formula uses (R-r) — FALSE: CSA of frustum = π(R+r)l. It uses the sum of radii (R+r), not the difference.",
     "The total surface area of a combined solid always equals the sum of TSAs of individual components — FALSE: The surfaces where two solids join are INTERNAL and not visible, so they are subtracted from the total."
-  ]
+  ],
+  "chapterNumber": 12
 }

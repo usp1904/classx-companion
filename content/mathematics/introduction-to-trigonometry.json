@@ -4,7 +4,6 @@
   "lesson": 1,
   "title": "Introduction to Trigonometry — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Define and calculate the six trigonometric ratios (sin, cos, tan, cosec, sec, cot) for acute angles",
     "Use trigonometric tables and standard angle values (0°, 30°, 45°, 60°, 90°) to solve problems",
@@ -12,9 +11,11 @@
     "Solve board exam problems involving trigonometric ratios and identities",
     "Apply trigonometric concepts to real-life Indian contexts"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS9_TRIANGLES", "MATH_CLASS9_PYTHAGORAS", "MATH_CLASS9_RATIO_PROPORTION"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS9_TRIANGLES",
+    "MATH_CLASS9_PYTHAGORAS",
+    "MATH_CLASS9_RATIO_PROPORTION"
+  ],
   "concepts": [
     {
       "name": "Trigonometry — The Study of Triangles",
@@ -61,7 +62,6 @@
       ]
     }
   ],
-
   "theorems": [
     {
       "name": "The Pythagorean Trigonometric Identity (sin²θ + cos²θ = 1)",
@@ -104,7 +104,6 @@
       ]
     }
   ],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -184,7 +183,6 @@
       "speed_mode": "Golden step: Recognize the 8-15-17 Pythagorean triplet! Once you know two sides of a right triangle, the third is determined by the triplet. Memorize common triplets: 3-4-5, 5-12-13, 7-24-25, 8-15-17."
     }
   ],
-
   "exercises": {
     "exercise_8_1": {
       "title": "Exercise 8.1 — Trigonometric Ratios",
@@ -583,7 +581,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 5 — Trigonometric Ratios",
     "topics": [
@@ -621,7 +618,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 5 — Trigonometric Ratios",
     "topics": [
@@ -645,48 +641,122 @@
       }
     ]
   },
-
-  "past_papers": {
-    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Introduction to Trigonometry contributes 8-12 marks (2-3 short answer + 1-2 long answer). Identities and standard angles are the most tested topics.",
-    "pattern": {
-      "short_answer_1_mark": [
-        "Find value of sin θ/cos θ given a ratio (asked in 2017, 2019, 2021, 2024)",
-        "Evaluate standard angle expression (asked in 2018, 2020, 2022, 2025)",
-        "Complementary angle relationship (asked in 2019, 2021, 2023, 2026)"
-      ],
-      "short_answer_2_marks": [
-        "Find all trigonometric ratios from one given ratio (asked in 2017, 2020, 2023, 2025)",
-        "Evaluate expression using standard angles (asked in 2018, 2021, 2024)",
-        "Find angle using complementary relations (asked in 2019, 2022, 2025)"
-      ],
-      "long_answer_4_marks": [
-        "Prove trigonometric identities (asked in EVERY year — most predictable question)",
-        "Express all ratios in terms of one ratio (asked in 2017, 2019, 2022, 2024, 2026)",
-        "Word problems combining trig ratios (asked in 2018, 2021, 2023)"
-      ]
-    },
-    "scoring_areas": [
-      "Identity proofs — memorize the basic identities and convert everything to sin and cos",
-      "Standard angle evaluations — memorize the table of values for 0°, 30°, 45°, 60°, 90°",
-      "Complementary angle problems — sin(90°-θ)=cos θ, tan(90°-θ)=cot θ, sec(90°-θ)=cosec θ",
-      "Finding ratios from one — use Pythagoras to find the third side, then compute all ratios"
+  "model_papers": {
+    "simple": [
+      {
+        "question": "If sin A = 5/13 and A is acute, find cos A and tan A.",
+        "answer": "cos A = 12/13, tan A = 5/12",
+        "steps": [
+          "sin A = opposite/hypotenuse = 5/13, so opposite = 5k, hypotenuse = 13k",
+          "By Pythagoras: adjacent² = (13k)² - (5k)² = 169k² - 25k² = 144k²",
+          "adjacent = 12k",
+          "cos A = adjacent/hypotenuse = 12/13",
+          "tan A = opposite/adjacent = 5/12"
+        ],
+        "hints": [
+          "Use the identity sin²A + cos²A = 1 to find cos A from sin A."
+        ]
+      },
+      {
+        "question": "Evaluate: sin 60° cos 30° + cos 60° sin 30°.",
+        "answer": "1",
+        "steps": [
+          "sin 60° = √3/2, cos 30° = √3/2",
+          "cos 60° = 1/2, sin 30° = 1/2",
+          "Expression = (√3/2)(√3/2) + (1/2)(1/2)",
+          "= 3/4 + 1/4 = 1"
+        ],
+        "hints": [
+          "Memorise the standard angle table for 0°, 30°, 45°, 60°, and 90°."
+        ]
+      }
     ],
-    "common_mistakes": [
-      "Forgetting that sin²θ means (sin θ)², not sin(θ²)",
-      "Mixing up reciprocal ratios: sin θ × cosec θ = 1, cos θ × sec θ = 1, tan θ × cot θ = 1",
-      "Forgetting to rationalize denominators (e.g., leaving 1/√2 is acceptable in CBSE, but some prefer √2/2)",
-      "Using complementary relationships in wrong direction: sin(90°-θ) = cos θ, NOT sin θ = cos(90°-θ) is also true",
-      "Not simplifying fully — in identity proofs, keep going until both sides are identical",
-      "Using the wrong Pythagorean identity: sin²θ + cos²θ = 1, 1 + tan²θ = sec²θ, 1 + cot²θ = cosec²θ"
+    "medium": [
+      {
+        "question": "If sec A = 13/5, find the values of sin A and tan A, where A is acute.",
+        "answer": "sin A = 12/13, tan A = 12/5",
+        "steps": [
+          "sec A = hypotenuse/adjacent = 13/5, so hyp = 13k, adj = 5k",
+          "By Pythagoras: opp² = (13k)² - (5k)² = 169k² - 25k² = 144k²",
+          "opposite = 12k",
+          "sin A = opp/hyp = 12/13",
+          "tan A = opp/adj = 12/5"
+        ],
+        "hints": [
+          "Given sec A, find cos A first using cos A = 1/sec A, then use sin²A + cos²A = 1."
+        ]
+      },
+      {
+        "question": "Prove that (1 - sin² A) sec² A = 1.",
+        "answer": "LHS = RHS = 1 (proved)",
+        "steps": [
+          "LHS = (1 - sin² A) sec² A",
+          "1 - sin² A = cos² A (using sin²A + cos²A = 1)",
+          "sec² A = 1/cos² A",
+          "LHS = cos² A × 1/cos² A = 1 = RHS"
+        ],
+        "hints": [
+          "Use the identity sin²θ + cos²θ = 1 and the definition sec θ = 1/cos θ."
+        ]
+      },
+      {
+        "question": "If tan A = cot B, prove that A + B = 90°.",
+        "answer": "A + B = 90° (proved)",
+        "steps": [
+          "tan A = cot B",
+          "cot B = tan(90° - B) since cot θ = tan(90° - θ)",
+          "So tan A = tan(90° - B)",
+          "Since A and B are acute, A = 90° - B",
+          "Therefore A + B = 90°"
+        ],
+        "hints": [
+          "Convert cot B into tan using the complementary angle formula."
+        ]
+      }
+    ],
+    "complex": [
+      {
+        "question": "Prove that (1 + cot A - cosec A)(1 + tan A + sec A) = 2.",
+        "answer": "LHS = 2 (proved)",
+        "steps": [
+          "LHS = (1 + cos A/sin A - 1/sin A)(1 + sin A/cos A + 1/cos A)",
+          "= ((sin A + cos A - 1)/sin A)((cos A + sin A + 1)/cos A)",
+          "= ((sin A + cos A)² - 1²)/(sin A cos A)",
+          "= (sin²A + cos²A + 2 sin A cos A - 1)/(sin A cos A)",
+          "= (1 + 2 sin A cos A - 1)/(sin A cos A)",
+          "= (2 sin A cos A)/(sin A cos A) = 2"
+        ],
+        "hints": [
+          "Convert everything to sin and cos, then combine using algebraic identities."
+        ]
+      },
+      {
+        "question": "If sin A + sin² A = 1, prove that cos² A + cos⁴ A = 1.",
+        "answer": "cos² A + cos⁴ A = 1 (proved)",
+        "steps": [
+          "Given sin A + sin² A = 1",
+          "sin A = 1 - sin² A = cos² A",
+          "cos² A + cos⁴ A = cos² A + (cos² A)²",
+          "= sin A + sin² A (substituting cos² A = sin A)",
+          "= 1 (from given)"
+        ],
+        "hints": [
+          "Rewrite the given condition to express sin A in terms of cos² A."
+        ]
+      }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "sin 0° is equal to:",
-        "options": ["0", "1", "1/2", "√3/2"],
+        "options": [
+          "0",
+          "1",
+          "1/2",
+          "√3/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sin 0° = 0. At angle 0°, the opposite side has length 0, so the ratio is 0.",
@@ -700,7 +770,12 @@
       {
         "id": "q-s-2",
         "question": "The value of cos 60° is:",
-        "options": ["1/2", "√3/2", "1/√2", "1"],
+        "options": [
+          "1/2",
+          "√3/2",
+          "1/√2",
+          "1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "cos 60° = 1/2. In a 30-60-90 triangle, the adjacent side to 60° is half the hypotenuse.",
@@ -714,7 +789,12 @@
       {
         "id": "q-s-3",
         "question": "tan 45° is equal to:",
-        "options": ["1", "0", "√3", "1/√3"],
+        "options": [
+          "1",
+          "0",
+          "√3",
+          "1/√3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "tan 45° = 1. At 45°, opposite and adjacent sides are equal, so their ratio is 1.",
@@ -728,7 +808,12 @@
       {
         "id": "q-s-4",
         "question": "Which of the following is the reciprocal of sin θ?",
-        "options": ["cosec θ", "sec θ", "cot θ", "cos θ"],
+        "options": [
+          "cosec θ",
+          "sec θ",
+          "cot θ",
+          "cos θ"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "cosec θ = 1/sin θ. They are reciprocal ratios.",
@@ -742,7 +827,12 @@
       {
         "id": "q-s-5",
         "question": "sin²θ + cos²θ = ?",
-        "options": ["1", "0", "sin θ cos θ", "tan²θ"],
+        "options": [
+          "1",
+          "0",
+          "sin θ cos θ",
+          "tan²θ"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sin²θ + cos²θ = 1. This is the fundamental Pythagorean trigonometric identity.",
@@ -756,7 +846,12 @@
       {
         "id": "q-s-6",
         "question": "sec θ = 1/___?",
-        "options": ["cos θ", "sin θ", "tan θ", "cot θ"],
+        "options": [
+          "cos θ",
+          "sin θ",
+          "tan θ",
+          "cot θ"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sec θ = 1/cos θ. They are reciprocal trigonometric ratios.",
@@ -770,7 +865,12 @@
       {
         "id": "q-s-7",
         "question": "If sin θ = 1/2, and θ is acute, θ = ?",
-        "options": ["30°", "45°", "60°", "90°"],
+        "options": [
+          "30°",
+          "45°",
+          "60°",
+          "90°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sin 30° = 1/2. This is a standard angle value to memorize.",
@@ -784,7 +884,12 @@
       {
         "id": "q-s-8",
         "question": "The value of tan 90° is:",
-        "options": ["Not defined", "0", "1", "∞"],
+        "options": [
+          "Not defined",
+          "0",
+          "1",
+          "∞"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "tan 90° = sin 90°/cos 90° = 1/0, which is undefined (division by zero).",
@@ -798,7 +903,12 @@
       {
         "id": "q-s-9",
         "question": "Which ratio is greater than 1 for acute angles?",
-        "options": ["sec θ", "cos θ", "sin θ", "None"],
+        "options": [
+          "sec θ",
+          "cos θ",
+          "sin θ",
+          "None"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sec θ = 1/cos θ. Since cos θ < 1 for 0° < θ < 90° (except cos 0°=1), sec θ > 1 for most acute angles.",
@@ -812,7 +922,12 @@
       {
         "id": "q-s-10",
         "question": "sin 30° + cos 60° = ?",
-        "options": ["1", "0", "1/2", "√3"],
+        "options": [
+          "1",
+          "0",
+          "1/2",
+          "√3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sin 30° = 1/2 and cos 60° = 1/2. Sum = 1/2 + 1/2 = 1.",
@@ -824,12 +939,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-m-1",
         "question": "If sin A = 3/5 and A is acute, find cos A.",
-        "options": ["4/5", "2/5", "√34/5", "5/3"],
+        "options": [
+          "4/5",
+          "2/5",
+          "√34/5",
+          "5/3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "cos²A = 1 - sin²A = 1 - 9/25 = 16/25. cos A = 4/5 (positive since A is acute).",
@@ -843,7 +962,12 @@
       {
         "id": "q-m-2",
         "question": "Evaluate: 2 tan² 45° + cos² 30° - sin² 60°",
-        "options": ["2", "1", "0", "3"],
+        "options": [
+          "2",
+          "1",
+          "0",
+          "3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "tan 45° = 1, so tan² 45° = 1. cos 30° = √3/2, so cos² 30° = 3/4. sin 60° = √3/2, so sin² 60° = 3/4. Expression = 2(1) + 3/4 - 3/4 = 2.",
@@ -857,7 +981,12 @@
       {
         "id": "q-m-3",
         "question": "If sec A = 2, find A (acute).",
-        "options": ["60°", "30°", "45°", "0°"],
+        "options": [
+          "60°",
+          "30°",
+          "45°",
+          "0°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sec A = 2 → cos A = 1/2 → A = 60° (since cos 60° = 1/2).",
@@ -871,7 +1000,12 @@
       {
         "id": "q-m-4",
         "question": "Simplify: (1 - sin²θ) sec²θ",
-        "options": ["1", "0", "tan²θ", "cos²θ"],
+        "options": [
+          "1",
+          "0",
+          "tan²θ",
+          "cos²θ"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "1 - sin²θ = cos²θ. And cos²θ × sec²θ = cos²θ × 1/cos²θ = 1.",
@@ -885,7 +1019,12 @@
       {
         "id": "q-m-5",
         "question": "If tan θ = 1, then cos θ = ? (θ acute)",
-        "options": ["1/√2", "1", "0", "√3/2"],
+        "options": [
+          "1/√2",
+          "1",
+          "0",
+          "√3/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "tan θ = 1 → θ = 45°. cos 45° = 1/√2.",
@@ -899,7 +1038,12 @@
       {
         "id": "q-m-6",
         "question": "In ∆ABC, right-angled at B, AB = 3, BC = 4. Find sin A.",
-        "options": ["4/5", "3/5", "4/3", "3/4"],
+        "options": [
+          "4/5",
+          "3/5",
+          "4/3",
+          "3/4"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "AC = √(3²+4²) = 5. sin A = opposite/hypotenuse = BC/AC = 4/5.",
@@ -913,7 +1057,12 @@
       {
         "id": "q-m-7",
         "question": "cos 48° - sin 42° = ?",
-        "options": ["0", "1", "-1", "1/2"],
+        "options": [
+          "0",
+          "1",
+          "-1",
+          "1/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "cos 48° = cos(90°-42°) = sin 42°. So cos 48° - sin 42° = sin 42° - sin 42° = 0.",
@@ -927,7 +1076,12 @@
       {
         "id": "q-m-8",
         "question": "Simplify: (cosec A - sin A)(sec A - cos A)",
-        "options": ["1/(tan A + cot A)", "tan A + cot A", "sin A cos A", "1"],
+        "options": [
+          "1/(tan A + cot A)",
+          "tan A + cot A",
+          "sin A cos A",
+          "1"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "(cosec A - sin A)(sec A - cos A) = (1/sin A - sin A)(1/cos A - cos A) = ((1-sin²A)/sin A)((1-cos²A)/cos A) = (cos²A/sin A)(sin²A/cos A) = cos A sin A = sin A cos A. Now 1/(tan A + cot A) = 1/(sin A/cos A + cos A/sin A) = 1/((sin²A+cos²A)/sin A cos A) = sin A cos A. So the expression = 1/(tan A + cot A).",
@@ -941,7 +1095,12 @@
       {
         "id": "q-m-9",
         "question": "Find the value of sin 30° cos 60° + cos 30° sin 60°.",
-        "options": ["1", "0", "√3/2", "1/2"],
+        "options": [
+          "1",
+          "0",
+          "√3/2",
+          "1/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sin 30° cos 60° + cos 30° sin 60° = (1/2)(1/2) + (√3/2)(√3/2) = 1/4 + 3/4 = 1. Note this equals sin 90° = 1 by the sin(A+B) formula.",
@@ -955,7 +1114,12 @@
       {
         "id": "q-m-10",
         "question": "If 3 cot A = 4, find tan A.",
-        "options": ["3/4", "4/3", "5/3", "3/5"],
+        "options": [
+          "3/4",
+          "4/3",
+          "5/3",
+          "3/5"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "cot A = 4/3, so tan A = 1/cot A = 3/4.",
@@ -967,7 +1131,6 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-c-1",
@@ -991,7 +1154,12 @@
       {
         "id": "q-c-2",
         "question": "If cos A + cos²A = 1, find sin²A + sin⁴A.",
-        "options": ["1", "0", "2", "3"],
+        "options": [
+          "1",
+          "0",
+          "2",
+          "3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "cos A + cos²A = 1 → cos A = 1 - cos²A = sin²A. So sin²A = cos A. Then sin²A + sin⁴A = cos A + cos²A = 1.",
@@ -1005,7 +1173,12 @@
       {
         "id": "q-c-3",
         "question": "If sin A + sin B = a and cos A + cos B = b, find cos(A-B).",
-        "options": ["(a² + b² - 2)/2", "(a² - b²)/2", "(a² + b²)/2", "ab/2"],
+        "options": [
+          "(a² + b² - 2)/2",
+          "(a² - b²)/2",
+          "(a² + b²)/2",
+          "ab/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Square and add: (sin A+sin B)²+(cos A+cos B)² = a²+b². (sin²A+cos²A)+(sin²B+cos²B)+2(sin A sin B+cos A cos B) = a²+b². 1+1+2 cos(A-B) = a²+b². So 2+2 cos(A-B) = a²+b² → cos(A-B) = (a²+b²-2)/2.",
@@ -1019,7 +1192,12 @@
       {
         "id": "q-c-4",
         "question": "If sec A + tan A = 1/2, find sec A - tan A.",
-        "options": ["2", "1/2", "4", "-2"],
+        "options": [
+          "2",
+          "1/2",
+          "4",
+          "-2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "We know sec²A - tan²A = 1. So (sec A + tan A)(sec A - tan A) = 1. Given sec A + tan A = 1/2, so (1/2)(sec A - tan A) = 1 → sec A - tan A = 2.",
@@ -1033,7 +1211,12 @@
       {
         "id": "q-c-5",
         "question": "Evaluate: (tan 1° tan 2° ... tan 89°)",
-        "options": ["1", "0", "45", "Undefined"],
+        "options": [
+          "1",
+          "0",
+          "45",
+          "Undefined"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "tan 1° × tan 89° = tan 1° × cot 1° = 1. Similarly tan 2° × tan 88° = 1, ..., tan 44° × tan 46° = 1, and tan 45° = 1. So the entire product = 1.",
@@ -1047,15 +1230,15 @@
       {
         "id": "q-c-6",
         "question": "In a ∆ABC, right-angled at C, sin A sin B = ?",
-        "options": ["1/2", "c/(2R)", "ab/c²", "Both B and C"],
-        "correct": 0,
+        "options": [
+          "1/2",
+          "c/(2R)",
+          "ab/c²",
+          "Both B and C"
+        ],
+        "correct": 2,
         "explanation": {
-          "correct": "In right triangle at C, A + B = 90°. sin B = sin(90°-A) = cos A. So sin A sin B = sin A cos A. But sin 2A = 2 sin A cos A = 2 sin A cos A. So sin A cos A = (sin 2A)/2 = sin(2×acute_angle)/2. In a right triangle with legs a,b opposite A,B: sin A = a/c, sin B = b/c. So sin A sin B = ab/c². The value 1/2 is not generally correct — it's only 1/2 when A = B = 45°.",
-            "Actually option 0 says 1/2 which is NOT always true. Let me reconsider.",
-            "sin A sin B = sin A cos A = (sin 2A)/2. This equals 1/2 only when sin 2A = 1, i.e., 2A = 90°, A = 45°. So 1/2 is only for a 45-45-90 triangle.",
-            "ab/c² is always correct: sin A sin B = (a/c)(b/c) = ab/c².",
-            "c/(2R): In any triangle, a = 2R sin A, b = 2R sin B, c = 2R sin C = 2R. So sin A sin B = ab/(4R²) = ab/c². And c/(2R) = c/c = 1 (since c = 2R). That doesn't match."
-          ],
+          "correct": "In right triangle at C, A + B = 90°. With legs a opposite A, b opposite B, hypotenuse c: sin A = a/c, sin B = b/c. So sin A sin B = (a/c)(b/c) = ab/c². This is always true. Option 0 (1/2) is only correct when A = B = 45°. Option 1 (c/(2R)) simplifies to 1 since c = 2R in a right triangle (sin C = 1). Only option 2 (ab/c²) is universally correct.",
           "wrong_options": {
             "0": "1/2 is only true for A = B = 45°.",
             "1": "c/(2R) is not equal to sin A sin B in general.",
@@ -1067,7 +1250,12 @@
       {
         "id": "q-c-7",
         "question": "If a cos θ + b sin θ = m and a sin θ - b cos θ = n, find a² + b².",
-        "options": ["m² + n²", "m² - n²", "m n", "(m+n)/2"],
+        "options": [
+          "m² + n²",
+          "m² - n²",
+          "m n",
+          "(m+n)/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Squaring and adding: m²+n² = (a cos θ+b sin θ)²+(a sin θ-b cos θ)² = a²cos²θ+2ab cos θ sin θ+b²sin²θ+a²sin²θ-2ab sin θ cos θ+b²cos²θ = a²(cos²θ+sin²θ)+b²(sin²θ+cos²θ) = a²+b².",
@@ -1080,28 +1268,33 @@
       },
       {
         "id": "q-c-8",
-        "question": "Find the value of x if sin A = x and tan A = 1/x? (A acute, x ≠ 0)",
-        "options": ["x = ±1", "x = 1/√2", "x = √2", "x = 0"],
-        "correct": 0,
+        "question": "If sin A = x and tan A = 1, find the value of x (A acute).",
+        "options": [
+          "x = ±1",
+          "x = 1/√2",
+          "x = √2",
+          "x = 0"
+        ],
+        "correct": 1,
         "explanation": {
-          "correct": "tan A = sin A/cos A = 1/x. So cos A = x sin A = x². Since sin²A+cos²A=1, x²+(x²)²=1 → x²+x⁴=1 → x⁴+x²-1=0. Let y=x²: y²+y-1=0 → y = (-1±√5)/2. Since y=x²≥0, y = (√5-1)/2. So x = ±√((√5-1)/2). Hmm, that's not ±1. Let me recheck the problem.",
-            "If sin A = x and tan A = 1/x, then tan A = sin A/cos A = x/cos A = 1/x → cos A = x².",
-            "sin²A+cos²A = x²+x⁴ = 1 → x⁴+x²-1=0. x² = (-1+√5)/2 (≈ 0.618). x ≈ ±0.786.",
-            "Wait, if x = ±1: sin²A+cos²A = 1+1² = 2 ≠ 1. So x ≠ ±1 generally. But let me check if tan A = ±1: if sin A = cos A, then A = 45°, sin A = 1/√2, tan A = 1. So if x = 1/√2, sin A = 1/√2 and tan A = 1 ≠ 1/(1/√2) = √2. So that doesn't work either.",
-            "Actually let me re-solve: x/cos A = 1/x → cos A = x². Then x² + x⁴ = 1 → x⁴ + x² - 1 = 0. x² = (-1 + √5)/2 ≈ 0.618, x ≈ ±0.786. None of the options directly match. Option 0 gives ±1 which doesn't satisfy. Let me reconsider if the intended problem was different. If sin A = x and tan A = x (instead of 1/x), then x/cos A = x → cos A = 1 (if x≠0) → A=0°, sin A=0, x=0. If x=0, tan 0° = 0 = 1/0 undefined. So that doesn't work either."
-          ],
+          "correct": "tan A = 1 ⇒ A = 45°. sin 45° = 1/√2. So x = sin A = 1/√2.",
           "wrong_options": {
-            "0": "±1 doesn't satisfy the relationship for a general acute angle.",
-            "1": "1/√2 doesn't work with the given conditions.",
-            "2": "√2 doesn't work.",
-            "3": "x=0 would make tan A undefined."
+            "0": "±1 would require sin A = ±1, meaning A = 90°, but tan 90° is undefined and A is acute.",
+            "1": "1/√2 is correct — sin 45° = 1/√2, tan 45° = 1.",
+            "2": "√2 > 1, impossible for sin A.",
+            "3": "x = 0 would make sin A = 0, A = 0°, but tan 0° = 0, not 1."
           }
         }
       },
       {
         "id": "q-c-9",
         "question": "If 7 sin²θ + 3 cos²θ = 4, find tan θ.",
-        "options": ["1/√3", "√3", "1", "3"],
+        "options": [
+          "1/√3",
+          "√3",
+          "1",
+          "3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "7 sin²θ + 3 cos²θ = 4. Split as 3(sin²θ+cos²θ) + 4 sin²θ = 4 → 3(1) + 4 sin²θ = 4 → 4 sin²θ = 1 → sin²θ = 1/4 → sin θ = ±1/2. Since we consider acute: sin θ = 1/2 → θ = 30° → tan θ = 1/√3.",
@@ -1115,7 +1308,12 @@
       {
         "id": "q-c-10",
         "question": "Find the value of sin 15° using trigonometric identities.",
-        "options": ["(√3-1)/(2√2)", "(√3+1)/(2√2)", "1/2", "√3/2"],
+        "options": [
+          "(√3-1)/(2√2)",
+          "(√3+1)/(2√2)",
+          "1/2",
+          "√3/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "sin 15° = sin(45°-30°) = sin 45° cos 30° - cos 45° sin 30° = (1/√2)(√3/2) - (1/√2)(1/2) = (√3-1)/(2√2). Rationalizing: (√6-√2)/4.",
@@ -1128,7 +1326,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Ekadhikena Purvena for Trigonometric Values",
@@ -1156,7 +1353,7 @@
         {
           "problem": "Remember reciprocal pairs.",
           "steps": [
-            "Step 1: sin → cosec (co-responding)",  
+            "Step 1: sin → cosec (co-responding)",
             "Step 2: cos → sec",
             "Step 3: tan → cot",
             "Step 4: The product of each pair = 1"
@@ -1165,7 +1362,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Introduction to Trigonometry — Complete Mind Map",
     "type": "hierarchical",
@@ -1223,50 +1419,157 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "How Trigonometry Connects — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Right Triangle", "group": "foundation" },
-      { "id": "n2", "label": "Trigonometric Ratios", "group": "ratios" },
-      { "id": "n3", "label": "Standard Angles", "group": "values" },
-      { "id": "n4", "label": "Complementary Angles", "group": "relations" },
-      { "id": "n5", "label": "Pythagoras Theorem", "group": "foundation" },
-      { "id": "n6", "label": "Trigonometric Identities", "group": "identities" },
-      { "id": "n7", "label": "Finding Missing Sides/Angles", "group": "application" },
-      { "id": "n8", "label": "Heights & Distances (Applications)", "group": "goal" },
-      { "id": "n9", "label": "Board & Competitive Problems", "group": "goal" }
+      {
+        "id": "n1",
+        "label": "Right Triangle",
+        "group": "foundation"
+      },
+      {
+        "id": "n2",
+        "label": "Trigonometric Ratios",
+        "group": "ratios"
+      },
+      {
+        "id": "n3",
+        "label": "Standard Angles",
+        "group": "values"
+      },
+      {
+        "id": "n4",
+        "label": "Complementary Angles",
+        "group": "relations"
+      },
+      {
+        "id": "n5",
+        "label": "Pythagoras Theorem",
+        "group": "foundation"
+      },
+      {
+        "id": "n6",
+        "label": "Trigonometric Identities",
+        "group": "identities"
+      },
+      {
+        "id": "n7",
+        "label": "Finding Missing Sides/Angles",
+        "group": "application"
+      },
+      {
+        "id": "n8",
+        "label": "Heights & Distances (Applications)",
+        "group": "goal"
+      },
+      {
+        "id": "n9",
+        "label": "Board & Competitive Problems",
+        "group": "goal"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n1", "n5"],
-      ["n2", "n3"], ["n2", "n4"],
-      ["n2", "n7"],
-      ["n5", "n6"],
-      ["n4", "n6"],
-      ["n3", "n7"],
-      ["n7", "n8"],
-      ["n8", "n9"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n5"
+      ],
+      [
+        "n2",
+        "n3"
+      ],
+      [
+        "n2",
+        "n4"
+      ],
+      [
+        "n2",
+        "n7"
+      ],
+      [
+        "n5",
+        "n6"
+      ],
+      [
+        "n4",
+        "n6"
+      ],
+      [
+        "n3",
+        "n7"
+      ],
+      [
+        "n7",
+        "n8"
+      ],
+      [
+        "n8",
+        "n9"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "How to Solve a Trigonometry Problem",
       "steps": [
-        { "order": 1, "action": "Identify the right triangle and the angle of interest", "next": 2 },
-        { "order": 2, "action": "Label sides: opposite (O), adjacent (A), hypotenuse (H)", "next": 3 },
-        { "order": 3, "action": "What is given? One angle and one side, or two sides?", "decision": true, "if_yes": 4, "if_no": 6 },
-        { "order": 4, "action": "Choose appropriate ratio: sin=O/H, cos=A/H, tan=O/A", "next": 5 },
-        { "order": 5, "action": "Substitute and solve for the unknown", "next": "END" },
-        { "order": 6, "action": "If identity problem: convert to sin and cos", "next": 7 },
-        { "order": 7, "action": "Use identities to simplify both sides", "next": 8 },
-        { "order": 8, "action": "Are LHS and RHS identical?", "decision": true, "if_yes": 9, "if_no": 10 },
-        { "order": 9, "action": "Identity proved!" },
-        { "order": 10, "action": "Try alternative approach (multiply by conjugate, factor, etc.)" }
+        {
+          "order": 1,
+          "action": "Identify the right triangle and the angle of interest",
+          "next": 2
+        },
+        {
+          "order": 2,
+          "action": "Label sides: opposite (O), adjacent (A), hypotenuse (H)",
+          "next": 3
+        },
+        {
+          "order": 3,
+          "action": "What is given? One angle and one side, or two sides?",
+          "decision": true,
+          "if_yes": 4,
+          "if_no": 6
+        },
+        {
+          "order": 4,
+          "action": "Choose appropriate ratio: sin=O/H, cos=A/H, tan=O/A",
+          "next": 5
+        },
+        {
+          "order": 5,
+          "action": "Substitute and solve for the unknown",
+          "next": "END"
+        },
+        {
+          "order": 6,
+          "action": "If identity problem: convert to sin and cos",
+          "next": 7
+        },
+        {
+          "order": 7,
+          "action": "Use identities to simplify both sides",
+          "next": 8
+        },
+        {
+          "order": 8,
+          "action": "Are LHS and RHS identical?",
+          "decision": true,
+          "if_yes": 9,
+          "if_no": 10
+        },
+        {
+          "order": 9,
+          "action": "Identity proved!"
+        },
+        {
+          "order": 10,
+          "action": "Try alternative approach (multiply by conjugate, factor, etc.)"
+        }
       ]
     }
   ],
-
   "visualizations": [
     {
       "rendererType": "COORDINATE_GRAPH",
@@ -1274,8 +1577,16 @@
       "visualizationProperties": {
         "title": "Right Triangle with Trigonometric Ratios",
         "type": "right_triangle_labels",
-        "angles": [30, 60, 90],
-        "sides": [1, 2, "√3"],
+        "angles": [
+          30,
+          60,
+          90
+        ],
+        "sides": [
+          1,
+          2,
+          "√3"
+        ],
         "showRatios": true
       }
     },
@@ -1285,13 +1596,18 @@
       "visualizationProperties": {
         "title": "Unit Circle — sin and cos visualization",
         "type": "unit_circle",
-        "showAngles": [0, 30, 45, 60, 90],
+        "showAngles": [
+          0,
+          30,
+          45,
+          60,
+          90
+        ],
         "showSine": true,
         "showCosine": true
       }
     }
   ],
-
   "common_misconceptions": [
     "sin²θ means (sin θ)², NOT sin(θ²) — sin²30° = (1/2)² = 1/4, NOT sin 900°.",
     "sin(A+B) = sin A + sin B — FALSE: sin(A+B) = sin A cos B + cos A sin B. Example: sin 90° = 1, but sin 30° + sin 60° ≈ 0.5 + 0.866 = 1.366 ≠ 1.",
@@ -1301,5 +1617,6 @@
     "All trigonometric ratios are positive for all angles — FALSE: Only sin θ (and cosec θ) are positive in quadrant II, etc. For acute angles (0° to 90°), all are positive.",
     "If sin A = sin B, then A = B — FALSE: sin 30° = sin 150° = 1/2, so different angles can have the same sine.",
     "The three Pythagorean identities are unrelated — FALSE: They all come from sin²θ + cos²θ = 1. Dividing by cos²θ gives 1 + tan²θ = sec²θ. Dividing by sin²θ gives 1 + cot²θ = cosec²θ."
-  ]
+  ],
+  "chapterNumber": 9
 }

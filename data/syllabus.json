@@ -211,6 +211,24 @@
           ]
         },
         {
+          "id": "coordinate-geometry",
+          "name": "Coordinate Geometry",
+          "summary": "Distance formula, section formula, and area of triangles in the coordinate plane.",
+          "topics": [
+            "Distance Formula",
+            "Section Formula",
+            "Area of a Triangle"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "cg-1",
+              "question": "Find the distance between (3, 4) and (7, 1).",
+              "solution": "Distance = sqrt((7-3)^2 + (1-4)^2) = sqrt(16 + 9) = 5."
+            }
+          ]
+        },
+        {
           "id": "triangles",
           "name": "Triangles",
           "summary": "Similarity of triangles, Pythagoras theorem, and basic proportionality.",
@@ -232,20 +250,22 @@
           ]
         },
         {
-          "id": "coordinate-geometry",
-          "name": "Coordinate Geometry",
-          "summary": "Distance formula, section formula, and area of triangles in the coordinate plane.",
+          "id": "circles",
+          "name": "Circles",
+          "summary": "Tangent, cyclic quadrilaterals, and angle properties of circles.",
           "topics": [
-            "Distance Formula",
-            "Section Formula",
-            "Area of a Triangle"
+            "Tangent and Secant",
+            "Angle Subtended by an Arc",
+            "Cyclic Quadrilaterals"
           ],
-          "theorems": [],
+          "theorems": [
+            "Tangent-Secant Theorem"
+          ],
           "exercises": [
             {
-              "id": "cg-1",
-              "question": "Find the distance between (3, 4) and (7, 1).",
-              "solution": "Distance = sqrt((7-3)^2 + (1-4)^2) = sqrt(16 + 9) = 5."
+              "id": "cir-1",
+              "question": "If a tangent to a circle makes a right angle with the radius at the point of contact, what is the angle between the tangent and the radius?",
+              "solution": "The angle between the tangent and the radius at the point of contact is 90 degrees."
             }
           ]
         },
@@ -284,44 +304,6 @@
               "id": "trig-2",
               "question": "From a point 20 m away from the base of a tower, the angle of elevation of its top is 30 degrees. Find the height of the tower.",
               "solution": "Height = 20 * tan(30 degrees) = 20 / sqrt(3) ≈ 11.55 m."
-            }
-          ]
-        },
-        {
-          "id": "circles",
-          "name": "Circles",
-          "summary": "Tangent, cyclic quadrilaterals, and angle properties of circles.",
-          "topics": [
-            "Tangent and Secant",
-            "Angle Subtended by an Arc",
-            "Cyclic Quadrilaterals"
-          ],
-          "theorems": [
-            "Tangent-Secant Theorem"
-          ],
-          "exercises": [
-            {
-              "id": "cir-1",
-              "question": "If a tangent to a circle makes a right angle with the radius at the point of contact, what is the angle between the tangent and the radius?",
-              "solution": "The angle between the tangent and the radius at the point of contact is 90 degrees."
-            }
-          ]
-        },
-        {
-          "id": "constructions",
-          "name": "Constructions",
-          "summary": "Construction of triangles, bisectors, and tangents to circles.",
-          "topics": [
-            "Triangle Construction",
-            "Angle Bisector",
-            "Circle Tangent"
-          ],
-          "theorems": [],
-          "exercises": [
-            {
-              "id": "cons-1",
-              "question": "Construct a triangle given two sides and the included angle.",
-              "solution": "Use a ruler and compass to draw one side, then construct the given angle at one endpoint and mark the second side length."
             }
           ]
         },
