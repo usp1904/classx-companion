@@ -1,0 +1,417 @@
+{
+  "id": "probability",
+  "chapter": "Probability",
+  "lesson": 15,
+  "title": "Probability — Complete Learning Module (Learn Maths with Fun)",
+  "schemaVersion": "2.0",
+
+  "outcomes": [
+    "Define probability as P(E) = n(E)/n(S) and apply it to simple events",
+    "Distinguish between experimental and theoretical probability",
+    "Calculate probability for coin tosses, dice rolls, card draws, and ball picks",
+    "Use complementary events: P(E) + P(not E) = 1",
+    "Solve 'at least' and 'at most' probability problems",
+    "Connect probability to real-life decisions and risk assessment",
+    "Solve RD Sharma and RS Aggarwal extension problems for competitive readiness"
+  ],
+
+  "prerequisite_nodes": ["MATH_CLASS9_PROBABILITY_BASIC", "MATH_CLASS8_DATA_HANDLING"],
+
+  "concepts": [
+    {
+      "name": "Probability — The Measure of Chance",
+      "real_life_application": "When the weather report says '80% chance of rain', that's probability. When a doctor says 'this surgery has a 95% success rate', that's probability. When a cricket team wins 7 out of 10 matches, the probability of winning the next match is 0.7 — until the match actually happens!",
+      "purpose": "Probability quantifies uncertainty on a scale from 0 (impossible) to 1 (certain). It transforms 'maybe' into a precise number. It's the mathematical language of risk, used in insurance, stock markets, and medical diagnoses.",
+      "day_to_day_usage": [
+        "Weather forecast: '70% chance of rain' means in 70 out of 100 similar conditions, it rained",
+        "Life insurance: premium calculated based on probability of death at a given age",
+        "Cricket: probability of winning based on historical head-to-head records",
+        "Railways: probability of a train being on time based on past data"
+      ]
+    },
+    {
+      "name": "Experimental vs Theoretical Probability",
+      "real_life_application": "If you toss a coin 10 times and get 7 heads, the experimental probability of heads is 0.7. But theoretically, the chance is 0.5. The more tosses you do, the closer experimental probability gets to theoretical — this is the Law of Large Numbers.",
+      "purpose": "Experimental probability is based on actual trials. Theoretical probability is the ideal value based on symmetry. For a fair coin, theoretical P(head) = 1/2. Experimental probability approaches this as the number of trials increases.",
+      "day_to_day_usage": [
+        "A bus company tracks on-time arrivals for a year to get experimental probability",
+        "In a cricket match, the theoretical probability of heads in the toss is always 1/2",
+        "A factory tests 1000 products to find experimental probability of defects"
+      ]
+    },
+    {
+      "name": "Sample Space and Events",
+      "real_life_application": "When you choose a card from a deck, all 52 cards form the sample space S. 'Drawing a king' is an event E with 4 favorable outcomes. P(king) = 4/52 = 1/13.",
+      "purpose": "The sample space is the set of all possible outcomes. An event is a subset of the sample space. Probability = number of favorable outcomes / total number of possible outcomes. The sample space must be well-defined first.",
+      "day_to_day_usage": [
+        "Rolling a die: S = {1, 2, 3, 4, 5, 6}, event 'even number' = {2, 4, 6}",
+        "Raffle draw: S = all ticket numbers, event 'win' = your ticket numbers",
+        "Traffic light: S = {red, yellow, green}, event 'stop' = {red}"
+      ]
+    },
+    {
+      "name": "Complementary Events",
+      "real_life_application": "If the probability of passing an exam is 0.75, the probability of failing is 0.25. You either pass or fail — these are complementary events. The sum of probabilities of complementary events is always 1.",
+      "purpose": "Complementary events are two events that together cover all possible outcomes and don't overlap. The complement rule P(not E) = 1 - P(E) is the most useful shortcut. Many 'at least' problems are easier when solved via complements.",
+      "day_to_day_usage": [
+        "P(it rains today) + P(it doesn't rain today) = 1",
+        "P(team wins) + P(team doesn't win) = 1",
+        "'At least one head' is easier found as 1 - P(no heads)"
+      ]
+    },
+    {
+      "name": "Probability Problems — Dice, Coins, Cards, Balls",
+      "real_life_application": "From a TV game show choosing envelopes to a lottery draw, these classic problems model real random selection. A card deck simulates any equally-likely selection problem. Dice model any uniform random number generator.",
+      "purpose": "These standard problems teach the systematic counting of favorable and total outcomes. Dice: 6 outcomes. Two dice: 36 outcomes. Coin: 2 outcomes. Cards: 52 outcomes. Balls from bag: total balls = n(S). Mastering these builds intuition for complex problems.",
+      "day_to_day_usage": [
+        "Card games like Teen Patti use probability to calculate winning hands",
+        "Ludo and Snakes & Ladders use a die — each number has probability 1/6",
+        "Lottery systems — probability = 1 / (total ticket combinations)",
+        "Random sampling in quality control — picking defective items from a batch"
+      ]
+    }
+  ],
+
+  "worked_examples": [
+    {
+      "id": "we-1",
+      "topic": "Probability — Coin Tosses",
+      "problem": "Two unbiased coins are tossed simultaneously. Find the probability of getting: (i) at least one head, (ii) exactly one tail, (iii) at most one head.",
+      "board_mode": [
+        "Given: Two coins tossed. Sample space S = {HH, HT, TH, TT}, n(S) = 4.",
+        "",
+        "(i) Event E₁ 'at least one head' = {HH, HT, TH}, n(E₁) = 3",
+        "  P(E₁) = n(E₁)/n(S) = 3/4 = 0.75",
+        "",
+        "(ii) Event E₂ 'exactly one tail' = {HT, TH}, n(E₂) = 2",
+        "  P(E₂) = n(E₂)/n(S) = 2/4 = 1/2 = 0.5",
+        "",
+        "(iii) Event E₃ 'at most one head' = {HT, TH, TT}, n(E₃) = 3",
+        "  P(E₃) = n(E₃)/n(S) = 3/4 = 0.75",
+        "",
+        "Alternative (iii): 'At most one head' is complement of 'two heads'",
+        "  P(two heads) = 1/4, so P(at most one head) = 1 - 1/4 = 3/4 ✓"
+      ],
+      "speed_mode": "Golden step: For coin problems, list all possibilities systematically. For 'at least one', use complement: 1 - P(no heads) = 1 - 1/4 = 3/4.",
+      "competitive_shortcut": "For n coins, total outcomes = 2ⁿ. Number of outcomes with exactly r heads = ⁿCᵣ. Using combinations is faster for 3+ coins."
+    },
+    {
+      "id": "we-2",
+      "topic": "Probability — Dice Rolls",
+      "problem": "Two dice are rolled simultaneously. Find the probability that the sum is 7.",
+      "board_mode": [
+        "Given: Two dice. Total outcomes = 6 × 6 = 36.",
+        "Favorable outcomes where sum = 7:",
+        "  (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) — 6 outcomes.",
+        "P(sum = 7) = 6/36 = 1/6",
+        "To Find: P(sum = 7) = 1/6"
+      ],
+      "speed_mode": "Golden step: For sum problems, outcomes are symmetric. Sum 7 has 6 outcomes (the maximum for two dice). Sum 2 and 12 have 1 outcome each. Sum 6 and 8 have 5 outcomes each. Memorize the distribution.",
+      "competitive_shortcut": "Sum distribution for two dice forms a triangle: 2(1), 3(2), 4(3), 5(4), 6(5), 7(6), 8(5), 9(4), 10(3), 11(2), 12(1). Total = 36."
+    },
+    {
+      "id": "we-3",
+      "topic": "Probability — Cards",
+      "problem": "One card is drawn from a well-shuffled deck of 52 cards. Find the probability of getting: (i) a king, (ii) a red card, (iii) a face card, (iv) a black queen.",
+      "board_mode": [
+        "Given: Deck of 52 cards. n(S) = 52.",
+        "",
+        "(i) Kings: 4 (one per suit). P(king) = 4/52 = 1/13",
+        "",
+        "(ii) Red cards: hearts (13) + diamonds (13) = 26. P(red) = 26/52 = 1/2",
+        "",
+        "(iii) Face cards: Jack, Queen, King per suit = 3 × 4 = 12. P(face card) = 12/52 = 3/13",
+        "",
+        "(iv) Black queens: queen of spades + queen of clubs = 2. P(black queen) = 2/52 = 1/26",
+        "",
+        "To Find: (i) 1/13 (ii) 1/2 (iii) 3/13 (iv) 1/26"
+      ],
+      "speed_mode": "Golden step: Memorize the deck: 4 suits × 13 cards = 52. Suits: spades(black), hearts(red), clubs(black), diamonds(red). Each suit: Ace, 2-10, Jack, Queen, King. Face cards = J, Q, K (12 total).",
+      "competitive_shortcut": "Ace is not a face card. Number cards = 2-10 (9 per suit = 36). Face cards = 12. Total = 36 + 12 + 4 aces = 52 ✓."
+    },
+    {
+      "id": "we-4",
+      "topic": "Probability — Balls from Bag",
+      "problem": "A bag contains 5 red balls, 3 blue balls, and 2 green balls. One ball is drawn at random. Find the probability that it is: (i) red, (ii) not blue, (iii) red or green.",
+      "board_mode": [
+        "Given: Total balls = 5 + 3 + 2 = 10. n(S) = 10.",
+        "",
+        "(i) Red balls = 5. P(red) = 5/10 = 1/2",
+        "",
+        "(ii) Not blue = total - blue = 10 - 3 = 7. P(not blue) = 7/10 = 0.7",
+        "  Alternatively: P(blue) = 3/10, so P(not blue) = 1 - 3/10 = 7/10 ✓",
+        "",
+        "(iii) Red or green = 5 + 2 = 7. P(red or green) = 7/10 = 0.7",
+        "",
+        "To Find: (i) 1/2 (ii) 7/10 (iii) 7/10"
+      ],
+      "speed_mode": "Golden step: 'Not' problems are complementary events — always check if 1 - P(E) is easier. 'Or' means add the favorable outcomes if events are mutually exclusive (can't happen together)."
+    }
+  ],
+
+  "exercises": {
+    "exercise_15_1": {
+      "title": "Exercise 15.1 — Basic Probability",
+      "objective": "Calculate probability of simple events",
+      "problems": [
+        {
+          "id": "ex15.1-1",
+          "question": "Complete the statements: (i) P(E) + P(not E) = ___ (ii) Probability of an event that cannot happen is ___. (iii) Probability of an event that is certain is ___. (iv) The sum of probabilities of all elementary events is ___. (v) Probability of an event is always between ___ and ___.",
+          "solution": [
+            "(i) P(E) + P(not E) = 1",
+            "(ii) 0 (impossible event)",
+            "(iii) 1 (certain event)",
+            "(iv) 1",
+            "(v) 0 and 1"
+          ],
+          "final_answer": "(i) 1 (ii) 0 (iii) 1 (iv) 1 (v) 0, 1"
+        },
+        {
+          "id": "ex15.1-2",
+          "question": "A coin is tossed 1000 times with the following outcomes: Head: 455, Tail: 545. Find the experimental probability of each outcome. How does it compare with theoretical?",
+          "solution": [
+            "Step 1: Total trials = 1000.",
+            "Step 2: P(head) experimental = 455/1000 = 0.455",
+            "Step 3: P(tail) experimental = 545/1000 = 0.545",
+            "Step 4: Theoretical P(head) = P(tail) = 0.5",
+            "Step 5: With 1000 tosses, experimental values are close to 0.5 but not exact. More tosses would give closer values."
+          ],
+          "final_answer": "Experimental: P(head) = 0.455, P(tail) = 0.545. Theoretical: 0.5 each."
+        },
+        {
+          "id": "ex15.1-3",
+          "question": "A die is thrown 1000 times. Frequencies: 1→179, 2→150, 3→157, 4→149, 5→175, 6→190. Find experimental probability of each outcome.",
+          "solution": [
+            "Step 1: Total = 1000.",
+            "Step 2: P(1) = 179/1000 = 0.179",
+            "Step 3: P(2) = 150/1000 = 0.15",
+            "Step 4: P(3) = 157/1000 = 0.157",
+            "Step 5: P(4) = 149/1000 = 0.149",
+            "Step 6: P(5) = 175/1000 = 0.175",
+            "Step 7: P(6) = 190/1000 = 0.19",
+            "Theoretical P(each) = 1/6 ≈ 0.167. Experimental values are close."
+          ],
+          "final_answer": "0.179, 0.15, 0.157, 0.149, 0.175, 0.19"
+        },
+        {
+          "id": "ex15.1-4",
+          "question": "Three coins are tossed simultaneously. Find the probability of getting: (i) exactly 2 heads, (ii) at least 2 heads, (iii) at most 2 tails.",
+          "solution": [
+            "Step 1: Sample space for 3 coins: {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}, n(S) = 8.",
+            "Step 2 (i): Exactly 2 heads: {HHT, HTH, THH}, n = 3. P = 3/8",
+            "Step 3 (ii): At least 2 heads: {HHH, HHT, HTH, THH}, n = 4. P = 4/8 = 1/2",
+            "Step 4 (iii): At most 2 tails: complement of 3 tails (TTT). P = 1 - 1/8 = 7/8"
+          ],
+          "final_answer": "(i) 3/8 (ii) 1/2 (iii) 7/8"
+        },
+        {
+          "id": "ex15.1-5",
+          "question": "Two dice are rolled. Find the probability that the sum is (i) 5, (ii) 13, (iii) less than 13.",
+          "solution": [
+            "Step 1: n(S) = 36.",
+            "Step 2 (i): Sum = 5: {(1,4), (2,3), (3,2), (4,1)}, n = 4. P = 4/36 = 1/9",
+            "Step 3 (ii): Maximum sum = 12. Sum = 13 is impossible. P = 0",
+            "Step 4 (iii): All sums are less than 13 (max 12). P = 1 (certain event)"
+          ],
+          "final_answer": "(i) 1/9 (ii) 0 (iii) 1"
+        }
+      ]
+    },
+    "exercise_15_2": {
+      "title": "Exercise 15.2 — Complementary Events",
+      "objective": "Solve problems using complementary events",
+      "problems": [
+        {
+          "id": "ex15.2-1",
+          "question": "A box contains 90 good pens and 10 defective pens. One pen is selected at random. Find the probability that it is (i) good (ii) defective.",
+          "solution": [
+            "Step 1: Total pens = 100.",
+            "Step 2 (i): P(good) = 90/100 = 9/10 = 0.9",
+            "Step 3 (ii): P(defective) = 10/100 = 1/10 = 0.1",
+            "Check: P(good) + P(defective) = 0.9 + 0.1 = 1 ✓"
+          ],
+          "final_answer": "(i) 9/10 (ii) 1/10"
+        },
+        {
+          "id": "ex15.2-4",
+          "question": "Two dice are rolled. Find the probability that the sum is a prime number.",
+          "solution": [
+            "Step 1: n(S) = 36.",
+            "Step 2: Prime sums possible: 2, 3, 5, 7, 11.",
+            "  Sum 2: (1,1) → 1 outcome",
+            "  Sum 3: (1,2), (2,1) → 2 outcomes",
+            "  Sum 5: (1,4), (2,3), (3,2), (4,1) → 4 outcomes",
+            "  Sum 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) → 6 outcomes",
+            "  Sum 11: (5,6), (6,5) → 2 outcomes",
+            "Step 3: Total favorable = 1 + 2 + 4 + 6 + 2 = 15",
+            "Step 4: P(prime sum) = 15/36 = 5/12"
+          ],
+          "final_answer": "5/12"
+        }
+      ]
+    }
+  },
+
+  "rd_sharma_extensions": {
+    "book": "RD Sharma Class 10, Chapter 16 — Probability",
+    "topics": [
+      {
+        "name": "Problems with Multiple Events",
+        "concept": "When multiple events occur simultaneously, systematically list all combinations. Use the fundamental principle of counting: if one event has m outcomes and another has n outcomes, total combined outcomes = m × n.",
+        "examples": [
+          {
+            "problem": "A coin is tossed and a die is rolled simultaneously. Find the probability of getting a head and an even number.",
+            "solution": [
+              "Step 1: For coin: {H, T} = 2. For die: {1,2,3,4,5,6} = 6.",
+              "Step 2: Total outcomes = 2 × 6 = 12.",
+              "Step 3: Favorable: H with {2,4,6} = 3 outcomes.",
+              "Step 4: P = 3/12 = 1/4"
+            ],
+            "final_answer": "1/4"
+          }
+        ],
+        "competitive_note": "Multiple-event problems are the foundation for complex probability in JEE (Class XI/XII). Master the counting principle here."
+      },
+      {
+        "name": "Cards — Full Deck Analysis",
+        "concept": "A standard deck: 52 cards, 4 suits (♠♣♥♦), 13 cards per suit. Face cards: J, Q, K (12 total). Aces: 4. Number cards: 2-10 (36 total).",
+        "competitive_note": "Memorize the deck structure. Common problems: 'red face card' (6/52), 'black ace' (2/52), 'king or queen' (8/52)."
+      }
+    ]
+  },
+
+  "rs_aggarwal_extensions": {
+    "book": "RS Aggarwal Class 10, Chapter 15 — Probability",
+    "topics": [
+      {
+        "name": "'At Least' and 'At Most' Problems",
+        "concept": "Use complement for 'at least' problems: P(at least one) = 1 - P(none). For 'at most', count directly or use complement.",
+        "examples": [
+          {
+            "problem": "Two dice are rolled. Find the probability of getting at least one 6.",
+            "solution": [
+              "Step 1: P(at least one 6) = 1 - P(no 6)",
+              "Step 2: P(no 6 on first die) = 5/6, P(no 6 on second) = 5/6",
+              "Step 3: P(no 6 on either) = 5/6 × 5/6 = 25/36",
+              "Step 4: P(at least one 6) = 1 - 25/36 = 11/36"
+            ],
+            "final_answer": "11/36"
+          }
+        ]
+      },
+      {
+        "name": "Drawing Without Replacement",
+        "concept": "When drawing two items without replacement, the sample space changes after the first draw. The probability for the second draw depends on the first outcome.",
+        "competitive_note": "This is a bridge to conditional probability (Class XII). Practice these to build intuition for dependent events."
+      }
+    ]
+  },
+
+  "past_papers": {
+    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Probability consistently contributes 3-5 marks (1 short answer + 1 long answer).",
+    "pattern": {
+      "short_answer_1_mark": [
+        "Complementary events — P(E) + P(not E) = 1 (asked in 2017, 2020, 2023)",
+        "Total outcomes when two coins/dice are tossed (asked in 2018, 2021, 2024)"
+      ],
+      "short_answer_2_marks": [
+        "Find probability from a pack of cards (asked in 2019, 2022, 2025)",
+        "Ball from bag — simple probability (asked in 2018, 2021, 2024)"
+      ],
+      "long_answer_4_marks": [
+        "Two dice — sum-based probability (asked in 2017, 2020, 2023, 2026)",
+        "Cards — multiple conditions like 'red king or black queen' (asked in 2019, 2022, 2025)",
+        "Three coins — at least/at most problems (asked in 2018, 2021, 2024)"
+      ]
+    },
+    "scoring_areas": [
+      "Coin and dice problems — memorize the sample spaces",
+      "Card problems — memorize the deck structure",
+      "Complement rule — 'at least' problems are always easier via complement",
+      "Ball from bag — 'not' means 1 - P(that color)"
+    ],
+    "common_mistakes": [
+      "Counting (1,1) only once when two dice are rolled — both dice are distinct, so (1,1) is one of 36 ordered pairs",
+      "Forgetting that Ace is not a face card",
+      "Using 'or' when events are mutually exclusive vs not — in Class X, all given events are mutually exclusive",
+      "Calculation errors in total outcomes for three coins (always 8, not 6)"
+    ]
+  },
+
+  "quizzes": {
+    "simple": [
+      {
+        "id": "q-s-1",
+        "question": "The probability of a certain event is:",
+        "options": ["0", "0.5", "1", "Infinite"],
+        "correct": 2,
+        "explanation": "A certain event always happens, so its probability is 1."
+      },
+      {
+        "id": "q-s-2",
+        "question": "When a coin is tossed, P(head) = ?",
+        "options": ["0", "1/2", "1", "2"],
+        "correct": 1,
+        "explanation": "A fair coin has two equally likely outcomes: head and tail. P(head) = 1/2."
+      },
+      {
+        "id": "q-s-3",
+        "question": "Total outcomes when two dice are rolled:",
+        "options": ["6", "12", "36", "216"],
+        "correct": 2,
+        "explanation": "Each die has 6 outcomes, so total = 6 × 6 = 36."
+      },
+      {
+        "id": "q-s-4",
+        "question": "P(E) + P(not E) = ?",
+        "options": ["0", "0.5", "1", "Depends on E"],
+        "correct": 2,
+        "explanation": "E and not E are complementary — they cover all possibilities. So P(E) + P(not E) = 1."
+      },
+      {
+        "id": "q-s-5",
+        "question": "How many face cards are in a deck of 52?",
+        "options": ["4", "8", "12", "16"],
+        "correct": 2,
+        "explanation": "Each suit has 3 face cards (Jack, Queen, King). 4 suits × 3 = 12 face cards."
+      }
+    ],
+    "medium": [
+      {
+        "id": "q-m-1",
+        "question": "A bag has 3 red, 5 blue, 2 green marbles. P(not blue) = ?",
+        "options": ["1/2", "3/10", "1/5", "2/5"],
+        "correct": 0,
+        "explanation": "Total = 10. Not blue = 3 + 2 = 5. P(not blue) = 5/10 = 1/2."
+      },
+      {
+        "id": "q-m-2",
+        "question": "Two dice are rolled. Probability of sum = 6 is:",
+        "options": ["5/36", "6/36", "4/36", "7/36"],
+        "correct": 0,
+        "explanation": "Sum 6: (1,5), (2,4), (3,3), (4,2), (5,1) = 5 outcomes. P = 5/36."
+      },
+      {
+        "id": "q-m-3",
+        "question": "Three coins tossed. Probability of exactly 1 head:",
+        "options": ["1/8", "3/8", "1/2", "5/8"],
+        "correct": 1,
+        "explanation": "Exactly 1 head: {HTT, THT, TTH} = 3 outcomes. Total = 8. P = 3/8."
+      },
+      {
+        "id": "q-m-4",
+        "question": "P(drawing a red king from a deck) = ?",
+        "options": ["1/13", "1/26", "1/52", "1/4"],
+        "correct": 1,
+        "explanation": "Red kings: king of hearts + king of diamonds = 2. P = 2/52 = 1/26."
+      },
+      {
+        "id": "q-m-5",
+        "question": "If P(E) = 0.35, then P(not E) = ?",
+        "options": ["0.35", "0.65", "0.75", "1.35"],
+        "correct": 1,
+        "explanation": "P(not E) = 1 - P(E) = 1 - 0.35 = 0.65."
+      }
+    ]
+  }
+}
