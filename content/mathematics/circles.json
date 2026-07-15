@@ -1,0 +1,507 @@
+{
+  "id": "circles",
+  "chapter": "Circles",
+  "lesson": 10,
+  "title": "Circles — Complete Learning Module (Learn Maths with Fun)",
+  "schemaVersion": "2.0",
+
+  "outcomes": [
+    "Define a tangent to a circle and prove its uniqueness at a point",
+    "Prove and apply the Tangent-Radius perpendicular theorem",
+    "Find the length of a tangent from an external point",
+    "Prove and apply the Tangent-Secant Theorem (Alternate Segment Theorem)",
+    "Solve problems involving tangents, secants, and their combinations",
+    "Connect circle theorems to real-life applications in Indian context",
+    "Solve RD Sharma and RS Aggarwal extension problems for competitive readiness"
+  ],
+
+  "prerequisite_nodes": ["MATH_CLASS9_CIRCLES_BASIC", "MATH_CLASS8_GEOMETRY", "MATH_CLASS9_TRIANGLES"],
+
+  "concepts": [
+    {
+      "name": "Tangent to a Circle — The Line That Just Touches",
+      "real_life_application": "When a car takes a sharp turn on a curved road, the headlights shine in a straight line that just touches the curve — that's a tangent. When you spin a wet football, the water flies off along a tangent. The wheel of your bicycle touches the road at exactly one point — that point of contact is where the tangent (road) meets the circle (wheel).",
+      "purpose": "The tangent is the limiting case of a secant as the two intersection points come closer and merge into one. Understanding tangents is essential for optics (reflection off curved surfaces), engineering (gear teeth design), and navigation (radar horizon).",
+      "day_to_day_usage": [
+        "Bicycle wheel touching the road — tangent at the contact point",
+        "A stone tied to a string, when released, flies off along a tangent to its circular path",
+        "The horizon as seen from an airplane is a tangent to the Earth's surface",
+        "Headlight beams from a car on a curved road shine along tangents to the curve"
+      ]
+    },
+    {
+      "name": "Number of Tangents from a Point",
+      "real_life_application": "From where you stand outside a roundabout, you can enter the roundabout from exactly two directions (two tangents). From inside a circular garden, you can look outward in every direction (infinitely many tangents).",
+      "purpose": "The number of tangents depends on the location of the point relative to the circle: outside → 2 tangents, on the circle → 1 tangent, inside → 0 tangents. This classification reappears in conic sections (Class XI) and geometry of lenses.",
+      "day_to_day_usage": [
+        "A person outside a circular park can see the park from two tangent viewpoints",
+        "A satellite orbiting Earth has two tangent lines of sight to the ground station",
+        "Drawing a tangent from a point outside a circle using ruler and compass"
+      ]
+    },
+    {
+      "name": "Tangent-Radius Perpendicular Theorem",
+      "real_life_application": "Imagine a water wheel. The spoke (radius) is perpendicular to the water surface (tangent) at the point where the wheel touches the water. This 90° angle is what makes water wheels efficient.",
+      "purpose": "This is the most fundamental theorem about tangents. It states: the radius drawn to the point of tangency is perpendicular to the tangent. This theorem is used in every tangent problem — finding distances, angles, and solving construction problems.",
+      "day_to_day_usage": [
+        "A ladder leaning against a circular silo — the point of contact forms a right angle with the radius",
+        "In billiards, the cue ball's path off the circular cushion follows the tangent-radius rule"
+      ]
+    },
+    {
+      "name": "Length of Tangent from an External Point",
+      "real_life_application": "When you tie a cow to a peg outside a circular pond, the rope length that just touches the pond is the tangent length. The same rope length on both sides tells you the cow can graze symmetrically.",
+      "purpose": "Tangents from the same external point are equal in length. This is proved using the Tangent-Radius theorem and triangle congruence (RHS). It's the basis for constructing tangents and solving distance problems.",
+      "day_to_day_usage": [
+        "Two equal tangents from a point outside a circular garden to the garden edges",
+        "A common tangent to two circles — belt and pulley systems in machines"
+      ]
+    },
+    {
+      "name": "Tangent-Secant Theorem (Alternate Segment Theorem)",
+      "real_life_application": "If you stand at a point outside a circular stadium and look along a tangent, the angle between the tangent and a line to a player on the field equals the angle in the opposite arc segment.",
+      "purpose": "This theorem connects angles formed by tangents and secants. It states: the angle between a tangent and a chord through the point of contact equals the angle in the alternate segment. This is a powerful tool for angle chasing in geometry.",
+      "day_to_day_usage": [
+        "In circular sports stadiums, the viewing angle from a tangent position relates to the opposite seating arc",
+        "Used in optical design for reflecting telescopes"
+      ]
+    }
+  ],
+
+  "theorems": [
+    {
+      "name": "Tangent-Radius Perpendicular Theorem",
+      "statement": "The tangent at any point of a circle is perpendicular to the radius through the point of contact.",
+      "proposed_by": {
+        "name": "Euclid of Alexandria",
+        "era": "c. 300 BCE",
+        "location": "Alexandria, Egypt",
+        "book": "Elements (Book III)",
+        "known_as": "Father of Geometry"
+      },
+      "historical_context": "Euclid's Book III of Elements deals entirely with circles. Proposition 18 states: 'If a straight line touches a circle, and a straight line is drawn from the center to the point of contact, the line so drawn will be perpendicular to the tangent.' This theorem has been used for over 2300 years.",
+      "why_proposed": "Euclid needed to establish the fundamental relationship between a circle's radius and its tangent to build more complex theorems about angles in circles.",
+      "real_world_utility": "Every time you use a GPS, the tangent calculation is involved. The curvature of the Earth requires tangent calculations for satellite communication. Bicycle gear systems rely on tangent geometry for chain tension.",
+      "why_students_learn": "It teaches: (1) The power of proof by contradiction — assume the radius is NOT perpendicular and derive a contradiction; (2) The connection between algebra (shortest distance) and geometry; (3) Foundation for trigonometry and calculus.",
+      "examples": [
+        {
+          "problem": "A circle has center O and radius 5 cm. A tangent touches the circle at point T. If a point P on the tangent is 13 cm from O, find PT (the length of the tangent segment).",
+          "solution_step_by_step": [
+            "Step 1: Draw OT (radius) and PT (tangent segment).",
+            "Step 2: By the theorem, OT ⟂ PT. So triangle OTP is right-angled at T.",
+            "Step 3: Given: OT = 5 cm (radius), OP = 13 cm.",
+            "Step 4: By Pythagoras: PT² = OP² - OT² = 13² - 5² = 169 - 25 = 144",
+            "Step 5: PT = √144 = 12 cm"
+          ],
+          "final_answer": "PT = 12 cm"
+        },
+        {
+          "problem": "A tangent PQ touches a circle at point Q. If O is the center and ∠OPQ = 30°, find ∠POQ.",
+          "solution_step_by_step": [
+            "Step 1: OQ ⟂ PQ (Tangent-Radius theorem), so ∠OQP = 90°.",
+            "Step 2: In triangle OPQ: ∠OPQ + ∠OQP + ∠POQ = 180° (angle sum).",
+            "Step 3: 30° + 90° + ∠POQ = 180°",
+            "Step 4: ∠POQ = 180° - 120° = 60°"
+          ],
+          "final_answer": "∠POQ = 60°"
+        }
+      ]
+    },
+    {
+      "name": "Equal Tangents Theorem",
+      "statement": "The lengths of tangents drawn from an external point to a circle are equal.",
+      "proposed_by": {
+        "name": "Euclid",
+        "era": "c. 300 BCE",
+        "book": "Elements (Book III, Proposition 17-18)"
+      },
+      "historical_context": "Euclid used this theorem to construct tangents geometrically. The proof uses RHS congruence of right triangles formed by the two tangents, the radii, and the line joining the center to the external point.",
+      "examples": [
+        {
+          "problem": "From an external point P, two tangents PA and PB are drawn to a circle with center O. If PA = 7 cm, find PB. Also find ∠APB if ∠AOB = 120°.",
+          "solution_step_by_step": [
+            "Step 1: By Equal Tangents Theorem, PB = PA = 7 cm.",
+            "Step 2: OA ⟂ PA and OB ⟂ PB (Tangent-Radius theorem).",
+            "Step 3: In quadrilateral AOBP: ∠OAP = ∠OBP = 90°.",
+            "Step 4: Sum of angles in quadrilateral = 360°: ∠AOB + ∠OAP + ∠OBP + ∠APB = 360°",
+            "Step 5: 120° + 90° + 90° + ∠APB = 360°",
+            "Step 6: ∠APB = 360° - 300° = 60°"
+          ],
+          "final_answer": "PB = 7 cm, ∠APB = 60°"
+        }
+      ]
+    },
+    {
+      "name": "Alternate Segment Theorem (Tangent-Secant Theorem)",
+      "statement": "The angle between a tangent and a chord through the point of contact is equal to the angle in the alternate segment.",
+      "proposed_by": {
+        "name": "Euclid",
+        "era": "c. 300 BCE",
+        "book": "Elements (Book III, Proposition 32)"
+      },
+      "examples": [
+        {
+          "problem": "A tangent at point A of a circle touches it. A chord AB makes an angle of 40° with the tangent. Find the angle subtended by chord AB at a point C on the circle in the alternate segment.",
+          "solution_step_by_step": [
+            "Step 1: Let the tangent at A be line AT. ∠BAT = 40° (given).",
+            "Step 2: By Alternate Segment Theorem, ∠ACB = ∠BAT = 40°.",
+            "Step 3: Therefore, the angle in the alternate segment is 40°."
+          ],
+          "final_answer": "∠ACB = 40°"
+        }
+      ]
+    }
+  ],
+
+  "worked_examples": [
+    {
+      "id": "we-1",
+      "topic": "Tangent Length Calculation",
+      "problem": "Find the length of the tangent drawn from a point 25 cm away from the center of a circle of radius 7 cm.",
+      "board_mode": [
+        "Given: OP = 25 cm (distance from external point P to center O), radius r = 7 cm.",
+        "Step 1: Draw the figure. Let T be the point of tangency.",
+        "Step 2: OT ⟂ PT (Tangent-Radius theorem). Triangle OTP is right-angled at T.",
+        "Step 3: By Pythagoras: PT² = OP² - OT² = 25² - 7²",
+        "Step 4: PT² = 625 - 49 = 576",
+        "Step 5: PT = √576 = 24 cm",
+        "To Find: Length of tangent = 24 cm"
+      ],
+      "speed_mode": "Golden step: Always identify the right triangle first. The radius to the point of tangency and the distance from center to external point form the two sides; Pythagoras gives the tangent length.",
+      "competitive_shortcut": "For JEE, remember: tangent length = √(d² - r²) where d = distance of external point from center. This is a direct formula."
+    },
+    {
+      "id": "we-2",
+      "topic": "Two Tangents from a Point",
+      "problem": "Two tangents TP and TQ are drawn from an external point T to a circle with center O. If ∠PTQ = 80°, find ∠POQ.",
+      "board_mode": [
+        "Given: ∠PTQ = 80°, TP and TQ are tangents from T.",
+        "Step 1: OP ⟂ TP and OQ ⟂ TQ (Tangent-Radius theorem).",
+        "Step 2: ∠OPT = 90° and ∠OQT = 90°.",
+        "Step 3: In quadrilateral OPTQ: sum of angles = 360°",
+        "Step 4: ∠POQ + 90° + 80° + 90° = 360°",
+        "Step 5: ∠POQ + 260° = 360°",
+        "Step 6: ∠POQ = 100°",
+        "To Find: ∠POQ = 100°"
+      ],
+      "speed_mode": "Golden step: In any two-tangent problem, the quadrilateral formed by the two radii, the two tangents, and the external point has two right angles. The remaining two angles (at center and at external point) sum to 180°.",
+      "competitive_shortcut": "Direct formula: When two tangents from P make angle θ, the angle at center = 180° - θ. Here ∠POQ = 180° - 80° = 100°."
+    },
+    {
+      "id": "we-3",
+      "topic": "Tangents and Pythagoras Combined",
+      "problem": "A circle of radius 5 cm has a tangent from an external point P. If the tangent length is 12 cm, find the distance of P from the center.",
+      "board_mode": [
+        "Given: radius r = 5 cm, tangent length PT = 12 cm.",
+        "Step 1: OT ⟂ PT where T is point of tangency.",
+        "Step 2: By Pythagoras: OP² = OT² + PT² = 5² + 12²",
+        "Step 3: OP² = 25 + 144 = 169",
+        "Step 4: OP = √169 = 13 cm",
+        "To Find: Distance OP = 13 cm"
+      ],
+      "speed_mode": "Golden step: This is a 5-12-13 Pythagorean triple — a common pattern. Memorize: (3,4,5), (5,12,13), (8,15,17), (7,24,25)."
+    },
+    {
+      "id": "we-4",
+      "topic": "Tangents with Common External Point",
+      "problem": "A circle touches all sides of a quadrilateral ABCD. Prove that AB + CD = AD + BC.",
+      "board_mode": [
+        "Given: Circle touches sides AB, BC, CD, DA at points P, Q, R, S respectively.",
+        "Step 1: AP = AS (tangents from A to circle)",
+        "Step 2: BP = BQ (tangents from B)",
+        "Step 3: CQ = CR (tangents from C)",
+        "Step 4: DR = DS (tangents from D)",
+        "Step 5: Now: AB + CD = (AP + PB) + (CR + RD)",
+        "Step 6: = (AS + BQ) + (CQ + DS) (substituting from steps 1-4)",
+        "Step 7: = (AS + DS) + (BQ + CQ) = AD + BC",
+        "Hence proved."
+      ],
+      "speed_mode": "Golden step: When a circle touches all sides of a quadrilateral, tangents from each vertex are equal in pairs. This is a standard board exam 4-mark question."
+    }
+  ],
+
+  "exercises": {
+    "exercise_10_1": {
+      "title": "Exercise 10.1 — Tangent Basics",
+      "objective": "Understanding tangents and their basic properties",
+      "problems": [
+        {
+          "id": "ex10.1-1",
+          "question": "How many tangents can a circle have?",
+          "solution": ["A circle can have infinitely many tangents — one at each point on its circumference."],
+          "final_answer": "Infinitely many",
+          "concept_insight": "At every point on the circumference, there is exactly one tangent perpendicular to the radius at that point."
+        },
+        {
+          "id": "ex10.1-2",
+          "question": "Fill in the blanks: (i) A tangent to a circle intersects it in _____ point(s). (ii) A line intersecting a circle in two points is called a _____. (iii) A circle can have _____ parallel tangents at most. (iv) The common point of a tangent and the circle is called _____.",
+          "solution": [
+            "(i) one",
+            "(ii) secant",
+            "(iii) two (one at each end of a diameter)",
+            "(iv) point of contact"
+          ],
+          "final_answer": "(i) one (ii) secant (iii) two (iv) point of contact"
+        },
+        {
+          "id": "ex10.1-3",
+          "question": "A tangent PQ at a point P of a circle of radius 5 cm meets a line through the center O at a point Q so that OQ = 13 cm. Find the length of PQ.",
+          "solution": [
+            "Step 1: OP ⟂ PQ (Tangent-Radius theorem), so triangle OPQ is right-angled at P.",
+            "Step 2: OP = 5 cm (radius), OQ = 13 cm.",
+            "Step 3: By Pythagoras: PQ² = OQ² - OP² = 13² - 5² = 169 - 25 = 144",
+            "Step 4: PQ = √144 = 12 cm"
+          ],
+          "final_answer": "PQ = 12 cm"
+        },
+        {
+          "id": "ex10.1-4",
+          "question": "Draw a circle and two lines parallel to a given line such that one is a tangent and the other is a secant to the circle.",
+          "solution": [
+            "Step 1: Draw a circle with center O.",
+            "Step 2: Draw a line L₁ touching the circle at exactly one point — this is the tangent line.",
+            "Step 3: Draw another line L₂ parallel to L₁ that cuts the circle at two points — this is the secant.",
+            "Note: L₁ and L₂ are parallel to each other."
+          ],
+          "final_answer": "Diagram: Two parallel lines — one tangent (touching at one point), one secant (cutting at two points)."
+        }
+      ]
+    },
+    "exercise_10_2": {
+      "title": "Exercise 10.2 — Tangent Theorems",
+      "objective": "Apply tangent theorems to solve problems",
+      "problems": [
+        {
+          "id": "ex10.2-1",
+          "question": "From a point Q, the length of the tangent to a circle of radius 5 cm is 12 cm. Find the distance of Q from the center.",
+          "solution": [
+            "Step 1: Let O be the center, T the point of tangency.",
+            "Step 2: OT ⟂ QT, so triangle OTQ is right-angled at T.",
+            "Step 3: OT = 5 cm, QT = 12 cm.",
+            "Step 4: OQ² = OT² + QT² = 5² + 12² = 25 + 144 = 169",
+            "Step 5: OQ = √169 = 13 cm"
+          ],
+          "final_answer": "OQ = 13 cm"
+        },
+        {
+          "id": "ex10.2-2",
+          "question": "Find the length of the tangent from a point 26 cm away from the center of a circle of radius 10 cm.",
+          "solution": [
+            "Step 1: Let O be center, P external point, T point of tangency.",
+            "Step 2: OP = 26 cm, OT = 10 cm, OT ⟂ PT.",
+            "Step 3: PT² = OP² - OT² = 26² - 10² = 676 - 100 = 576",
+            "Step 4: PT = √576 = 24 cm"
+          ],
+          "final_answer": "PT = 24 cm"
+        },
+        {
+          "id": "ex10.2-3",
+          "question": "The length of a tangent from a point A at distance 5 cm from the center is 4 cm. Find the radius.",
+          "solution": [
+            "Step 1: Let O be center, T point of tangency.",
+            "Step 2: OA = 5 cm, AT = 4 cm, OT ⟂ AT.",
+            "Step 3: OT² = OA² - AT² = 5² - 4² = 25 - 16 = 9",
+            "Step 4: OT = √9 = 3 cm"
+          ],
+          "final_answer": "Radius = 3 cm"
+        },
+        {
+          "id": "ex10.2-4",
+          "question": "Two concentric circles are of radii 5 cm and 3 cm. Find the length of the chord of the larger circle which touches the smaller circle.",
+          "solution": [
+            "Step 1: Let O be the common center. The chord AB of the larger circle touches the smaller circle at point T.",
+            "Step 2: OT ⟂ AB (Tangent-Radius theorem applied to smaller circle).",
+            "Step 3: In right triangle OTA: OA = 5 cm (larger radius), OT = 3 cm (smaller radius).",
+            "Step 4: AT² = OA² - OT² = 25 - 9 = 16 → AT = 4 cm.",
+            "Step 5: Since OT ⟂ AB, T is the midpoint of AB (perpendicular from center bisects chord).",
+            "Step 6: AB = 2 × AT = 8 cm"
+          ],
+          "final_answer": "AB = 8 cm"
+        },
+        {
+          "id": "ex10.2-5",
+          "question": "In the figure, a circle touches all sides of a quadrilateral ABCD with sides AB = 6 cm, BC = 7 cm, CD = 4 cm. Find AD.",
+          "solution": [
+            "Step 1: For a circle inscribed in a quadrilateral, tangents from each vertex are equal.",
+            "Step 2: Let the tangent lengths from vertices be: from A: AP = AS = a, from B: BP = BQ = b, from C: CQ = CR = c, from D: DR = DS = d.",
+            "Step 3: AB = a + b = 6, BC = b + c = 7, CD = c + d = 4",
+            "Step 4: AD = a + d = ?",
+            "Step 5: We know: AB + CD = (a + b) + (c + d) = (a + d) + (b + c) = AD + BC",
+            "Step 6: So: AD = AB + CD - BC = 6 + 4 - 7 = 3 cm"
+          ],
+          "final_answer": "AD = 3 cm"
+        }
+      ]
+    }
+  },
+
+  "rd_sharma_extensions": {
+    "book": "RD Sharma Class 10, Chapter 8 — Circles (Note: chapter numbering varies by edition; verify against your copy)",
+    "topics": [
+      {
+        "name": "Common Tangents to Two Circles",
+        "concept": "Two circles can have direct common tangents (which do not cross the line joining centers) and transverse common tangents (which cross the line joining centers).",
+        "formula": "For circles of radii r₁ and r₂ with centers distance d: Direct common tangent length = √(d² - (r₁ - r₂)²). Transverse common tangent length = √(d² - (r₁ + r₂)²).",
+        "examples": [
+          {
+            "problem": "Two circles of radii 5 cm and 3 cm have centers 10 cm apart. Find the length of the direct common tangent.",
+            "solution": [
+              "Step 1: d = 10 cm, r₁ = 5 cm, r₂ = 3 cm.",
+              "Step 2: Length of direct common tangent = √(d² - (r₁ - r₂)²)",
+              "Step 3: = √(100 - (2)²) = √(100 - 4) = √96 = 4√6 cm"
+            ],
+            "final_answer": "4√6 cm"
+          }
+        ],
+        "competitive_note": "Common tangent problems are a JEE Main favorite. Learn the two formulas and practice identifying whether a tangent is direct or transverse."
+      },
+      {
+        "name": "Tangent-Secant Power Theorem",
+        "concept": "If a tangent and a secant intersect at a point outside the circle, then (tangent length)² = (external part of secant) × (whole secant).",
+        "formula": "If PT is tangent and PAB is secant, PT² = PA × PB.",
+        "examples": [
+          {
+            "problem": "From an external point P, a tangent PT of length 6 cm is drawn. If the secant PAB has external part PA = 4 cm, find AB.",
+            "solution": [
+              "Step 1: PT² = PA × PB",
+              "Step 2: 36 = 4 × PB → PB = 9 cm",
+              "Step 3: AB = PB - PA = 9 - 4 = 5 cm"
+            ],
+            "final_answer": "AB = 5 cm"
+          }
+        ]
+      }
+    ]
+  },
+
+  "rs_aggarwal_extensions": {
+    "book": "RS Aggarwal Class 10, Chapter 10 — Circles",
+    "topics": [
+      {
+        "name": "Cyclic Quadrilaterals with Tangents",
+        "concept": "When a circle touches all four sides of a quadrilateral, the quadrilateral is circumscribed. The sum of lengths of opposite sides are equal: AB + CD = AD + BC.",
+        "competitive_note": "This is a standard board exam 4-mark question. The proof uses equal tangents from each vertex."
+      },
+      {
+        "name": "Tangents and Pythagoras Combination",
+        "concept": "Many tangent problems reduce to right triangles using the Tangent-Radius theorem, then apply Pythagoras.",
+        "examples": [
+          {
+            "problem": "A tangent PQ of length 8 cm is drawn from point P to a circle. If P is 17 cm from the center, find the radius.",
+            "solution": [
+              "Step 1: OQ ⟂ PQ, so OQ² = OP² - PQ² = 17² - 8² = 289 - 64 = 225",
+              "Step 2: Radius = OQ = √225 = 15 cm"
+            ],
+            "final_answer": "15 cm"
+          }
+        ]
+      }
+    ]
+  },
+
+  "past_papers": {
+    "analysis_summary": "Based on CBSE Class 10 board exams (2017-2026): Circles consistently contributes 4-6 marks (1-2 short answer + 1 long answer).",
+    "pattern": {
+      "short_answer_1_mark": [
+        "Number of tangents from a point inside/on/outside a circle (asked in 2017, 2020, 2023)",
+        "Tangent length and radius relationship (asked in 2018, 2021, 2024)"
+      ],
+      "short_answer_2_marks": [
+        "Find tangent length using Pythagoras (asked in 2019, 2022, 2025)",
+        "Find radius given tangent length and distance from center"
+      ],
+      "long_answer_4_marks": [
+        "Prove that tangents from an external point are equal (asked in 2018, 2020, 2023, 2026)",
+        "Quadrilateral circumscribed around a circle — side length proof (asked in 2019, 2021, 2024)",
+        "Concentric circles and tangent chord problem (asked in 2022, 2025)"
+      ]
+    },
+    "scoring_areas": [
+      "Equal tangents theorem proof — easy full marks, memorize the RHS congruence steps",
+      "Tangent-Radius theorem with Pythagoras — identify the right triangle first",
+      "Quadrilateral tangent sums — use the 'opposite sides equal' property"
+    ],
+    "common_mistakes": [
+      "Forgetting to state OT ⟂ PT before using Pythagoras",
+      "Confusing which triangle is right-angled",
+      "Not establishing RHS congruence properly in the equal tangents proof"
+    ]
+  },
+
+  "quizzes": {
+    "simple": [
+      {
+        "id": "q-s-1",
+        "question": "How many tangents can be drawn from a point inside a circle?",
+        "options": ["0", "1", "2", "Infinite"],
+        "correct": 0,
+        "explanation": "From a point inside a circle, no tangent can be drawn. Any line through an interior point will cut the circle at two points (secant)."
+      },
+      {
+        "id": "q-s-2",
+        "question": "A tangent to a circle makes an angle of ___° with the radius at the point of contact.",
+        "options": ["45°", "60°", "90°", "180°"],
+        "correct": 2,
+        "explanation": "The Tangent-Radius theorem states the radius is perpendicular (90°) to the tangent at the point of contact."
+      },
+      {
+        "id": "q-s-3",
+        "question": "How many parallel tangents can a circle have at most?",
+        "options": ["1", "2", "3", "4"],
+        "correct": 1,
+        "explanation": "A circle can have at most two parallel tangents — one at each end of a diameter."
+      },
+      {
+        "id": "q-s-4",
+        "question": "If the distance from the center to an external point is 10 cm and the radius is 6 cm, the tangent length is:",
+        "options": ["6 cm", "8 cm", "10 cm", "12 cm"],
+        "correct": 1,
+        "explanation": "Tangent length = √(10² - 6²) = √(100 - 36) = √64 = 8 cm."
+      },
+      {
+        "id": "q-s-5",
+        "question": "The lengths of two tangents from the same external point are:",
+        "options": ["Always equal", "Always different", "Equal only for isosceles triangle", "Cannot determine"],
+        "correct": 0,
+        "explanation": "The Equal Tangents Theorem states that tangents from an external point are always equal in length."
+      }
+    ],
+    "medium": [
+      {
+        "id": "q-m-1",
+        "question": "Two tangents TP and TQ are drawn from point T to a circle. If ∠PTQ = 60°, find ∠POQ (O is center).",
+        "options": ["60°", "90°", "120°", "180°"],
+        "correct": 2,
+        "explanation": "In quadrilateral OPTQ: ∠OPT = ∠OQT = 90° (radius ⟂ tangent). Sum = 360°. So ∠POQ + 90° + 60° + 90° = 360° → ∠POQ = 120°."
+      },
+      {
+        "id": "q-m-2",
+        "question": "In a quadrilateral ABCD circumscribing a circle, AB = 8, BC = 7, CD = 5. Find AD.",
+        "options": ["4", "6", "8", "10"],
+        "correct": 1,
+        "explanation": "AB + CD = AD + BC → 8 + 5 = AD + 7 → 13 = AD + 7 → AD = 6."
+      },
+      {
+        "id": "q-m-3",
+        "question": "A chord of a larger circle (radius 13 cm) touches a smaller concentric circle (radius 5 cm). Find the chord length.",
+        "options": ["12 cm", "24 cm", "10 cm", "20 cm"],
+        "correct": 1,
+        "explanation": "Half-chord = √(13² - 5²) = √(169 - 25) = √144 = 12. Full chord = 24 cm."
+      },
+      {
+        "id": "q-m-4",
+        "question": "If PT is tangent, PAB is secant, PT = 12, PA = 9, find AB.",
+        "options": ["4", "5", "7", "16"],
+        "correct": 2,
+        "explanation": "PT² = PA × PB → 144 = 9 × PB → PB = 16. AB = PB - PA = 16 - 9 = 7."
+      },
+      {
+        "id": "q-m-5",
+        "question": "From point P outside a circle, a tangent PT = 15 cm is drawn. If the distance from P to center is 17 cm, find radius.",
+        "options": ["6 cm", "8 cm", "10 cm", "12 cm"],
+        "correct": 1,
+        "explanation": "r² = d² - t² = 17² - 15² = 289 - 225 = 64 → r = 8 cm."
+      }
+    ]
+  }
+}
