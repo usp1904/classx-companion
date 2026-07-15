@@ -516,9 +516,14 @@ function App() {
   const [subjects, setSubjects] = useState([]);
   const [instructions, setInstructions] = useState([]);
   const [activeNav, setActiveNav] = useState('overview');
-  const [selectedChapter, setSelectedChapter] = useState('real-numbers');
+  const [selectedSubject, setSelectedSubject] = useState('');
+  const [selectedChapter, setSelectedChapter] = useState('');
   const [status, setStatus] = useState('offline');
   const [allLessons, setAllLessons] = useState([]);
+
+  const filteredLessons = allLessons.filter(l =>
+    !selectedSubject || l.subject === selectedSubject
+  );
 
   useEffect(() => {
     Promise.all([
@@ -529,9 +534,16 @@ function App() {
     ]).then(([s, i, h, cl]) => {
       if (s.ok) setSubjects(s.subjects);
       if (i.ok) setInstructions(i.instructions || []);
-      if (cl.ok) setAllLessons(cl.lessons || []);
+      if (cl.ok) {
+        setAllLessons(cl.lessons || []);
+        if (cl.lessons.length) {
+          const first = cl.lessons[0];
+          setSelectedSubject(first.subject);
+          setSelectedChapter(first.lessonId);
+          loadLesson(first.lessonId);
+        }
+      }
       setStatus(h.ok ? 'online' : 'offline');
-      if (cl.ok && cl.lessons.length) loadLesson(cl.lessons[0].lessonId);
     }).catch(() => setStatus('offline'));
   }, []);
 
@@ -544,6 +556,14 @@ function App() {
       setSelectedChapter(lessonId);
     }
   }, []);
+
+  const handleSubjectChange = useCallback((subjectId) => {
+    setSelectedSubject(subjectId);
+    const lessonsInSubject = allLessons.filter(l => l.subject === subjectId);
+    if (lessonsInSubject.length) {
+      loadLesson(lessonsInSubject[0].lessonId);
+    }
+  }, [allLessons, loadLesson]);
 
   const view = (() => {
     if (!lesson) return h(Loading);
@@ -575,14 +595,24 @@ function App() {
         )
       ),
       div({className:'header-chapter'},
-        lesson ? label({style:{fontSize:12,color:'var(--textMuted)'}}, 'Chapter:') : null,
+        label({style:{fontSize:12,color:'var(--textMuted)',marginRight:4}}, 'Subject:'),
+        select_({
+          className:'chapter-select',
+          value:selectedSubject,
+          onChange:e => handleSubjectChange(e.target.value)
+        },
+          subjects.map(s => option({key:s.id,value:s.id},
+            s.name
+          ))
+        ),
+        label({style:{fontSize:12,color:'var(--textMuted)',margin:'0 4px 0 12px'}}, 'Chapter:'),
         select_({
           className:'chapter-select',
           value:selectedChapter,
           onChange:e => loadLesson(e.target.value)
         },
-          allLessons.map(l => option({key:l.lessonId,value:l.lessonId},
-            l.subject+' — '+(l.lessonId.charAt(0).toUpperCase()+l.lessonId.slice(1).replace(/-/g,' '))
+          filteredLessons.map(l => option({key:l.lessonId,value:l.lessonId},
+            l.title || l.lessonId
           ))
         ),
         div({className:'header-status '+status},
