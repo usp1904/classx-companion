@@ -412,6 +412,243 @@
         "correct": 1,
         "explanation": "P(not E) = 1 - P(E) = 1 - 0.35 = 0.65."
       }
+    ],
+    "complex": [
+      {
+        "id": "q-c-1",
+        "question": "A bag contains 5 red, 4 green, and 3 blue balls. Three balls are drawn at random. What is the probability that they are all of different colors?",
+        "options": ["3/11", "4/11", "5/11", "2/11"],
+        "correct": 0,
+        "explanation": "Total outcomes = C(12,3) = 220. Favorable = 5×4×3 = 60. P = 60/220 = 3/11.",
+        "wrong_options": {
+          "1": "4/11 would be 80/220 — double counting some selections",
+          "2": "5/11 would be 100/220 — too high for 3 different colors",
+          "3": "2/11 would be 40/220 — missing some color combinations"
+        }
+      },
+      {
+        "id": "q-c-2",
+        "question": "Two dice are rolled. What is the probability that the product of the numbers is a perfect square?",
+        "options": ["5/36", "7/36", "8/36", "4/36"],
+        "correct": 1,
+        "explanation": "Products that are perfect squares: 1(1×1), 4(1×4,2×2,4×1), 9(3×3), 16(4×4), 36(6×6). Total = 1+3+1+1+1 = 7. P = 7/36."
+      }
     ]
-  }
+  },
+
+  "vedic_math_shortcuts": [
+    {
+      "title": "Vedic Method: Sample Space Counting Using Urdhva Tiryagbhyam",
+      "sanskrit": "ऊर्ध्व तिर्यग्भ्याम्",
+      "concept": "'Urdhva Tiryagbhyam' (Vertically and Crosswise) — the most versatile Vedic sutra. Used here for systematic counting: when combining two independent events (coin + coin, coin + die, two dice), multiply outcomes vertically for total sample space.",
+      "real_numbers_application": "For 2 coins: 2 × 2 = 4 outcomes. For 3 coins: 2 × 2 × 2 = 8. For 2 dice: 6 × 6 = 36. For coin + die: 2 × 6 = 12. Visualize as a grid — vertically one set, crosswise the other.",
+      "examples": [
+        {
+          "problem": "Two dice and a coin are tossed together. Total outcomes?",
+          "steps": [
+            "Vedic: Urdhva Tiryagbhyam — multiply vertically and crosswise.",
+            "Die 1: 6, Die 2: 6, Coin: 2.",
+            "Total = 6 × 6 × 2 = 72 outcomes."
+          ],
+          "regular_method": "Same multiplication, but Vedic presentation makes it intuitive as a vertical-crisscross grid."
+        }
+      ]
+    },
+    {
+      "title": "Vedic Method: Complementary Events Using Anurupye (Proportion)",
+      "sanskrit": "अनुरूप्य",
+      "concept": "'Anurupye' (Proportionality) — if P(E) is known, P(not E) follows by complement. The sum of all probabilities is 1 = total. This is proportionality in its simplest form.",
+      "real_numbers_application": "P(at least one) = 1 - P(none). This Vedic insight avoids counting complex favorable cases directly.",
+      "examples": [
+        {
+          "problem": "Three coins tossed. Find P(at least one head).",
+          "steps": [
+            "Vedic Anurupye: P(at least one) = 1 - P(no heads).",
+            "P(no heads) = P(TTT) = 1/8.",
+            "P(at least one head) = 1 - 1/8 = 7/8.",
+            "Compare: directly counting would need 7 favorable cases — slower."
+          ],
+          "regular_method": "Count {HHH, HHT, HTH, HTT, THH, THT, TTH} = 7/8. Vedic method is faster."
+        }
+      ]
+    },
+    {
+      "title": "Vedic Method: Card Probability By Memory Bandhas",
+      "sanskrit": "बन्धाः",
+      "concept": "'Bandhas' (Structural binding) — memorize the deck structure as a fixed pattern: 4 suits × 13 cards = 52. Each suit: A, 2-10, J, Q, K. Face cards = J+Q+K = 3 per suit × 4 = 12. This structure is a 'bandha' (fixed pattern) that never changes.",
+      "real_numbers_application": "Once the deck structure is memorized, any card probability can be computed instantly without listing all cards.",
+      "examples": [
+        {
+          "problem": "P(red face card) = ?",
+          "steps": [
+            "Vedic Bandha: Face cards = 12. Red suits = 2 (hearts, diamonds).",
+            "Red face cards = 3 × 2 = 6.",
+            "P = 6/52 = 3/26."
+          ],
+          "regular_method": "Same calculation, but Vedic approach emphasizes structural pattern recognition."
+        },
+        {
+          "problem": "P(king or red card) = ?",
+          "steps": [
+            "Vedic Bandha: Kings = 4, Red cards = 26, Red kings counted twice.",
+            "P = (4 + 26 - 2)/52 = 28/52 = 7/13.",
+            "The 'minus 2' removes double-counted red kings."
+          ],
+          "regular_method": "Same formula, but Vedic method visualizes as set intersection."
+        }
+      ]
+    },
+    {
+      "title": "Vedic Method: Dice Sum Distribution Using Meru Prastara",
+      "sanskrit": "मेरु प्रस्तार",
+      "concept": "'Meru Prastara' (Pascal's triangle/Meru mountain) — the sum distribution for two dice follows the triangular pattern: 1,2,3,4,5,6,5,4,3,2,1 for sums 2 through 12. This is the Meru sequence, known to Vedic mathematicians long before Pascal.",
+      "real_numbers_application": "P(sum=7) = 6/36 = 1/6 (peak of the triangle). P(sum=2 or 12) = 1/36 each (ends). The entire distribution is symmetric.",
+      "examples": [
+        {
+          "problem": "Two dice rolled. P(sum = 5) vs P(sum = 9) — are they equal?",
+          "steps": [
+            "Vedic Meru: The distribution is symmetric about 7.",
+            "Sum 5 is 2 below 7, Sum 9 is 2 above 7. They are symmetric.",
+            "P(5) = P(9) = 4/36 = 1/9."
+          ],
+          "regular_method": "Count: (1,4), (2,3), (3,2), (4,1) = 4 for sum 5. (3,6), (4,5), (5,4), (6,3) = 4 for sum 9. Equal."
+        }
+      ]
+    }
+  ],
+
+  "common_misconceptions": [
+    "Students think probability can be greater than 1 or negative. Probability is always between 0 and 1 inclusive.",
+    "Students think experimental probability is 'wrong' if it differs from theoretical. Experimental approaches theoretical as trials increase (Law of Large Numbers) but is not 'wrong'.",
+    "Students list only 3 outcomes for 2 coins (HH, HT, TT) instead of 4 (HH, HT, TH, TT). The two coins are distinct — HT and TH are different outcomes.",
+    "Students forget that Ace is NOT a face card. Face cards are J, Q, K only (12 total). Ace is a number card in probability.",
+    "Students think the probability of a 6 on a die is 'either happens or not, so 1/2'. This is the 'Fair doesn't mean 50-50' fallacy. Outcomes must be equally likely, not binary.",
+    "Students use P(A or B) = P(A) + P(B) without checking for overlap. In Class X, events given are mutually exclusive, but students should still verify.",
+    "Students think drawing without replacement keeps probabilities the same. After removing one ball, the total changes and probabilities update.",
+    "Students answer 'at least one' problems by listing all favorable cases instead of using the complement. For large n, listing is impractical — always use 1 - P(none)."
+  ],
+
+  "mind_maps": {
+    "title": "Probability — Complete Mind Map",
+    "root": "🎲 Probability (NCERT Ch 15)",
+    "branches": [
+      {
+        "concept": "Core Definitions",
+        "sub_nodes": [
+          "P(E) = n(E)/n(S) — favorable / total",
+          "Sample Space (S): all possible outcomes",
+          "Event (E): subset of sample space",
+          "0 ≤ P(E) ≤ 1 for any event"
+        ],
+        "connections": "Foundation for all probability calculations"
+      },
+      {
+        "concept": "Experimental vs Theoretical",
+        "sub_nodes": [
+          "Experimental: based on actual trials (observed frequency)",
+          "Theoretical: based on symmetry (ideal value)",
+          "Law of Large Numbers: experimental → theoretical as trials ↑",
+          "Both are valid — context determines which to use"
+        ],
+        "connections": "Bridge to statistics (Class XI inference)"
+      },
+      {
+        "concept": "Coin Problems",
+        "sub_nodes": [
+          "1 coin: 2 outcomes (H, T)",
+          "2 coins: 4 outcomes (HH, HT, TH, TT)",
+          "3 coins: 8 outcomes — use combinations for speed",
+          "'At least' = complement of 'none'"
+        ],
+        "connections": "Foundation for binary event modeling"
+      },
+      {
+        "concept": "Dice Problems",
+        "sub_nodes": [
+          "1 die: 6 outcomes",
+          "2 dice: 36 outcomes (6 × 6 grid)",
+          "Sum distributes as Meru Prastara (1-2-3-4-5-6-5-4-3-2-1)",
+          "Product/prime sum problems require systematic listing"
+        ],
+        "connections": "Model for uniform random selection"
+      },
+      {
+        "concept": "Card Problems",
+        "sub_nodes": [
+          "52 cards = 4 suits × 13 cards",
+          "Suits: ♠♣ (black), ♥♦ (red)",
+          "Face cards: J, Q, K = 12 total",
+          "Ace is NOT a face card"
+        ],
+        "connections": "Classic equally-likely selection model"
+      },
+      {
+        "concept": "Ball/Item Problems",
+        "sub_nodes": [
+          "Total items = n(S)",
+          "'Not' = 1 - P(that color)",
+          "'At least one' = 1 - P(none)",
+          "Drawing without replacement changes n(S)"
+        ],
+        "connections": "Models real-world random sampling"
+      }
+    ]
+  },
+
+  "concept_maps": {
+    "nodes": [
+      { "id": "prob", "label": "Probability", "group": "foundation" },
+      { "id": "ss", "label": "Sample Space (S)", "group": "foundation" },
+      { "id": "event", "label": "Event (E)", "group": "foundation" },
+      { "id": "exp", "label": "Experimental P", "group": "core" },
+      { "id": "theo", "label": "Theoretical P", "group": "core" },
+      { "id": "comp", "label": "Complement: P + P(not) = 1", "group": "theorem" },
+      { "id": "coin", "label": "Coin Problems", "group": "application" },
+      { "id": "dice", "label": "Dice Problems", "group": "application" },
+      { "id": "card", "label": "Card Problems", "group": "application" },
+      { "id": "ball", "label": "Ball/Bag Problems", "group": "application" },
+      { "id": "least", "label": "At Least / At Most", "group": "application" },
+      { "id": "dist", "label": "Sum Distribution (Meru)", "group": "application" }
+    ],
+    "edges": [
+      ["prob", "ss"],
+      ["prob", "event"],
+      ["prob", "exp"],
+      ["prob", "theo"],
+      ["event", "comp"],
+      ["ss", "coin"],
+      ["ss", "dice"],
+      ["ss", "card"],
+      ["ss", "ball"],
+      ["event", "least"],
+      ["comp", "least"],
+      ["dice", "dist"]
+    ]
+  },
+
+  "flowcharts": [
+    {
+      "title": "How to Solve Any Probability Problem",
+      "steps": [
+        { "order": 1, "action": "Identify the experiment (coin, dice, cards, balls, etc.)", "decision": false },
+        { "order": 2, "action": "Determine total outcomes n(S) by counting or multiplication principle", "decision": false },
+        { "order": 3, "action": "Define the event E clearly — what outcomes are favorable?", "decision": false },
+        { "order": 4, "action": "Does the problem say 'at least' or 'at most'?", "decision": true, "if_yes": 5, "if_no": 6 },
+        { "order": 5, "action": "Use complement: P(at least) = 1 - P(none). P(at most) = sum of individual cases or complement.", "decision": false, "next": 7 },
+        { "order": 6, "action": "Count favorable outcomes n(E) directly (list, multiply, or use combinations)", "decision": false },
+        { "order": 7, "action": "Apply: P(E) = n(E)/n(S)", "decision": false },
+        { "order": 8, "action": "Simplify fraction to lowest terms. Check: 0 ≤ P ≤ 1. Verify with complement.", "decision": false, "next": "END" }
+      ]
+    },
+    {
+      "title": "Cards Problems Quick Reference",
+      "steps": [
+        { "order": 1, "action": "Total: 52 cards. 4 suits × 13 ranks per suit.", "decision": false },
+        { "order": 2, "action": "Black suits: ♠ spades (13), ♣ clubs (13). Red suits: ♥ hearts (13), ♦ diamonds (13).", "decision": false },
+        { "order": 3, "action": "Face cards: J, Q, K (3 per suit × 4 = 12 total). Ace is NOT face card.", "decision": false },
+        { "order": 4, "action": "Probability questions combine: color + rank + suit. E.g., 'red king' → 2 cards out of 52.", "decision": false },
+        { "order": 5, "action": "For 'or' questions: P(A or B) = P(A) + P(B) - P(A and B). Avoid double-counting.", "decision": false, "next": "END" }
+      ]
+    }
+  ]
 }
