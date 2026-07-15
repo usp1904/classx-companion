@@ -4,13 +4,36 @@
   "description": "Backend scaffold for Class X IIT-JEE/NEET Foundation Companion",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "node --test tests/**/*.test.js",
+    "test:watch": "node --test --watch tests/**/*.test.js"
   },
   "dependencies": {
+    "@langchain/core": "^1.2.2",
+    "@langchain/langgraph": "^1.4.7",
     "ajv": "^8.12.0",
     "body-parser": "^1.20.2",
+    "compression": "^1.8.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "express-rate-limit": "^8.5.2",
+    "langchain": "^1.5.3",
     "node-fetch": "^2.6.9"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/usp1904/classx-companion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/usp1904/classx-companion/issues"
+  },
+  "homepage": "https://github.com/usp1904/classx-companion#readme"
 }

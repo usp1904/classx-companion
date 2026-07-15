@@ -4,7 +4,7 @@
     "type": "subject",
     "path": "Mathematics",
     "title": "Mathematics",
-    "text": "NCERT Class X mathematics with foundation topics, theorems, and solved exercises. Chapters include Real Numbers, Polynomials, and Pair of Linear Equations in Two Variables.",
+    "text": "NCERT Class X mathematics covering algebra, geometry, trigonometry, mensuration, statistics, and probability.",
     "metadata": {
       "subject": "Mathematics"
     }
@@ -14,34 +14,10 @@
     "type": "chapter",
     "path": "Mathematics > Real Numbers",
     "title": "Real Numbers",
-    "text": "Number systems, Euclid's algorithm, and properties of real numbers. Topics include Euclid's Division Lemma, Fundamental Theorem of Arithmetic, Irrational Numbers, and Decimal Representations.",
+    "text": "Number systems, Euclid's algorithm, irrational numbers, and properties of real numbers. Topics: Euclid's Division Lemma, Fundamental Theorem of Arithmetic, Irrational Numbers, Decimal Representations.",
     "metadata": {
       "subject": "Mathematics",
       "chapter": "Real Numbers"
-    }
-  },
-  {
-    "id": "exercise-rm-1",
-    "type": "exercise",
-    "path": "Mathematics > Real Numbers > rm-1",
-    "title": "Prove that the square root of 2 is irrational.",
-    "text": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Write p = 2k => 2q^2 = 4k^2 => q^2 = 2k^2, so q is even. Contradiction. Therefore sqrt(2) is irrational.",
-    "metadata": {
-      "subject": "Mathematics",
-      "chapter": "Real Numbers",
-      "exerciseId": "rm-1"
-    }
-  },
-  {
-    "id": "exercise-rm-2",
-    "type": "exercise",
-    "path": "Mathematics > Real Numbers > rm-2",
-    "title": "Show that between any two rational numbers there exists an irrational number.",
-    "text": "Given rationals a < b, choose x = a + (b - a) / sqrt(2). Then x is irrational and lies between a and b.",
-    "metadata": {
-      "subject": "Mathematics",
-      "chapter": "Real Numbers",
-      "exerciseId": "rm-2"
     }
   },
   {
@@ -49,22 +25,10 @@
     "type": "chapter",
     "path": "Mathematics > Polynomials",
     "title": "Polynomials",
-    "text": "Polynomial operations, zeroes, and algebraic identities. Topics include Degree of Polynomial, Zeroes of Polynomial, Remainder Theorem, and Factor Theorem.",
+    "text": "Polynomial operations, zeroes, and algebraic identities. Topics: Degree of Polynomial, Zeroes of Polynomial, Remainder Theorem, Factor Theorem.",
     "metadata": {
       "subject": "Mathematics",
       "chapter": "Polynomials"
-    }
-  },
-  {
-    "id": "exercise-pm-1",
-    "type": "exercise",
-    "path": "Mathematics > Polynomials > pm-1",
-    "title": "If p(x) is a polynomial with p(2)=0, show that (x-2) is a factor of p(x).",
-    "text": "By the Factor Theorem, if p(2)=0 then (x-2) divides p(x).",
-    "metadata": {
-      "subject": "Mathematics",
-      "chapter": "Polynomials",
-      "exerciseId": "pm-1"
     }
   },
   {
@@ -72,226 +36,337 @@
     "type": "chapter",
     "path": "Mathematics > Pair of Linear Equations in Two Variables",
     "title": "Pair of Linear Equations in Two Variables",
-    "text": "Solve linear systems using substitution, elimination, and graphical methods. Topics include Graphical Method, Substitution Method, Elimination Method, and Applications in Word Problems.",
+    "text": "Solve linear systems using substitution, elimination, and graphical methods. Topics: Graphical Method, Substitution Method, Elimination Method, Applications in Word Problems.",
     "metadata": {
       "subject": "Mathematics",
       "chapter": "Pair of Linear Equations in Two Variables"
     }
   },
   {
-    "id": "exercise-pl-1",
-    "type": "exercise",
-    "path": "Mathematics > Pair of Linear Equations in Two Variables > pl-1",
-    "title": "Solve the system x + y = 5 and 2x - y = 1.",
-    "text": "Add equations to eliminate y: 3x = 6, so x = 2. Then y = 3.",
+    "id": "chapter-quadratic-equations",
+    "type": "chapter",
+    "path": "Mathematics > Quadratic Equations",
+    "title": "Quadratic Equations",
+    "text": "Quadratic equations, discriminant, nature of roots, and applications in real life. Topics: Standard Form of Quadratic Equation, Discriminant, Nature of Roots, Applications of Quadratic Equations.",
     "metadata": {
       "subject": "Mathematics",
-      "chapter": "Pair of Linear Equations in Two Variables",
-      "exerciseId": "pl-1"
+      "chapter": "Quadratic Equations"
     }
   },
   {
-    "id": "subject-science",
+    "id": "chapter-arithmetic-progressions",
+    "type": "chapter",
+    "path": "Mathematics > Arithmetic Progressions",
+    "title": "Arithmetic Progressions",
+    "text": "Arithmetic sequences, nth term, sum of n terms, and applications. Topics: nth Term of an AP, Sum of First n Terms, Arithmetic Mean.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Arithmetic Progressions"
+    }
+  },
+  {
+    "id": "chapter-triangles",
+    "type": "chapter",
+    "path": "Mathematics > Triangles",
+    "title": "Triangles",
+    "text": "Similarity of triangles, Pythagoras theorem, and basic proportionality. Topics: Similarity of Triangles, Pythagoras Theorem, Areas of Similar Triangles.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Triangles"
+    }
+  },
+  {
+    "id": "chapter-coordinate-geometry",
+    "type": "chapter",
+    "path": "Mathematics > Coordinate Geometry",
+    "title": "Coordinate Geometry",
+    "text": "Distance formula, section formula, and area of triangles in the coordinate plane. Topics: Distance Formula, Section Formula, Area of a Triangle.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Coordinate Geometry"
+    }
+  },
+  {
+    "id": "chapter-introduction-to-trigonometry",
+    "type": "chapter",
+    "path": "Mathematics > Introduction to Trigonometry",
+    "title": "Introduction to Trigonometry",
+    "text": "Trigonometric ratios of acute angles and basic identities. Topics: Sine, Cosine, Tangent, Reciprocal Ratios, Trigonometric Identities.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Introduction to Trigonometry"
+    }
+  },
+  {
+    "id": "chapter-applications-of-trigonometry",
+    "type": "chapter",
+    "path": "Mathematics > Some Applications of Trigonometry",
+    "title": "Some Applications of Trigonometry",
+    "text": "Heights and distances, angles of elevation and depression. Topics: Angle of Elevation, Angle of Depression, Height and Distance Problems.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Some Applications of Trigonometry"
+    }
+  },
+  {
+    "id": "chapter-circles",
+    "type": "chapter",
+    "path": "Mathematics > Circles",
+    "title": "Circles",
+    "text": "Tangent, cyclic quadrilaterals, and angle properties of circles. Topics: Tangent and Secant, Angle Subtended by an Arc, Cyclic Quadrilaterals.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Circles"
+    }
+  },
+  {
+    "id": "chapter-constructions",
+    "type": "chapter",
+    "path": "Mathematics > Constructions",
+    "title": "Constructions",
+    "text": "Construction of triangles, bisectors, and tangents to circles. Topics: Triangle Construction, Angle Bisector, Circle Tangent.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Constructions"
+    }
+  },
+  {
+    "id": "chapter-areas-related-to-circles",
+    "type": "chapter",
+    "path": "Mathematics > Areas Related to Circles",
+    "title": "Areas Related to Circles",
+    "text": "Area of circles, sectors, segments, and combinations of plane figures. Topics: Area of a Circle, Area of a Sector, Area of a Segment.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Areas Related to Circles"
+    }
+  },
+  {
+    "id": "chapter-surface-areas-and-volumes",
+    "type": "chapter",
+    "path": "Mathematics > Surface Areas and Volumes",
+    "title": "Surface Areas and Volumes",
+    "text": "Surface area and volume of solids like cuboids, cylinders, cones, and spheres. Topics: Surface Area of Solids, Volume of Solids, Conversion between Shapes.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Surface Areas and Volumes"
+    }
+  },
+  {
+    "id": "chapter-statistics",
+    "type": "chapter",
+    "path": "Mathematics > Statistics",
+    "title": "Statistics",
+    "text": "Collection, presentation and analysis of data using mean, median and mode. Topics: Mean of Grouped Data, Median of Grouped Data, Mode of Grouped Data.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Statistics"
+    }
+  },
+  {
+    "id": "chapter-probability",
+    "type": "chapter",
+    "path": "Mathematics > Probability",
+    "title": "Probability",
+    "text": "Probability of events, experimental and theoretical probability of simple events. Topics: Probability of an Event, Sample Space, Complementary Events.",
+    "metadata": {
+      "subject": "Mathematics",
+      "chapter": "Probability"
+    }
+  },
+  {
+    "id": "subject-physics",
     "type": "subject",
-    "path": "Science",
-    "title": "Science",
-    "text": "Class X science syllabus with Physics, Chemistry, and Biology chapters covering optics, electricity, chemical reactions, periodic classification, life processes, and control and coordination.",
-    "metadata": {
-      "subject": "Science"
-    }
-  },
-  {
-    "id": "subsubject-physics",
-    "type": "subsubject",
-    "path": "Science > Physics",
+    "path": "Physics",
     "title": "Physics",
-    "text": "Class X physics concepts and numericals covering optics, electricity, and motion.",
+    "text": "NCERT Class X physics covering light, electricity, magnetism, and energy resources.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Physics"
+      "subject": "Physics"
     }
   },
   {
     "id": "chapter-light-reflection-refraction",
     "type": "chapter",
-    "path": "Science > Physics > Light - Reflection and Refraction",
+    "path": "Physics > Light - Reflection and Refraction",
     "title": "Light - Reflection and Refraction",
-    "text": "Reflection, refraction, lenses, and mirrors with ray diagrams and laws of optics. Topics include Laws of Reflection, Spherical Mirrors, Refraction, and Lenses and Lens Formula.",
+    "text": "Reflection, refraction, mirrors, lenses and ray diagrams. Topics: Laws of Reflection, Refraction and Snell's Law, Spherical Mirrors, Lens Formula.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Physics",
+      "subject": "Physics",
       "chapter": "Light - Reflection and Refraction"
     }
   },
   {
-    "id": "exercise-ph-1",
-    "type": "exercise",
-    "path": "Science > Physics > Light - Reflection and Refraction > ph-1",
-    "title": "A concave mirror forms a real image at a distance equal to its focal length. Where is the object placed?",
-    "text": "For a concave mirror, when object distance u = f, the image forms at infinity. Therefore the object is at the focus.",
+    "id": "chapter-human-eye-and-colourful-world",
+    "type": "chapter",
+    "path": "Physics > Human Eye and Colourful World",
+    "title": "Human Eye and Colourful World",
+    "text": "Structure of the eye, defects of vision, and dispersion of light. Topics: Structure of the Eye, Defects of Vision, Dispersion of Light, Rainbow Formation.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Physics",
-      "chapter": "Light - Reflection and Refraction",
-      "exerciseId": "ph-1"
+      "subject": "Physics",
+      "chapter": "Human Eye and Colourful World"
     }
   },
   {
     "id": "chapter-electricity",
     "type": "chapter",
-    "path": "Science > Physics > Electricity",
+    "path": "Physics > Electricity",
     "title": "Electricity",
-    "text": "Current, resistance, Ohm's law, series and parallel circuits, and heating effects. Topics include Electric Current, Ohm's Law, Resistance, and Series and Parallel Combinations.",
+    "text": "Current, resistance, Ohm's law, circuit diagrams, and power in electrical circuits. Topics: Ohm's Law, Series and Parallel Circuits, Electrical Power, Heating Effects of Current.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Physics",
+      "subject": "Physics",
       "chapter": "Electricity"
     }
   },
   {
-    "id": "exercise-ph-2",
-    "type": "exercise",
-    "path": "Science > Physics > Electricity > ph-2",
-    "title": "Calculate the total resistance of three resistors 2Ω, 3Ω and 6Ω in parallel.",
-    "text": "1/R = 1/2 + 1/3 + 1/6 = 1. So R = 1Ω.",
+    "id": "chapter-magnetic-effects-of-electric-current",
+    "type": "chapter",
+    "path": "Physics > Magnetic Effects of Electric Current",
+    "title": "Magnetic Effects of Electric Current",
+    "text": "Magnetic fields around current-carrying conductors, electromagnets, and electric motors. Topics: Magnetic Field Lines, Fleming's Left Hand Rule, Electromagnets, Electric Motors.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Physics",
-      "chapter": "Electricity",
-      "exerciseId": "ph-2"
+      "subject": "Physics",
+      "chapter": "Magnetic Effects of Electric Current"
     }
   },
   {
-    "id": "subsubject-chemistry",
-    "type": "subsubject",
-    "path": "Science > Chemistry",
-    "title": "Chemistry",
-    "text": "Class X chemistry fundamentals: chemical reactions, periodicity, metals and non-metals.",
+    "id": "chapter-sources-of-energy",
+    "type": "chapter",
+    "path": "Physics > Sources of Energy",
+    "title": "Sources of Energy",
+    "text": "Renewable and non-renewable energy sources, energy security, and environmental impact. Topics: Fossil Fuels, Solar Energy, Hydroelectric Power, Energy Conservation.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Chemistry"
+      "subject": "Physics",
+      "chapter": "Sources of Energy"
+    }
+  },
+  {
+    "id": "subject-chemistry",
+    "type": "subject",
+    "path": "Chemistry",
+    "title": "Chemistry",
+    "text": "NCERT Class X chemistry covering reactions, acids and bases, metals and their compounds, organic compounds, and periodicity.",
+    "metadata": {
+      "subject": "Chemistry"
     }
   },
   {
     "id": "chapter-chemical-reactions-equations",
     "type": "chapter",
-    "path": "Science > Chemistry > Chemical Reactions and Equations",
+    "path": "Chemistry > Chemical Reactions and Equations",
     "title": "Chemical Reactions and Equations",
-    "text": "Types of chemical reactions, balancing equations, and activity series. Topics include Types of Reactions, Balancing Chemical Equations, Endothermic and Exothermic Reactions.",
+    "text": "Types of chemical reactions, balancing equations, and activity series. Topics: Types of Reactions, Balancing Chemical Equations, Exothermic and Endothermic Reactions.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Chemistry",
+      "subject": "Chemistry",
       "chapter": "Chemical Reactions and Equations"
     }
   },
   {
-    "id": "exercise-ch-1",
-    "type": "exercise",
-    "path": "Science > Chemistry > Chemical Reactions and Equations > ch-1",
-    "title": "Balance the equation: Fe + O2 -> Fe2O3.",
-    "text": "4Fe + 3O2 -> 2Fe2O3.",
+    "id": "chapter-acids-bases-salts",
+    "type": "chapter",
+    "path": "Chemistry > Acids, Bases and Salts",
+    "title": "Acids, Bases and Salts",
+    "text": "Properties of acids and bases, pH scale, and neutralization reactions. Topics: Characteristics of Acids and Bases, pH Scale, Neutralization.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Chemistry",
-      "chapter": "Chemical Reactions and Equations",
-      "exerciseId": "ch-1"
+      "subject": "Chemistry",
+      "chapter": "Acids, Bases and Salts"
+    }
+  },
+  {
+    "id": "chapter-metals-and-non-metals",
+    "type": "chapter",
+    "path": "Chemistry > Metals and Non-metals",
+    "title": "Metals and Non-metals",
+    "text": "Physical and chemical properties of metals and non-metals, reactivity series, and corrosion. Topics: Physical Properties of Metals, Reactivity Series, Metallic and Non-metallic Behaviour.",
+    "metadata": {
+      "subject": "Chemistry",
+      "chapter": "Metals and Non-metals"
+    }
+  },
+  {
+    "id": "chapter-carbon-and-its-compounds",
+    "type": "chapter",
+    "path": "Chemistry > Carbon and Its Compounds",
+    "title": "Carbon and Its Compounds",
+    "text": "Organic chemistry basics, covalent bonding, and hydrocarbon families. Topics: Covalent Bonding, Hydrocarbons, Functional Groups.",
+    "metadata": {
+      "subject": "Chemistry",
+      "chapter": "Carbon and Its Compounds"
     }
   },
   {
     "id": "chapter-periodic-classification-elements",
     "type": "chapter",
-    "path": "Science > Chemistry > Periodic Classification of Elements",
+    "path": "Chemistry > Periodic Classification of Elements",
     "title": "Periodic Classification of Elements",
-    "text": "Modern periodic table, periodic trends, and element groups. Topics include Periodic Properties, Atomic Number and Mass Number, Groups and Periods.",
+    "text": "Modern periodic table, periodic trends, and properties of elements. Topics: Periodic Table, Periodic Trends, Groups and Periods.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Chemistry",
+      "subject": "Chemistry",
       "chapter": "Periodic Classification of Elements"
     }
   },
   {
-    "id": "exercise-ch-2",
-    "type": "exercise",
-    "path": "Science > Chemistry > Periodic Classification of Elements > ch-2",
-    "title": "Explain why atomic radius decreases across a period.",
-    "text": "Across a period, nuclear charge increases while electron shielding stays roughly constant, pulling electrons closer and reducing atomic radius.",
-    "metadata": {
-      "subject": "Science",
-      "subsubject": "Chemistry",
-      "chapter": "Periodic Classification of Elements",
-      "exerciseId": "ch-2"
-    }
-  },
-  {
-    "id": "subsubject-biology",
-    "type": "subsubject",
-    "path": "Science > Biology",
+    "id": "subject-biology",
+    "type": "subject",
+    "path": "Biology",
     "title": "Biology",
-    "text": "Class X biology syllabus covering life processes, control and coordination, and reproduction.",
+    "text": "NCERT Class X biology covering life processes, control and coordination, reproduction, heredity, and environmental conservation.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Biology"
+      "subject": "Biology"
     }
   },
   {
     "id": "chapter-life-processes",
     "type": "chapter",
-    "path": "Science > Biology > Life Processes",
+    "path": "Biology > Life Processes",
     "title": "Life Processes",
-    "text": "Nutrition, respiration, transportation, and excretion in plants and animals. Topics include Nutrition, Respiration, Transportation, and Excretion.",
+    "text": "Nutrition, respiration, transportation, and excretion in living organisms. Topics: Nutrition, Respiration, Transportation, Excretion.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Biology",
+      "subject": "Biology",
       "chapter": "Life Processes"
-    }
-  },
-  {
-    "id": "exercise-bio-1",
-    "type": "exercise",
-    "path": "Science > Biology > Life Processes > bio-1",
-    "title": "Describe the process of transpiration in plants.",
-    "text": "Transpiration is the loss of water vapour through stomata. It helps in nutrient transport and cooling the plant.",
-    "metadata": {
-      "subject": "Science",
-      "subsubject": "Biology",
-      "chapter": "Life Processes",
-      "exerciseId": "bio-1"
     }
   },
   {
     "id": "chapter-control-and-coordination",
     "type": "chapter",
-    "path": "Science > Biology > Control and Coordination",
+    "path": "Biology > Control and Coordination",
     "title": "Control and Coordination",
-    "text": "Nervous system, hormones, and plant responses. Topics include Nervous System, Hormones, and Plant Tropisms.",
+    "text": "Nervous and hormonal coordination in animals and plants. Topics: Nervous System, Endocrine System, Plant Hormones.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Biology",
+      "subject": "Biology",
       "chapter": "Control and Coordination"
     }
   },
   {
-    "id": "exercise-bio-2",
-    "type": "exercise",
-    "path": "Science > Biology > Control and Coordination > bio-2",
-    "title": "What is the role of the endocrine system in coordination?",
-    "text": "The endocrine system secretes hormones that regulate growth, metabolism, and homeostasis, acting alongside the nervous system.",
+    "id": "chapter-how-do-organisms-reproduce",
+    "type": "chapter",
+    "path": "Biology > How Do Organisms Reproduce?",
+    "title": "How Do Organisms Reproduce?",
+    "text": "Asexual and sexual reproduction in plants and animals. Topics: Asexual Reproduction, Sexual Reproduction, Reproductive Structures.",
     "metadata": {
-      "subject": "Science",
-      "subsubject": "Biology",
-      "chapter": "Control and Coordination",
-      "exerciseId": "bio-2"
+      "subject": "Biology",
+      "chapter": "How Do Organisms Reproduce?"
     }
   },
   {
-    "id": "subject-social-studies-missing",
-    "type": "subject",
-    "path": "Social Studies",
-    "title": "Social Studies",
-    "text": "Social Studies syllabus data is not available in the current workspace.",
+    "id": "chapter-heredity-and-evolution",
+    "type": "chapter",
+    "path": "Biology > Heredity and Evolution",
+    "title": "Heredity and Evolution",
+    "text": "Inheritance patterns, Mendel's laws, and the theory of evolution. Topics: Mendelian Genetics, Variation, Natural Selection.",
     "metadata": {
-      "subject": "Social Studies",
-      "status": "missing"
+      "subject": "Biology",
+      "chapter": "Heredity and Evolution"
+    }
+  },
+  {
+    "id": "chapter-natural-resources",
+    "type": "chapter",
+    "path": "Biology > Natural Resources",
+    "title": "Natural Resources",
+    "text": "Conservation and sustainable use of air, water, forests, and natural ecosystems. Topics: Air and Water Resources, Forest Resources, Sustainable Use.",
+    "metadata": {
+      "subject": "Biology",
+      "chapter": "Natural Resources"
     }
   }
 ]

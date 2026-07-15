@@ -1,21 +1,21 @@
 {
   "meta": {
-    "generatedAt": "2026-07-11T00:00:00Z",
+    "generatedAt": "2026-07-11T14:24:41Z",
     "source": "data/syllabus.json",
-    "notes": "Social Studies content not found in the current workspace. Add History/Geography/Civics/Economics syllabus data when available."
+    "notes": "Auto-generated syllabus tree from data/syllabus.json"
   },
   "documentTree": [
     {
       "id": "mathematics",
       "type": "subject",
       "name": "Mathematics",
-      "description": "NCERT Class X mathematics with foundation topics, theorems, and solved exercises.",
+      "description": "NCERT Class X mathematics covering algebra, geometry, trigonometry, mensuration, statistics, and probability.",
       "children": [
         {
           "id": "real-numbers",
           "type": "chapter",
           "name": "Real Numbers",
-          "summary": "Number systems, Euclid's algorithm, and properties of real numbers.",
+          "summary": "Number systems, Euclid's algorithm, irrational numbers, and properties of real numbers.",
           "topics": [
             "Euclid's Division Lemma",
             "Fundamental Theorem of Arithmetic",
@@ -27,16 +27,24 @@
             "Fundamental Theorem of Arithmetic"
           ],
           "exercises": [
-            {
-              "id": "rm-1",
-              "question": "Prove that the square root of 2 is irrational.",
-              "solution": "Assume sqrt(2) = p/q in lowest terms. Then 2q^2 = p^2, so p is even. Write p = 2k => 2q^2 = 4k^2 => q^2 = 2k^2, so q is even. Contradiction. Therefore sqrt(2) is irrational."
-            },
-            {
-              "id": "rm-2",
-              "question": "Show that between any two rational numbers there exists an irrational number.",
-              "solution": "Given rationals a < b, choose x = a + (b - a) / sqrt(2). Then x is irrational and lies between a and b."
-            }
+            { "id": "ex1.1-1", "exercise_label": "Exercise 1.1", "question": "Find HCF of 135 and 225" },
+            { "id": "ex1.1-2", "exercise_label": "Exercise 1.1", "question": "Find HCF of 196 and 38220" },
+            { "id": "ex1.1-3", "exercise_label": "Exercise 1.1", "question": "Find HCF of 867 and 255" },
+            { "id": "ex1.1-4", "exercise_label": "Exercise 1.1", "question": "Odd integer form 6q+1, 6q+3, 6q+5" },
+            { "id": "ex1.1-5", "exercise_label": "Exercise 1.1", "question": "Cube of integer form 9m, 9m+1, 9m+8" },
+            { "id": "ex1.2-1", "exercise_label": "Exercise 1.2", "question": "Prime factors of 140" },
+            { "id": "ex1.2-2", "exercise_label": "Exercise 1.2", "question": "Prime factors of 156" },
+            { "id": "ex1.2-3", "exercise_label": "Exercise 1.2", "question": "LCM and HCF of 12, 15, 21" },
+            { "id": "ex1.2-4", "exercise_label": "Exercise 1.2", "question": "LCM and HCF of 17, 23, 29" },
+            { "id": "ex1.2-5", "exercise_label": "Exercise 1.2", "question": "Can 4^n end with digit 0?" },
+            { "id": "ex1.2-6", "exercise_label": "Exercise 1.2", "question": "Composite number proof" },
+            { "id": "ex1.2-7", "exercise_label": "Exercise 1.2", "question": "LCM word problem - Sonia and Ravi" },
+            { "id": "ex1.3-1", "exercise_label": "Exercise 1.3", "question": "Prove sqrt(5) irrational" },
+            { "id": "ex1.3-2", "exercise_label": "Exercise 1.3", "question": "Prove 3+2√5 irrational" },
+            { "id": "ex1.3-3", "exercise_label": "Exercise 1.3", "question": "Prove 1/√2, 7√5, 6+√2 irrational" },
+            { "id": "ex1.4-1", "exercise_label": "Exercise 1.4", "question": "Classify 13/3125 decimal" },
+            { "id": "ex1.4-2", "exercise_label": "Exercise 1.4", "question": "Classify 17/8 decimal" },
+            { "id": "ex1.4-3", "exercise_label": "Exercise 1.4", "question": "Rational or irrational - decimals" }
           ]
         },
         {
@@ -57,8 +65,7 @@
           "exercises": [
             {
               "id": "pm-1",
-              "question": "If p(x) is a polynomial with p(2)=0, show that (x-2) is a factor of p(x).",
-              "solution": "By the Factor Theorem, if p(2)=0 then (x-2) divides p(x)."
+              "question": "If p(x) is a polynomial with p(2) = 0, show that (x - 2) is a factor of p(x)."
             }
           ]
         },
@@ -77,230 +84,542 @@
           "exercises": [
             {
               "id": "pl-1",
-              "question": "Solve the system x + y = 5 and 2x - y = 1.",
-              "solution": "Add equations to eliminate y: 3x = 6, so x = 2. Then y = 3."
+              "question": "Solve the system x + y = 5 and 2x - y = 1."
+            }
+          ]
+        },
+        {
+          "id": "quadratic-equations",
+          "type": "chapter",
+          "name": "Quadratic Equations",
+          "summary": "Quadratic equations, discriminant, nature of roots, and applications in real life.",
+          "topics": [
+            "Standard Form of Quadratic Equation",
+            "Discriminant",
+            "Nature of Roots",
+            "Applications of Quadratic Equations"
+          ],
+          "theorems": [
+            "Quadratic Formula"
+          ],
+          "exercises": [
+            {
+              "id": "qm-1",
+              "question": "Find the roots of x^2 - 5x + 6 = 0."
+            }
+          ]
+        },
+        {
+          "id": "arithmetic-progressions",
+          "type": "chapter",
+          "name": "Arithmetic Progressions",
+          "summary": "Arithmetic sequences, nth term, sum of n terms, and applications.",
+          "topics": [
+            "nth Term of an AP",
+            "Sum of First n Terms",
+            "Arithmetic Mean"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "ap-1",
+              "question": "Find the sum of the first 10 terms of the AP 3, 7, 11, ... ."
+            }
+          ]
+        },
+        {
+          "id": "triangles",
+          "type": "chapter",
+          "name": "Triangles",
+          "summary": "Similarity of triangles, Pythagoras theorem, and basic proportionality.",
+          "topics": [
+            "Similarity of Triangles",
+            "Pythagoras Theorem",
+            "Areas of Similar Triangles"
+          ],
+          "theorems": [
+            "AA Similarity Criterion",
+            "Pythagorean Theorem"
+          ],
+          "exercises": [
+            {
+              "id": "tr-1",
+              "question": "If two triangles are similar and the ratio of corresponding sides is 2:3, what is the ratio of their areas?"
+            }
+          ]
+        },
+        {
+          "id": "coordinate-geometry",
+          "type": "chapter",
+          "name": "Coordinate Geometry",
+          "summary": "Distance formula, section formula, and area of triangles in the coordinate plane.",
+          "topics": [
+            "Distance Formula",
+            "Section Formula",
+            "Area of a Triangle"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "cg-1",
+              "question": "Find the distance between (3, 4) and (7, 1)."
+            }
+          ]
+        },
+        {
+          "id": "introduction-to-trigonometry",
+          "type": "chapter",
+          "name": "Introduction to Trigonometry",
+          "summary": "Trigonometric ratios of acute angles and basic identities.",
+          "topics": [
+            "Sine, Cosine, Tangent",
+            "Reciprocal Ratios",
+            "Trigonometric Identities"
+          ],
+          "theorems": [
+            "sin^2(theta) + cos^2(theta) = 1"
+          ],
+          "exercises": [
+            {
+              "id": "trig-1",
+              "question": "If sin(theta) = 3/5 for an acute angle theta, find cos(theta)."
+            }
+          ]
+        },
+        {
+          "id": "applications-of-trigonometry",
+          "type": "chapter",
+          "name": "Some Applications of Trigonometry",
+          "summary": "Heights and distances, angles of elevation and depression.",
+          "topics": [
+            "Angle of Elevation",
+            "Angle of Depression",
+            "Height and Distance Problems"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "trig-2",
+              "question": "From a point 20 m away from the base of a tower, the angle of elevation of its top is 30 degrees. Find the height of the tower."
+            }
+          ]
+        },
+        {
+          "id": "circles",
+          "type": "chapter",
+          "name": "Circles",
+          "summary": "Tangent, cyclic quadrilaterals, and angle properties of circles.",
+          "topics": [
+            "Tangent and Secant",
+            "Angle Subtended by an Arc",
+            "Cyclic Quadrilaterals"
+          ],
+          "theorems": [
+            "Tangent-Secant Theorem"
+          ],
+          "exercises": [
+            {
+              "id": "cir-1",
+              "question": "If a tangent to a circle makes a right angle with the radius at the point of contact, what is the angle between the tangent and the radius?"
+            }
+          ]
+        },
+        {
+          "id": "constructions",
+          "type": "chapter",
+          "name": "Constructions",
+          "summary": "Construction of triangles, bisectors, and tangents to circles.",
+          "topics": [
+            "Triangle Construction",
+            "Angle Bisector",
+            "Circle Tangent"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "cons-1",
+              "question": "Construct a triangle given two sides and the included angle."
+            }
+          ]
+        },
+        {
+          "id": "areas-related-to-circles",
+          "type": "chapter",
+          "name": "Areas Related to Circles",
+          "summary": "Area of circles, sectors, segments, and combinations of plane figures.",
+          "topics": [
+            "Area of a Circle",
+            "Area of a Sector",
+            "Area of a Segment"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "arc-1",
+              "question": "Find the area of a sector of a circle of radius 7 cm and central angle 60 degrees."
+            }
+          ]
+        },
+        {
+          "id": "surface-areas-and-volumes",
+          "type": "chapter",
+          "name": "Surface Areas and Volumes",
+          "summary": "Surface area and volume of solids like cuboids, cylinders, cones, and spheres.",
+          "topics": [
+            "Surface Area of Solids",
+            "Volume of Solids",
+            "Conversion between Shapes"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "sa-1",
+              "question": "Calculate the volume of a cylinder with radius 3 cm and height 10 cm."
+            }
+          ]
+        },
+        {
+          "id": "statistics",
+          "type": "chapter",
+          "name": "Statistics",
+          "summary": "Collection, presentation and analysis of data using mean, median and mode.",
+          "topics": [
+            "Mean of Grouped Data",
+            "Median of Grouped Data",
+            "Mode of Grouped Data"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "stats-1",
+              "question": "Find the mean of the data set 12, 15, 17, 20, 25."
+            }
+          ]
+        },
+        {
+          "id": "probability",
+          "type": "chapter",
+          "name": "Probability",
+          "summary": "Probability of events, experimental and theoretical probability of simple events.",
+          "topics": [
+            "Probability of an Event",
+            "Sample Space",
+            "Complementary Events"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "prob-1",
+              "question": "If a coin is tossed twice, what is the probability of getting exactly one head?"
             }
           ]
         }
       ]
     },
     {
-      "id": "science",
+      "id": "physics",
       "type": "subject",
-      "name": "Science",
-      "description": "Class X science syllabus, including Physics, Chemistry, and Biology chapters.",
+      "name": "Physics",
+      "description": "NCERT Class X physics covering light, electricity, magnetism, and energy resources.",
       "children": [
         {
-          "id": "physics",
-          "type": "subsubject",
-          "name": "Physics",
-          "description": "Class X physics concepts and numericals covering optics, electricity, and motion.",
-          "children": [
+          "id": "light-reflection-refraction",
+          "type": "chapter",
+          "name": "Light - Reflection and Refraction",
+          "summary": "Reflection, refraction, mirrors, lenses and ray diagrams.",
+          "topics": [
+            "Laws of Reflection",
+            "Refraction and Snell's Law",
+            "Spherical Mirrors",
+            "Lens Formula"
+          ],
+          "theorems": [
+            "Law of Reflection",
+            "Snell's Law"
+          ],
+          "exercises": [
             {
-              "id": "light-reflection-refraction",
-              "type": "chapter",
-              "name": "Light - Reflection and Refraction",
-              "summary": "Reflection, refraction, lenses, and mirrors with ray diagrams and laws of optics.",
-              "topics": [
-                "Laws of Reflection",
-                "Spherical Mirrors",
-                "Refraction",
-                "Lenses and Lens Formula"
-              ],
-              "theorems": [
-                "Law of Reflection",
-                "Snell's Law"
-              ],
-              "exercises": [
-                {
-                  "id": "ph-1",
-                  "question": "A concave mirror forms a real image at a distance equal to its focal length. Where is the object placed?",
-                  "solution": "For a concave mirror, when object distance u = f, the image forms at infinity. Therefore the object is at the focus."
-                }
-              ]
-            },
-            {
-              "id": "electricity",
-              "type": "chapter",
-              "name": "Electricity",
-              "summary": "Current, resistance, Ohm's law, series and parallel circuits, and heating effects.",
-              "topics": [
-                "Electric Current",
-                "Ohm's Law",
-                "Resistance",
-                "Series and Parallel Combinations"
-              ],
-              "theorems": [
-                "Ohm's Law"
-              ],
-              "exercises": [
-                {
-                  "id": "ph-2",
-                  "question": "Calculate the total resistance of three resistors 2Ω, 3Ω and 6Ω in parallel.",
-                  "solution": "1/R = 1/2 + 1/3 + 1/6 = 1. So R = 1Ω."
-                }
-              ]
+              "id": "ph-1",
+              "question": "A concave mirror forms a real image at infinity. Where is the object placed?"
             }
           ]
         },
         {
-          "id": "chemistry",
-          "type": "subsubject",
-          "name": "Chemistry",
-          "description": "Class X chemistry fundamentals: chemical reactions, periodicity, metals and non-metals.",
-          "children": [
+          "id": "human-eye-and-colourful-world",
+          "type": "chapter",
+          "name": "Human Eye and Colourful World",
+          "summary": "Structure of the eye, defects of vision, and dispersion of light.",
+          "topics": [
+            "Structure of the Eye",
+            "Defects of Vision",
+            "Dispersion of Light",
+            "Rainbow Formation"
+          ],
+          "theorems": [],
+          "exercises": [
             {
-              "id": "chemical-reactions-equations",
-              "type": "chapter",
-              "name": "Chemical Reactions and Equations",
-              "summary": "Types of chemical reactions, balancing equations, and activity series.",
-              "topics": [
-                "Types of Reactions",
-                "Balancing Chemical Equations",
-                "Endothermic and Exothermic Reactions"
-              ],
-              "theorems": [],
-              "exercises": [
-                {
-                  "id": "ch-1",
-                  "question": "Balance the equation: Fe + O2 -> Fe2O3.",
-                  "solution": "4Fe + 3O2 -> 2Fe2O3."
-                }
-              ]
-            },
-            {
-              "id": "periodic-classification-elements",
-              "type": "chapter",
-              "name": "Periodic Classification of Elements",
-              "summary": "Modern periodic table, periodic trends, and element groups.",
-              "topics": [
-                "Periodic Properties",
-                "Atomic Number and Mass Number",
-                "Groups and Periods"
-              ],
-              "theorems": [],
-              "exercises": [
-                {
-                  "id": "ch-2",
-                  "question": "Explain why atomic radius decreases across a period.",
-                  "solution": "Across a period, nuclear charge increases while electron shielding stays roughly constant, pulling electrons closer and reducing atomic radius."
-                }
-              ]
+              "id": "ph-2",
+              "question": "Why does a rainbow appear after rain?"
             }
           ]
         },
         {
-          "id": "biology",
-          "type": "subsubject",
-          "name": "Biology",
-          "description": "Class X biology syllabus covering life processes, control and coordination, and reproduction.",
-          "children": [
+          "id": "electricity",
+          "type": "chapter",
+          "name": "Electricity",
+          "summary": "Current, resistance, Ohm's law, circuit diagrams, and power in electrical circuits.",
+          "topics": [
+            "Ohm's Law",
+            "Series and Parallel Circuits",
+            "Electrical Power",
+            "Heating Effects of Current"
+          ],
+          "theorems": [
+            "Ohm's Law"
+          ],
+          "exercises": [
             {
-              "id": "life-processes",
-              "type": "chapter",
-              "name": "Life Processes",
-              "summary": "Nutrition, respiration, transportation, and excretion in plants and animals.",
-              "topics": [
-                "Nutrition",
-                "Respiration",
-                "Transportation",
-                "Excretion"
-              ],
-              "theorems": [],
-              "exercises": [
-                {
-                  "id": "bio-1",
-                  "question": "Describe the process of transpiration in plants.",
-                  "solution": "Transpiration is the loss of water vapour through stomata. It helps in nutrient transport and cooling the plant."
-                }
-              ]
-            },
+              "id": "ph-3",
+              "question": "Calculate the current through a 12 ohm resistor connected across a 24 V battery."
+            }
+          ]
+        },
+        {
+          "id": "magnetic-effects-of-electric-current",
+          "type": "chapter",
+          "name": "Magnetic Effects of Electric Current",
+          "summary": "Magnetic fields around current-carrying conductors, electromagnets, and electric motors.",
+          "topics": [
+            "Magnetic Field Lines",
+            "Fleming's Left Hand Rule",
+            "Electromagnets",
+            "Electric Motors"
+          ],
+          "theorems": [],
+          "exercises": [
             {
-              "id": "control-and-coordination",
-              "type": "chapter",
-              "name": "Control and Coordination",
-              "summary": "Nervous system, hormones, and plant responses.",
-              "topics": [
-                "Nervous System",
-                "Hormones",
-                "Plant Tropisms"
-              ],
-              "theorems": [],
-              "exercises": [
-                {
-                  "id": "bio-2",
-                  "question": "What is the role of the endocrine system in coordination?",
-                  "solution": "The endocrine system secretes hormones that regulate growth, metabolism, and homeostasis, acting alongside the nervous system."
-                }
-              ]
+              "id": "ph-4",
+              "question": "Describe the direction of the magnetic field around a current-carrying straight conductor."
+            }
+          ]
+        },
+        {
+          "id": "sources-of-energy",
+          "type": "chapter",
+          "name": "Sources of Energy",
+          "summary": "Renewable and non-renewable energy sources, energy security, and environmental impact.",
+          "topics": [
+            "Fossil Fuels",
+            "Solar Energy",
+            "Hydroelectric Power",
+            "Energy Conservation"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "ph-5",
+              "question": "Name one renewable and one non-renewable source of energy."
             }
           ]
         }
       ]
     },
     {
-      "id": "social-studies",
+      "id": "chemistry",
       "type": "subject",
-      "name": "Social Studies",
-      "description": "Social Studies syllabus for Class X (History, Geography, Civics, Economics). Data not available in the current workspace.",
-      "children": []
-    }
-  ],
-  "ragEntries": [
-    {
-      "id": "mathematics",
-      "path": "Mathematics",
-      "content": "NCERT Class X mathematics with foundation topics, theorems, and solved exercises. Chapters: Real Numbers, Polynomials, Pair of Linear Equations in Two Variables."
+      "name": "Chemistry",
+      "description": "NCERT Class X chemistry covering reactions, acids and bases, metals and their compounds, organic compounds, and periodicity.",
+      "children": [
+        {
+          "id": "chemical-reactions-equations",
+          "type": "chapter",
+          "name": "Chemical Reactions and Equations",
+          "summary": "Types of chemical reactions, balancing equations, and activity series.",
+          "topics": [
+            "Types of Reactions",
+            "Balancing Chemical Equations",
+            "Exothermic and Endothermic Reactions"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "ch-1",
+              "question": "Balance the equation: Fe + O2 -> Fe2O3."
+            }
+          ]
+        },
+        {
+          "id": "acids-bases-salts",
+          "type": "chapter",
+          "name": "Acids, Bases and Salts",
+          "summary": "Properties of acids and bases, pH scale, and neutralization reactions.",
+          "topics": [
+            "Characteristics of Acids and Bases",
+            "pH Scale",
+            "Neutralization"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "ch-2",
+              "question": "What is the pH of a neutral solution?"
+            }
+          ]
+        },
+        {
+          "id": "metals-and-non-metals",
+          "type": "chapter",
+          "name": "Metals and Non-metals",
+          "summary": "Physical and chemical properties of metals and non-metals, reactivity series, and corrosion.",
+          "topics": [
+            "Physical Properties of Metals",
+            "Reactivity Series",
+            "Metallic and Non-metallic Behaviour"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "ch-3",
+              "question": "Why does sodium react vigorously with water?"
+            }
+          ]
+        },
+        {
+          "id": "carbon-and-its-compounds",
+          "type": "chapter",
+          "name": "Carbon and Its Compounds",
+          "summary": "Organic chemistry basics, covalent bonding, and hydrocarbon families.",
+          "topics": [
+            "Covalent Bonding",
+            "Hydrocarbons",
+            "Functional Groups"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "ch-4",
+              "question": "What is a homologous series?"
+            }
+          ]
+        },
+        {
+          "id": "periodic-classification-elements",
+          "type": "chapter",
+          "name": "Periodic Classification of Elements",
+          "summary": "Modern periodic table, periodic trends, and properties of elements.",
+          "topics": [
+            "Periodic Table",
+            "Periodic Trends",
+            "Groups and Periods"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "ch-5",
+              "question": "Why does atomic radius decrease across a period?"
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "real-numbers",
-      "path": "Mathematics > Real Numbers",
-      "content": "Number systems, Euclid's algorithm, and properties of real numbers. Topics: Euclid's Division Lemma, Fundamental Theorem of Arithmetic, Irrational Numbers, Decimal Representations. Exercise examples include proving sqrt 2 is irrational and finding an irrational number between two rationals."
-    },
-    {
-      "id": "polynomials",
-      "path": "Mathematics > Polynomials",
-      "content": "Polynomial operations, zeroes, and algebraic identities. Topics: Degree of Polynomial, Zeroes of Polynomial, Remainder Theorem, Factor Theorem. Includes factor theorem exercise with p(2)=0."
-    },
-    {
-      "id": "pair-of-linear-equations",
-      "path": "Mathematics > Pair of Linear Equations in Two Variables",
-      "content": "Solve linear systems using substitution, elimination, and graphical methods. Topics: Graphical Method, Substitution Method, Elimination Method, Applications in Word Problems. Example question solves x + y = 5 and 2x - y = 1."
-    },
-    {
-      "id": "science",
-      "path": "Science",
-      "content": "Class X science syllabus with Physics, Chemistry, and Biology chapters covering optics, electricity, chemical reactions, periodic classification and life processes."
-    },
-    {
-      "id": "light-reflection-refraction",
-      "path": "Science > Physics > Light - Reflection and Refraction",
-      "content": "Reflection, refraction, lenses, and mirrors with ray diagrams and laws of optics. Topics include Laws of Reflection, Spherical Mirrors, Refraction, Lenses and Lens Formula. Example exercise asks where an object is placed for a real image at focal length."
-    },
-    {
-      "id": "electricity",
-      "path": "Science > Physics > Electricity",
-      "content": "Current, resistance, Ohm's law, series and parallel circuits, and heating effects. Topics include Electric Current, Ohm's Law, Resistance, Series and Parallel Combinations. Exercise calculates equivalent parallel resistance."
-    },
-    {
-      "id": "chemical-reactions-equations",
-      "path": "Science > Chemistry > Chemical Reactions and Equations",
-      "content": "Types of chemical reactions, balancing equations, and activity series. Topics: Types of Reactions, Balancing Chemical Equations, Endothermic and Exothermic Reactions. Example exercise balances Fe + O2 -> Fe2O3."
-    },
-    {
-      "id": "periodic-classification-elements",
-      "path": "Science > Chemistry > Periodic Classification of Elements",
-      "content": "Modern periodic table, periodic trends, and element groups. Topics: Periodic Properties, Atomic Number and Mass Number, Groups and Periods. Example exercise explains why atomic radius decreases across a period."
-    },
-    {
-      "id": "life-processes",
-      "path": "Science > Biology > Life Processes",
-      "content": "Nutrition, respiration, transportation, and excretion in plants and animals. Topics include Nutrition, Respiration, Transportation, Excretion. Example exercise describes transpiration."
-    },
-    {
-      "id": "control-and-coordination",
-      "path": "Science > Biology > Control and Coordination",
-      "content": "Nervous system, hormones, and plant responses. Topics include Nervous System, Hormones, Plant Tropisms. Example exercise covers the role of the endocrine system."
+      "id": "biology",
+      "type": "subject",
+      "name": "Biology",
+      "description": "NCERT Class X biology covering life processes, control and coordination, reproduction, heredity, and environmental conservation.",
+      "children": [
+        {
+          "id": "life-processes",
+          "type": "chapter",
+          "name": "Life Processes",
+          "summary": "Nutrition, respiration, transportation, and excretion in living organisms.",
+          "topics": [
+            "Nutrition",
+            "Respiration",
+            "Transportation",
+            "Excretion"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "bio-1",
+              "question": "Describe the role of stomata in transpiration."
+            }
+          ]
+        },
+        {
+          "id": "control-and-coordination",
+          "type": "chapter",
+          "name": "Control and Coordination",
+          "summary": "Nervous and hormonal coordination in animals and plants.",
+          "topics": [
+            "Nervous System",
+            "Endocrine System",
+            "Plant Hormones"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "bio-2",
+              "question": "How does the endocrine system contribute to coordination?"
+            }
+          ]
+        },
+        {
+          "id": "how-do-organisms-reproduce",
+          "type": "chapter",
+          "name": "How Do Organisms Reproduce?",
+          "summary": "Asexual and sexual reproduction in plants and animals.",
+          "topics": [
+            "Asexual Reproduction",
+            "Sexual Reproduction",
+            "Reproductive Structures"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "bio-3",
+              "question": "Give one advantage of sexual reproduction over asexual reproduction."
+            }
+          ]
+        },
+        {
+          "id": "heredity-and-evolution",
+          "type": "chapter",
+          "name": "Heredity and Evolution",
+          "summary": "Inheritance patterns, Mendel's laws, and the theory of evolution.",
+          "topics": [
+            "Mendelian Genetics",
+            "Variation",
+            "Natural Selection"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "bio-4",
+              "question": "What does Mendel's law of segregation state?"
+            }
+          ]
+        },
+        {
+          "id": "natural-resources",
+          "type": "chapter",
+          "name": "Natural Resources",
+          "summary": "Conservation and sustainable use of air, water, forests, and natural ecosystems.",
+          "topics": [
+            "Air and Water Resources",
+            "Forest Resources",
+            "Sustainable Use"
+          ],
+          "theorems": [],
+          "exercises": [
+            {
+              "id": "bio-5",
+              "question": "Why is water conservation important for ecosystems?"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

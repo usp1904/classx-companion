@@ -5,6 +5,9 @@ const { loadInstructionModules, getInstructionByName } = require('../lib/instruc
 const syllabus = require('../lib/syllabus');
 const mcp = require('../services/mcp');
 const kg = require('../services/kg');
+const aiTutor = require('../services/aiTutor');
+const flags = require('../lib/featureFlags');
+const content = require('../lib/content');
 const fs = require('fs');
 const path = require('path');
 const Ajv = require('ajv');
@@ -140,6 +143,15 @@ router.post('/format-math', (req, res) => {
   return res.json({ ok: true, formatted: result.formatted, issues: result.issues });
 });
 
+// POST /api/ai/tutor -> AI tutor endpoint
+router.post('/ai/tutor', async (req, res) => {
+  const { question, mode, context } = req.body || {};
+  if (!question) return res.status(400).json({ ok: false, error: 'question string is required' });
+  const result = await aiTutor.askTutor({ question, mode, context });
+  if (!result.ok) return res.status(400).json(result);
+  return res.json(result);
+});
+
 // MCP fetch connector
 router.get('/mcp/fetch', async (req, res) => {
   const q = req.query.q || 'default';
@@ -165,6 +177,19 @@ router.get('/kg/resolve', async (req, res) => {
   } catch (error) {
     return res.status(500).json({ ok: false, error: 'KG resolve failed', details: error.message });
   }
+});
+
+// GET /api/content/lessons -> list all authored lessons
+router.get('/content/lessons', (req, res) => {
+  const lessons = content.listLessons();
+  return res.json({ ok: true, lessons });
+});
+
+// GET /api/content/lessons/:lessonId -> full lesson with all features
+router.get('/content/lessons/:lessonId', (req, res) => {
+  const lesson = content.getLessonById(req.params.lessonId);
+  if (!lesson) return res.status(404).json({ ok: false, error: 'Lesson not found' });
+  return res.json({ ok: true, lesson: lesson.data });
 });
 
 module.exports = router;
