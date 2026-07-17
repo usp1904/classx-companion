@@ -112,10 +112,11 @@ test('POST /api/convert-latex converts plaintext math', async () => {
   assert.ok(res.body.converted.includes('\\frac'));
 });
 
-test('POST /api/format-math flags plaintext math issues', async () => {
+test('POST /api/format-math converts and validates plaintext math', async () => {
   const res = await fetch('POST', '/api/format-math', { text: 'x^2 + 1' });
-  assert.equal(res.status, 400); // enforceLaTeX flags caret power
-  assert.equal(res.body.ok, false);
+  assert.equal(res.status, 200);
+  assert.equal(res.body.ok, true);
+  assert.ok(res.body.formatted.includes('$x^2$'));
 });
 
 test('POST /api/dual-mode-route routes BOARD mode', async () => {

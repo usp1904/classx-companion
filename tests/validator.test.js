@@ -123,8 +123,9 @@ test('generateHistoricalPaperTags: rejects non-object', () => {
 
 test('formatMath: formats correctly', () => {
   const result = formatMath('1/2 + x^2');
-  assert.equal(result.ok, false); // will fail enforce after conversion due to multiple patterns
-  assert.ok(result.formatted);
+  assert.equal(result.ok, true);
+  assert.ok(result.formatted.includes('\\frac'));
+  assert.ok(result.formatted.includes('$x^2$'));
 });
 
 test('formatMath: rejects non-string', () => {

@@ -1,21 +1,3 @@
-/**
- * Agent Bridge — connects Node.js backend to Python agent orchestration layer.
- *
- * Talks to `agents/bridge.py` over HTTP. If the bridge is not running,
- * falls back to a deterministic stub (same interface, no Python dependency).
- *
- * Agent endpoints:
- *   POST /agents/agent-loop      — tutor → evaluate → hint
- *   POST /agents/verification-loop — NCERT curriculum guard
- *   POST /agents/event-loop       — student event processing
- *   POST /agents/hill-climb       — adaptive difficulty optimization
- *   POST /agents/full-pipeline    — all 4 loops combined
- *
- * Doom Loop protection: every loop invocation is bounded by:
- *   - DOOM_LOOP_MAX_ITERATIONS (default 10) — hard ceiling on iterations
- *   - DOOM_LOOP_MAX_REPETITIONS (default 3) — identical consecutive states trigger termination
- *   - Bridge call-level dedup + retry guard
- */
 'use strict';
 
 const fetchImpl = global.fetch || (() => {
@@ -27,6 +9,12 @@ const fetchImpl = global.fetch || (() => {
 const { DoomLoop } = require('../lib/doomLoop');
 const config = require('../lib/config');
 const logger = require('../lib/logger');
+const flags = require('../lib/featureFlags');
+
+let langgraphWorkflow;
+if (flags.isEnabled('langGraph')) {
+  try { langgraphWorkflow = require('./langgraphWorkflow'); } catch (e) { /* not available */ }
+}
 
 const BRIDGE_URL = process.env.AGENT_BRIDGE_URL || 'http://localhost:8765';
 const BRIDGE_TIMEOUT_MS = parseInt(process.env.AGENT_BRIDGE_TIMEOUT_MS || '30000', 10);
@@ -114,6 +102,19 @@ function _validateBridgeResult(result, loopType) {
  * Agent Loop: Tutor → Evaluator → Hint
  */
 async function runAgentLoop({ question, studentAnswer, mode, context, student }) {
+  if (langgraphWorkflow && flags.isEnabled('langGraph')) {
+    try {
+      const result = await langgraphWorkflow.runTutorWorkflow({ question, studentAnswer, mode });
+      return {
+        loop_type: 'agent_loop',
+        iterations_used: result.iterations || 1,
+        terminated_early: false,
+        tutor_output: { explanation: result.tutorOutput, ncert_core: '', jee_neet_bridge: null, latex_rendered: false, mode: mode || 'DUAL' },
+        evaluator_output: result.evaluation ? { score: 0.5, is_correct: true, weak_concepts: [], feedback: result.evaluation, partial_credit: 0 } : null,
+        hint_output: result.hint ? { hint_text: result.hint, hint_level: 1, prerequisite_reminder: null, class6_analogy: null } : null
+      };
+    } catch (e) { /* fall through to bridge */ }
+  }
   const result = callBridge('/agents/agent-loop', {
     question,
     student_answer: studentAnswer,
@@ -126,61 +127,32 @@ async function runAgentLoop({ question, studentAnswer, mode, context, student })
 
   if (validated.source === 'doom') return validated.data;
 
-  // Stub fallback with doom loop guard
-  const doom = new DoomLoop();
-  const state = { question, studentAnswer, mode };
-  let iteration = 0;
-
-  while (iteration < 3) {
-    iteration++;
-    doom.check(state);
-
-    const stubResult = {
-      loop_type: 'agent_loop',
-      iterations_used: doom.iterationCount,
-      terminated_early: false,
-      termination_reason: 'bridge_unavailable',
-      tutor_output: {
-        explanation: `[Stub Tutor] ${question} — Think of a real-life example...`,
-        ncert_core: `NCERT Class X covers: ${question}`,
-        jee_neet_bridge: null,
-        latex_rendered: false,
-        mode: mode || 'DUAL'
-      },
-      evaluator_output: studentAnswer ? {
-        score: 0.7,
-        is_correct: true,
-        weak_concepts: [],
-        feedback: 'Good attempt! Review for precision.',
-        partial_credit: 0
-      } : null,
-      hint_output: studentAnswer ? null : {
-        hint_text: 'Try breaking the problem into smaller steps.',
-        hint_level: 1,
-        prerequisite_reminder: null,
-        class6_analogy: 'Think about how you approach a new game...'
-      }
-    };
-
-    const check = doom.check(stubResult);
-    if (check.terminated) {
-      stubResult.terminated_early = true;
-      stubResult.termination_reason = check.reason;
-      stubResult.iterations_used = check.iterationsUsed;
-      return stubResult;
-    }
-
-    return stubResult;
-  }
-
+  // Stub fallback (deterministic single pass, no bridge dependency)
   return {
     loop_type: 'agent_loop',
-    iterations_used: doom.iterationCount,
-    terminated_early: true,
-    termination_reason: 'stub_max_iterations',
-    tutor_output: null,
-    evaluator_output: null,
-    hint_output: null
+    iterations_used: 1,
+    terminated_early: false,
+    termination_reason: 'bridge_unavailable',
+    tutor_output: {
+      explanation: `[Stub Tutor] ${question} — Think of a real-life example...`,
+      ncert_core: `NCERT Class X covers: ${question}`,
+      jee_neet_bridge: null,
+      latex_rendered: false,
+      mode: mode || 'DUAL'
+    },
+    evaluator_output: studentAnswer ? {
+      score: 0.7,
+      is_correct: true,
+      weak_concepts: [],
+      feedback: 'Good attempt! Review for precision.',
+      partial_credit: 0
+    } : null,
+    hint_output: studentAnswer ? null : {
+      hint_text: 'Try breaking the problem into smaller steps.',
+      hint_level: 1,
+      prerequisite_reminder: null,
+      class6_analogy: 'Think about how you approach a new game...'
+    }
   };
 }
 

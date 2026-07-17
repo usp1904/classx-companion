@@ -75,9 +75,11 @@ class StubProvider {
 }
 
 const PROVIDERS = {
-  stub: new StubProvider()
-  // ollama:    will be registered when lib/ollama is implemented
-  // openrouter: will be registered when lib/openrouter is implemented
+  stub: new StubProvider(),
+  get langchain() {
+    const { LangChainProvider } = require('./aiProviders/langchainProvider');
+    return new LangChainProvider();
+  }
 };
 
 function getProvider() {

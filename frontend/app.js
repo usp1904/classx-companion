@@ -20,12 +20,38 @@ const option = (p, ...c) => h('option', p || {}, ...c);
 const textarea = (p) => h('textarea', p || {});
 const label = (p, ...c) => h('label', p || {}, ...c);
 
+/* ───────── KaTeX rendering ───────── */
+function renderFormula(latex) {
+  if (!window.katex || !latex) return latex || '';
+  try {
+    return window.katex.renderToString(latex, { throwOnError: false, displayMode: false });
+  } catch (e) {
+    return latex;
+  }
+}
+function renderFormulaDisplay(latex) {
+  if (!window.katex || !latex) return latex || '';
+  try {
+    return window.katex.renderToString(latex, { throwOnError: false, displayMode: true });
+  } catch (e) {
+    return latex;
+  }
+}
+function InlineFormula({ latex }) {
+  if (!latex) return null;
+  return h('span', { className:'formula-inline', dangerouslySetInnerHTML:{ __html: renderFormula(latex) } });
+}
+function FormulaBox({ latex }) {
+  if (!latex) return null;
+  return div({ className:'formula-box', dangerouslySetInnerHTML:{ __html: renderFormulaDisplay(latex) } });
+}
+
 /* ───────── API ───────── */
 const api = (path) => fetch(path).then(r => r.json());
 
 /* ───────── THEME COLORS ───────── */
 const C = {
-  cyan: '#2dd4ff', violet: '#a78bfa', green: '#34d399', amber: '#f59e0b', red: '#f87171'
+  cyan: '#6366f1', violet: '#6366f1', green: '#14b8a6', amber: '#f59e0b', red: '#f43f5e'
 };
 
 /* ───────── SIDEBAR NAV ───────── */
@@ -61,6 +87,9 @@ function Overview({ lesson, subjects, instructions }) {
     { value:d.flowcharts?.length||0, label:'Flowcharts', color:'green' },
     { value:d.common_misconceptions?.length||0, label:'Misconceptions', color:'amber' },
   ];
+  const totalProblems = Object.values(d.exercises||{}).reduce((sum, ex) => sum + (ex.problems?.length||0), 0);
+  const totalRdProblems = (d.rd_sharma_extensions?.topics||[]).reduce((s, t) => s + (t.examples?.length||0), 0);
+  const totalRsProblems = (d.rs_aggarwal_extensions?.topics||[]).reduce((s, t) => s + (t.examples?.length||0), 0);
   return div({className:'card'},
     div({className:'card-header'},
       h2(null, d.chapter || 'Real Numbers'),
@@ -72,6 +101,9 @@ function Overview({ lesson, subjects, instructions }) {
         div({className:'stat-label'}, s.label)
       ))
     ),
+    totalProblems > 0 ? div({style:{marginBottom:16,fontSize:13,color:'var(--textDim)'}},
+      `📊 Total NCERT Problems: ${totalProblems}  |  RD Sharma: ${totalRdProblems}  |  RS Aggarwal: ${totalRsProblems}`
+    ) : null,
     div({className:'outcomes'},
       h3(null, '🎯 Learning Outcomes'),
       ul(null, (d.outcomes||[]).map((o,i) => li({key:i}, o)))
@@ -119,7 +151,7 @@ function Theorems({ lesson }) {
     ),
     lesson.theorems.map((t, i) => div({key:i, className:'theorem-card'},
       h3(null, t.name),
-      t.statement ? div({className:'theorem-statement'}, t.statement) : null,
+      t.statement ? div({className:'theorem-statement',dangerouslySetInnerHTML:{__html:renderFormulaDisplay(t.statement)}}) : null,
       t.proposed_by ? div({className:'theorem-meta'},
         span(null, '👤 '+(t.proposed_by.name||'')+(t.proposed_by.era ? ', '+t.proposed_by.era : '')),
         span(null, '📖 '+(t.proposed_by.book||'')),
@@ -160,18 +192,18 @@ function Examples({ lesson }) {
     ),
     lesson.worked_examples.map((ex, i) => div({key:i, className:'example-card'},
       h3(null, (i+1)+'. '+ex.topic),
-      div({className:'example-problem'}, ex.problem),
+      div({className:'example-problem',dangerouslySetInnerHTML:{__html:renderFormulaDisplay(ex.problem)}}),
       ex.board_mode ? div({className:'example-mode board'},
         h5(null, '📋 Board Exam Mode (Step-by-Step)'),
-        pre(null, ex.board_mode.join('\n'))
+        pre({dangerouslySetInnerHTML:{__html:ex.board_mode.map(l => renderFormula(l)).join('\n')}})
       ) : null,
       ex.speed_mode ? div({className:'example-mode speed'},
         h5(null, '⚡ Speed Mode — Golden Step'),
-        pre(null, ex.speed_mode)
+        pre({dangerouslySetInnerHTML:{__html:renderFormula(ex.speed_mode)}})
       ) : null,
       ex.competitive_shortcut ? div({className:'example-mode speed'},
         h5(null, '🏆 Competitive Exam Shortcut'),
-        pre(null, ex.competitive_shortcut)
+        pre({dangerouslySetInnerHTML:{__html:renderFormula(ex.competitive_shortcut)}})
       ) : null,
     ))
   );
@@ -179,10 +211,16 @@ function Examples({ lesson }) {
 
 /* ───────── EXERCISES ───────── */
 function Exercises({ lesson }) {
-  const [active, setActive] = useState(0);
+  const [activeEx, setActiveEx] = useState(0);
+  const [currentProblem, setCurrentProblem] = useState(0);
   if (!lesson?.exercises) return null;
   const keys = Object.keys(lesson.exercises);
-  const current = lesson.exercises[keys[active]];
+  const current = lesson.exercises[keys[activeEx]];
+  const problems = current?.problems || [];
+  const pr = problems[currentProblem];
+
+  const totalProblems = Object.values(lesson.exercises).reduce((sum, ex) => sum + (ex.problems?.length||0), 0);
+
   return div({className:'card'},
     div({className:'card-header'},
       h2(null, '📝 NCERT Exercises — Every Problem Solved'),
@@ -190,16 +228,61 @@ function Exercises({ lesson }) {
     ),
     div({className:'exercise-tabs'},
       keys.map((k, i) => btn({
-        key:k, className:'exercise-tab'+(i===active?' active':''),
-        onClick:()=>setActive(i)
-      }, k.replace('_',' ').toUpperCase()))
+        key:k, className:'exercise-tab'+(i===activeEx?' active':''),
+        onClick:()=>{setActiveEx(i);setCurrentProblem(0);}
+      }, k.replace(/_/g,' ').toUpperCase(),
+        span({className:'exercise-tab-count'}, (lesson.exercises[k].problems?.length||0)+' problems')
+      ))
     ),
-    current?.problems?.length ? current.problems.map(pr => div({key:pr.id, className:'exercise-problem'},
-      h4(null, pr.id+'. '+pr.question),
-      pr.solution?.length ? div({className:'exercise-solution'}, pr.solution.join('\n')) : null,
-      pr.final_answer ? div({className:'exercise-answer'}, '✅ '+pr.final_answer) : null,
+    problems.length > 0 ? div({className:'problem-nav'},
+      btn({
+        className:'problem-nav-btn',
+        onClick:()=>setCurrentProblem(p => Math.max(0, p-1)),
+        disabled:currentProblem===0
+      }, '‹ Prev'),
+      span({className:'problem-counter'}, `Problem ${currentProblem+1} of ${problems.length} in ${keys[activeEx].replace(/_/g,' ').toUpperCase()}`),
+      span({className:'problem-counter',style:{color:'var(--textMuted)',fontSize:11}}, `(${totalProblems} total in chapter)`),
+      btn({
+        className:'problem-nav-btn',
+        onClick:()=>setCurrentProblem(p => Math.min(problems.length-1, p+1)),
+        disabled:currentProblem===problems.length-1
+      }, 'Next ›'),
+    ) : null,
+    pr ? div({key:pr.id+'-'+currentProblem, className:'exercise-problem'},
+      div({className:'exercise-problem-header'},
+        h4(null, pr.id+'. '+pr.question),
+        pr.formulae_used?.length ? span({className:'formula-used',title:'Formulae leveraged'},
+          pr.formulae_used.length+' formulas'
+        ) : null,
+      ),
+      pr.solution?.length ? div({className:'exercise-solution'},
+        pr.solution.map((s, i) => div({key:i, style:{marginBottom:i<pr.solution.length-1?6:0},
+          dangerouslySetInnerHTML:{__html:renderFormula(s)}
+        }))
+      ) : null,
+      pr.final_answer ? div({className:'exercise-answer'},
+        '✅ ', h(InlineFormula, {latex: pr.final_answer})
+      ) : null,
       pr.concept_insight ? div({className:'exercise-insight'}, '💡 '+pr.concept_insight) : null,
-    )) : div({style:{color:'var(--textMuted)'}}, 'No problems in this exercise.')
+      pr.formulae_used?.length ? div({style:{marginTop:8,padding:'8px 10px',background:'var(--accentLight)',borderRadius:6,fontSize:12}},
+        span({style:{fontWeight:600,color:C.cyan}}, '📐 Formulae leveraged: '),
+        pr.formulae_used.map((f, fi) => span({key:fi,style:{margin:'0 3px',padding:'1px 5px',background:'var(--accentDim)',borderRadius:3,color:C.cyan}},
+          f
+        ))
+      ) : null,
+    ) : div({style:{color:'var(--textMuted)',padding:20,textAlign:'center'}}, 'No problems in this exercise.'),
+    problems.length > 1 ? div({style:{display:'flex',gap:4,flexWrap:'wrap',marginTop:12,justifyContent:'center'}},
+      problems.map((_, pi) => btn({
+        key:pi,
+        style:{
+          width:24,height:24,borderRadius:'50%',fontSize:10,fontWeight:600,
+          background: pi===currentProblem ? 'var(--accent)' : 'var(--bg1)',
+          color: pi===currentProblem ? '#fff' : 'var(--textDim)',
+          border: '1px solid var(--panelBorder)',
+        },
+        onClick:()=>setCurrentProblem(pi)
+      }, String(pi+1)))
+    ) : null,
   );
 }
 
@@ -214,14 +297,14 @@ function ExtensionView({ title, data }) {
     data.topics.map((t, i) => div({key:i, className:'ext-section'},
       h3(null, t.name),
       t.concept ? p(null, t.concept) : null,
-      t.formula ? div({style:{padding:'8px 12px',background:'var(--neonCyanDim)',borderRadius:8,marginBottom:10,fontSize:13,color:C.cyan}}, t.formula) : null,
+      t.formula ? FormulaBox({latex: t.formula}) : null,
       t.method ? p(null, t.method) : null,
       t.examples?.length ? t.examples.map((ex, j) => div({key:j, className:'ext-example'},
         h5(null, 'Example: '+(ex.problem||'')),
-        ex.solution?.length ? ul({className:'step-list'}, ex.solution.map((s,k) => li({key:k}, s))) : null,
-        ex.final_answer ? p({style:{fontSize:13,fontWeight:600,color:C.green,marginTop:6}}, 'Answer: '+ex.final_answer) : null,
+        ex.solution?.length ? ul({className:'step-list'}, ex.solution.map((s,k) => li({key:k, dangerouslySetInnerHTML:{__html:renderFormula(s)}}))) : null,
+        ex.final_answer ? p({style:{fontSize:13,fontWeight:600,color:C.green,marginTop:6}}, h(InlineFormula, {latex: ex.final_answer})) : null,
       )) : null,
-      t.competitive_note ? div({style:{padding:'8px 12px',background:'var(--neonAmberDim)',borderRadius:8,marginTop:8,fontSize:12,color:C.amber}}, '🏆 '+t.competitive_note) : null,
+      t.competitive_note ? div({style:{padding:'8px 12px',background:'var(--amberDim)',borderRadius:8,marginTop:8,fontSize:12,color:C.amber}}, '🏆 '+t.competitive_note) : null,
     ))
   );
 }
@@ -244,16 +327,14 @@ function ModelPapers({ lesson }) {
       const items = mp[tier.id] || [];
       if (!items.length) return null;
       return div({key:tier.id, className:'paper-section'},
-        h3({style:{color:'var(--neon'+tier.color.charAt(0).toUpperCase()+tier.color.slice(1)+')'}},
-          '▸ '+tier.label+' ('+items.length+' problems)'
-        ),
+        h3({style:{color:C[tier.color]}}, '▸ '+tier.label+' ('+items.length+' problems)'),
         items.map((item, i) => div({key:i, style:{padding:'10px 14px',marginBottom:8,background:'var(--bg2)',borderRadius:8}},
           div({style:{fontWeight:600,fontSize:13,marginBottom:4}}, (i+1)+'. '+item.question),
           item.steps?.length ? div({style:{fontSize:12,color:'var(--textDim)',marginBottom:4}},
             item.steps.map((s, j) => div({key:j}, '→ '+s))
           ) : null,
-          item.answer ? div({style:{fontSize:12,color:'var(--neonGreen)',fontWeight:600}}, '✅ '+item.answer) : null,
-          item.hints?.length ? div({style:{fontSize:11,color:'var(--neonCyan)',marginTop:4,fontStyle:'italic'}},
+          item.answer ? div({style:{fontSize:12,color:C.green,fontWeight:600}}, '✅ '+item.answer) : null,
+          item.hints?.length ? div({style:{fontSize:11,color:C.cyan,marginTop:4,fontStyle:'italic'}},
             '💡 '+item.hints.join(' | ')
           ) : null,
         ))
@@ -290,7 +371,9 @@ function Quizzes({ lesson }) {
       const sel = answers[difficulty+'-'+i];
       const correctIdx = q.correct;
       return div({key:i, className:'quiz-card'},
-        div({className:'quiz-question'}, (i+1)+'. '+q.question),
+        div({className:'quiz-question',
+          dangerouslySetInnerHTML:{__html:renderFormula(q.question)}
+        }),
         div({className:'quiz-options'},
           q.options.map((opt, j) => {
             let cls = 'quiz-option';
@@ -303,8 +386,9 @@ function Quizzes({ lesson }) {
             return btn({
               key:j, className:cls,
               onClick:() => select(i, j),
-              disabled:sel !== undefined
-            }, opt);
+              disabled:sel !== undefined,
+              dangerouslySetInnerHTML:{__html:renderFormula(opt)}
+            });
           })
         ),
         sel !== undefined && q.explanation ? div({className:'quiz-explanation'},
@@ -335,11 +419,11 @@ function VedicMath({ lesson }) {
       h3(null, v.title),
       v.sanskrit ? div({className:'vedic-sanskrit'}, v.sanskrit) : null,
       v.concept ? p({style:{fontSize:13,color:'var(--textDim)',marginBottom:8}}, v.concept) : null,
-      v.real_numbers_application ? p({style:{fontSize:12,color:'var(--neonCyan)',marginBottom:8}}, '📌 '+v.real_numbers_application) : null,
-      v.examples?.length ? v.examples.map((ex, j) => div({key:j, style:{marginTop:10,padding:'10px 14px',background:'rgba(0,0,0,0.2)',borderRadius:8}},
+      v.real_numbers_application ? p({style:{fontSize:12,color:C.cyan,marginBottom:8}}, '📌 '+v.real_numbers_application) : null,
+      v.examples?.length ? v.examples.map((ex, j) => div({key:j, style:{marginTop:10,padding:'10px 14px',background:'rgba(0,0,0,0.02)',borderRadius:8}},
         p({style:{fontWeight:600,fontSize:13,marginBottom:4}}, 'Example: '+ex.problem),
         ex.explanation ? p({style:{fontSize:12,color:'var(--textDim)',fontStyle:'italic',marginBottom:4}}, ex.explanation) : null,
-        ex.steps ? ul({className:'vedic-steps'}, ex.steps.map((s,k) => li({key:k}, s))) : null,
+        ex.steps ? ul({className:'vedic-steps'}, ex.steps.map((s,k) => li({key:k, dangerouslySetInnerHTML:{__html:renderFormula(s)}}))) : null,
         ex.regular_method ? p({style:{fontSize:12,color:'var(--textMuted)',marginTop:4}}, 'Regular method: '+ex.regular_method) : null,
       )) : null,
     ))
@@ -413,14 +497,14 @@ function drawCoordinateGraph(canvas, viz) {
   const range = props.gridRange || { xMin: -10, xMax: 10, yMin: -10, yMax: 10 };
   const mapX = x => (x - range.xMin) / (range.xMax - range.xMin) * w;
   const mapY = y => h - (y - range.yMin) / (range.yMax - range.yMin) * h;
-  ctx.strokeStyle = 'rgba(45,212,255,0.08)'; ctx.lineWidth = 1;
+  ctx.strokeStyle = 'rgba(99,102,241,0.08)'; ctx.lineWidth = 1;
   for (let i = 0; i <= 10; i++) {
     const gx = range.xMin + (range.xMax - range.xMin) * i / 10;
     ctx.beginPath(); ctx.moveTo(mapX(gx), 0); ctx.lineTo(mapX(gx), h); ctx.stroke();
     const gy = range.yMin + (range.yMax - range.yMin) * i / 10;
     ctx.beginPath(); ctx.moveTo(0, mapY(gy)); ctx.lineTo(w, mapY(gy)); ctx.stroke();
   }
-  ctx.strokeStyle = 'rgba(45,212,255,0.3)'; ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'rgba(99,102,241,0.25)'; ctx.lineWidth = 1.5;
   if (range.yMin <= 0 && range.yMax >= 0) { ctx.beginPath(); ctx.moveTo(0, mapY(0)); ctx.lineTo(w, mapY(0)); ctx.stroke(); }
   if (range.xMin <= 0 && range.xMax >= 0) { ctx.beginPath(); ctx.moveTo(mapX(0), 0); ctx.lineTo(mapX(0), h); ctx.stroke(); }
   if (props.functionString) {
@@ -438,7 +522,6 @@ function drawCoordinateGraph(canvas, viz) {
     }
     ctx.stroke();
   }
-  // Number line markers
   if (props.markers) {
     props.markers.forEach(m => {
       const px = mapX(m.position);
@@ -454,7 +537,7 @@ function drawCoordinateGraph(canvas, viz) {
 function Viz({ lesson }) {
   const [input, setInput] = useState(JSON.stringify({
     rendererType:'COORDINATE_GRAPH', syllabusSource:'NCERT_2026_27',
-    visualizationProperties:{functionString:'2*x^2 - 5*x + 3',curveColor:C.cyan,gridRange:{xMin:-3,xMax:5,yMin:-4,yMax:8}}
+    visualizationProperties:{functionString:'2*x^2 - 5*x + 3',curveColor:'#6366f1',gridRange:{xMin:-3,xMax:5,yMin:-4,yMax:8}}
   }, null, 2));
   const [viz, setViz] = useState(null);
   const canvasRef = useRef();
@@ -532,6 +615,7 @@ function App() {
   const [selectedChapter, setSelectedChapter] = useState('');
   const [status, setStatus] = useState('offline');
   const [allLessons, setAllLessons] = useState([]);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const filteredLessons = allLessons.filter(l =>
     !selectedSubject || l.subject === selectedSubject
@@ -562,6 +646,7 @@ function App() {
   const loadLesson = useCallback(async (lessonId) => {
     setLesson(null);
     setActiveNav('overview');
+    setSidebarOpen(false);
     const res = await api('/api/content/lessons/'+lessonId);
     if (res.ok) {
       setLesson(res.lesson);
@@ -597,6 +682,9 @@ function App() {
   })();
 
   return div(null,
+    /* ── SIDEBAR OVERLAY (mobile) ── */
+    div({className:'sidebar-overlay'+(sidebarOpen?' open':''), onClick:()=>setSidebarOpen(false)}),
+
     /* ── HEADER ── */
     div({className:'header'},
       div({className:'header-brand'},
@@ -613,9 +701,7 @@ function App() {
           value:selectedSubject,
           onChange:e => handleSubjectChange(e.target.value)
         },
-          subjects.map(s => option({key:s.id,value:s.id},
-            s.name
-          ))
+          subjects.map(s => option({key:s.id,value:s.id}, s.name))
         ),
         label({style:{fontSize:12,color:'var(--textMuted)',margin:'0 4px 0 12px'}}, 'Chapter:'),
         select_({
@@ -623,9 +709,7 @@ function App() {
           value:selectedChapter,
           onChange:e => loadLesson(e.target.value)
         },
-          filteredLessons.map(l => option({key:l.lessonId,value:l.lessonId},
-            l.title || l.lessonId
-          ))
+          filteredLessons.map(l => option({key:l.lessonId,value:l.lessonId}, l.title || l.lessonId))
         ),
         div({className:'header-status '+status},
           div({className:'status-dot'}),
@@ -637,16 +721,21 @@ function App() {
     /* ── LAYOUT ── */
     div({className:'layout'},
       /* Sidebar */
-      div({className:'sidebar'},
+      div({className:'sidebar'+(sidebarOpen?' open':'')},
         div({className:'sidebar-label'}, '📚 Learn'),
-        NAV_ITEMS.slice(0,6).map(item => btn({
+        NAV_ITEMS.slice(0,5).map(item => btn({
           key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
-          onClick:()=>setActiveNav(item.id)
+          onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
+        }, span({className:'nav-icon'}, item.icon), item.label)),
+        div({className:'sidebar-label',style:{marginTop:8}}, '📖 Reference'),
+        NAV_ITEMS.slice(5,7).map(item => btn({
+          key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
+          onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
         }, span({className:'nav-icon'}, item.icon), item.label)),
         div({className:'sidebar-label',style:{marginTop:8}}, '🎯 Practice'),
-        NAV_ITEMS.slice(6).map(item => btn({
+        NAV_ITEMS.slice(7).map(item => btn({
           key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
-          onClick:()=>setActiveNav(item.id)
+          onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
         }, span({className:'nav-icon'}, item.icon), item.label)),
         lesson ? div({style:{marginTop:'auto',paddingTop:12,borderTop:'1px solid var(--panelBorder)'}},
           div({style:{fontSize:11,color:'var(--textMuted)',textAlign:'center'}},
@@ -659,7 +748,10 @@ function App() {
 
       /* Main */
       div({className:'main'}, view)
-    )
+    ),
+
+    /* Mobile sidebar toggle */
+    btn({className:'sidebar-toggle', onClick:()=>setSidebarOpen(o=>!o)}, '☰')
   );
 }
 

@@ -14,7 +14,7 @@ test('listLessons: finds mathematics lessons', () => {
 });
 
 test('getLessonById: retrieves known lesson', () => {
-  const lesson = content.getLessonById('ch3-l1');
+  const lesson = content.getLessonById('real-numbers');
   assert.ok(lesson);
   assert.equal(lesson.subject, 'mathematics');
   assert.ok(lesson.data);
