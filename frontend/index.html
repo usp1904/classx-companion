@@ -441,6 +441,51 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 .flowchart-num.end { background: var(--sageDim); color: var(--sage); }
 .flowchart-content { font-size: 13px; color: var(--textDim); line-height: 1.6; }
 
+/* CONCEPT CAROUSEL */
+.concept-carousel { background: var(--bg2); border: 1px solid var(--panelBorder); border-radius: 14px; padding: 24px 28px; box-shadow: var(--shadow); }
+.cc-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.cc-header h3 { font-size: 16px; font-weight: 700; color: var(--accent); }
+.cc-controls { display: flex; align-items: center; gap: 10px; }
+.cc-controls button { padding: 4px 12px; border-radius: 6px; font-size: 11px; font-weight: 600; background: var(--accentDim); color: var(--accent); }
+.cc-slide { animation: ccFadeIn 0.5s ease; }
+@keyframes ccFadeIn { from { opacity: 0; transform: translateX(20px); } to { opacity: 1; transform: translateX(0); } }
+.cc-title { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 14px; line-height: 1.5; }
+.cc-section { margin-bottom: 14px; padding: 14px; border-radius: 10px; background: var(--bg1); border: 1px solid var(--panelBorder); }
+.cc-section.cc-life { border-left: 3px solid var(--sage); }
+.cc-section.cc-purpose { border-left: 3px solid var(--accent); }
+.cc-section h5 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--textMuted); margin-bottom: 6px; }
+.cc-section p { font-size: 14px; line-height: 1.7; color: var(--textDim); }
+.cc-section ul { list-style: none; padding: 0; margin-top: 6px; }
+.cc-section li { padding: 4px 0 4px 16px; font-size: 13px; color: var(--textDim); position: relative; }
+.cc-section li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
+.cc-dots { display: flex; justify-content: center; gap: 6px; margin-top: 16px; }
+.cc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--panelBorder); cursor: pointer; transition: all 0.2s; }
+.cc-dot.active { background: var(--accent); width: 24px; border-radius: 4px; }
+
+/* ANIMATED STEP SOLVER */
+.step-solver { background: var(--bg1); border: 1px solid var(--panelBorder); border-radius: 12px; padding: 20px; }
+.ss-progress { height: 4px; background: var(--panelBorder); border-radius: 2px; margin-bottom: 16px; overflow: hidden; }
+.ss-track { height: 100%; background: linear-gradient(90deg, var(--accent), var(--sage)); border-radius: 2px; transition: width 0.6s ease; }
+.ss-step { display: flex; gap: 12px; padding: 10px 14px; margin-bottom: 6px; border-radius: 8px; transition: all 0.4s ease; background: var(--bg2); border: 1px solid transparent; }
+.ss-step.done { border-color: var(--sageDim); opacity: 0.8; }
+.ss-step.done .ss-step-num { background: var(--sage); }
+.ss-step.active { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accentDim); transform: scale(1.01); }
+.ss-step.active .ss-step-num { background: var(--accent); color: #fff; }
+.ss-step.future { opacity: 0.35; }
+.ss-step-num { width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; flex-shrink: 0; font-size: 11px; font-weight: 700; background: var(--panelBorder); color: var(--textMuted); transition: all 0.3s; }
+.ss-step-text { font-size: 13px; line-height: 1.6; color: var(--textDim); flex: 1; padding-top: 3px; }
+.ss-step-text .katex { font-size: 1em; }
+.ss-controls { display: flex; gap: 8px; justify-content: center; margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--panelBorder); }
+.ss-controls button { padding: 6px 16px; border-radius: 6px; font-size: 12px; font-weight: 600; background: var(--accentDim); color: var(--accent); transition: all 0.12s; }
+.ss-controls button:hover { background: var(--accent); color: #fff; }
+.ss-controls button:disabled { opacity: 0.4; cursor: default; background: var(--bg1); color: var(--textMuted); }
+
+/* INTERACTIVE CARDS */
+.interactive-card { background: var(--bg2); border: 1px solid var(--panelBorder); border-radius: 14px; padding: 20px 24px; box-shadow: var(--shadow); }
+.interactive-card input[type="range"] { -webkit-appearance: none; height: 6px; border-radius: 3px; background: var(--panelBorder); outline: none; }
+.interactive-card input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); cursor: pointer; box-shadow: 0 2px 6px rgba(99,102,241,0.3); }
+.interactive-card label { font-size: 12px; color: var(--textDim); display: block; margin-bottom: 4px; }
+
 /* VISUALIZATIONS */
 .viz-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 @media (max-width: 768px) { .viz-split { grid-template-columns: 1fr; } }

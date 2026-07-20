@@ -67,6 +67,7 @@ const NAV_ITEMS = [
   { id:'quizzes',       icon:'🧪', label:'Practice Quizzes' },
   { id:'vedic-math',    icon:'⚡', label:'Vedic Math' },
   { id:'mind-maps',     icon:'🧠', label:'Mind Maps' },
+  { id:'interactive',  icon:'🎮', label:'Interactive' },
   { id:'viz',           icon:'📈', label:'Visualizations' },
 ];
 
@@ -117,27 +118,38 @@ function Overview({ lesson, subjects, instructions }) {
 
 /* ───────── CONCEPTS ───────── */
 function Concepts({ lesson }) {
+  const [carouselMode, setCarouselMode] = useState(false);
   if (!lesson?.concepts) return null;
-  return div({className:'card'},
-    div({className:'card-header'},
-      h2(null, '📚 Concepts — Real Life Applications'),
-      p(null, 'Every concept connected to Indian diaspora context and day-to-day usage'),
+  return div(null,
+    div({style:{display:'flex',justifyContent:'flex-end',marginBottom:8,gap:8}},
+      btn({
+        className:'btn '+(carouselMode?'btn-primary':'btn-secondary'),
+        onClick:()=>setCarouselMode(c=>!c)
+      }, carouselMode?'📋 List View':'🔄 Slideshow')
     ),
-    lesson.concepts.map((c, i) => div({key:i, className:'concept-card'},
-      h3(null, (i+1)+'. '+c.name),
-      c.real_life_application ? div({className:'concept-section'},
-        h4(null, '🏠 Real-Life Application'),
-        p(null, c.real_life_application)
-      ) : null,
-      c.purpose ? div({className:'concept-section'},
-        h4(null, '🎯 Purpose'),
-        p(null, c.purpose)
-      ) : null,
-      c.day_to_day_usage?.length ? div({className:'concept-section'},
-        h4(null, '📌 Day-to-Day Usage'),
-        ul(null, c.day_to_day_usage.map((u,j) => li({key:j}, u)))
-      ) : null,
-    ))
+    carouselMode
+      ? h(ConceptCarousel, {concepts:lesson.concepts})
+      : div({className:'card'},
+          div({className:'card-header'},
+            h2(null, '📚 Concepts — Real Life Applications'),
+            p(null, 'Every concept connected to Indian diaspora context and day-to-day usage'),
+          ),
+          lesson.concepts.map((c, i) => div({key:i, className:'concept-card'},
+            h3(null, (i+1)+'. '+c.name),
+            c.real_life_application ? div({className:'concept-section'},
+              h4(null, '🏠 Real-Life Application'),
+              p(null, c.real_life_application)
+            ) : null,
+            c.purpose ? div({className:'concept-section'},
+              h4(null, '🎯 Purpose'),
+              p(null, c.purpose)
+            ) : null,
+            c.day_to_day_usage?.length ? div({className:'concept-section'},
+              h4(null, '📌 Day-to-Day Usage'),
+              ul(null, c.day_to_day_usage.map((u,j) => li({key:j}, u)))
+            ) : null,
+          ))
+        )
   );
 }
 
@@ -184,28 +196,44 @@ function Theorems({ lesson }) {
 
 /* ───────── WORKED EXAMPLES ───────── */
 function Examples({ lesson }) {
+  const [solverIdx, setSolverIdx] = useState(-1);
   if (!lesson?.worked_examples) return null;
-  return div({className:'card'},
-    div({className:'card-header'},
-      h2(null, '✏️ Worked Examples — Step by Step'),
-      p(null, 'Board exam style + competitive speed mode + JEE shortcuts'),
-    ),
-    lesson.worked_examples.map((ex, i) => div({key:i, className:'example-card'},
-      h3(null, (i+1)+'. '+ex.topic),
-      div({className:'example-problem',dangerouslySetInnerHTML:{__html:renderFormulaDisplay(ex.problem)}}),
-      ex.board_mode ? div({className:'example-mode board'},
-        h5(null, '📋 Board Exam Mode (Step-by-Step)'),
-        pre({dangerouslySetInnerHTML:{__html:ex.board_mode.map(l => renderFormula(l)).join('\n')}})
-      ) : null,
-      ex.speed_mode ? div({className:'example-mode speed'},
-        h5(null, '⚡ Speed Mode — Golden Step'),
-        pre({dangerouslySetInnerHTML:{__html:renderFormula(ex.speed_mode)}})
-      ) : null,
-      ex.competitive_shortcut ? div({className:'example-mode speed'},
-        h5(null, '🏆 Competitive Exam Shortcut'),
-        pre({dangerouslySetInnerHTML:{__html:renderFormula(ex.competitive_shortcut)}})
-      ) : null,
-    ))
+  return div(null,
+    solverIdx >= 0 ? div({className:'card'},
+      div({style:{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:12}},
+        h3({style:{fontSize:15,fontWeight:600}}, '▶ Animated: '+(lesson.worked_examples[solverIdx]?.topic||'')),
+        btn({className:'btn btn-secondary',onClick:()=>setSolverIdx(-1)}, '✕ Close')
+      ),
+      h(AnimatedStepSolver, {steps: lesson.worked_examples[solverIdx].board_mode||[
+        lesson.worked_examples[solverIdx].problem,
+        lesson.worked_examples[solverIdx].speed_mode||''
+      ]})
+    ) : null,
+    div({className:'card'},
+      div({className:'card-header'},
+        h2(null, '✏️ Worked Examples — Step by Step'),
+        p(null, 'Board exam style + competitive speed mode + JEE shortcuts'),
+      ),
+      lesson.worked_examples.map((ex, i) => div({key:i, className:'example-card'},
+        h3(null, (i+1)+'. '+ex.topic),
+        div({className:'example-problem',dangerouslySetInnerHTML:{__html:renderFormulaDisplay(ex.problem)}}),
+        div({style:{marginBottom:8}},
+          btn({className:'btn btn-primary',onClick:()=>setSolverIdx(i)}, '▶ Animated Walkthrough')
+        ),
+        ex.board_mode ? div({className:'example-mode board'},
+          h5(null, '📋 Board Exam Mode (Step-by-Step)'),
+          pre({dangerouslySetInnerHTML:{__html:ex.board_mode.map(l => renderFormula(l)).join('\n')}})
+        ) : null,
+        ex.speed_mode ? div({className:'example-mode speed'},
+          h5(null, '⚡ Speed Mode — Golden Step'),
+          pre({dangerouslySetInnerHTML:{__html:renderFormula(ex.speed_mode)}})
+        ) : null,
+        ex.competitive_shortcut ? div({className:'example-mode speed'},
+          h5(null, '🏆 Competitive Exam Shortcut'),
+          pre({dangerouslySetInnerHTML:{__html:renderFormula(ex.competitive_shortcut)}})
+        ) : null,
+      ))
+    )
   );
 }
 
@@ -478,6 +506,230 @@ function MindMaps({ lesson }) {
   );
 }
 
+/* ───────── CONCEPT CAROUSEL ───────── */
+function ConceptCarousel({ concepts }) {
+  const [idx, setIdx] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const timerRef = useRef(null);
+  useEffect(() => {
+    if (playing) { timerRef.current = setTimeout(() => setIdx(i => (i+1)%concepts.length), 5000); }
+    return () => clearTimeout(timerRef.current);
+  }, [playing, idx, concepts.length]);
+  if (!concepts?.length) return null;
+  const c = concepts[idx];
+  return div({className:'concept-carousel'},
+    div({className:'cc-header'},
+      h3(null, '🔄 Concept Slideshow'),
+      div({className:'cc-controls'},
+        btn({onClick:()=>setPlaying(p=>!p)}, playing?'⏸ Pause':'▶ Play'),
+        span({style:{fontSize:11,color:'var(--textMuted)'}}, `${idx+1}/${concepts.length}`)
+      )
+    ),
+    div({key:idx, className:'cc-slide'},
+      h4({className:'cc-title'}, c.name),
+      c.real_life_application ? div({className:'cc-section cc-life'},
+        h5(null, '🏠 Real Life'), p(null, c.real_life_application)
+      ) : null,
+      c.purpose ? div({className:'cc-section cc-purpose'},
+        h5(null, '🎯 Purpose'), p(null, c.purpose)
+      ) : null,
+      c.day_to_day_usage?.length ? div({className:'cc-section'},
+        h5(null, '📌 Examples'),
+        ul(null, c.day_to_day_usage.map((u,j) => li({key:j}, u)))
+      ) : null
+    ),
+    div({className:'cc-dots'},
+      concepts.map((_, i) => div({
+        key:i, className:'cc-dot'+(i===idx?' active':''),
+        onClick:()=>{setIdx(i);setPlaying(false);}
+      }))
+    )
+  );
+}
+
+/* ───────── ANIMATED STEP SOLVER ───────── */
+function AnimatedStepSolver({ steps }) {
+  const [step, setStep] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const timerRef = useRef(null);
+  useEffect(() => {
+    if (playing && step < steps.length-1) {
+      timerRef.current = setTimeout(() => setStep(s => Math.min(s+1, steps.length-1)), 2000);
+    } else if (playing && step >= steps.length-1) { setPlaying(false); }
+    return () => clearTimeout(timerRef.current);
+  }, [playing, step, steps.length]);
+  const done = steps.length;
+  return div({className:'step-solver'},
+    div({className:'ss-progress'},
+      div({className:'ss-track',
+        style:{width:(step+1)/done*100+'%'}}
+      )
+    ),
+    steps.map((s, i) => div({
+      key:i,
+      className:'ss-step'+(i<step?' done':'')+(i===step?' active':'')+(i>step?' future':'')
+    },
+      div({className:'ss-step-num'}, i+1),
+      div({className:'ss-step-text',dangerouslySetInnerHTML:{__html:renderFormula(s)}}
+      )
+    )),
+    div({className:'ss-controls'},
+      btn({disabled:step===0,onClick:()=>{setPlaying(false);setStep(s=>s-1);}},'◀ Prev'),
+      btn({onClick:()=>{if(step>=done-1){setStep(0);setPlaying(false);}else setPlaying(p=>!p);}}, playing?'⏸ Pause':(step<done-1?'▶ Auto-Play':'🔄 Reset')),
+      btn({disabled:step>=done-1,onClick:()=>{setPlaying(false);setStep(s=>s+1);}},'Next ▶'),
+    )
+  );
+}
+
+/* ───────── INTERACTIVE UNIT CIRCLE ───────── */
+function drawUnitCircle(ctx, w, h, angleDeg, opts) {
+  const cx = w*0.35, cy = h*0.5, r = Math.min(w*0.3, h*0.4);
+  const rad = angleDeg*Math.PI/180;
+  const cos = Math.cos(rad), sin = Math.sin(rad);
+  const px = cx+r*cos, py = cy-r*sin;
+  ctx.clearRect(0,0,w,h);
+  ctx.strokeStyle='rgba(99,102,241,0.15)'; ctx.lineWidth=1;
+  for (let a=0;a<360;a+=30) {
+    const ar=a*Math.PI/180;
+    ctx.beginPath(); ctx.moveTo(cx,cy);
+    ctx.lineTo(cx+r*Math.cos(ar),cy-r*Math.sin(ar)); ctx.stroke();
+  }
+  ctx.strokeStyle='rgba(99,102,241,0.3)'; ctx.lineWidth=1.5;
+  ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.stroke();
+  ctx.strokeStyle='rgba(99,102,241,0.2)'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(cx-r-10,cy); ctx.lineTo(cx+r+10,cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx,cy-r-10); ctx.lineTo(cx,cy+r+10); ctx.stroke();
+  ctx.fillStyle='#6366f1'; ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,cy); ctx.lineTo(px,py); ctx.closePath(); ctx.fill();
+  ctx.strokeStyle='#f43f5e'; ctx.lineWidth=2.5;
+  ctx.beginPath(); ctx.arc(cx,cy,r*0.06,0,-rad,true); ctx.stroke();
+  ctx.fillStyle='#f43f5e'; ctx.font='bold 11px Inter,sans-serif';
+  ctx.fillText('θ='+angleDeg+'°',cx+r*0.65*Math.cos(rad/2),cy-r*0.65*Math.sin(rad/2)-6);
+  ctx.strokeStyle='#f59e0b'; ctx.lineWidth=2;
+  ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,py); ctx.stroke();
+  ctx.fillStyle='#1e293b';
+  ctx.beginPath(); ctx.arc(px,py,5,0,Math.PI*2); ctx.fill();
+  ctx.font='12px Inter,sans-serif'; ctx.textAlign='center';
+  ctx.fillStyle='#14b8a6';
+  ctx.fillText('sin = '+sin.toFixed(4), cx+r+60, cy-20);
+  ctx.fillStyle='#6366f1';
+  ctx.fillText('cos = '+cos.toFixed(4), cx+r+60, cy);
+  ctx.fillStyle='#f59e0b';
+  ctx.fillText('tan = '+(angleDeg%90===0?'∞':(sin/cos).toFixed(4)), cx+r+60, cy+20);
+  ctx.fillStyle='#94a3b8'; ctx.font='10px Inter,sans-serif';
+  ctx.fillText('(1,0)', cx+r+12, cy+14);
+  ctx.fillText('(0,1)', cx-10, cy-r-6);
+}
+
+function UnitCircle({ lesson }) {
+  const [angle, setAngle] = useState(45);
+  const [autoRotate, setAutoRotate] = useState(false);
+  const canvasRef = useRef();
+  const timerRef = useRef(null);
+  const draw = useCallback(() => {
+    const ca = canvasRef.current;
+    if (!ca) return;
+    ca.width = ca.clientWidth; ca.height = ca.clientHeight;
+    drawUnitCircle(ca.getContext('2d'), ca.width, ca.height, angle, {});
+  }, [angle]);
+  useEffect(() => { draw(); window.addEventListener('resize', draw); return () => window.removeEventListener('resize', draw); }, [draw]);
+  useEffect(() => {
+    if (autoRotate) { timerRef.current = setTimeout(() => setAngle(a => (a+1)%360), 50); }
+    return () => clearTimeout(timerRef.current);
+  }, [autoRotate, angle]);
+  return div({className:'interactive-card'},
+    h3({style:{marginBottom:8}}, '📐 Unit Circle Explorer'),
+    p({style:{fontSize:12,color:'var(--textDim)',marginBottom:12}}, 'Drag or auto-rotate to see sin, cos, tan change in real time'),
+    div({className:'viz-canvas-shell', style:{minHeight:300}},
+      h('canvas',{ref:canvasRef,className:'viz-canvas',style:{height:300}})
+    ),
+    div({style:{display:'flex',gap:12,alignItems:'center',marginTop:12,flexWrap:'wrap'}},
+      label({style:{fontSize:12,fontWeight:600}}, `Angle: ${angle}°`),
+      h('input',{type:'range',min:0,max:360,value:angle,style:{flex:1,maxWidth:300},
+        onChange:e=>{setAutoRotate(false);setAngle(+e.target.value);}
+      }),
+      btn({onClick:()=>setAutoRotate(a=>!a), className:'btn '+(autoRotate?'btn-primary':'btn-secondary')},
+        autoRotate?'⏹ Stop':'▶ Auto-Rotate'
+      ),
+      btn({onClick:()=>{setAutoRotate(false);setAngle(45);}, className:'btn btn-secondary'},'Reset 45°')
+    )
+  );
+}
+
+/* ───────── INTERACTIVE RIGHT TRIANGLE ───────── */
+function drawRightTriangle(canvas, a, b) {
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width = canvas.clientWidth;
+  const h = canvas.height = canvas.clientHeight;
+  ctx.clearRect(0,0,w,h);
+  const pad = 60, scale = Math.min((w-pad*2)/Math.max(a,b), (h-pad*2)/Math.max(a,b), 80);
+  const sx = pad, sy = h-pad;
+  const ax = sx + b*scale, ay = sy;
+  const bx = sx, by = sy - a*scale;
+  const c = Math.sqrt(a*a+b*b);
+  ctx.strokeStyle='#6366f1'; ctx.lineWidth=2.5;
+  ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(ax,ay); ctx.lineTo(bx,by); ctx.closePath(); ctx.stroke();
+  ctx.fillStyle='rgba(99,102,241,0.06)';
+  ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(ax,ay); ctx.lineTo(bx,by); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#14b8a6'; ctx.font='bold 14px Inter,sans-serif'; ctx.textAlign='center';
+  const mx = (sx+ax)/2, my = (sy+ay)/2;
+  ctx.fillText('b = '+b, mx, my+18);
+  ctx.fillStyle='#6366f1';
+  const nx = (sx+bx)/2-4, ny = (sy+by)/2;
+  ctx.fillText('a = '+a, nx-20, ny);
+  ctx.fillStyle='#f59e0b';
+  const hx = (ax+bx)/2+8, hy = (ay+by)/2;
+  ctx.fillText('c = '+c.toFixed(2), hx+12, hy);
+  const angleA = Math.atan2(a,b)*180/Math.PI;
+  ctx.fillStyle='#f43f5e'; ctx.font='12px Inter,sans-serif';
+  ctx.beginPath(); ctx.arc(sx,sy,20,0,-angleA*Math.PI/180,true); ctx.stroke();
+  ctx.fillText('θ='+angleA.toFixed(1)+'°', sx+30, sy-8);
+  ctx.fillStyle='#6366f1'; ctx.font='10px Inter,sans-serif'; ctx.textAlign='center';
+  ctx.fillText('sin θ = '+(a/c).toFixed(4)+'  cos θ = '+(b/c).toFixed(4)+'  tan θ = '+(a/b).toFixed(4),
+    w/2, h-8);
+  ctx.fillStyle='#94a3b8'; ctx.textAlign='left'; ctx.font='11px Inter,sans-serif';
+  ctx.fillText('(0,0)', sx-6, sy+16);
+  ctx.fillText('('+b+',0)', ax-10, sy+16);
+  ctx.fillText('(0,'+a+')', bx-32, by+4);
+}
+
+function RightTriangle() {
+  const [a, setA] = useState(4);
+  const [b, setB] = useState(3);
+  const canvasRef = useRef();
+  const draw = useCallback(() => {
+    const ca = canvasRef.current;
+    if (!ca) return;
+    drawRightTriangle(ca, a, b);
+  }, [a,b]);
+  useEffect(() => { draw(); window.addEventListener('resize', draw); return () => window.removeEventListener('resize', draw); }, [draw]);
+  return div({className:'interactive-card'},
+    h3({style:{marginBottom:8}}, '🔺 Right Triangle Explorer'),
+    p({style:{fontSize:12,color:'var(--textDim)',marginBottom:12}}, 'Adjust sides to see trigonometry in action'),
+    div({className:'viz-canvas-shell', style:{minHeight:260}},
+      h('canvas',{ref:canvasRef,className:'viz-canvas',style:{height:260}})
+    ),
+    div({style:{display:'flex',gap:16,marginTop:12,flexWrap:'wrap',alignItems:'center'}},
+      div(null, label({style:{fontSize:11}},`Opposite (a): ${a}`),
+        h('input',{type:'range',min:1,max:10,step:0.5,value:a,style:{width:140,display:'block'},
+          onChange:e=>setA(+e.target.value)})
+      ),
+      div(null, label({style:{fontSize:11}},`Adjacent (b): ${b}`),
+        h('input',{type:'range',min:1,max:10,step:0.5,value:b,style:{width:140,display:'block'},
+          onChange:e=>setB(+e.target.value)})
+      ),
+      btn({onClick:()=>{setA(4);setB(3);}, className:'btn btn-secondary'},'↺ Reset 3-4-5')
+    )
+  );
+}
+
+/* ───────── INTERACTIVE WRAPPER ───────── */
+function Interactive({ lesson }) {
+  return div(null,
+    h(UnitCircle, {lesson}),
+    div({style:{marginTop:16}}, h(RightTriangle))
+  );
+}
+
 /* ───────── VIZ (existing ported) ───────── */
 function normalizeFunctionString(fn) {
   let expr = fn.replace(/\^/g, '**');
@@ -676,11 +928,16 @@ function App() {
       case 'quizzes':     return h(Quizzes, {lesson});
       case 'vedic-math':  return h(VedicMath, {lesson});
       case 'mind-maps':   return h(MindMaps, {lesson});
+      case 'interactive': return h(Interactive, {lesson});
       case 'viz':         return h(Viz, {lesson});
       default:            return h(Overview, {lesson,subjects,instructions});
     }
   })();
 
+  const sideLearn = NAV_ITEMS.slice(0,5);
+  const sideRef = NAV_ITEMS.slice(5,7);
+  const sidePractice = NAV_ITEMS.slice(7,11);
+  const sideExplore = NAV_ITEMS.slice(11);
   return div(null,
     /* ── SIDEBAR OVERLAY (mobile) ── */
     div({className:'sidebar-overlay'+(sidebarOpen?' open':''), onClick:()=>setSidebarOpen(false)}),
@@ -723,17 +980,22 @@ function App() {
       /* Sidebar */
       div({className:'sidebar'+(sidebarOpen?' open':'')},
         div({className:'sidebar-label'}, '📚 Learn'),
-        NAV_ITEMS.slice(0,5).map(item => btn({
+        sideLearn.map(item => btn({
           key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
           onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
         }, span({className:'nav-icon'}, item.icon), item.label)),
         div({className:'sidebar-label',style:{marginTop:8}}, '📖 Reference'),
-        NAV_ITEMS.slice(5,7).map(item => btn({
+        sideRef.map(item => btn({
           key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
           onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
         }, span({className:'nav-icon'}, item.icon), item.label)),
         div({className:'sidebar-label',style:{marginTop:8}}, '🎯 Practice'),
-        NAV_ITEMS.slice(7).map(item => btn({
+        sidePractice.map(item => btn({
+          key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
+          onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
+        }, span({className:'nav-icon'}, item.icon), item.label)),
+        div({className:'sidebar-label',style:{marginTop:8}}, '🔬 Explore'),
+        sideExplore.map(item => btn({
           key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
           onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
         }, span({className:'nav-icon'}, item.icon), item.label)),
