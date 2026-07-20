@@ -10,6 +10,7 @@ const { DoomLoop } = require('../lib/doomLoop');
 const config = require('../lib/config');
 const logger = require('../lib/logger');
 const flags = require('../lib/featureFlags');
+const { getSuperMemory, SuperMemory } = require('../lib/superMemory');
 
 let langgraphWorkflow;
 if (flags.isEnabled('langGraph')) {
@@ -100,8 +101,32 @@ function _validateBridgeResult(result, loopType) {
 
 /**
  * Agent Loop: Tutor → Evaluator → Hint
+ * (with SuperMemory recall before LLM call)
  */
 async function runAgentLoop({ question, studentAnswer, mode, context, student }) {
+  // Check SuperMemory before any LLM call
+  if (flags.isEnabled('superMemory')) {
+    const smHit = await recallSuperMemory(question, mode);
+    if (smHit) {
+      return {
+        loop_type: 'agent_loop',
+        iterations_used: 0,
+        terminated_early: false,
+        termination_reason: 'supermemory_hit',
+        tutor_output: {
+          explanation: smHit.text,
+          ncert_core: smHit.payload.core || '',
+          jee_neet_bridge: smHit.payload.bridge || null,
+          latex_rendered: true,
+          mode: mode || 'DUAL'
+        },
+        evaluator_output: null,
+        hint_output: null,
+        _supermemory: true
+      };
+    }
+  }
+
   if (langgraphWorkflow && flags.isEnabled('langGraph')) {
     try {
       const result = await langgraphWorkflow.runTutorWorkflow({ question, studentAnswer, mode });
@@ -262,6 +287,79 @@ async function runFullPipeline({ question, studentAnswer, mode, context, student
 }
 
 /**
+ * Store a compressed RTK payload in SuperMemory.
+ * Called by the Compression Agent (Python side) after Caveman + RTK pass.
+ */
+async function storeSuperMemory(payload) {
+  if (!flags.isEnabled('superMemory')) {
+    return { ok: false, error: 'SuperMemory disabled' };
+  }
+
+  const sm = getSuperMemory();
+  try {
+    const rtkPayload = {
+      conceptKey: payload.concept_key,
+      questionHash: payload.question_hash,
+      ncertRef: payload.ncert_ref || null,
+      anchor: payload.anchor || null,
+      core: payload.core,
+      bridge: payload.bridge || null,
+      mode: payload.mode || 'DUAL',
+      latexMap: payload.latex_map || {},
+      compressedRepr: payload.compressed_repr,
+    };
+    await sm.store(rtkPayload);
+
+    logger.info(
+      'SuperMemory: stored %s (savings: %.0f%%)',
+      rtkPayload.conceptKey,
+      (payload.token_savings_ratio || 0) * 100
+    );
+
+    return { ok: true, conceptKey: rtkPayload.conceptKey };
+  } catch (err) {
+    logger.error('SuperMemory: store error: %s', err.message);
+    return { ok: false, error: err.message };
+  }
+}
+
+/**
+ * Recall from SuperMemory by question (compressed cache check).
+ * Called as first pass before the agent loop to skip LLM if cached.
+ */
+async function recallSuperMemory(question, mode) {
+  if (!flags.isEnabled('superMemory')) return null;
+
+  const sm = getSuperMemory();
+  try {
+    // Try by question hash first
+    const qHash = crypto.createHash('sha256')
+      .update(question.toLowerCase().replace(/[^\w\s]/g, '').trim())
+      .digest('hex')
+      .slice(0, 16);
+
+    const hit = await sm.recallByHash(qHash);
+    if (hit) {
+      const decompressed = SuperMemory.decompress(hit);
+      return { ok: true, source: 'supermemory', payload: hit, text: decompressed };
+    }
+    return null;
+  } catch (err) {
+    logger.debug('SuperMemory recall error: %s', err.message);
+    return null;
+  }
+}
+
+/**
+ * Get SuperMemory statistics.
+ */
+async function superMemoryStats() {
+  const sm = getSuperMemory();
+  const storeStats = await sm.getStats();
+  return { ok: true, stats: storeStats };
+}
+
+/**
  * Check if the agent bridge is healthy
  */
 async function healthCheck() {
@@ -285,5 +383,8 @@ module.exports = {
   runEventLoop,
   runHillClimb,
   runFullPipeline,
+  storeSuperMemory,
+  recallSuperMemory,
+  superMemoryStats,
   healthCheck
 };

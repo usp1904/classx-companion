@@ -19,9 +19,11 @@
  */
 'use strict';
 
+const crypto = require('crypto');
 const config = require('../lib/config');
 const flags = require('../lib/featureFlags');
 const cache = require('../lib/semanticCache');
+const { getSuperMemory, SuperMemory } = require('../lib/superMemory');
 
 /* ------------------------------------------------------------------------- *
  *  Difficulty classifier (very lightweight — keyword-based for now)
@@ -101,7 +103,32 @@ async function askTutor({ question, mode, context }) {
     return { ok: false, error: 'question string is required' };
   }
 
-  // 1) Cache check
+  // 1) SuperMemory check (compressed semantic cache — checked first)
+  if (flags.isEnabled('superMemory')) {
+    const sm = getSuperMemory();
+    const qHash = crypto.createHash('sha256')
+      .update(question.toLowerCase().replace(/[^\w\s]/g, '').trim())
+      .digest('hex')
+      .slice(0, 16);
+
+    const smHit = await sm.recallByHash(qHash);
+    if (smHit) {
+      const decompressed = SuperMemory.decompress(smHit);
+      return {
+        ok: true,
+        source: 'supermemory',
+        tier,
+        answer: {
+          provider: 'supermemory',
+          tier,
+          text: decompressed,
+          usedContext: false
+        }
+      };
+    }
+  }
+
+  // 2) Legacy semantic cache check
   if (flags.isEnabled('semanticCache')) {
     const hit = cache.get(question);
     if (hit) {

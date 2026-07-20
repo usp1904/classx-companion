@@ -40,6 +40,7 @@ import logging
 from datetime import datetime
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
+from .compression_agent import CompressionAgent, CompressionResult
 from .config import config
 from .evaluator_agent import evaluator_node
 from .event_loop import event_node, EventType, StudentEvent
@@ -281,7 +282,9 @@ class AgentOrchestrator:
         1. Event Loop (process incoming event)
         2. Agent Loop (tutor → evaluate → hint)
         3. Verification Loop (NCERT alignment)
-        4. Hill Climbing Loop (adapt difficulty)
+        4. Compression Agent (Caveman + RTK — token-efficient storage)
+        5. SuperMemory (semantic persistence of compressed output)
+        6. Hill Climbing Loop (adapt difficulty)
 
         Each loop is independently bounded. If any loop fails, the pipeline
         continues with degraded output (graceful degradation).
@@ -290,6 +293,7 @@ class AgentOrchestrator:
             "event_loop": None,
             "agent_loop": None,
             "verification_loop": None,
+            "compression": None,
             "hill_climb_loop": None,
             "overall_status": "ok",
             "errors": [],
@@ -348,6 +352,7 @@ class AgentOrchestrator:
             results["errors"].append(f"Agent loop error: {e}")
 
         # Step 3: Verification
+        tutor_content = None
         try:
             if agent_result and agent_result.get("tutor_output"):
                 tutor_content = agent_result["tutor_output"]
@@ -358,7 +363,30 @@ class AgentOrchestrator:
         except Exception as e:
             results["errors"].append(f"Verification loop error: {e}")
 
-        # Step 4: Hill climbing (adaptive difficulty)
+        # Step 4: Compression Agent (Caveman + RTK)
+        try:
+            if tutor_content and agent_result and agent_result.get("tutor_output"):
+                from .models import TutorOutput
+                from .compression_agent import CompressionAgent
+
+                tutor_out = agent_result["tutor_output"]
+                if isinstance(tutor_out, dict):
+                    tutor_out = TutorOutput(**tutor_out)
+
+                ca = CompressionAgent()
+                compression_result = await ca.compress(
+                    tutor_output=tutor_out,
+                    question=question,
+                    ncert_ref=(context or {}).get("ncert_ref"),
+                )
+                results["compression"] = compression_result.dict()
+
+                # Persist to SuperMemory (Python side — pushes to JS bridge or Redis)
+                self._store_supermemory(compression_result, question)
+        except Exception as e:
+            results["errors"].append(f"Compression error: {e}")
+
+        # Step 5: Hill climbing (adaptive difficulty)
         try:
             hill_result = await self.run_hill_climb_loop(student_obj)
             results["hill_climb_loop"] = hill_result
@@ -369,6 +397,59 @@ class AgentOrchestrator:
             results["overall_status"] = "degraded"
 
         return results
+
+    def _store_supermemory(
+        self,
+        compression_result: "CompressionResult",
+        question: str,
+    ) -> None:
+        """
+        Persist a compressed RTK payload to SuperMemory.
+
+        In production, this writes to Redis via the JS bridge.
+        In dev/stub mode, this is a no-op (cache warming for demo).
+        """
+        try:
+            import json
+            import os
+
+            rtk = compression_result.rtk_payload
+            sm_key = f"supermemory:{rtk.concept_key}:{rtk.mode}"
+
+            # Log for observability
+            logger.info(
+                "SuperMemory: storing %s (savings: %.0f%%) | key=%s",
+                rtk.concept_key,
+                compression_result.token_savings_ratio * 100,
+                sm_key,
+            )
+
+            # If configured, push via JS bridge or direct Redis
+            bridge_url = os.environ.get("AGENT_BRIDGE_URL")
+            if bridge_url and rtk.concept_key:
+                import requests
+
+                try:
+                    requests.post(
+                        f"{bridge_url}/agents/supermemory/store",
+                        json={
+                            "concept_key": rtk.concept_key,
+                            "question_hash": rtk.question_hash,
+                            "ncert_ref": rtk.ncert_ref,
+                            "anchor": rtk.anchor,
+                            "core": rtk.core,
+                            "bridge": rtk.bridge,
+                            "mode": rtk.mode,
+                            "latex_map": rtk.latex_map,
+                            "compressed_repr": rtk.compressed_repr,
+                            "token_savings_ratio": compression_result.token_savings_ratio,
+                        },
+                        timeout=2,
+                    )
+                except Exception:
+                    logger.debug("SuperMemory bridge unavailable — stored in-memory only")
+        except Exception as e:
+            logger.debug("SuperMemory: skipped (%s)", e)
 
     # ───────────────────────────────────────────────
     # Serialization helpers

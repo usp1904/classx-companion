@@ -11,6 +11,13 @@ All 4 loops share state via LangGraph's StateGraph channels.
 No infinite loops - each loop has bounded iterations & termination guards.
 """
 
+from .compression_agent import (
+    CompressionAgent,
+    CompressionResult,
+    RTKPayload,
+    compress_caveman,
+    tokenize_rtk,
+)
 from .models import (
     AgentState,
     TutorOutput,
@@ -24,7 +31,6 @@ from .models import (
     LoopType,
     LoopResult,
 )
-
 from .orchestrator import AgentOrchestrator
 
 __all__ = [
@@ -40,4 +46,9 @@ __all__ = [
     "DifficultyTier",
     "LoopType",
     "LoopResult",
+    "CompressionAgent",
+    "CompressionResult",
+    "RTKPayload",
+    "compress_caveman",
+    "tokenize_rtk",
 ]

@@ -1,0 +1,707 @@
+{
+  "Live-Class-2026/Class 1 Python AI/OOPS.py": {
+    "mtime": 1784345844.2906196,
+    "ast_hash": "9651990e6ef12beb2e06b421611a2338",
+    "semantic_hash": "9651990e6ef12beb2e06b421611a2338"
+  },
+  "Live-Class-2026/Class 1 Python AI/Python_foundamentals.py": {
+    "mtime": 1784345844.3024971,
+    "ast_hash": "6b5438fcaf90c6f520b257caf31387e5",
+    "semantic_hash": "6b5438fcaf90c6f520b257caf31387e5"
+  },
+  "Live-Class-2026/Class 1 Python AI/currency.py": {
+    "mtime": 1784345844.315998,
+    "ast_hash": "f9edee900d5b531c40d6f59429c59e98",
+    "semantic_hash": "f9edee900d5b531c40d6f59429c59e98"
+  },
+  "Live-Class-2026/Class 1 Python AI/functions or tools.py": {
+    "mtime": 1784345844.3252776,
+    "ast_hash": "a065b61a97db09bb0c59a7b73ed9a4be",
+    "semantic_hash": "a065b61a97db09bb0c59a7b73ed9a4be"
+  },
+  "Live-Class-2026/Class 1 Python AI/my-first-project/main.py": {
+    "mtime": 1784345844.353357,
+    "ast_hash": "45a67b32059e2f5eb556a1764ce3007b",
+    "semantic_hash": "45a67b32059e2f5eb556a1764ce3007b"
+  },
+  "Live-Class-2026/Class 1 Python AI/my-first-project/pyproject.toml": {
+    "mtime": 1784345844.3594728,
+    "ast_hash": "741fdb18e82ac4e5d9470b08831ae816",
+    "semantic_hash": "741fdb18e82ac4e5d9470b08831ae816"
+  },
+  "Live-Class-2026/Class 1 Python AI/tools.py": {
+    "mtime": 1784345844.3976579,
+    "ast_hash": "cf41989d84ada2adb3d793a990d09bde",
+    "semantic_hash": "cf41989d84ada2adb3d793a990d09bde"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/_01_ai_model_vs_chatbot_vs_agent.py": {
+    "mtime": 1784345844.4433496,
+    "ast_hash": "d506bcf0c42361c2f7b7a8a3209f1082",
+    "semantic_hash": "d506bcf0c42361c2f7b7a8a3209f1082"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/_02_calling_the_ai_paid_and_free.py": {
+    "mtime": 1784345844.4494917,
+    "ast_hash": "fddc0ee2d0158db63b18232dc75a04c7",
+    "semantic_hash": "fddc0ee2d0158db63b18232dc75a04c7"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/_03_structuring_with_pydantic.py": {
+    "mtime": 1784345844.4541507,
+    "ast_hash": "70e27ea457af523bc19ab37a0868e6ed",
+    "semantic_hash": "70e27ea457af523bc19ab37a0868e6ed"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/_04_giving_it_a_tool.py": {
+    "mtime": 1784345844.4619408,
+    "ast_hash": "dbe5e3c8d1e4a79a1b7a22964689182c",
+    "semantic_hash": "dbe5e3c8d1e4a79a1b7a22964689182c"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/_05_teaching_it_to_choose.py": {
+    "mtime": 1784345844.4708037,
+    "ast_hash": "c8a70232b058005245a2398f49da390a",
+    "semantic_hash": "c8a70232b058005245a2398f49da390a"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/_06_project_zero_agent.py": {
+    "mtime": 1784345844.4770122,
+    "ast_hash": "0b93a72147d9c99d66065e907209dbca",
+    "semantic_hash": "0b93a72147d9c99d66065e907209dbca"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/_07_streamlit_app.py": {
+    "mtime": 1784345844.48421,
+    "ast_hash": "2eca7702f17d19b3db815496fd36cdd8",
+    "semantic_hash": "2eca7702f17d19b3db815496fd36cdd8"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/pyproject.toml": {
+    "mtime": 1784345844.5007043,
+    "ast_hash": "6e9e1fb2650157274df9cc346514b4b5",
+    "semantic_hash": "6e9e1fb2650157274df9cc346514b4b5"
+  },
+  "Live-Class-2026/Class 6  - Langchain Starts/langchain_agents.py": {
+    "mtime": 1784345844.5291693,
+    "ast_hash": "6c4ad339d0e81d467981edc8f8d091d8",
+    "semantic_hash": "6c4ad339d0e81d467981edc8f8d091d8"
+  },
+  "Live-Class-2026/Class 6  - Langchain Starts/langchain_basics.py": {
+    "mtime": 1784345844.5358233,
+    "ast_hash": "9231c36afd78c99e9dec3aa699f3daa0",
+    "semantic_hash": "9231c36afd78c99e9dec3aa699f3daa0"
+  },
+  "Live-Class-2026/Class 6  - Langchain Starts/main.py": {
+    "mtime": 1784345844.5404296,
+    "ast_hash": "953597563d3d8f04394e238059644914",
+    "semantic_hash": "953597563d3d8f04394e238059644914"
+  },
+  "Live-Class-2026/Class 6  - Langchain Starts/pyproject.toml": {
+    "mtime": 1784345844.545743,
+    "ast_hash": "5ddd50e3d109ff702da069415253e344",
+    "semantic_hash": "5ddd50e3d109ff702da069415253e344"
+  },
+  "Live-Class-2026/Class 7 - Langchain/Langchain Practical/langchain-course/Learning/Part 3  - Messages/messages.py": {
+    "mtime": 1784447017.2617114,
+    "ast_hash": "b1184ccda4a0b2052b5db8e510b2c629",
+    "semantic_hash": "b1184ccda4a0b2052b5db8e510b2c629"
+  },
+  "Live-Class-2026/Class 7 - Langchain/Langchain Practical/langchain-course/main.py": {
+    "mtime": 1784347150.0860732,
+    "ast_hash": "9182ff2fc4ffdb5bd0bca49f805128d0",
+    "semantic_hash": "9182ff2fc4ffdb5bd0bca49f805128d0"
+  },
+  "Live-Class-2026/Class 7 - Langchain/Langchain Practical/langchain-course/pyproject.toml": {
+    "mtime": 1784347150.7856123,
+    "ast_hash": "f09fa548346d31df6a78491ea61d84d0",
+    "semantic_hash": "f09fa548346d31df6a78491ea61d84d0"
+  },
+  "Live-Class-2026/class2v2/8_Pydantic/1. Why Pydantic.py": {
+    "mtime": 1784345844.6637325,
+    "ast_hash": "a0a074f1c9348e381082bbc3bb1e9ac7",
+    "semantic_hash": "a0a074f1c9348e381082bbc3bb1e9ac7"
+  },
+  "Live-Class-2026/class2v2/8_Pydantic/main.py": {
+    "mtime": 1784345844.6993754,
+    "ast_hash": "5281b6d7d885970e80e17f1a9a82db09",
+    "semantic_hash": "5281b6d7d885970e80e17f1a9a82db09"
+  },
+  "Live-Class-2026/class2v2/8_Pydantic/pyproject.toml": {
+    "mtime": 1784345844.7029974,
+    "ast_hash": "9a1b565c061b055ec79735e47a997164",
+    "semantic_hash": "9a1b565c061b055ec79735e47a997164"
+  },
+  "Live-Class-2026/class2v2/_0_basics_refresher.py": {
+    "mtime": 1784345844.745439,
+    "ast_hash": "4c1babcc8ce7d84e3e01431ceaf19a18",
+    "semantic_hash": "4c1babcc8ce7d84e3e01431ceaf19a18"
+  },
+  "Live-Class-2026/class2v2/_10_tool_with_ai_call.py": {
+    "mtime": 1784345844.8006737,
+    "ast_hash": "da969cdd79b9cccd828288b0ddc449b3",
+    "semantic_hash": "da969cdd79b9cccd828288b0ddc449b3"
+  },
+  "Live-Class-2026/class2v2/_11_agent_class_ai_only.py": {
+    "mtime": 1784345844.8089254,
+    "ast_hash": "f28fa08ab4a917fa08d049044d97de18",
+    "semantic_hash": "f28fa08ab4a917fa08d049044d97de18"
+  },
+  "Live-Class-2026/class2v2/_12_agent_with_one_tool.py": {
+    "mtime": 1784345844.821414,
+    "ast_hash": "30cfb398c423a0515088d4ca22df1ad2",
+    "semantic_hash": "30cfb398c423a0515088d4ca22df1ad2"
+  },
+  "Live-Class-2026/class2v2/_13_agent_with_more_tools.py": {
+    "mtime": 1784345844.8356667,
+    "ast_hash": "b00f64e67778b7d0483d8e7c465543a8",
+    "semantic_hash": "b00f64e67778b7d0483d8e7c465543a8"
+  },
+  "Live-Class-2026/class2v2/_14_agent_with_memory.py": {
+    "mtime": 1784345844.843548,
+    "ast_hash": "ff392aadfd68999dde08e4b1cf74d604",
+    "semantic_hash": "ff392aadfd68999dde08e4b1cf74d604"
+  },
+  "Live-Class-2026/class2v2/_1_data_structures.py": {
+    "mtime": 1784345844.8569517,
+    "ast_hash": "329c036dd733e4e673b4ac83e67fdda6",
+    "semantic_hash": "329c036dd733e4e673b4ac83e67fdda6"
+  },
+  "Live-Class-2026/class2v2/_2_oop_classes.py": {
+    "mtime": 1784345844.8651867,
+    "ast_hash": "e900bbeceb092c0975527171689fae6a",
+    "semantic_hash": "e900bbeceb092c0975527171689fae6a"
+  },
+  "Live-Class-2026/class2v2/_3_error_handling.py": {
+    "mtime": 1784345844.8731363,
+    "ast_hash": "28e44331f1272903d97d891c46fbabb6",
+    "semantic_hash": "28e44331f1272903d97d891c46fbabb6"
+  },
+  "Live-Class-2026/class2v2/_4_decorators.py": {
+    "mtime": 1784345844.8824866,
+    "ast_hash": "6005e4712862629c16b49a5f5965e5b3",
+    "semantic_hash": "6005e4712862629c16b49a5f5965e5b3"
+  },
+  "Live-Class-2026/class2v2/_5_calling_a_real_api.py": {
+    "mtime": 1784345844.893166,
+    "ast_hash": "f6b194d6e1536124b9a535f3f640f93a",
+    "semantic_hash": "f6b194d6e1536124b9a535f3f640f93a"
+  },
+  "Live-Class-2026/class2v2/_6_fake_ai_call.py": {
+    "mtime": 1784345844.9011996,
+    "ast_hash": "c60aa383972cda57643333fcb1d7cb6b",
+    "semantic_hash": "c60aa383972cda57643333fcb1d7cb6b"
+  },
+  "Live-Class-2026/class2v2/_7_ai_call_free_and_paid.py": {
+    "mtime": 1784345844.9073985,
+    "ast_hash": "6494d4fe7a1792ea7fe075e0550356b9",
+    "semantic_hash": "6494d4fe7a1792ea7fe075e0550356b9"
+  },
+  "Live-Class-2026/class2v2/_8_pydantic_with_ai.py": {
+    "mtime": 1784345844.9172056,
+    "ast_hash": "13ca2c7506cf1266db99c056932d0355",
+    "semantic_hash": "13ca2c7506cf1266db99c056932d0355"
+  },
+  "Live-Class-2026/class2v2/_9_api_call_with_structure.py": {
+    "mtime": 1784345844.9239986,
+    "ast_hash": "a75b37890d73c7272ebd1c645203ac15",
+    "semantic_hash": "a75b37890d73c7272ebd1c645203ac15"
+  },
+  "Live-Class-2026/class2v2/pyproject.toml": {
+    "mtime": 1784345844.9314196,
+    "ast_hash": "e54e9dc73a2047695416e92c542389ff",
+    "semantic_hash": "e54e9dc73a2047695416e92c542389ff"
+  },
+  "agents/__init__.py": {
+    "mtime": 1784045748.1081958,
+    "ast_hash": "79da8f0a319425e8adf4f7b0841ca88a",
+    "semantic_hash": "79da8f0a319425e8adf4f7b0841ca88a"
+  },
+  "agents/bridge.py": {
+    "mtime": 1784045906.992047,
+    "ast_hash": "57dc1fc892b68a326d095485ccf17b42",
+    "semantic_hash": "57dc1fc892b68a326d095485ccf17b42"
+  },
+  "agents/config.py": {
+    "mtime": 1784101168.2045972,
+    "ast_hash": "5bf30867ff46627be446472b3a60d297",
+    "semantic_hash": "5bf30867ff46627be446472b3a60d297"
+  },
+  "agents/evaluator_agent.py": {
+    "mtime": 1784045793.877542,
+    "ast_hash": "13b472185cd35cd9920f6729ff310e4e",
+    "semantic_hash": "13b472185cd35cd9920f6729ff310e4e"
+  },
+  "agents/event_loop.py": {
+    "mtime": 1784045857.0721838,
+    "ast_hash": "eb92a9e66a2f0d00fb281344e169d060",
+    "semantic_hash": "eb92a9e66a2f0d00fb281344e169d060"
+  },
+  "agents/hill_climbing.py": {
+    "mtime": 1784045857.4496367,
+    "ast_hash": "0beee40b7708596eca181c363e3723dd",
+    "semantic_hash": "0beee40b7708596eca181c363e3723dd"
+  },
+  "agents/hint_agent.py": {
+    "mtime": 1784045804.2407157,
+    "ast_hash": "1283a4bcc7268587bfdd5e345fa3c43e",
+    "semantic_hash": "1283a4bcc7268587bfdd5e345fa3c43e"
+  },
+  "agents/models.py": {
+    "mtime": 1784045761.0016677,
+    "ast_hash": "755617ce8baf3ca958877bfb3ee7ed8f",
+    "semantic_hash": "755617ce8baf3ca958877bfb3ee7ed8f"
+  },
+  "agents/orchestrator.py": {
+    "mtime": 1784101149.3015692,
+    "ast_hash": "72f2fd744bc6fff5cfbe80d1058305a3",
+    "semantic_hash": "72f2fd744bc6fff5cfbe80d1058305a3"
+  },
+  "agents/tutor_agent.py": {
+    "mtime": 1784045784.8677402,
+    "ast_hash": "cc62ceadf5b752a7316511a683ea6958",
+    "semantic_hash": "cc62ceadf5b752a7316511a683ea6958"
+  },
+  "agents/verification_loop.py": {
+    "mtime": 1784045825.603838,
+    "ast_hash": "c290885e49f488fc3bb5fd8e92f2d4d5",
+    "semantic_hash": "c290885e49f488fc3bb5fd8e92f2d4d5"
+  },
+  "app.js": {
+    "mtime": 1784318885.144697,
+    "ast_hash": "8bdfcbf80e3b9c95f64935bd9259de2f",
+    "semantic_hash": "8bdfcbf80e3b9c95f64935bd9259de2f"
+  },
+  "content/mathematics/applications-of-trigonometry.json": {
+    "mtime": 1784122959.0636284,
+    "ast_hash": "a8f969f7bd46cdb644d29bf59038cf10",
+    "semantic_hash": "a8f969f7bd46cdb644d29bf59038cf10"
+  },
+  "content/mathematics/areas-related-to-circles.json": {
+    "mtime": 1784122959.0856285,
+    "ast_hash": "2fdc697082ad6779c3ea8f82b9e07168",
+    "semantic_hash": "2fdc697082ad6779c3ea8f82b9e07168"
+  },
+  "content/mathematics/arithmetic-progressions.json": {
+    "mtime": 1784122959.1006267,
+    "ast_hash": "811d4494f797462fd2035887c2255fc1",
+    "semantic_hash": "811d4494f797462fd2035887c2255fc1"
+  },
+  "content/mathematics/circles.json": {
+    "mtime": 1784122959.1166213,
+    "ast_hash": "ee005edd169a5b685c180d89ea8c56d4",
+    "semantic_hash": "ee005edd169a5b685c180d89ea8c56d4"
+  },
+  "content/mathematics/constructions.json": {
+    "mtime": 1784121382.4518127,
+    "ast_hash": "08dc14464f06b0ab80c1ec8455c9131f",
+    "semantic_hash": "08dc14464f06b0ab80c1ec8455c9131f"
+  },
+  "content/mathematics/coordinate-geometry.json": {
+    "mtime": 1784122959.1366293,
+    "ast_hash": "24ce549aaabd759494fdb4fc532c1d13",
+    "semantic_hash": "24ce549aaabd759494fdb4fc532c1d13"
+  },
+  "content/mathematics/introduction-to-trigonometry.json": {
+    "mtime": 1784122959.1522121,
+    "ast_hash": "8e93377fee879520b3f4e75190c3cc5c",
+    "semantic_hash": "8e93377fee879520b3f4e75190c3cc5c"
+  },
+  "content/mathematics/pair-of-linear-equations.json": {
+    "mtime": 1784122959.1732652,
+    "ast_hash": "88c275a2a443780ad214bc2177efcf5e",
+    "semantic_hash": "88c275a2a443780ad214bc2177efcf5e"
+  },
+  "content/mathematics/polynomials.json": {
+    "mtime": 1784122959.1882606,
+    "ast_hash": "388af9d83fee799d938c03ea1fa88eab",
+    "semantic_hash": "388af9d83fee799d938c03ea1fa88eab"
+  },
+  "content/mathematics/probability.json": {
+    "mtime": 1784122959.1962585,
+    "ast_hash": "93ac9f7a62ffd42a93ba30b603afff4f",
+    "semantic_hash": "93ac9f7a62ffd42a93ba30b603afff4f"
+  },
+  "content/mathematics/quadratic-equations.json": {
+    "mtime": 1784122959.2112603,
+    "ast_hash": "4401f84b6440cbf0033788fafe1f1bf9",
+    "semantic_hash": "4401f84b6440cbf0033788fafe1f1bf9"
+  },
+  "content/mathematics/real-numbers.json": {
+    "mtime": 1784122959.2302625,
+    "ast_hash": "bb45d6ca557cecfbd290c1521df03000",
+    "semantic_hash": "bb45d6ca557cecfbd290c1521df03000"
+  },
+  "content/mathematics/statistics.json": {
+    "mtime": 1784122959.2393272,
+    "ast_hash": "521233d6798f43b55d32d7b278303fc3",
+    "semantic_hash": "521233d6798f43b55d32d7b278303fc3"
+  },
+  "content/mathematics/surface-areas-and-volumes.json": {
+    "mtime": 1784122959.2518668,
+    "ast_hash": "68ef3eb4845170d2da269b48381daf2c",
+    "semantic_hash": "68ef3eb4845170d2da269b48381daf2c"
+  },
+  "content/mathematics/triangles.json": {
+    "mtime": 1784122959.2709208,
+    "ast_hash": "53181257586586451782fe03f87874bd",
+    "semantic_hash": "53181257586586451782fe03f87874bd"
+  },
+  "data/study-plan-ncert-2026-27.json": {
+    "mtime": 1784116230.9448953,
+    "ast_hash": "c3164c842af49f76a354be87092d91ca",
+    "semantic_hash": "c3164c842af49f76a354be87092d91ca"
+  },
+  "data/syllabus-embeddings.json": {
+    "mtime": 1783779881.3216064,
+    "ast_hash": "093769425407f0aed63a06e18b1d17cc",
+    "semantic_hash": "093769425407f0aed63a06e18b1d17cc"
+  },
+  "data/syllabus-rag-tree.json": {
+    "mtime": 1784123150.0028982,
+    "ast_hash": "fc35fe4350c0faa48727be482d52e988",
+    "semantic_hash": "fc35fe4350c0faa48727be482d52e988"
+  },
+  "data/syllabus.json": {
+    "mtime": 1784123090.0204647,
+    "ast_hash": "d0734c85d789e56e62adca39d8d3ea94",
+    "semantic_hash": "d0734c85d789e56e62adca39d8d3ea94"
+  },
+  "frontend/app.js": {
+    "mtime": 1784317774.8826075,
+    "ast_hash": "dd54364ac51b0279dde4c99558332311",
+    "semantic_hash": "dd54364ac51b0279dde4c99558332311"
+  },
+  "frontend/vendor-react-dom.production.min.js": {
+    "mtime": 1783770313.3929963,
+    "ast_hash": "7d4842a904e5d5d1b19240075998b111",
+    "semantic_hash": "7d4842a904e5d5d1b19240075998b111"
+  },
+  "frontend/vendor-react.production.min.js": {
+    "mtime": 1783770299.3500323,
+    "ast_hash": "e91b2616629791b375867c298dc846cc",
+    "semantic_hash": "e91b2616629791b375867c298dc846cc"
+  },
+  "lib/config.js": {
+    "mtime": 1784446980.9950733,
+    "ast_hash": "0fe04f4465c42de93e55c84989c4feef",
+    "semantic_hash": "0fe04f4465c42de93e55c84989c4feef"
+  },
+  "lib/content.js": {
+    "mtime": 1784122979.148064,
+    "ast_hash": "d03ad014bdc147109bf7e9fd601e86b2",
+    "semantic_hash": "d03ad014bdc147109bf7e9fd601e86b2"
+  },
+  "lib/doomLoop.js": {
+    "mtime": 1784101061.725539,
+    "ast_hash": "768d258a07b94eb7c26e79fc3306f156",
+    "semantic_hash": "768d258a07b94eb7c26e79fc3306f156"
+  },
+  "lib/enterprise.js": {
+    "mtime": 1784046040.534508,
+    "ast_hash": "1a401576685f8f399a784eb2be74e9b2",
+    "semantic_hash": "1a401576685f8f399a784eb2be74e9b2"
+  },
+  "lib/envCheck.js": {
+    "mtime": 1783933551.7133527,
+    "ast_hash": "62193ae06781025c61ce4ca8cb046741",
+    "semantic_hash": "62193ae06781025c61ce4ca8cb046741"
+  },
+  "lib/featureFlags.js": {
+    "mtime": 1784317774.8907418,
+    "ast_hash": "4f63895dfd5d8869480086c92602b28b",
+    "semantic_hash": "4f63895dfd5d8869480086c92602b28b"
+  },
+  "lib/instructionBank.js": {
+    "mtime": 1783767130.6003766,
+    "ast_hash": "629269fbc675fa6969e4dcaad6741736",
+    "semantic_hash": "629269fbc675fa6969e4dcaad6741736"
+  },
+  "lib/logger.js": {
+    "mtime": 1783933524.622306,
+    "ast_hash": "467af4a332c42b020754f99f3e34e578",
+    "semantic_hash": "467af4a332c42b020754f99f3e34e578"
+  },
+  "lib/semanticCache.js": {
+    "mtime": 1783842248.325169,
+    "ast_hash": "3900b73b7ef766343f769fdba710860c",
+    "semantic_hash": "3900b73b7ef766343f769fdba710860c"
+  },
+  "lib/syllabus.js": {
+    "mtime": 1784317774.8924625,
+    "ast_hash": "fe2fb740d727d75549de6716983a9a51",
+    "semantic_hash": "fe2fb740d727d75549de6716983a9a51"
+  },
+  "lib/validator.js": {
+    "mtime": 1784317774.8941221,
+    "ast_hash": "c8ce462d99127fe5832843926d008cd3",
+    "semantic_hash": "c8ce462d99127fe5832843926d008cd3"
+  },
+  "my-openrouter-app/main.py": {
+    "mtime": 1784317774.8975697,
+    "ast_hash": "69340bc80aaf9ad8961ce92ea97811b3",
+    "semantic_hash": "69340bc80aaf9ad8961ce92ea97811b3"
+  },
+  "my-openrouter-app/pyproject.toml": {
+    "mtime": 1784317774.8992002,
+    "ast_hash": "40787998a7c375e9855b27f412312608",
+    "semantic_hash": "40787998a7c375e9855b27f412312608"
+  },
+  "package.json": {
+    "mtime": 1784317774.9044771,
+    "ast_hash": "1a9edbe10f2cacf6294db1a6b9d0f4b2",
+    "semantic_hash": "1a9edbe10f2cacf6294db1a6b9d0f4b2"
+  },
+  "routes/agents.js": {
+    "mtime": 1784046055.9233706,
+    "ast_hash": "5d1eec7fdb601ee0122459a393ecd556",
+    "semantic_hash": "5d1eec7fdb601ee0122459a393ecd556"
+  },
+  "routes/api.js": {
+    "mtime": 1783938079.4919593,
+    "ast_hash": "3797cc27fede52bcf15b0fa4fd06ed34",
+    "semantic_hash": "3797cc27fede52bcf15b0fa4fd06ed34"
+  },
+  "samples/sample-question.json": {
+    "mtime": 1783755769.9227073,
+    "ast_hash": "065830e3883813bd8330cb2f7ea097ff",
+    "semantic_hash": "065830e3883813bd8330cb2f7ea097ff"
+  },
+  "schemas/question.schema.json": {
+    "mtime": 1783755769.9227073,
+    "ast_hash": "ada634be3f89cea6e6cc6d654ec36156",
+    "semantic_hash": "ada634be3f89cea6e6cc6d654ec36156"
+  },
+  "schemas/viz.schema.json": {
+    "mtime": 1783758190.2239072,
+    "ast_hash": "a42e803e44b9b1980aece83ab61a4db8",
+    "semantic_hash": "a42e803e44b9b1980aece83ab61a4db8"
+  },
+  "scripts/debug-dropdown.js": {
+    "mtime": 1784124421.1705163,
+    "ast_hash": "5e55964c465bf09135b9ec3d9478e7a5",
+    "semantic_hash": "5e55964c465bf09135b9ec3d9478e7a5"
+  },
+  "scripts/verify-dropdown.js": {
+    "mtime": 1784124685.5768626,
+    "ast_hash": "83cde9066007a629f23facc7a7cd3cdb",
+    "semantic_hash": "83cde9066007a629f23facc7a7cd3cdb"
+  },
+  "server.js": {
+    "mtime": 1784046074.8743985,
+    "ast_hash": "5c2dbc5db719705aa1e9f718a54d3071",
+    "semantic_hash": "5c2dbc5db719705aa1e9f718a54d3071"
+  },
+  "services/agentBridge.js": {
+    "mtime": 1784317774.9062467,
+    "ast_hash": "e072ee810482e5c3e674cb97c84c7b8d",
+    "semantic_hash": "e072ee810482e5c3e674cb97c84c7b8d"
+  },
+  "services/aiProviders/langchainProvider.js": {
+    "mtime": 1784317774.908285,
+    "ast_hash": "646e81dfc12ea21946e27f1326c7e61a",
+    "semantic_hash": "646e81dfc12ea21946e27f1326c7e61a"
+  },
+  "services/aiTutor.js": {
+    "mtime": 1784317774.9103034,
+    "ast_hash": "a2337aea21130aa0de531ee79c98070b",
+    "semantic_hash": "a2337aea21130aa0de531ee79c98070b"
+  },
+  "services/kg.js": {
+    "mtime": 1783759579.7040365,
+    "ast_hash": "8d7925923485f9b8f894d9585a5f562a",
+    "semantic_hash": "8d7925923485f9b8f894d9585a5f562a"
+  },
+  "services/langgraphWorkflow.js": {
+    "mtime": 1784317774.9113066,
+    "ast_hash": "7b4ddac155a3fd1b2030b9c880b05e72",
+    "semantic_hash": "7b4ddac155a3fd1b2030b9c880b05e72"
+  },
+  "services/mcp.js": {
+    "mtime": 1783759579.6924095,
+    "ast_hash": "434275102bc462d7638368e335cd683c",
+    "semantic_hash": "434275102bc462d7638368e335cd683c"
+  },
+  "tests/aiTutor.test.js": {
+    "mtime": 1783933636.1216881,
+    "ast_hash": "792d386d402751b9ce129d3a2ab4cf42",
+    "semantic_hash": "792d386d402751b9ce129d3a2ab4cf42"
+  },
+  "tests/api.integration.test.js": {
+    "mtime": 1784317774.9128401,
+    "ast_hash": "2220579fabb73a89d54451f06c79c3c7",
+    "semantic_hash": "2220579fabb73a89d54451f06c79c3c7"
+  },
+  "tests/config.test.js": {
+    "mtime": 1783933868.1400764,
+    "ast_hash": "890c3ecc81b5e11e24db565d01144b93",
+    "semantic_hash": "890c3ecc81b5e11e24db565d01144b93"
+  },
+  "tests/content.test.js": {
+    "mtime": 1784317774.91484,
+    "ast_hash": "eaebcb493e0be5c17c089fb34e8544d5",
+    "semantic_hash": "eaebcb493e0be5c17c089fb34e8544d5"
+  },
+  "tests/doomLoop.test.js": {
+    "mtime": 1784101184.2377572,
+    "ast_hash": "967e0facdc0aea7b40a50d200fb3de08",
+    "semantic_hash": "967e0facdc0aea7b40a50d200fb3de08"
+  },
+  "tests/envCheck.test.js": {
+    "mtime": 1783933669.7922308,
+    "ast_hash": "c4847f9195b7618f2cdb39067889d1a0",
+    "semantic_hash": "c4847f9195b7618f2cdb39067889d1a0"
+  },
+  "tests/featureFlags.test.js": {
+    "mtime": 1783933868.506912,
+    "ast_hash": "7408ae8a063f879b37d967526600025a",
+    "semantic_hash": "7408ae8a063f879b37d967526600025a"
+  },
+  "tests/instructionBank.test.js": {
+    "mtime": 1783767130.5943792,
+    "ast_hash": "94d680935bbdf62ba3f0e6356044e13d",
+    "semantic_hash": "94d680935bbdf62ba3f0e6356044e13d"
+  },
+  "tests/logger.test.js": {
+    "mtime": 1783933669.4056427,
+    "ast_hash": "718c2331b8fc1ff3b1626f66fba2679e",
+    "semantic_hash": "718c2331b8fc1ff3b1626f66fba2679e"
+  },
+  "tests/semanticCache.test.js": {
+    "mtime": 1783933869.3628957,
+    "ast_hash": "9d9061105ce8cb96b3b4c2c25b22466d",
+    "semantic_hash": "9d9061105ce8cb96b3b4c2c25b22466d"
+  },
+  "tests/syllabus.test.js": {
+    "mtime": 1784123246.5945506,
+    "ast_hash": "67970e86a751e4feae18ea8025ec904e",
+    "semantic_hash": "67970e86a751e4feae18ea8025ec904e"
+  },
+  "tests/validator.test.js": {
+    "mtime": 1784317774.9168417,
+    "ast_hash": "c081a336555d9c73e603aa74d5e5874a",
+    "semantic_hash": "c081a336555d9c73e603aa74d5e5874a"
+  },
+  "vendor-react-dom.production.min.js": {
+    "mtime": 1783770313.3929963,
+    "ast_hash": "7d4842a904e5d5d1b19240075998b111",
+    "semantic_hash": "7d4842a904e5d5d1b19240075998b111"
+  },
+  "vendor-react.production.min.js": {
+    "mtime": 1783770299.3500323,
+    "ast_hash": "e91b2616629791b375867c298dc846cc",
+    "semantic_hash": "e91b2616629791b375867c298dc846cc"
+  },
+  ".github/workflows/ci.yml": {
+    "mtime": 1783933716.098821,
+    "ast_hash": "57d93de7239bc53d37cac9e5cb1a0a25",
+    "semantic_hash": "57d93de7239bc53d37cac9e5cb1a0a25"
+  },
+  "ARCHITECTURE.md": {
+    "mtime": 1783841897.5725124,
+    "ast_hash": "9fdc1c86ce3180b5a08eb2efabbaa8e9",
+    "semantic_hash": "9fdc1c86ce3180b5a08eb2efabbaa8e9"
+  },
+  "Live-Class-2026/Class 1 Python AI/my-first-project/README.md": {
+    "mtime": 1784345844.3467095,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "Live-Class-2026/Class 1 Python AI/my-first-project/requirements.txt": {
+    "mtime": 1784345844.3641136,
+    "ast_hash": "ef72009b1ce29cb581fd946274d7425b",
+    "semantic_hash": "ef72009b1ce29cb581fd946274d7425b"
+  },
+  "Live-Class-2026/Class 4 & 5 and 6.5  - Agents in Python/Project 0/README.md": {
+    "mtime": 1784345844.4340918,
+    "ast_hash": "f946d469dc595f9245f7eb8f69d45d77",
+    "semantic_hash": "f946d469dc595f9245f7eb8f69d45d77"
+  },
+  "Live-Class-2026/Class 6  - Langchain Starts/README.md": {
+    "mtime": 1784345844.524058,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "Live-Class-2026/Class 7 - Langchain/Langchain Practical/langchain-course/Learning/Part 1  - Environment Setup/commands.txt": {
+    "mtime": 1784347149.728965,
+    "ast_hash": "96e82f140c86a0d9d149aa2c9e48989e",
+    "semantic_hash": "96e82f140c86a0d9d149aa2c9e48989e"
+  },
+  "Live-Class-2026/Class 7 - Langchain/Langchain Practical/langchain-course/README.md": {
+    "mtime": 1784347149.782641,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "Live-Class-2026/Class 7 - Langchain/Langchain Practical/langchain-course/requirements.txt": {
+    "mtime": 1784347151.0590148,
+    "ast_hash": "645b00d002360e7092dffd3b0d65ccf2",
+    "semantic_hash": "645b00d002360e7092dffd3b0d65ccf2"
+  },
+  "Live-Class-2026/README.md": {
+    "mtime": 1784345844.6074548,
+    "ast_hash": "70d949434d98b70b0cef88bafa354ed9",
+    "semantic_hash": "70d949434d98b70b0cef88bafa354ed9"
+  },
+  "Live-Class-2026/class2v2/8_Pydantic/README.md": {
+    "mtime": 1784345844.6942432,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "Live-Class-2026/class2v2/README.md": {
+    "mtime": 1784345844.737228,
+    "ast_hash": "f1f344912dd522b8f44e0c9a835ff77c",
+    "semantic_hash": "f1f344912dd522b8f44e0c9a835ff77c"
+  },
+  "README.md": {
+    "mtime": 1783765775.1381893,
+    "ast_hash": "53bc8c8131bb19b748a8922c14609b76",
+    "semantic_hash": "53bc8c8131bb19b748a8922c14609b76"
+  },
+  "TODO.md": {
+    "mtime": 1784317774.8803725,
+    "ast_hash": "06ed5545fc8103c5f1e482dfb7880c39",
+    "semantic_hash": "06ed5545fc8103c5f1e482dfb7880c39"
+  },
+  "curriculum-guard.md": {
+    "mtime": 1783766443.545787,
+    "ast_hash": "0d8f96d575941c89109f631683a4d6b6",
+    "semantic_hash": "0d8f96d575941c89109f631683a4d6b6"
+  },
+  "docker-compose.yml": {
+    "mtime": 1783933695.7402344,
+    "ast_hash": "3458a855a474f0913bbfa77ec84f127b",
+    "semantic_hash": "3458a855a474f0913bbfa77ec84f127b"
+  },
+  "dual-mode-router.md": {
+    "mtime": 1783766505.1923509,
+    "ast_hash": "75ef0a1630d45968d1a681f7e6f2c25d",
+    "semantic_hash": "75ef0a1630d45968d1a681f7e6f2c25d"
+  },
+  "frontend/index.html": {
+    "mtime": 1784317774.885561,
+    "ast_hash": "49f43890c161fec1aba05eb175eb81bd",
+    "semantic_hash": "49f43890c161fec1aba05eb175eb81bd"
+  },
+  "historical-paper-tags.md": {
+    "mtime": 1783766588.6383557,
+    "ast_hash": "84eb512d8e74159e2d8af13050fbcbb0",
+    "semantic_hash": "84eb512d8e74159e2d8af13050fbcbb0"
+  },
+  "index.html": {
+    "mtime": 1784318598.826617,
+    "ast_hash": "3a432500d9292038ac32dc483b781175",
+    "semantic_hash": "3a432500d9292038ac32dc483b781175"
+  },
+  "math-formatter.md": {
+    "mtime": 1783766634.7749825,
+    "ast_hash": "a2ef0fd248318807e578d96e6bc5efe6",
+    "semantic_hash": "a2ef0fd248318807e578d96e6bc5efe6"
+  },
+  "my-openrouter-app/README.md": {
+    "mtime": 1784317774.8964,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "viz-generator.md": {
+    "mtime": 1783766756.9595277,
+    "ast_hash": "7e959688e1cb3cbb36517e9bebc5e48b",
+    "semantic_hash": "7e959688e1cb3cbb36517e9bebc5e48b"
+  },
+  "Live-Class-2026/Agentic-3-0.pdf": {
+    "mtime": 1784345844.2642746,
+    "ast_hash": "d02db9330e8cea4cc7d501e5b1c2f46a",
+    "semantic_hash": "d02db9330e8cea4cc7d501e5b1c2f46a"
+  }
+}
