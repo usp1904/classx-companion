@@ -19,7 +19,6 @@
     "express": "^4.18.2",
     "express-rate-limit": "^8.5.2",
     "langchain": "^1.5.3",
-    "langsmith": "^0.8.4",
     "node-fetch": "^2.6.9"
   },
   "directories": {
@@ -37,5 +36,8 @@
   "bugs": {
     "url": "https://github.com/usp1904/classx-companion/issues"
   },
-  "homepage": "https://github.com/usp1904/classx-companion#readme"
+  "homepage": "https://github.com/usp1904/classx-companion#readme",
+  "devDependencies": {
+    "langsmith": "^0.8.7"
+  }
 }
