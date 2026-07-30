@@ -1,0 +1,62 @@
+{
+  "subject": "History",
+  "board_source": "CBSE_NCERT",
+  "chapterNumber": 1,
+  "chapter": "Nationalism in India",
+  "title": "History Notes: Nationalism in India",
+  "concepts": [
+    {
+      "name": "Impact of First World War on India",
+      "real_life_application": "Understanding how wartime economies create steep price rises and inflation affecting common citizens.",
+      "purpose": "Learn how global military conflicts ripple into local colonial taxes, forced recruitment, and trigger political movements.",
+      "day_to_day_usage": [
+        "Understanding tax rate spikes during economic crises",
+        "Relating history to international trade blockades and modern oil inflation"
+      ],
+      "video_embed": "https://www.youtube.com/embed/5F7JtP1EGFw?autoplay=1&mute=1&playlist=5F7JtP1EGFw&loop=1&controls=0&rel=0&modestbranding=1"
+    },
+    {
+      "name": "The Idea of Satyagraha",
+      "real_life_application": "Using peaceful, truth-based protests to appeal to the conscience of the oppressor rather than using physical force.",
+      "purpose": "Explore Mahatma Gandhi's core philosophy of non-violent resistance (Ahimsa).",
+      "day_to_day_usage": [
+        "Resolving conflicts at school or home without arguments or aggression",
+        "Understanding the power of peaceful advocacy in local assemblies"
+      ],
+      "video_embed": "https://www.youtube.com/embed/S_B7sH3f1gY?autoplay=1&mute=1&playlist=S_B7sH3f1gY&loop=1&controls=0&rel=0&modestbranding=1"
+    }
+  ],
+  "theorems": [],
+  "exercises": {
+    "qa_session_1": {
+      "title": "History Q&A Notes",
+      "objective": "Deep analytical comprehension of historical events",
+      "problems": [
+        {
+          "id": "hist-qa-1",
+          "book_source": "NCERT",
+          "question": "Why did Mahatma Gandhi decide to withdraw the Non-Cooperation Movement in February 1922?",
+          "difficulty": "MEDIUM",
+          "solution": [
+            "Chauri Chaura Incident: In February 1922, a peaceful demonstration of satyagrahis at Chauri Chaura in Gorakhpur, Uttar Pradesh, turned violent when the police fired upon the crowd. In retaliation, angry protesters set fire to a nearby police station, burning 22 policemen alive.",
+            "Adherence to Non-Violence: Gandhi was a strict believer in total non-violence (Ahimsa). The incident deeply shocked him.",
+            "Need for Training: He realized that the movement was turning violent in many places and that satyagrahis needed proper training before they could engage in massive national struggles.",
+            "Immediate Withdrawal: Consequently, he suspended the movement immediately to prevent further violence and regroup."
+          ]
+        },
+        {
+          "id": "hist-qa-2",
+          "book_source": "NCERT",
+          "question": "What was the Rowlatt Act and why did Indians oppose it?",
+          "difficulty": "HARD",
+          "solution": [
+            "Definition: The Rowlatt Act was passed by the Imperial Legislative Council in 1919 despite the united opposition of Indian members.",
+            "Repressive Powers: It gave the British government enormous powers to repress political activities, and allowed the detention of political prisoners without trial for up to two years.",
+            "Opposition Rationale: Indians opposed it because it violated basic civil liberties, denied the right to a fair trial, and was seen as highly authoritarian and unjust.",
+            "Response: Mahatma Gandhi started a non-violent civil disobedience against this 'black act' with a strike (hartal) on April 6, 1919."
+          ]
+        }
+      ]
+    }
+  }
+}

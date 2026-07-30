@@ -1,0 +1,40 @@
+{
+  "subject": "Geography",
+  "board_source": "CBSE_NCERT",
+  "chapterNumber": 3,
+  "chapter": "Resources and Development",
+  "title": "Geography Notes: Soil & Natural Resources",
+  "concepts": [
+    {
+      "name": "Soil Classification & Formation",
+      "real_life_application": "Identifying which crop to plant based on garden soil texture and moisture content.",
+      "purpose": "Examine various types of soil distributed across India and their agricultural suitability.",
+      "day_to_day_usage": [
+        "Choosing organic fertilizers appropriate for red vs clayey soils",
+        "Understanding watershed management and check dams in dry regions"
+      ],
+      "video_embed": "https://www.youtube.com/embed/E-sh99Fae90?autoplay=1&mute=1&playlist=E-sh99Fae90&loop=1&controls=0&rel=0&modestbranding=1"
+    }
+  ],
+  "theorems": [],
+  "exercises": {
+    "qa_session_1": {
+      "title": "Geography Q&A Notes",
+      "objective": "Understand resource classification and soil characteristics",
+      "problems": [
+        {
+          "id": "geo-qa-1",
+          "book_source": "NCERT",
+          "question": "What is Black Soil? Describe its key characteristics and geographical distribution in India.",
+          "difficulty": "MEDIUM",
+          "solution": [
+            "Nomenclature: Black soil is also known as Regur soil or black cotton soil because it is ideal for growing cotton.",
+            "Formation: Formed by the weathering of lava rocks from volcanic eruptions over millions of years.",
+            "Properties: Highly clayey, extremely rich in moisture-holding capacity, and contains high amounts of calcium carbonate, magnesium, potash, and lime.",
+            "Distribution: Found extensively in the Deccan trap region of Maharashtra, Saurashtra, Malwa, Madhya Pradesh, and Chhattisgarh."
+          ]
+        }
+      ]
+    }
+  }
+}

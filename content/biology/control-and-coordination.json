@@ -1,0 +1,18 @@
+{
+  "id": "control-and-coordination",
+  "chapter": "Control and Coordination",
+  "title": "Nervous and hormonal coordination in animals and plants.",
+  "concepts": [
+    "Nervous System",
+    "Endocrine System",
+    "Plant Hormones"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "bio-2",
+      "question": "How does the endocrine system contribute to coordination?",
+      "solution": "The endocrine system secretes hormones that regulate body functions and maintain internal balance, complementing the nervous system."
+    }
+  ]
+}

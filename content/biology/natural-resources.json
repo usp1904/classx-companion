@@ -1,0 +1,18 @@
+{
+  "id": "natural-resources",
+  "chapter": "Natural Resources",
+  "title": "Conservation and sustainable use of air, water, forests, and natural ecosystems.",
+  "concepts": [
+    "Air and Water Resources",
+    "Forest Resources",
+    "Sustainable Use"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "bio-5",
+      "question": "Why is water conservation important for ecosystems?",
+      "solution": "Water conservation protects freshwater supplies for plants, animals, and people, and maintains healthy ecosystems."
+    }
+  ]
+}

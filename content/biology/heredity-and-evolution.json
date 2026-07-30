@@ -1,0 +1,18 @@
+{
+  "id": "heredity-and-evolution",
+  "chapter": "Heredity and Evolution",
+  "title": "Inheritance patterns, Mendel's laws, and the theory of evolution.",
+  "concepts": [
+    "Mendelian Genetics",
+    "Variation",
+    "Natural Selection"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "bio-4",
+      "question": "What does Mendel's law of segregation state?",
+      "solution": "It states that during gamete formation, the two alleles for a trait separate so that each gamete carries only one allele."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "subject": "Biology",
+  "board_source": "CBSE_NCERT",
+  "chapterNumber": 3,
+  "chapter": "Life Processes",
+  "title": "Science Notes: Life Processes & Metabolism",
+  "concepts": [
+    {
+      "name": "Autotrophic vs Heterotrophic Nutrition",
+      "real_life_application": "Green plants synthesize sugar using sunlight, water, and CO2 (autotrophic), while animals consume plants or other organisms to acquire ready-made organic matter (heterotrophic).",
+      "purpose": "Explore how different living beings ingest or synthesize food to survive.",
+      "day_to_day_usage": [
+        "Understanding agricultural yields based on sunlight availability",
+        "Tracking calorie intake and digestion of consumed foods"
+      ],
+      "video_embed": "https://www.youtube.com/embed/UP7aG8xip48?autoplay=1&mute=1&playlist=UP7aG8xip48&loop=1&controls=0&rel=0&modestbranding=1"
+    }
+  ],
+  "theorems": [],
+  "exercises": {
+    "qa_session_1": {
+      "title": "Biology Q&A Notes",
+      "objective": "Understand body organ functions and metabolic pathways",
+      "problems": [
+        {
+          "id": "bio-qa-1",
+          "book_source": "NCERT",
+          "question": "What is the function of digestive enzymes in the human body?",
+          "difficulty": "EASY",
+          "solution": [
+            "Catalytic Action: Digestive enzymes act as biological catalysts that speed up chemical breakdown of complex food substances into simpler, soluble molecules.",
+            "Salivary Amylase: Breakdown of complex starch into simple sugars (maltose) in the mouth.",
+            "Pepsin & Trypsin: Breakdown of proteins into peptides and amino acids in the stomach and small intestine.",
+            "Lipase: Emulsified fats are broken down into fatty acids and glycerol.",
+            "Absorption: These smaller molecules are then easily absorbed through the intestinal walls into the bloodstream."
+          ]
+        }
+      ]
+    }
+  }
+}

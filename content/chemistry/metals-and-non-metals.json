@@ -1,0 +1,18 @@
+{
+  "id": "metals-and-non-metals",
+  "chapter": "Metals and Non-metals",
+  "title": "Physical and chemical properties of metals and non-metals, reactivity series, and corrosion.",
+  "concepts": [
+    "Physical Properties of Metals",
+    "Reactivity Series",
+    "Metallic and Non-metallic Behaviour"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "ch-3",
+      "question": "Why does sodium react vigorously with water?",
+      "solution": "Sodium is a highly reactive metal that displaces hydrogen from water, producing sodium hydroxide and hydrogen gas."
+    }
+  ]
+}

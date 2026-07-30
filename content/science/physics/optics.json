@@ -1,0 +1,50 @@
+{
+  "id": "optics",
+  "chapter": "Light - Reflection and Refraction",
+  "title": "Optics Exemplar Problems",
+  "concepts": [
+    {
+      "name": "Law of Reflection",
+      "real_life_application": "Seeing your own reflection in a mirror",
+      "day_to_day_usage": []
+    },
+    {
+      "name": "Snell's Law",
+      "real_life_application": "Designing lenses for glasses",
+      "day_to_day_usage": []
+    }
+  ],
+  "exercises": {
+    "ex1": {
+      "title": "Reflection Problem",
+      "objective": "Apply the law of reflection",
+      "problems": [
+        {
+          "id": "opt-1",
+          "question": "A ray of light strikes a plane mirror at an angle of 30°. What is the angle of the reflected ray?",
+          "solution": [
+            "According to the law of reflection, the angle of incidence equals the angle of reflection.",
+            "Therefore the reflected angle is also 30°."
+          ]
+        }
+      ]
+    },
+    "ex2": {
+      "title": "Refraction Problem",
+      "objective": "Use Snell's law to find refraction angle",
+      "problems": [
+        {
+          "id": "opt-2",
+          "question": "A light ray passes from air (n=1.00) into water (n=1.33) with an incidence angle of 45°. Find the refraction angle.",
+          "solution": [
+            "Snell's law: n₁ sinθ₁ = n₂ sinθ₂.",
+            "Plug values: 1.00·sin45° = 1.33·sinθ₂.",
+            "sinθ₂ = sin45° / 1.33 ≈ 0.7071 / 1.33 ≈ 0.531.",
+            "θ₂ = arcsin(0.531) ≈ 32.1°.",
+            "Thus the refracted ray makes an angle of about 32° with the normal."
+          ]
+        }
+      ]
+    }
+  }
+}

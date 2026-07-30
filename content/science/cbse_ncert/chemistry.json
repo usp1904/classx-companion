@@ -1,0 +1,39 @@
+{
+  "subject": "Chemistry",
+  "board_source": "CBSE_NCERT",
+  "chapterNumber": 2,
+  "chapter": "Chemical Reactions and Equations",
+  "title": "Science Notes: Chemical Reactions & Equations",
+  "concepts": [
+    {
+      "name": "Exothermic vs Endothermic Reactions",
+      "real_life_application": "Digestion of food or respiration is exothermic (releases heat energy), whereas photosynthesis in plants is endothermic (absorbs solar energy).",
+      "purpose": "Classify reactions based on thermal energy absorption or release.",
+      "day_to_day_usage": [
+        "Understanding how self-heating cans or ice packs work in first aid",
+        "Explaining warmth generated during quicklime mixing with water"
+      ],
+      "video_embed": "https://www.youtube.com/embed/Hh33dC52R0M?autoplay=1&mute=1&playlist=Hh33dC52R0M&loop=1&controls=0&rel=0&modestbranding=1"
+    }
+  ],
+  "theorems": [],
+  "exercises": {
+    "qa_session_1": {
+      "title": "Chemistry Q&A Notes",
+      "objective": "Understand chemical equations and reaction types",
+      "problems": [
+        {
+          "id": "chem-qa-1",
+          "book_source": "NCERT",
+          "question": "Why should a magnesium ribbon be cleaned with sandpaper before burning in air?",
+          "difficulty": "EASY",
+          "solution": [
+            "Formation of Protective Layer: Magnesium is a highly reactive metal. When exposed to moist air, it reacts with oxygen to form a thin, stable protective layer of Magnesium Oxide (MgO) on its surface.",
+            "Inhibition of Combustion: This white oxide layer prevents the magnesium ribbon from burning effectively when heated.",
+            "Action of Sandpaper: Cleaning the ribbon with sandpaper removes this oxide layer, exposing the underlying pure magnesium metal to react readily with oxygen and burn with a dazzling white flame."
+          ]
+        }
+      ]
+    }
+  }
+}

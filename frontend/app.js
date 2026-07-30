@@ -69,6 +69,7 @@ const NAV_ITEMS = [
   { id:'mind-maps',     icon:'🧠', label:'Mind Maps' },
   { id:'interactive',  icon:'🎮', label:'Interactive' },
   { id:'viz',           icon:'📈', label:'Visualizations' },
+  { id:'rag-search',    icon:'🔍', label:'RAG Hybrid Search' },
 ];
 
 /* ───────── LOADING ───────── */
@@ -148,6 +149,18 @@ function Concepts({ lesson }) {
               h4(null, '📌 Day-to-Day Usage'),
               ul(null, c.day_to_day_usage.map((u,j) => li({key:j}, u)))
             ) : null,
+            c.video_embed ? div({className:'concept-section video-section', style:{marginTop:16}},
+              h4(null, '🎬 Concept Visualization Reel'),
+              div({style:{position:'relative',paddingBottom:'56.25%',height:0,overflow:'hidden',borderRadius:10,border:'1px solid var(--panelBorder)'}},
+                h('iframe', {
+                  src: c.video_embed,
+                  title: c.name,
+                  style: {position:'absolute',top:0,left:0,width:'100%',height:'100%',border:0},
+                  allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+                  allowFullScreen: true
+                })
+              )
+            ) : null
           ))
         )
   );
@@ -204,7 +217,7 @@ function Examples({ lesson }) {
         h3({style:{fontSize:15,fontWeight:600}}, '▶ Animated: '+(lesson.worked_examples[solverIdx]?.topic||'')),
         btn({className:'btn btn-secondary',onClick:()=>setSolverIdx(-1)}, '✕ Close')
       ),
-      h(AnimatedStepSolver, {steps: lesson.worked_examples[solverIdx].board_mode||[
+      h(AnimatedStepSolver, {key: solverIdx, steps: lesson.worked_examples[solverIdx].board_mode||[
         lesson.worked_examples[solverIdx].problem,
         lesson.worked_examples[solverIdx].speed_mode||''
       ]})
@@ -536,6 +549,18 @@ function ConceptCarousel({ concepts }) {
       c.day_to_day_usage?.length ? div({className:'cc-section'},
         h5(null, '📌 Examples'),
         ul(null, c.day_to_day_usage.map((u,j) => li({key:j}, u)))
+      ) : null,
+      c.video_embed ? div({className:'cc-section', style:{marginTop:16}},
+        h5(null, '🎬 Visualization Reel'),
+        div({style:{position:'relative',paddingBottom:'56.25%',height:0,overflow:'hidden',borderRadius:10,border:'1px solid var(--panelBorder)'}},
+          h('iframe', {
+            src: c.video_embed,
+            title: c.name,
+            style: {position:'absolute',top:0,left:0,width:'100%',height:'100%',border:0},
+            allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
+            allowFullScreen: true
+          })
+        )
       ) : null
     ),
     div({className:'cc-dots'},
@@ -857,8 +882,139 @@ function Viz({ lesson }) {
   );
 }
 
+
+
+function RagSearch() {
+  const [query, setQuery] = useState('Linear');
+  const [results, setResults] = useState(null);
+  const [selectedProblem, setSelectedProblem] = useState(null);
+  const [selectedConcept, setSelectedConcept] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  const search = async () => {
+    setLoading(true);
+    setSelectedProblem(null);
+    setSelectedConcept(null);
+    try {
+      const res = await fetch(`/api/db/search?q=${encodeURIComponent(query)}`);
+      const data = await res.json();
+      if (data.ok) {
+        setResults(data.results);
+      }
+    } catch(e) {
+      console.error(e);
+    }
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    search();
+  }, []);
+
+  const loadProblem = async (id) => {
+    try {
+      const res = await fetch(`/api/db/problems/${id}`);
+      const data = await res.json();
+      if (data.ok) {
+        setSelectedProblem(data.details);
+        setSelectedConcept(null);
+      }
+    } catch(e) {
+      console.error(e);
+    }
+  };
+
+  const loadConcept = async (id) => {
+    try {
+      const res = await fetch(`/api/db/concepts/${id}`);
+      const data = await res.json();
+      if (data.ok) {
+        setSelectedConcept(data.graph);
+        setSelectedProblem(null);
+      }
+    } catch(e) {
+      console.error(e);
+    }
+  };
+
+  return div({className:'card'},
+    div({className:'card-header'},
+      h2(null, '🔍 Hybrid Search (Vector & Graph RAG)'),
+      p(null, 'Query the indexed Class X Mathematics syllabus, textbook problems, and knowledge graph relationships.'),
+    ),
+    div({style:{display:'flex',gap:12,marginBottom:20}},
+      h('input', {
+        className: 'tutor-input',
+        style: {fontSize: 14, padding: '10px 14px', flex: 1},
+        type: 'text',
+        placeholder: 'Search topics, problems, formulas...',
+        value: query,
+        onChange: e => setQuery(e.target.value),
+        onKeyDown: e => e.key === 'Enter' && search()
+      }),
+      btn({className:'btn btn-primary', onClick:search, disabled:loading}, loading ? 'Searching...' : 'Search')
+    ),
+    
+    selectedProblem ? div({className:'concept-card', style:{borderLeft:'4px solid var(--accent)'}},
+      btn({className:'btn btn-secondary', style:{float:'right', padding:'4px 8px'}, onClick:()=>setSelectedProblem(null)}, '✕ Close Details'),
+      h3(null, `${selectedProblem.problem.book_source} - ${selectedProblem.problem.exercise_label}`),
+      div({className:'exercise-problem', style:{fontSize:15, margin:'10px 0', background:'var(--bg0)'}, dangerouslySetInnerHTML:{__html:renderFormulaDisplay(selectedProblem.problem.question_text)}}),
+      
+      h4({style:{fontSize:13, color:'var(--accent)', margin:'12px 0 6px'}}, 'Step-by-Step Solution:'),
+      div({style:{display:'flex', flexDirection:'column', gap:10}},
+        selectedProblem.steps.map(s => div({key:s.id, style:{background:'var(--bg2)', padding:12, borderRadius:8, border:'1px solid var(--panelBorder)'}},
+          strong(null, `Step ${s.step_number}: `),
+          span(null, s.step_explanation),
+          s.step_latex ? div({style:{marginTop:6}, dangerouslySetInnerHTML:{__html:renderFormulaDisplay(s.step_latex)}}) : null,
+          s.vedic_shortcut_applied && s.vedic_shortcut_applied !== 'None' ? div({style:{marginTop:6, color:C.amber, fontSize:12}},
+            `⚡ Vedic Shortcut: ${s.vedic_shortcut_applied}`
+          ) : null
+        ))
+      )
+    ) : null,
+
+    selectedConcept ? div({className:'concept-card', style:{borderLeft:'4px solid var(--sage)'}},
+      btn({className:'btn btn-secondary', style:{float:'right', padding:'4px 8px'}, onClick:()=>setSelectedConcept(null)}, '✕ Close Graph'),
+      h3(null, `Concept Node: ${selectedConcept.concept.name}`),
+      p({style:{margin:'10px 0'}, dangerouslySetInnerHTML:{__html:renderFormula(selectedConcept.concept.description)}}),
+      
+      h4({style:{fontSize:13, color:'var(--sage)', margin:'12px 0 6px'}}, 'Knowledge Graph Connections:'),
+      div({style:{display:'flex', gap:8, flexWrap:'wrap'}},
+        selectedConcept.edges.map(e => span({key:e.id, className:'tag violet'},
+          `${e.source_name} ➔ ${e.target_name} (${e.relation_type})`
+        ))
+      )
+    ) : null,
+
+    !selectedProblem && !selectedConcept && results ? div({className:'viz-split'},
+      div(null,
+        h3({style:{fontSize:14, color:C.cyan, marginBottom:10}}, '📝 Matching Textbook Problems'),
+        results.problems.length > 0 ? results.problems.map(p => btn({
+          key:p.id,
+          className:'nav-btn',
+          style:{marginBottom:6, padding:'10px', background:'var(--bg1)', border:'1px solid var(--panelBorder)'},
+          onClick:()=>loadProblem(p.id)
+        }, span({style:{fontWeight:600, color:C.cyan, marginRight:8}}, `[${p.book_source}]`), p.question_text.slice(0, 80) + '...'))
+        : p({style:{color:'var(--textMuted)', fontSize:13}}, 'No matching problems found.')
+      ),
+      div(null,
+        h3({style:{fontSize:14, color:C.green, marginBottom:10}}, '📚 Syllabus Topics & Concepts'),
+        results.concepts.length > 0 ? results.concepts.map(c => btn({
+          key:c.id,
+          className:'nav-btn',
+          style:{marginBottom:6, padding:'10px', background:'var(--bg1)', border:'1px solid var(--panelBorder)'},
+          onClick:()=>loadConcept(c.id)
+        }, span({style:{fontWeight:600, color:C.green, marginRight:8}}, `[Concept]`), c.name))
+        : p({style:{color:'var(--textMuted)', fontSize:13}}, 'No matching concepts found.')
+      )
+    ) : null
+  );
+}
+
 /* ───────── MAIN APP ───────── */
+
 function App() {
+  const [selectedBoard, setSelectedBoard] = useState('CBSE_NCERT');
   const [lesson, setLesson] = useState(null);
   const [subjects, setSubjects] = useState([]);
   const [instructions, setInstructions] = useState([]);
@@ -870,8 +1026,100 @@ function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const filteredLessons = allLessons.filter(l =>
-    !selectedSubject || l.subject === selectedSubject
+    (!selectedSubject || l.subject === selectedSubject) &&
+    (!selectedBoard || l.board === selectedBoard)
   );
+
+  const loadLesson = useCallback(async (lessonId, boardId = selectedBoard) => {
+    setLesson(null);
+    setActiveNav('overview');
+    setSidebarOpen(false);
+    
+    // 1. Try static
+    try {
+      const res = await api('/api/content/lessons/'+lessonId);
+      if (res.ok) {
+        setLesson(res.lesson);
+        setSelectedChapter(lessonId);
+        return;
+      }
+    } catch(e) {}
+
+    // 2. Database Fallback
+    try {
+      const dbs = await api('/api/db/syllabus?board=' + boardId);
+      if (dbs.ok && dbs.syllabus) {
+        const dbCh = dbs.syllabus.find(c => c.id === lessonId);
+        if (dbCh) {
+          const mockLesson = {
+            id: dbCh.id,
+            chapter: dbCh.name,
+            title: dbCh.name,
+            outcomes: [
+              `Understand the core concepts of ${dbCh.name}`,
+              "Apply standard mathematical formulas to solve problems step-by-step",
+              "Practice selected textbook problems from NCERT, RD Sharma, and RS Aggarwal"
+            ],
+            concepts: dbCh.topics.map(t => ({
+              name: t.name,
+              real_life_application: t.description || `Everyday application of ${t.name} in daily routine.`,
+              purpose: "Understand the purpose and application of this mathematical concept."
+            })),
+            theorems: [],
+            exercises: {},
+            rd_sharma_extensions: {
+              book: `RD Sharma Class 10, Chapter — ${dbCh.name}`,
+              topics: dbCh.topics.filter(t => t.name.toLowerCase().includes('rd sharma') || t.id.includes('-rd-')).map(t => ({
+                name: t.name.replace('RD Sharma: ', ''),
+                concept: t.description || 'Advanced concept and applications.',
+                formula: 'Refer to formulas in RAG Search.',
+                examples: t.problems ? t.problems.map(p => ({
+                  problem: p.question_text,
+                  solution: ["Step 1: Check step details in RAG Search"],
+                  final_answer: p.question_latex || ''
+                })) : []
+              }))
+            },
+            rs_aggarwal_extensions: {
+              book: `RS Aggarwal Class 10, Chapter — ${dbCh.name}`,
+              topics: dbCh.topics.filter(t => t.name.toLowerCase().includes('rs aggarwal') || t.id.includes('-rs-')).map(t => ({
+                name: t.name.replace('RS Aggarwal: ', ''),
+                concept: t.description || 'Advanced concept and applications.',
+                formula: 'Refer to formulas in RAG Search.',
+                examples: t.problems ? t.problems.map(p => ({
+                  problem: p.question_text,
+                  solution: ["Step 1: Check step details in RAG Search"],
+                  final_answer: p.question_latex || ''
+                })) : []
+              }))
+            }
+          };
+
+          if (mockLesson.rd_sharma_extensions.topics.length === 0) {
+            mockLesson.rd_sharma_extensions.topics = dbCh.topics.slice(0, 2).map(t => ({
+              name: t.name,
+              concept: t.description,
+              formula: 'Refer to textbook formula sheet.',
+              examples: []
+            }));
+          }
+          if (mockLesson.rs_aggarwal_extensions.topics.length === 0) {
+            mockLesson.rs_aggarwal_extensions.topics = dbCh.topics.slice(2, 4).map(t => ({
+              name: t.name,
+              concept: t.description,
+              formula: 'Refer to textbook formula sheet.',
+              examples: []
+            }));
+          }
+
+          setLesson(mockLesson);
+          setSelectedChapter(lessonId);
+        }
+      }
+    } catch(err) {
+      console.error("Database fallback failed", err);
+    }
+  }, [selectedBoard]);
 
   useEffect(() => {
     Promise.all([
@@ -879,40 +1127,65 @@ function App() {
       api('/api/instructions'),
       api('/health'),
       api('/api/content/lessons'),
-    ]).then(([s, i, h, cl]) => {
+      api('/api/db/syllabus'), // Get all chapters across all boards to avoid empty states
+    ]).then(([s, i, h, cl, dbs]) => {
       if (s.ok) setSubjects(s.subjects);
       if (i.ok) setInstructions(i.instructions || []);
+      
+      let mergedLessons = [];
+      if (dbs.ok && dbs.syllabus) {
+        dbs.syllabus.forEach(dbCh => {
+          mergedLessons.push({
+            lessonId: dbCh.id,
+            title: dbCh.name,
+            subject: dbCh.subject_id,
+            board: dbCh.board_source
+          });
+        });
+      }
       if (cl.ok) {
-        setAllLessons(cl.lessons || []);
-        if (cl.lessons.length) {
-          const first = cl.lessons[0];
-          setSelectedSubject(first.subject);
-          setSelectedChapter(first.lessonId);
-          loadLesson(first.lessonId);
-        }
+        cl.lessons.forEach(statCh => {
+          if (!mergedLessons.some(l => l.lessonId === statCh.lessonId)) {
+            mergedLessons.push({
+              ...statCh,
+              board: statCh.board || 'CBSE_NCERT'
+            });
+          }
+        });
+      }
+      setAllLessons(mergedLessons);
+      
+      // Default to first CBSE_NCERT lesson to ensure content is loaded instantly
+      const initial = mergedLessons.find(l => l.board === 'CBSE_NCERT') || mergedLessons[0];
+      if (initial) {
+        setSelectedBoard(initial.board);
+        setSelectedSubject(initial.subject);
+        setSelectedChapter(initial.lessonId);
+        loadLesson(initial.lessonId, initial.board);
       }
       setStatus(h.ok ? 'online' : 'offline');
     }).catch(() => setStatus('offline'));
   }, []);
 
-  const loadLesson = useCallback(async (lessonId) => {
-    setLesson(null);
-    setActiveNav('overview');
-    setSidebarOpen(false);
-    const res = await api('/api/content/lessons/'+lessonId);
-    if (res.ok) {
-      setLesson(res.lesson);
-      setSelectedChapter(lessonId);
+  const handleBoardChange = useCallback((boardId) => {
+    setSelectedBoard(boardId);
+    const lessonsInBoard = allLessons.filter(l => l.board === boardId);
+    if (lessonsInBoard.length) {
+      const first = lessonsInBoard[0];
+      setSelectedChapter(first.lessonId);
+      loadLesson(first.lessonId, boardId);
     }
-  }, []);
+  }, [allLessons, loadLesson]);
 
   const handleSubjectChange = useCallback((subjectId) => {
     setSelectedSubject(subjectId);
-    const lessonsInSubject = allLessons.filter(l => l.subject === subjectId);
+    const lessonsInSubject = allLessons.filter(l => l.subject === subjectId && l.board === selectedBoard);
     if (lessonsInSubject.length) {
-      loadLesson(lessonsInSubject[0].lessonId);
+      const first = lessonsInSubject[0];
+      setSelectedChapter(first.lessonId);
+      loadLesson(first.lessonId, selectedBoard);
     }
-  }, [allLessons, loadLesson]);
+  }, [allLessons, selectedBoard, loadLesson]);
 
   const view = (() => {
     if (!lesson) return h(Loading);
@@ -922,6 +1195,7 @@ function App() {
       case 'theorems':    return h(Theorems, {lesson});
       case 'examples':    return h(Examples, {lesson});
       case 'exercises':   return h(Exercises, {lesson});
+      case 'rag-search':  return h(RagSearch);
       case 'rd-sharma':   return h(ExtensionView, {title:'📖 RD Sharma Extensions', data:lesson.rd_sharma_extensions});
       case 'rs-aggarwal': return h(ExtensionView, {title:'📖 RS Aggarwal Extensions', data:lesson.rs_aggarwal_extensions});
       case 'model-papers': return h(ModelPapers, {lesson});
@@ -952,7 +1226,17 @@ function App() {
         )
       ),
       div({className:'header-chapter'},
-        label({style:{fontSize:12,color:'var(--textMuted)',marginRight:4}}, 'Subject:'),
+        label({style:{fontSize:12,color:'var(--textMuted)',marginRight:4}}, 'Board:'),
+        select_({
+          className:'chapter-select',
+          value:selectedBoard,
+          onChange:e => handleBoardChange(e.target.value)
+        },
+          option({value:'CBSE_NCERT'}, 'CBSE / NCERT'),
+          option({value:'AP_BOARD'}, 'AP State Board'),
+          option({value:'TS_BOARD'}, 'Telangana Board')
+        ),
+        label({style:{fontSize:12,color:'var(--textMuted)',margin:'0 4px 0 12px'}}, 'Subject:'),
         select_({
           className:'chapter-select',
           value:selectedSubject,
@@ -1013,7 +1297,8 @@ function App() {
     ),
 
     /* Mobile sidebar toggle */
-    btn({className:'sidebar-toggle', onClick:()=>setSidebarOpen(o=>!o)}, '☰')
+    btn({className:'sidebar-toggle', onClick:()=>setSidebarOpen(o=>!o)}, '☰'),
+
   );
 }
 

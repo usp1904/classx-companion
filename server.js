@@ -9,6 +9,8 @@ const config = require('./lib/config');
 const logger = require('./lib/logger');
 const enterprise = require('./lib/enterprise');
 require('./lib/envCheck').validate();
+require('./lib/database').initDatabase();
+
 
 const path = require('path');
 const crypto = require('crypto');

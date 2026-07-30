@@ -1,0 +1,21 @@
+{
+  "id": "electricity",
+  "chapter": "Electricity",
+  "title": "Current, resistance, Ohm's law, circuit diagrams, and power in electrical circuits.",
+  "concepts": [
+    "Ohm's Law",
+    "Series and Parallel Circuits",
+    "Electrical Power",
+    "Heating Effects of Current"
+  ],
+  "theorems": [
+    "Ohm's Law"
+  ],
+  "exercises": [
+    {
+      "id": "ph-3",
+      "question": "Calculate the current through a 12 ohm resistor connected across a 24 V battery.",
+      "solution": "Current = V / R = 24 / 12 = 2 A."
+    }
+  ]
+}

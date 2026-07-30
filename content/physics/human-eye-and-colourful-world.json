@@ -1,0 +1,19 @@
+{
+  "id": "human-eye-and-colourful-world",
+  "chapter": "Human Eye and Colourful World",
+  "title": "Structure of the eye, defects of vision, and dispersion of light.",
+  "concepts": [
+    "Structure of the Eye",
+    "Defects of Vision",
+    "Dispersion of Light",
+    "Rainbow Formation"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "ph-2",
+      "question": "Why does a rainbow appear after rain?",
+      "solution": "Rain drops act like prisms, dispersing sunlight into its component colours. Each colour refracts at a different angle, forming a rainbow."
+    }
+  ]
+}

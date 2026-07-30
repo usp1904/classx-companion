@@ -1,0 +1,18 @@
+{
+  "id": "chemical-reactions-equations",
+  "chapter": "Chemical Reactions and Equations",
+  "title": "Types of chemical reactions, balancing equations, and activity series.",
+  "concepts": [
+    "Types of Reactions",
+    "Balancing Chemical Equations",
+    "Exothermic and Endothermic Reactions"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "ch-1",
+      "question": "Balance the equation: Fe + O2 -> Fe2O3.",
+      "solution": "4Fe + 3O2 -> 2Fe2O3."
+    }
+  ]
+}

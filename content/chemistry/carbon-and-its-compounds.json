@@ -1,0 +1,18 @@
+{
+  "id": "carbon-and-its-compounds",
+  "chapter": "Carbon and Its Compounds",
+  "title": "Organic chemistry basics, covalent bonding, and hydrocarbon families.",
+  "concepts": [
+    "Covalent Bonding",
+    "Hydrocarbons",
+    "Functional Groups"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "ch-4",
+      "question": "What is a homologous series?",
+      "solution": "A homologous series consists of organic compounds with the same functional group and similar chemical properties, differing by CH2 units."
+    }
+  ]
+}

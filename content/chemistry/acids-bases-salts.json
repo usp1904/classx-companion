@@ -1,0 +1,18 @@
+{
+  "id": "acids-bases-salts",
+  "chapter": "Acids, Bases and Salts",
+  "title": "Properties of acids and bases, pH scale, and neutralization reactions.",
+  "concepts": [
+    "Characteristics of Acids and Bases",
+    "pH Scale",
+    "Neutralization"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "ch-2",
+      "question": "What is the pH of a neutral solution?",
+      "solution": "The pH of a neutral solution is 7."
+    }
+  ]
+}

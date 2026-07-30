@@ -1,0 +1,18 @@
+{
+  "id": "how-do-organisms-reproduce",
+  "chapter": "How Do Organisms Reproduce?",
+  "title": "Asexual and sexual reproduction in plants and animals.",
+  "concepts": [
+    "Asexual Reproduction",
+    "Sexual Reproduction",
+    "Reproductive Structures"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "bio-3",
+      "question": "Give one advantage of sexual reproduction over asexual reproduction.",
+      "solution": "Sexual reproduction generates variation, which helps populations adapt to changing environments."
+    }
+  ]
+}

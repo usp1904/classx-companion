@@ -1,0 +1,38 @@
+{
+  "subject": "Economics",
+  "board_source": "CBSE_NCERT",
+  "chapterNumber": 4,
+  "chapter": "Sectors of the Indian Economy",
+  "title": "Economics Notes: Industrial & Employment Sectors",
+  "concepts": [
+    {
+      "name": "Primary, Secondary, and Tertiary Sectors",
+      "real_life_application": "A farmer grows cotton (Primary), a textile mill spins it into cloth (Secondary), and a retail store transports and sells the clothes (Tertiary).",
+      "purpose": "Categorize economic activities to measure GDP contributions and employment rates.",
+      "day_to_day_usage": [
+        "Understanding where household expenses go (food vs manufacturing vs services like internet/education)",
+        "Identifying career paths in modern digital service sectors"
+      ],
+      "video_embed": "https://www.youtube.com/embed/wzP_tDsbRoo?autoplay=1&mute=1&playlist=wzP_tDsbRoo&loop=1&controls=0&rel=0&modestbranding=1"
+    }
+  ],
+  "theorems": [],
+  "exercises": {
+    "qa_session_1": {
+      "title": "Economics Q&A Notes",
+      "objective": "Analyze employment sectors and national production",
+      "problems": [
+        {
+          "id": "econ-qa-1",
+          "book_source": "NCERT",
+          "question": "Explain the difference between the Organized Sector and the Unorganized Sector.",
+          "difficulty": "MEDIUM",
+          "solution": [
+            "Organized Sector: Covers enterprises where the terms of employment are regular and secure. They are registered under government acts (like Factories Act, Shops and Establishment Act) and workers enjoy social security benefits like pensions, gratuity, fixed working hours, and paid leaves.",
+            "Unorganized Sector: Consists of small and scattered units largely outside government control. Employment is insecure, working hours are irregular with no overtime pay, and there are no social security benefits or paid leaves."
+          ]
+        }
+      ]
+    }
+  }
+}

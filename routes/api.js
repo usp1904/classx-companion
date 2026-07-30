@@ -5,7 +5,6 @@ const { loadInstructionModules, getInstructionByName } = require('../lib/instruc
 const syllabus = require('../lib/syllabus');
 const mcp = require('../services/mcp');
 const kg = require('../services/kg');
-const aiTutor = require('../services/aiTutor');
 const flags = require('../lib/featureFlags');
 const content = require('../lib/content');
 const fs = require('fs');
@@ -143,14 +142,7 @@ router.post('/format-math', (req, res) => {
   return res.json({ ok: true, formatted: result.formatted, issues: result.issues });
 });
 
-// POST /api/ai/tutor -> AI tutor endpoint
-router.post('/ai/tutor', async (req, res) => {
-  const { question, mode, context } = req.body || {};
-  if (!question) return res.status(400).json({ ok: false, error: 'question string is required' });
-  const result = await aiTutor.askTutor({ question, mode, context });
-  if (!result.ok) return res.status(400).json(result);
-  return res.json(result);
-});
+
 
 // MCP fetch connector
 router.get('/mcp/fetch', async (req, res) => {
@@ -190,6 +182,37 @@ router.get('/content/lessons/:lessonId', (req, res) => {
   const lesson = content.getLessonById(req.params.lessonId);
   if (!lesson) return res.status(404).json({ ok: false, error: 'Lesson not found' });
   return res.json({ ok: true, lesson: lesson.data });
+});
+
+// DB/RAG Service routes
+const ragService = require('../lib/ragService');
+
+// GET /api/db/syllabus
+router.get('/db/syllabus', (req, res) => {
+  const board = req.query.board || null;
+  const tree = ragService.getSyllabusTree(board);
+  return res.json({ ok: true, syllabus: tree });
+});
+
+// GET /api/db/search?q=...
+router.get('/db/search', (req, res) => {
+  const q = req.query.q || '';
+  const results = ragService.searchHybrid(q);
+  return res.json({ ok: true, query: q, results });
+});
+
+// GET /api/db/problems/:problemId
+router.get('/db/problems/:problemId', (req, res) => {
+  const details = ragService.getProblemDetails(req.params.problemId);
+  if (!details) return res.status(404).json({ ok: false, error: 'Problem not found' });
+  return res.json({ ok: true, details });
+});
+
+// GET /api/db/concepts/:conceptId
+router.get('/db/concepts/:conceptId', (req, res) => {
+  const graph = ragService.resolveConceptGraph(req.params.conceptId);
+  if (!graph) return res.status(404).json({ ok: false, error: 'Concept not found' });
+  return res.json({ ok: true, graph });
 });
 
 module.exports = router;

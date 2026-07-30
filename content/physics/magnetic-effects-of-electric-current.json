@@ -1,0 +1,19 @@
+{
+  "id": "magnetic-effects-of-electric-current",
+  "chapter": "Magnetic Effects of Electric Current",
+  "title": "Magnetic fields around current-carrying conductors, electromagnets, and electric motors.",
+  "concepts": [
+    "Magnetic Field Lines",
+    "Fleming's Left Hand Rule",
+    "Electromagnets",
+    "Electric Motors"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "ph-4",
+      "question": "Describe the direction of the magnetic field around a current-carrying straight conductor.",
+      "solution": "The magnetic field forms concentric circles around the conductor, with direction given by the right-hand thumb rule."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "subject": "Civics",
+  "board_source": "CBSE_NCERT",
+  "chapterNumber": 2,
+  "chapter": "Power Sharing",
+  "title": "Civics Notes: Power Sharing in Democracy",
+  "concepts": [
+    {
+      "name": "Horizontal vs Vertical Power Sharing",
+      "real_life_application": "Dividing school administration responsibilities between teachers and subject experts (horizontal) vs headmasters and school board governors (vertical).",
+      "purpose": "Learn how modern democracies share power across organs and tiers to avoid centralized despotism.",
+      "day_to_day_usage": [
+        "Understanding municipal corporation vs state government powers",
+        "Respecting separation of powers in student bodies"
+      ],
+      "video_embed": "https://www.youtube.com/embed/0G2z583Vf4E?autoplay=1&mute=1&playlist=0G2z583Vf4E&loop=1&controls=0&rel=0&modestbranding=1"
+    }
+  ],
+  "theorems": [],
+  "exercises": {
+    "qa_session_1": {
+      "title": "Civics Q&A Notes",
+      "objective": "Understand democratic structures and conflict resolution",
+      "problems": [
+        {
+          "id": "civ-qa-1",
+          "book_source": "NCERT",
+          "question": "Compare the ways in which Belgium and Sri Lanka dealt with cultural and linguistic diversity.",
+          "difficulty": "HARD",
+          "solution": [
+            "Belgium's Accommodation Policy: Belgian leaders recognized regional and cultural differences. They amended their constitution four times between 1970 and 1993 to create a power-sharing model where Dutch and French-speaking ministers have equal representation in the central government. They created a community government to handle education and culture.",
+            "Sri Lanka's Majoritarian Policy: In contrast, Sri Lankan leaders adopted majoritarian measures. In 1956, an Act was passed to recognize Sinhala as the only official language, disregarding Tamil. Government policies favored Sinhala applicants for university positions and jobs, causing alienation among Sri Lankan Tamils.",
+            "Result: Belgium successfully avoided division, whereas Sri Lanka faced a long and devastating civil war."
+          ]
+        }
+      ]
+    }
+  }
+}

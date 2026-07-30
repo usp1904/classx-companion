@@ -1,0 +1,19 @@
+{
+  "id": "sources-of-energy",
+  "chapter": "Sources of Energy",
+  "title": "Renewable and non-renewable energy sources, energy security, and environmental impact.",
+  "concepts": [
+    "Fossil Fuels",
+    "Solar Energy",
+    "Hydroelectric Power",
+    "Energy Conservation"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "ph-5",
+      "question": "Name one renewable and one non-renewable source of energy.",
+      "solution": "Solar energy is renewable; coal is non-renewable."
+    }
+  ]
+}

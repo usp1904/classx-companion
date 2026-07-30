@@ -1,0 +1,22 @@
+{
+  "id": "light-reflection-refraction",
+  "chapter": "Light - Reflection and Refraction",
+  "title": "Reflection, refraction, mirrors, lenses and ray diagrams.",
+  "concepts": [
+    "Laws of Reflection",
+    "Refraction and Snell's Law",
+    "Spherical Mirrors",
+    "Lens Formula"
+  ],
+  "theorems": [
+    "Law of Reflection",
+    "Snell's Law"
+  ],
+  "exercises": [
+    {
+      "id": "ph-1",
+      "question": "A concave mirror forms a real image at infinity. Where is the object placed?",
+      "solution": "When the object is at the focal point of a concave mirror, the reflected rays become parallel and the image forms at infinity."
+    }
+  ]
+}

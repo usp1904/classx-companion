@@ -60,36 +60,91 @@ class StubProvider {
     this.name = 'stub';
   }
   async generate({ prompt, tier, context }) {
-    const safe = String(prompt || '').trim().slice(0, 500);
+    const ragService = require('../lib/ragService');
+    const safe = String(prompt || '').trim();
+    
+    // Perform hybrid RAG search
+    const searchResults = ragService.searchHybrid(safe);
+    let matchedProblem = null;
+    let details = null;
+
+    if (searchResults.problems && searchResults.problems.length > 0) {
+      matchedProblem = searchResults.problems[0];
+      details = ragService.getProblemDetails(matchedProblem.id);
+    }
+
+    if (details) {
+      const prob = details.problem;
+      const stepsText = details.steps.map(s => {
+        let stepStr = `**Step ${s.step_number}**: ${s.step_explanation}`;
+        if (s.step_latex) {
+          stepStr += `\n$$${s.step_latex}$$`;
+        }
+        if (s.vedic_shortcut_applied && s.vedic_shortcut_applied !== 'None') {
+          stepStr += `\n*⚡ Vedic Shortcut (${s.vedic_shortcut_applied})*`;
+        }
+        return stepStr;
+      }).join('\n\n');
+
+      const conceptsResolved = ragService.resolveConceptGraph(prob.concept_id || 'c-lin-eq-2var');
+      const relatedConcepts = conceptsResolved ? conceptsResolved.nodes.map(n => n.name).join(', ') : '';
+
+      return {
+        provider: this.name,
+        tier,
+        text: 
+          `### 📚 RAG Resolved Question (${prob.book_source} - ${prob.exercise_label})\n` +
+          `**Question**: ${prob.question_text}\n\n` +
+          `#### 🏠 Everyday Analogy & Concept\n` +
+          `This problem relates to the concept of **${prob.topic_name}**. ${conceptsResolved?.concept?.description || ''}\n\n` +
+          `#### 📋 NCERT Step-by-Step Board Solution\n` +
+          `${stepsText}\n\n` +
+          `#### 🏆 JEE/NEET Bridge & Knowledge Graph\n` +
+          `*   **Prerequisite Concepts**: ${relatedConcepts}\n` +
+          `*   **Golden Formula**: ${conceptsResolved?.concept?.formulas || 'None'}\n`,
+        usedContext: true
+      };
+    }
+
+    // Default fallback stub if no database match
     return {
       provider: this.name,
       tier,
       text:
         `[${this.name} | ${tier}]\n` +
-        `Question: ${safe}\n\n` +
-        `Class 6 Anchor: Think of something you see every day that this idea reminds you of.\n\n` +
-        `NCERT Core: This concept is defined in the NCERT Class X syllabus. Refer to the chapter for the exact rule.\n\n` +
-        `JEE/NEET Bridge: Try to find the single "golden step" that unlocks the answer in 30 seconds.\n\n` +
+        `Question: ${safe.slice(0, 500)}\n\n` +
+        `Class 6 Anchor: Think of something you see every day that this idea reminds you of (like dividing mangoes or sharing pocket money).\n\n` +
+        `NCERT Core: This concept is covered in the Class X syllabus. Refer to the chapter for the exact mathematical rule.\n\n` +
+        `JEE/NEET Bridge: Try to identify the single "golden step" that unlocks the answer in 30 seconds.\n\n` +
         (context && context.lessonId ? `(Refer to lesson: ${context.lessonId})` : ''),
       usedContext: Boolean(context && context.lessonId)
     };
   }
 }
 
+
 const PROVIDERS = {
   stub: new StubProvider(),
   get langchain() {
     const { LangChainProvider } = require('./aiProviders/langchainProvider');
     return new LangChainProvider();
+  },
+  get gemini() {
+    const { GeminiProvider } = require('./aiProviders/geminiProvider');
+    return new GeminiProvider();
   }
 };
 
 function getProvider() {
+  if (process.env.GEMINI_API_KEY || config.ai.aliases.gemini) {
+    return PROVIDERS.gemini;
+  }
   const name = config.ai.provider;
   const provider = PROVIDERS[name];
   if (!provider) return PROVIDERS.stub;
   return provider;
 }
+
 
 /* ------------------------------------------------------------------------- *
  *  Public API
@@ -103,7 +158,10 @@ async function askTutor({ question, mode, context }) {
     return { ok: false, error: 'question string is required' };
   }
 
-  // 1) SuperMemory check (compressed semantic cache — checked first)
+  // 1) Difficulty classification (cascade on/off) - needed for cache and tutor responses
+  const tier = flags.isEnabled('promptCascade') ? classifyDifficulty(question) : 'MEDIUM';
+
+  // 2) SuperMemory check (compressed semantic cache — checked first)
   if (flags.isEnabled('superMemory')) {
     const sm = getSuperMemory();
     const qHash = crypto.createHash('sha256')
@@ -128,16 +186,13 @@ async function askTutor({ question, mode, context }) {
     }
   }
 
-  // 2) Legacy semantic cache check
+  // 3) Legacy semantic cache check
   if (flags.isEnabled('semanticCache')) {
     const hit = cache.get(question);
     if (hit) {
       return { ok: true, source: 'cache', score: hit.score, answer: hit.answer };
     }
   }
-
-  // 2) Difficulty classification (cascade on/off)
-  const tier = flags.isEnabled('promptCascade') ? classifyDifficulty(question) : 'MEDIUM';
 
   // 3) Provider call
   const provider = getProvider();

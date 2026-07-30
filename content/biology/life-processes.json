@@ -1,0 +1,19 @@
+{
+  "id": "life-processes",
+  "chapter": "Life Processes",
+  "title": "Nutrition, respiration, transportation, and excretion in living organisms.",
+  "concepts": [
+    "Nutrition",
+    "Respiration",
+    "Transportation",
+    "Excretion"
+  ],
+  "theorems": [],
+  "exercises": [
+    {
+      "id": "bio-1",
+      "question": "Describe the role of stomata in transpiration.",
+      "solution": "Stomata are tiny openings on leaves that allow water vapour to escape during transpiration, helping transport nutrients and cool the plant."
+    }
+  ]
+}

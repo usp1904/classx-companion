@@ -482,8 +482,8 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 
 /* INTERACTIVE CARDS */
 .interactive-card { background: var(--bg2); border: 1px solid var(--panelBorder); border-radius: 14px; padding: 20px 24px; box-shadow: var(--shadow); }
-.interactive-card input[type="range"] { -webkit-appearance: none; height: 6px; border-radius: 3px; background: var(--panelBorder); outline: none; }
-.interactive-card input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); cursor: pointer; box-shadow: 0 2px 6px rgba(99,102,241,0.3); }
+.interactive-card input[type="range"] { -webkit-appearance: none; appearance: none; height: 6px; border-radius: 3px; background: var(--panelBorder); outline: none; }
+.interactive-card input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 18px; height: 18px; border-radius: 50%; background: var(--accent); cursor: pointer; box-shadow: 0 2px 6px rgba(99,102,241,0.3); }
 .interactive-card label { font-size: 12px; color: var(--textDim); display: block; margin-bottom: 4px; }
 
 /* VISUALIZATIONS */
@@ -552,7 +552,6 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
   .exercise-tabs { gap: 4px; }
   .exercise-tab { font-size: 11px; padding: 4px 10px; }
   .problem-nav { flex-wrap: wrap; }
-}
     </style>
     <link rel="icon" href="/favicon.ico" />
     <script defer src="/vendor-react.production.min.js"></script>

@@ -1,0 +1,41 @@
+{
+  "subject": "Physics",
+  "board_source": "CBSE_NCERT",
+  "chapterNumber": 1,
+  "chapter": "Light - Reflection and Refraction",
+  "title": "Science Notes: Light, Reflection, and Refraction",
+  "concepts": [
+    {
+      "name": "Refraction & Optical Density",
+      "real_life_application": "A straw kept in a glass of water appears bent at the air-water interface because light changes speed when travelling from air to water.",
+      "purpose": "Explore light bending when moving across media of different refractive indices.",
+      "day_to_day_usage": [
+        "Understanding lens behavior in optical glasses",
+        "Explaining why swimming pools look shallower than they actually are"
+      ],
+      "video_embed": "https://www.youtube.com/embed/y55tzg_jS0Y?autoplay=1&mute=1&playlist=y55tzg_jS0Y&loop=1&controls=0&rel=0&modestbranding=1"
+    }
+  ],
+  "theorems": [],
+  "exercises": {
+    "qa_session_1": {
+      "title": "Physics Q&A Notes",
+      "objective": "Understand optical rules and calculations",
+      "problems": [
+        {
+          "id": "phys-qa-1",
+          "book_source": "NCERT",
+          "question": "A concave mirror produces a three times magnified real image of an object placed at 10 cm in front of it. Where is the image located?",
+          "difficulty": "MEDIUM",
+          "solution": [
+            "Given object distance u = -10 cm (using Cartesian sign convention).",
+            "For a real image, magnification m is negative: m = -3.",
+            "Magnification formula for mirrors: m = -v / u.",
+            "Substitute the values: -3 = -v / (-10) => -3 = v / 10 => v = -30 cm.",
+            "The image is located 30 cm in front of the mirror on the same side as the object."
+          ]
+        }
+      ]
+    }
+  }
+}
