@@ -144,3 +144,41 @@ test('getLeaderboard: orders by total XP descending', () => {
   assert.ok(idxHigh >= 0 && idxLow >= 0);
   assert.ok(idxHigh < idxLow); // higher XP appears first
 });
+
+test('getDailyGoal: counts today\'s correct solves against the target', () => {
+  const r = makeUser();
+  const id = r.data.id;
+  const today = g.dayKey();
+
+  const before = service.getDailyGoal(id, { target: 5, today });
+  assert.ok(before.ok);
+  assert.equal(before.data.solvedToday, 0);
+  assert.equal(before.data.remaining, 5);
+  assert.equal(before.data.done, false);
+
+  const ins = db.prepare("INSERT INTO practice_events (user_id, problem_id, difficulty, correct, xp_awarded, created_at) VALUES (?, ?, 'MEDIUM', 1, 20, ?)");
+  ins.run(id, 'p-ncert-3.2-1', `${today} 05:00:00`);
+  ins.run(id, 'p-ncert-3.2-1', `${today} 06:00:00`);
+  ins.run(id, 'p-ncert-3.2-1', `${today} 07:00:00`);
+
+  const after = service.getDailyGoal(id, { target: 5, today });
+  assert.equal(after.data.solvedToday, 3);
+  assert.equal(after.data.remaining, 2);
+  assert.equal(after.data.progressPct, 60);
+});
+
+test('getDailyGoal: unknown user returns 404', () => {
+  const r = service.getDailyGoal('does-not-exist');
+  assert.equal(r.ok, false);
+  assert.equal(r.status, 404);
+});
+
+test('shareSummary: builds a shareable one-liner', () => {
+  const r = makeUser();
+  const id = r.data.id;
+  service.grantXp({ userId: id, amount: 100 });
+  const s = service.shareSummary(id);
+  assert.ok(s.ok);
+  assert.ok(s.data.text.includes('XP'));
+  assert.ok(s.data.text.length > 20);
+});

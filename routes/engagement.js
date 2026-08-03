@@ -76,6 +76,22 @@ router.get('/gamify/:userId', guardEnabled, (req, res) => {
   return res.json(r);
 });
 
+// GET /api/gamify/:userId/goal -> daily-goal widget data
+router.get('/gamify/:userId/goal', guardEnabled, (req, res) => {
+  const target = Number(req.query.target) || 5;
+  const r = service.getDailyGoal(req.params.userId, { target });
+  if (!r.ok) return res.status(r.status || 404).json(r);
+  return res.json(r);
+});
+
+// GET /api/profile/:userId -> profile + shareable summary
+router.get('/profile/:userId', guardEnabled, (req, res) => {
+  const profile = service.getProfile(req.params.userId);
+  if (!profile.ok) return res.status(profile.status || 404).json(profile);
+  const share = service.shareSummary(req.params.userId);
+  return res.json({ ok: true, data: { ...profile.data, share: share.data.text } });
+});
+
 // GET /api/analytics/:userId
 router.get('/analytics/:userId', guardEnabled, (req, res) => {
   const r = service.getAnalytics(req.params.userId);

@@ -40,3 +40,21 @@ test('contentRoot: returns a string path', () => {
   assert.ok(typeof root === 'string');
   assert.ok(root.length > 0);
 });
+
+test('buildFlashcards: derives cards from lesson content', () => {
+  const lesson = content.getLessonById('circles');
+  const cards = content.buildFlashcards(lesson.data);
+  assert.ok(cards.length > 0);
+  for (const c of cards) {
+    assert.ok(c.id);
+    assert.ok(c.front);
+    assert.ok('back' in c);
+    assert.ok(c.source);
+  }
+});
+
+test('buildFlashcards: tolerates malformed input', () => {
+  assert.deepEqual(content.buildFlashcards(null), []);
+  assert.deepEqual(content.buildFlashcards({}), []);
+  assert.deepEqual(content.buildFlashcards({ exercises: 'not-an-object' }), []);
+});

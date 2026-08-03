@@ -8,6 +8,8 @@
     "test": "node scripts/run-tests.js",
     "test:watch": "node --test --watch tests/**/*.test.js",
     "seed:users": "node scripts/seedUsers.js",
+    "seed:boards": "node scripts/seedBoards.js",
+    "ingest:boards": "node scripts/ingestBoardTopics.js",
     "sync:syllabus": "node scripts/syncSyllabus.js"
   },
   "dependencies": {

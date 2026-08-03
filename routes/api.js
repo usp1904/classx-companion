@@ -218,6 +218,14 @@ router.get('/content/lessons/:lessonId', (req, res) => {
   return res.json({ ok: true, lesson: lesson.data });
 });
 
+// GET /api/content/flashcards/:lessonId -> flashcards derived from lesson content
+router.get('/content/flashcards/:lessonId', (req, res) => {
+  const lesson = content.getLessonById(req.params.lessonId);
+  if (!lesson) return res.status(404).json({ ok: false, error: 'Lesson not found' });
+  const flashcards = content.buildFlashcards(lesson.data);
+  return res.json({ ok: true, data: { lessonId: lesson.lessonId, subject: lesson.subject, count: flashcards.length, flashcards } });
+});
+
 // DB/RAG Service routes
 
 // GET /api/db/syllabus

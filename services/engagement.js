@@ -29,6 +29,7 @@ const stmt = {
   getProgress: db.prepare('SELECT * FROM user_progress WHERE user_id = ?'),
   insertEvent: db.prepare('INSERT INTO practice_events (user_id, problem_id, difficulty, correct, xp_awarded) VALUES (?, ?, ?, ?, ?)'),
   getEvents: db.prepare('SELECT * FROM practice_events WHERE user_id = ? ORDER BY created_at DESC, id DESC'),
+  solvedToday: db.prepare("SELECT COUNT(*) AS n FROM practice_events WHERE user_id = ? AND correct = 1 AND substr(created_at, 1, 10) = ?"),
   getProblemDef: db.prepare('SELECT difficulty FROM problems WHERE id = ?'),
   leaderboard: db.prepare('SELECT user_id, total_xp, solved_count, longest_streak FROM user_progress ORDER BY total_xp DESC, longest_streak DESC')
 };
@@ -188,6 +189,42 @@ function getLeaderboard() {
   })) };
 }
 
+/**
+ * Daily-goal widget data (VidyaSethu §5 Home Dashboard). `target` problems
+ * solved-correct per day; progress counts today's correct practice_events.
+ */
+function getDailyGoal(userId, { target = 5, today = g.dayKey() } = {}) {
+  const user = stmt.findById.get(userId);
+  if (!user) return { ok: false, status: 404, error: 'user not found' };
+  const solvedToday = Number(stmt.solvedToday.get(userId, today).n) || 0;
+  const p = stmt.getProgress.get(userId);
+  return {
+    ok: true,
+    data: {
+      userId,
+      target,
+      solvedToday,
+      remaining: Math.max(0, target - solvedToday),
+      done: solvedToday >= target,
+      progressPct: Math.min(100, Math.round((solvedToday / target) * 100)),
+      currentStreak: p ? p.current_streak : 0,
+      totalXp: p ? p.total_xp : 0
+    }
+  };
+}
+
+/** Shareable one-liner for the Profile "social sharing" action. */
+function shareSummary(userId) {
+  const profile = getProfile(userId);
+  if (!profile.ok) return profile;
+  const { progress, rank } = profile.data;
+  const text =
+    `🔥 I earned ${progress.totalXp} XP (${rank} rank) on ClassX Companion — ` +
+    `${progress.currentStreak}-day streak, ${progress.solvedCount} problems solved. ` +
+    `Join me: https://classx.example/app`;
+  return { ok: true, data: { text } };
+}
+
 function leaderboardPosition(userId) {
   const idx = stmt.leaderboard.all().findIndex(r => r.user_id === userId);
   return idx === -1 ? null : idx + 1;
@@ -201,5 +238,6 @@ function sanitize(user) {
 
 module.exports = {
   register, login, resolveToken,
-  recordPractice, grantXp, getProfile, getAnalytics, getLeaderboard
+  recordPractice, grantXp, getProfile, getAnalytics, getLeaderboard,
+  getDailyGoal, shareSummary
 };
