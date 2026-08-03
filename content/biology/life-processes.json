@@ -3,10 +3,46 @@
   "chapter": "Life Processes",
   "title": "Nutrition, respiration, transportation, and excretion in living organisms.",
   "concepts": [
-    "Nutrition",
-    "Respiration",
-    "Transportation",
-    "Excretion"
+    {
+      "name": "Nutrition",
+      "real_life_application": "The chapati you eat is broken down into glucose, fats and proteins that power your brain and muscles — autotrophs like plants make it, heterotrophs like you consume it.",
+      "day_to_day_usage": [
+        "Eating breakfast to fuel the school day",
+        "Plants making food in sunlight",
+        "Why you feel sleepy after a heavy meal"
+      ],
+      "industry_relevance": "Food technology, sports nutrition, agriculture.",
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": ""
+    },
+    {
+      "name": "Respiration",
+      "day_to_day_usage": [],
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": "",
+      "real_life_application": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry.",
+      "industry_relevance": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry."
+    },
+    {
+      "name": "Transportation",
+      "day_to_day_usage": [],
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": "",
+      "real_life_application": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry.",
+      "industry_relevance": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry."
+    },
+    {
+      "name": "Excretion",
+      "day_to_day_usage": [],
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": "",
+      "real_life_application": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry.",
+      "industry_relevance": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry."
+    }
   ],
   "theorems": [],
   "exercises": [

@@ -28,7 +28,10 @@
         "A stone tied to a string, when released, flies off along a tangent to its circular path",
         "The horizon as seen from an airplane is a tangent to the Earth's surface",
         "Headlight beams from a car on a curved road shine along tangents to the curve"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Number of Tangents from a Point",
@@ -38,7 +41,10 @@
         "A person outside a circular park can see the park from two tangent viewpoints",
         "A satellite orbiting Earth has two tangent lines of sight to the ground station",
         "Drawing a tangent from a point outside a circle using ruler and compass"
-      ]
+      ],
+      "industry_relevance": "Cryptography, data compression, computer arithmetic.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Tangent-Radius Perpendicular Theorem",
@@ -47,7 +53,10 @@
       "day_to_day_usage": [
         "A ladder leaning against a circular silo — the point of contact forms a right angle with the radius",
         "In billiards, the cue ball's path off the circular cushion follows the tangent-radius rule"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Length of Tangent from an External Point",
@@ -56,7 +65,10 @@
       "day_to_day_usage": [
         "Two equal tangents from a point outside a circular garden to the garden edges",
         "A common tangent to two circles — belt and pulley systems in machines"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Tangent-Secant Theorem (Alternate Segment Theorem)",
@@ -65,7 +77,10 @@
       "day_to_day_usage": [
         "In circular sports stadiums, the viewing angle from a tangent position relates to the opposite seating arc",
         "Used in optical design for reflecting telescopes"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [

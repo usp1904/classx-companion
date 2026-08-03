@@ -3,10 +3,50 @@
   "chapter": "Sources of Energy",
   "title": "Renewable and non-renewable energy sources, energy security, and environmental impact.",
   "concepts": [
-    "Fossil Fuels",
-    "Solar Energy",
-    "Hydroelectric Power",
-    "Energy Conservation"
+    {
+      "name": "Fossil Fuels",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    },
+    {
+      "name": "Solar Energy",
+      "real_life_application": "Solar panels on rooftops convert light into electricity — the same photoelectric effect that powers calculators and satellites.",
+      "day_to_day_usage": [
+        "Solar garden lights",
+        "EV charging from rooftop panels",
+        "Biogas plant in a village"
+      ],
+      "industry_relevance": "Renewable energy, solar manufacturing, battery storage.",
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": ""
+    },
+    {
+      "name": "Hydroelectric Power",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    },
+    {
+      "name": "Energy Conservation",
+      "real_life_application": "Solar panels on rooftops convert light into electricity — the same photoelectric effect that powers calculators and satellites.",
+      "day_to_day_usage": [
+        "Solar garden lights",
+        "EV charging from rooftop panels",
+        "Biogas plant in a village"
+      ],
+      "industry_relevance": "Renewable energy, solar manufacturing, battery storage.",
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": ""
+    }
   ],
   "theorems": [],
   "exercises": [

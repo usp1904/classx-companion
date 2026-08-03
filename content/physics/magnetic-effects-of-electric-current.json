@@ -3,10 +3,46 @@
   "chapter": "Magnetic Effects of Electric Current",
   "title": "Magnetic fields around current-carrying conductors, electromagnets, and electric motors.",
   "concepts": [
-    "Magnetic Field Lines",
-    "Fleming's Left Hand Rule",
-    "Electromagnets",
-    "Electric Motors"
+    {
+      "name": "Magnetic Field Lines",
+      "real_life_application": "The electromagnetic in your doorbell, school bell and refrigerator magnets all trace back to current flowing in a coil.",
+      "day_to_day_usage": [
+        "Doorbell ring",
+        "Refrigerator magnet",
+        "Loudspeaker cone vibration"
+      ],
+      "industry_relevance": "Electric motors, generators, transformers, MRI machines.",
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": ""
+    },
+    {
+      "name": "Fleming's Left Hand Rule",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    },
+    {
+      "name": "Electromagnets",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    },
+    {
+      "name": "Electric Motors",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    }
   ],
   "theorems": [],
   "exercises": [

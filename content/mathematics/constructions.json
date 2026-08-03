@@ -4,7 +4,6 @@
   "lesson": 1,
   "title": "Constructions — Complete Learning Module (Learn Maths with Fun)",
   "schemaVersion": "2.0",
-
   "outcomes": [
     "Divide a line segment internally in a given ratio using a ruler and compass",
     "Construct a triangle similar to a given triangle with a given scale factor (both smaller and larger)",
@@ -14,9 +13,12 @@
     "Apply construction techniques in real-world Indian contexts like land surveying and architecture",
     "Solve RD Sharma and RS Aggarwal extension problems for competitive exam readiness"
   ],
-
-  "prerequisite_nodes": ["MATH_CLASS9_CONSTRUCTIONS", "MATH_CLASS9_CIRCLES", "MATH_CLASS9_TRIANGLES", "MATH_CLASS9_LINEAR_EQUATIONS_ONE_VAR"],
-
+  "prerequisite_nodes": [
+    "MATH_CLASS9_CONSTRUCTIONS",
+    "MATH_CLASS9_CIRCLES",
+    "MATH_CLASS9_TRIANGLES",
+    "MATH_CLASS9_LINEAR_EQUATIONS_ONE_VAR"
+  ],
   "concepts": [
     {
       "name": "Division of a Line Segment in a Given Ratio",
@@ -28,7 +30,10 @@
         "Laying out running tracks of proportional lengths in a school playground",
         "Setting up tent pegs in a marriage pandal at specified distances",
         "Architects marking window placements along a wall in a given proportion"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Construction of Similar Triangles",
@@ -40,7 +45,10 @@
         "Creating map of a locality with proper scaling of distances",
         "Building a small-scale model of the Konark Sun Temple for a science exhibition",
         "Automobile designers creating 1:10 scale clay models of new car designs"
-      ]
+      ],
+      "industry_relevance": "Architecture, construction, forensics, image processing.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Construction of Tangents to a Circle",
@@ -52,10 +60,12 @@
         "A satellite dish oriented at a tangent angle to receive optimal signal",
         "A car taking a sharp turn on a circular road — the direction of motion is tangential",
         "A stone tied to a string released from a sling — it flies off along a tangent"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
-
   "theorems": [
     {
       "name": "Basic Proportionality Theorem (Thales Theorem) — Applied in Constructions",
@@ -115,7 +125,6 @@
       ]
     }
   ],
-
   "important_formulae": [
     {
       "name": "Scale Factor for Similar Triangles",
@@ -136,7 +145,6 @@
       "usage": "This formula is frequently used in both board and competitive exams."
     }
   ],
-
   "worked_examples": [
     {
       "id": "we-1",
@@ -190,7 +198,6 @@
       "competitive_shortcut": "Length of tangent can be found directly: PT = √(OP² - r²) = √(49 - 16) = √33 ≈ 5.74 cm. The construction is essentially creating a right-angled triangle OTP where angle T = 90°."
     }
   ],
-
   "exercises": {
     "exercise_1": {
       "title": "Exercise — Division of a Line Segment and Similar Triangles",
@@ -436,7 +443,6 @@
       ]
     }
   },
-
   "rd_sharma_extensions": {
     "book": "RD Sharma Class 10, Chapter 9 — Constructions",
     "topics": [
@@ -485,7 +491,6 @@
       }
     ]
   },
-
   "rs_aggarwal_extensions": {
     "book": "RS Aggarwal Class 10, Chapter 9 — Constructions",
     "topics": [
@@ -533,7 +538,6 @@
       }
     ]
   },
-
   "model_papers": {
     "simple": [
       {
@@ -548,7 +552,10 @@
           "Draw a line through A₃ parallel to A₇B meeting AB at P.",
           "AP:PB = 3:4. AP = (3/7) × 10 = 4.29 cm, PB = (4/7) × 10 = 5.71 cm."
         ],
-        "hints": ["Number of arcs = sum of ratio terms.", "The parallel line uses Basic Proportionality Theorem."]
+        "hints": [
+          "Number of arcs = sum of ratio terms.",
+          "The parallel line uses Basic Proportionality Theorem."
+        ]
       },
       {
         "id": "mp-cons-s-2",
@@ -563,7 +570,10 @@
           "Join PT₁ and PT₂. These are the required tangents.",
           "Length PT₁ = √(OP² - r²) = √(49 - 9) = √40 = 2√10 ≈ 6.32 cm."
         ],
-        "hints": ["The angle in a semicircle is 90°, giving the right angle needed.", "Use the formula PT = √(OP² - r²) to verify the length."]
+        "hints": [
+          "The angle in a semicircle is 90°, giving the right angle needed.",
+          "Use the formula PT = √(OP² - r²) to verify the length."
+        ]
       }
     ],
     "medium": [
@@ -581,7 +591,10 @@
           "Through C', draw C'A' ∥ CA extending BA beyond A to meet at A'.",
           "ΔA'BC' is the required triangle. Justification: By BPT, BC'/BC = BB₄/BB₃ = 4/3."
         ],
-        "hints": ["Scale factor > 1 means the new triangle is larger — extend the sides.", "Number of arcs on ray = denominator (3); parallel through numerator (4th arc)."]
+        "hints": [
+          "Scale factor > 1 means the new triangle is larger — extend the sides.",
+          "Number of arcs on ray = denominator (3); parallel through numerator (4th arc)."
+        ]
       },
       {
         "id": "mp-cons-m-2",
@@ -596,7 +609,10 @@
           "PA and PB are the required tangents inclined at 75°.",
           "Justification: ∠OAP = ∠OBP = 90°, ∠AOB = 105°, so ∠APB = 360° - 90° - 90° - 105° = 75°."
         ],
-        "hints": ["Angle between tangents + angle between radii = 180°.", "Use the property of quadrilateral OAPB."]
+        "hints": [
+          "Angle between tangents + angle between radii = 180°.",
+          "Use the property of quadrilateral OAPB."
+        ]
       }
     ],
     "complex": [
@@ -614,7 +630,10 @@
           "Length QT = √(OQ² - r²) = √(144 - 25) = √119 cm.",
           "Since √119 > √39, tangents from Q are longer by √119 - √39 cm ≈ 4.67 cm."
         ],
-        "hints": ["The length formula PT = √(OP² - r²) depends only on OP, not direction.", "Compare squares: OP² - r² vs OQ² - r² — the farther point gives longer tangents."]
+        "hints": [
+          "The length formula PT = √(OP² - r²) depends only on OP, not direction.",
+          "Compare squares: OP² - r² vs OQ² - r² — the farther point gives longer tangents."
+        ]
       },
       {
         "id": "mp-cons-c-2",
@@ -630,17 +649,24 @@
           "ΔA'BC' is the required triangle. Sides: A'B = (2/3) × 6 = 4 cm, BC' = (2/3) × 8 = 16/3 ≈ 5.33 cm, A'C' = (2/3) × 10 = 20/3 ≈ 6.67 cm.",
           "Verification: 4² + (16/3)² = 16 + 256/9 = (144 + 256)/9 = 400/9 = (20/3)². Hence right-angled at B."
         ],
-        "hints": ["Scale factor 2/3 < 1, so the new triangle is smaller than the original.", "Similar triangles preserve angles — a right triangle stays right-angled after similarity transformation."]
+        "hints": [
+          "Scale factor 2/3 < 1, so the new triangle is smaller than the original.",
+          "Similar triangles preserve angles — a right triangle stays right-angled after similarity transformation."
+        ]
       }
     ]
   },
-
   "quizzes": {
     "simple": [
       {
         "id": "q-s-1",
         "question": "What is the minimum number of arcs to be marked on the ray to divide a line segment in the ratio 3:4?",
-        "options": ["7", "3", "4", "12"],
+        "options": [
+          "7",
+          "3",
+          "4",
+          "12"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "We need to mark (3+4) = 7 equal arcs on the auxiliary ray.",
@@ -654,7 +680,12 @@
       {
         "id": "q-s-2",
         "question": "How many tangents can be drawn to a circle from a point outside the circle?",
-        "options": ["2", "1", "0", "Infinite"],
+        "options": [
+          "2",
+          "1",
+          "0",
+          "Infinite"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Exactly 2 tangents can be drawn from an external point to a circle — one on each side.",
@@ -668,7 +699,12 @@
       {
         "id": "q-s-3",
         "question": "The tangent at a point on a circle is perpendicular to:",
-        "options": ["The radius at the point of contact", "The diameter at the opposite end", "The chord through the point", "Any other tangent"],
+        "options": [
+          "The radius at the point of contact",
+          "The diameter at the opposite end",
+          "The chord through the point",
+          "Any other tangent"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Tangent-Radius theorem: The tangent is perpendicular to the radius drawn to the point of contact.",
@@ -682,7 +718,12 @@
       {
         "id": "q-s-4",
         "question": "Which theorem is used in the justification of dividing a line segment in a given ratio?",
-        "options": ["Basic Proportionality Theorem", "Pythagoras Theorem", "Tangent-Radius Theorem", "Angle Sum Property"],
+        "options": [
+          "Basic Proportionality Theorem",
+          "Pythagoras Theorem",
+          "Tangent-Radius Theorem",
+          "Angle Sum Property"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "BPT (Thales Theorem) states that if a line is drawn parallel to one side of a triangle, it divides the other two sides proportionally.",
@@ -696,7 +737,12 @@
       {
         "id": "q-s-5",
         "question": "The angle between the tangents drawn from an external point P to a circle is related to the angle between the radii as:",
-        "options": ["Sum = 180°", "Sum = 90°", "Equal", "Product = 180°"],
+        "options": [
+          "Sum = 180°",
+          "Sum = 90°",
+          "Equal",
+          "Product = 180°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "In quadrilateral OAPB (where A, B are points of tangency): ∠A = ∠B = 90°, so ∠AOB + ∠APB = 180°.",
@@ -710,7 +756,12 @@
       {
         "id": "q-s-6",
         "question": "For constructing a triangle similar to a given triangle with scale factor 3/5, the new triangle will be:",
-        "options": ["Smaller", "Larger", "Same size", "Cannot determine"],
+        "options": [
+          "Smaller",
+          "Larger",
+          "Same size",
+          "Cannot determine"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Scale factor = 3/5 = 0.6 < 1, so the new triangle is smaller than the original.",
@@ -724,7 +775,12 @@
       {
         "id": "q-s-7",
         "question": "What is the length of tangent from a point at distance 5 cm from center if radius = 3 cm?",
-        "options": ["4 cm", "2 cm", "8 cm", "√34 cm"],
+        "options": [
+          "4 cm",
+          "2 cm",
+          "8 cm",
+          "√34 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "PT = √(OP² - r²) = √(25 - 9) = √16 = 4 cm.",
@@ -738,7 +794,12 @@
       {
         "id": "q-s-8",
         "question": "In the construction of tangents, the circle drawn on OP as diameter is used because:",
-        "options": ["Angle in a semicircle is 90°", "Diameter is longest chord", "Circle passes through center", "It divides the circle into two equal parts"],
+        "options": [
+          "Angle in a semicircle is 90°",
+          "Diameter is longest chord",
+          "Circle passes through center",
+          "It divides the circle into two equal parts"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Angle in a semicircle is 90°. Since OT ⟂ PT (Tangent-Radius theorem), ∠OTP must be 90°, which is the angle in a semicircle with OP as diameter.",
@@ -752,7 +813,12 @@
       {
         "id": "q-s-9",
         "question": "If OP = 2r (distance of external point is twice the radius), the angle between tangents is:",
-        "options": ["60°", "30°", "90°", "45°"],
+        "options": [
+          "60°",
+          "30°",
+          "90°",
+          "45°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If OP = 2r, then sin(θ/2) = r/OP = 1/2, so θ/2 = 30°, θ = 60°.",
@@ -766,7 +832,12 @@
       {
         "id": "q-s-10",
         "question": "How many arcs are marked on the auxiliary ray when constructing a triangle similar to a given triangle with scale factor 5/3?",
-        "options": ["3", "5", "8", "15"],
+        "options": [
+          "3",
+          "5",
+          "8",
+          "15"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "For scale factor m/n, we mark 'n' arcs (the denominator) on the auxiliary ray. Here n = 3.",
@@ -778,12 +849,16 @@
         }
       }
     ],
-
     "medium": [
       {
         "id": "q-m-1",
         "question": "To divide a line segment AB in the ratio m:n, we draw a ray AX. On AX, we mark (m+n) equal arcs and join the last arc to B. Then through the point corresponding to which arc number do we draw the parallel line?",
-        "options": ["m", "n", "m+n", "m-n"],
+        "options": [
+          "m",
+          "n",
+          "m+n",
+          "m-n"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Through the mth arc (the first part of the ratio), we draw the line parallel to the line joining the last arc to B. This gives AP:PB = m:n by BPT.",
@@ -797,7 +872,12 @@
       {
         "id": "q-m-2",
         "question": "Two tangents are drawn from an external point P to a circle. If the distance from P to the center O is 13 cm and the radius is 5 cm, what is the length of each tangent?",
-        "options": ["12 cm", "10 cm", "8 cm", "14 cm"],
+        "options": [
+          "12 cm",
+          "10 cm",
+          "8 cm",
+          "14 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "PT² = OP² - r² = 13² - 5² = 169 - 25 = 144. PT = 12 cm.",
@@ -811,7 +891,12 @@
       {
         "id": "q-m-3",
         "question": "In the construction of a triangle similar to ΔABC with scale factor m/n (m < n), how many arcs are marked on the auxiliary ray and through which arc is the parallel drawn?",
-        "options": ["n arcs, through mth arc", "m arcs, through nth arc", "n arcs, through m+n arc", "m+n arcs, through mth arc"],
+        "options": [
+          "n arcs, through mth arc",
+          "m arcs, through nth arc",
+          "n arcs, through m+n arc",
+          "m+n arcs, through mth arc"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "For scale factor m/n, mark n equal arcs (denominator). Join nth arc to the base vertex. Draw parallel through the mth arc (numerator).",
@@ -825,7 +910,12 @@
       {
         "id": "q-m-4",
         "question": "What is the justification for drawing the circle on OP as diameter when constructing tangents from P?",
-        "options": ["The angle subtended by diameter is a right angle", "The circle has the same area as the original", "The diameter is perpendicular to the tangent", "The chords are equal"],
+        "options": [
+          "The angle subtended by diameter is a right angle",
+          "The circle has the same area as the original",
+          "The diameter is perpendicular to the tangent",
+          "The chords are equal"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "We need ∠OTP = 90° (Tangent-Radius theorem). For any point T on the circle with diameter OP, ∠OTP = 90° (angle in a semicircle). So T is the point where the tangent touches the circle.",
@@ -839,7 +929,12 @@
       {
         "id": "q-m-5",
         "question": "While constructing a triangle similar to a given triangle with scale factor m/n where m > n, the new triangle will be formed by:",
-        "options": ["Extending the sides of the original triangle", "Drawing the triangle inside the original", "Keeping the base same and reducing the height", "Using a different base"],
+        "options": [
+          "Extending the sides of the original triangle",
+          "Drawing the triangle inside the original",
+          "Keeping the base same and reducing the height",
+          "Using a different base"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "When m > n (enlargement), we extend the sides of the original triangle so the new triangle encloses the old one.",
@@ -853,7 +948,12 @@
       {
         "id": "q-m-6",
         "question": "From an external point P, tangents PT₁ and PT₂ are drawn. If the angle T₁PT₂ = 90°, then the locus of P for a fixed circle of radius r is:",
-        "options": ["A circle of radius r√2", "A circle of radius r", "A straight line", "A parabola"],
+        "options": [
+          "A circle of radius r√2",
+          "A circle of radius r",
+          "A straight line",
+          "A parabola"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If ∠T₁PT₂ = 90°, then quadrilateral OT₁PT₂ has ∠T₁ = ∠T₂ = 90° and ∠T₁PT₂ = 90°, so ∠T₁OT₂ = 90°. OT₁ = OT₂ = r, so by Pythagoras, OP² = r² + r² = 2r², OP = r√2. So P lies on a circle of radius r√2.",
@@ -867,7 +967,12 @@
       {
         "id": "q-m-7",
         "question": "A 10 cm line segment is to be divided in the ratio 2:3. What will be the lengths of the two parts?",
-        "options": ["4 cm and 6 cm", "2 cm and 8 cm", "3 cm and 7 cm", "5 cm and 5 cm"],
+        "options": [
+          "4 cm and 6 cm",
+          "2 cm and 8 cm",
+          "3 cm and 7 cm",
+          "5 cm and 5 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Total units = 2 + 3 = 5. First part = (2/5) × 10 = 4 cm. Second part = (3/5) × 10 = 6 cm.",
@@ -881,7 +986,12 @@
       {
         "id": "q-m-8",
         "question": "In the construction of a tangent at a point on a circle, which tool is used to construct the perpendicular to the radius?",
-        "options": ["Compass and ruler", "Only ruler", "Only compass", "Protractor"],
+        "options": [
+          "Compass and ruler",
+          "Only ruler",
+          "Only compass",
+          "Protractor"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "We use a compass to construct a 90° angle (by constructing perpendicular bisector) and a ruler to draw the line. Both compass and ruler are required.",
@@ -895,7 +1005,12 @@
       {
         "id": "q-m-9",
         "question": "Two tangents drawn from a point P to a circle of radius 6 cm are each of length 8 cm. Find OP.",
-        "options": ["10 cm", "12 cm", "14 cm", "2√7 cm"],
+        "options": [
+          "10 cm",
+          "12 cm",
+          "14 cm",
+          "2√7 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "By Tangent-Radius theorem and Pythagoras: OP² = PT² + r² = 8² + 6² = 64 + 36 = 100. OP = 10 cm.",
@@ -909,7 +1024,12 @@
       {
         "id": "q-m-10",
         "question": "If in the construction of a similar triangle, the scale factor is given as 0.4, what fraction should we use?",
-        "options": ["2/5", "4/10", "1/4", "2/3"],
+        "options": [
+          "2/5",
+          "4/10",
+          "1/4",
+          "2/3"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "0.4 = 4/10 = 2/5 in simplest form. Scale factor = 2/5 means mark 5 arcs and draw parallel through 2nd arc.",
@@ -921,12 +1041,16 @@
         }
       }
     ],
-
     "complex": [
       {
         "id": "q-c-1",
         "question": "A circle of radius 5 cm has two tangents from an external point P inclined at 60°. Find the distance OP.",
-        "options": ["10 cm", "5√3 cm", "10/√3 cm", "5 cm"],
+        "options": [
+          "10 cm",
+          "5√3 cm",
+          "10/√3 cm",
+          "5 cm"
+        ],
         "correct": 2,
         "explanation": {
           "correct": "If angle between tangents = 60°, then sin(60°/2) = sin(30°) = r/OP → 1/2 = 5/OP → OP = 10 cm. Wait, that gives 10 cm. Let me recheck.\n\nActually, sin(θ/2) = r/OP where θ = angle between tangents.\nsin(30°) = 5/OP → 1/2 = 5/OP → OP = 10 cm.\n\nSo answer should be 10 cm, but let me check the options again. Option 0 is 10 cm, option 2 is 10/√3 ≈ 5.77 cm.\n\nLet me verify: In the quadrilateral, ∠APB = 60°, ∠A = ∠B = 90°, so ∠AOB = 120°.\nIn ΔOAP, sin(60°) = OA/OP → √3/2 = 5/OP → OP = 10/√3 ≈ 5.77 cm.\n\nActually, I need to be careful. sin(θ/2) where θ is angle between tangents:\nsin(30°) = r/OP → 1/2 = 5/OP → OP = 10 cm? But that contradicts the quadrilateral method.\n\nLet me re-derive. ∠APB = 60°, OA = r = 5 cm, OA ⟂ AP.\nIn right ΔOAP, ∠APO = 30° (since the line OP bisects ∠APB = 60°).\nsin(30°) = OA/OP = 5/OP → 1/2 = 5/OP → OP = 10 cm.\n\nBut wait, OA is the radius and AP is the tangent. OA is NOT the hypotenuse.\nIn right ΔOAP, right angle at A (OA ⟂ AP).\n∠APO = 30° (half of ∠APB).\nSo sin(30°) = opposite/hypotenuse = OA/OP = 5/OP.\n1/2 = 5/OP → OP = 10 cm.\n\nHmm, but let me verify with another method:\nIn ΔOAP, we have OA = 5, ∠OAP = 90°, ∠APO = 30°.\nSo tan(30°) = OA/AP → 1/√3 = 5/AP → AP = 5√3.\nOP² = OA² + AP² = 25 + 75 = 100 → OP = 10 cm. ✓\n\nSo OP = 10 cm is correct.",
@@ -941,7 +1065,12 @@
       {
         "id": "q-c-2",
         "question": "A 14 cm long line segment is to be divided in the ratio 3:4. A ray is drawn and 7 equal arcs are marked. If the distance from A to A₇ (last arc) is 7 cm, what is the length saved per arc?",
-        "options": ["1 cm", "0.5 cm", "2 cm", "7 cm"],
+        "options": [
+          "1 cm",
+          "0.5 cm",
+          "2 cm",
+          "7 cm"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If 7 equal arcs cover 7 cm, each arc length = 7/7 = 1 cm. The arcs can be of any convenient length on the auxiliary ray. Their length does not affect the division ratio because BPT uses equal divisions regardless of the actual arc length.",
@@ -955,7 +1084,12 @@
       {
         "id": "q-c-3",
         "question": "From an external point P, tangents PT₁ and PT₂ are drawn. If OT₁ = 4 cm and PT₁ = 3 cm, find the area of quadrilateral OT₁PT₂.",
-        "options": ["24 cm²", "12 cm²", "48 cm²", "6 cm²"],
+        "options": [
+          "24 cm²",
+          "12 cm²",
+          "48 cm²",
+          "6 cm²"
+        ],
         "correct": 1,
         "explanation": {
           "correct": "OT₁ = OT₂ = r = 4 cm. PT₁ = PT₂ = 3 cm. Both triangles OT₁P and OT₂P are right-angled at T₁ and T₂.\nArea of each = (1/2) × 4 × 3 = 6 cm².\nTotal area of quadrilateral = 6 + 6 = 12 cm².\nAlternatively, quadrilateral OT₁PT₂ is a kite with diagonals OP and T₁T₂.\nOP = √(4² + 3²) = 5 cm.",
@@ -969,7 +1103,12 @@
       {
         "id": "q-c-4",
         "question": "Construct ΔABC with AB = 4 cm, BC = 5 cm, CA = 6 cm. Then the scale factor to construct ΔA'BC' ∼ ΔABC with A'C' = 9 cm is:",
-        "options": ["3/2", "4/3", "9/5", "9/4"],
+        "options": [
+          "3/2",
+          "4/3",
+          "9/5",
+          "9/4"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Original AC = 6 cm. New A'C' = 9 cm. Scale factor = new/original = 9/6 = 3/2 = 1.5.",
@@ -983,7 +1122,12 @@
       {
         "id": "q-c-5",
         "question": "In the construction of tangents from P to a circle, if the circle drawn on OP as diameter intersects the original circle at T₁ and T₂, what is ∠OT₁P?",
-        "options": ["90°", "60°", "45°", "30°"],
+        "options": [
+          "90°",
+          "60°",
+          "45°",
+          "30°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Since OP is the diameter of the new circle and T₁ lies on this circle, ∠OT₁P is the angle in a semicircle, which is always 90°. This matches the requirement that the tangent is perpendicular to the radius OT₁.",
@@ -997,7 +1141,12 @@
       {
         "id": "q-c-6",
         "question": "Two circles of radii 5 cm and 3 cm have their centers 9 cm apart. How many common tangents can be drawn to them?",
-        "options": ["2", "1", "3", "4"],
+        "options": [
+          "2",
+          "1",
+          "3",
+          "4"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Distance between centers = d = 9 cm. Sum of radii = 5 + 3 = 8 cm. Since d > sum of radii (9 > 8), the circles do not intersect and are externally separate. For externally separate circles, 4 common tangents exist (2 direct + 2 transverse).\n\nWait, let me reconsider. For two circles:\n- If d > r₁ + r₂: 4 common tangents (2 direct, 2 transverse)\n- If d = r₁ + r₂: 3 common tangents (touch externally)\n- If |r₁ - r₂| < d < r₁ + r₂: 2 common tangents (intersect)\n- If d = |r₁ - r₂|: 1 common tangent (touch internally)\n- If d < |r₁ - r₂|: 0 common tangents (one inside other)\n\nd = 9, r₁ + r₂ = 8. Since d > r₁ + r₂, there are 4 common tangents. But 4 is not in the options. Let me re-read.\n\nActually, in NCERT Class 10 Constructions, we only construct tangents from external point to a SINGLE circle, not common tangents between two circles. The question is about common tangents between two circles.\n\nGiven options: 2, 1, 3, 4. The correct answer should be 4, but... \n\nWait, 9 > 8, so d > r₁ + r₂ → circles are externally separate → 4 common tangents.\n\nBut option 3 = 4 is there. So the answer should be 3 (index) → 4 tangents.\n\nLet me mark correct = 3 (value 4).",
@@ -1011,7 +1160,12 @@
       {
         "id": "q-c-7",
         "question": "If we construct a triangle similar to ΔABC with scale factor 5/2 by extending sides, how many extra arcs beyond the denominator need to be marked?",
-        "options": ["3", "2", "5", "7"],
+        "options": [
+          "3",
+          "2",
+          "5",
+          "7"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "Scale factor = 5/2. Denominator = 2, numerator = 5. We mark 2 arcs (denominator) on the auxiliary ray. Since numerator > denominator, we need to extend: from the 2nd arc (the last), we go 3 more steps to reach the 5th arc. So 3 extra arcs beyond the denominator.",
@@ -1025,7 +1179,12 @@
       {
         "id": "q-c-8",
         "question": "A point P is at distance d from the center of a circle of radius r. For what value of d/r will the angle between the tangents be 120°?",
-        "options": ["2/√3", "√3/2", "2", "1/2"],
+        "options": [
+          "2/√3",
+          "√3/2",
+          "2",
+          "1/2"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "If angle between tangents = 120°, then sin(60°) = r/d → √3/2 = r/d → d = 2r/√3 → d/r = 2/√3.",
@@ -1039,7 +1198,12 @@
       {
         "id": "q-c-9",
         "question": "In ΔABC, AB = 5 cm, BC = 6 cm, ∠B = 90°. A similar triangle A'BC' is constructed with scale factor 4/3. What is the area of A'BC'?",
-        "options": ["(4/3)² × (1/2 × 5 × 6) cm²", "4/3 × (1/2 × 5 × 6) cm²", "1/2 × (4/3 × 5) × (4/3 × 6) cm²", "Both A and C"],
+        "options": [
+          "(4/3)² × (1/2 × 5 × 6) cm²",
+          "4/3 × (1/2 × 5 × 6) cm²",
+          "1/2 × (4/3 × 5) × (4/3 × 6) cm²",
+          "Both A and C"
+        ],
         "correct": 3,
         "explanation": {
           "correct": "Area scales as (scale factor)². Original area = (1/2) × 5 × 6 = 15 cm². New area = (4/3)² × 15 = (16/9) × 15 = 80/3 ≈ 26.67 cm².\n\nOption A: (4/3)² × 15 = (16/9) × 15 = 80/3 ← correct.\nOption C: (1/2) × (4/3 × 5) × (4/3 × 6) = (1/2) × (20/3) × 8 = (1/2) × 160/3 = 80/3 ← also correct.\nBoth A and C give the same result.",
@@ -1053,7 +1217,12 @@
       {
         "id": "q-c-10",
         "question": "From an external point, the length of tangent to a circle is 12 cm and the distance from the center is 15 cm. Find the radius and the angle between the tangents.",
-        "options": ["r = 9 cm, θ = 73.74°", "r = 8 cm, θ = 60°", "r = 10 cm, θ = 90°", "r = 9 cm, θ = 60°"],
+        "options": [
+          "r = 9 cm, θ = 73.74°",
+          "r = 8 cm, θ = 60°",
+          "r = 10 cm, θ = 90°",
+          "r = 9 cm, θ = 60°"
+        ],
         "correct": 0,
         "explanation": {
           "correct": "r = √(OP² - PT²) = √(225 - 144) = √81 = 9 cm.\nsin(θ/2) = r/OP = 9/15 = 3/5 = 0.6 → θ/2 = sin⁻¹(0.6) ≈ 36.87° → θ ≈ 73.74°.",
@@ -1066,7 +1235,6 @@
       }
     ]
   },
-
   "vedic_math_shortcuts": [
     {
       "title": "Geometric Construction Shortcuts Using Vedic Proportions (Samashti — समष्टि)",
@@ -1103,7 +1271,6 @@
       ]
     }
   ],
-
   "mind_maps": {
     "title": "Constructions — Complete Mind Map",
     "type": "hierarchical",
@@ -1162,61 +1329,201 @@
       }
     ]
   },
-
   "concept_maps": {
     "title": "Constructions — Concept Map",
     "nodes": [
-      { "id": "n1", "label": "Ruler & Compass", "group": "tools" },
-      { "id": "n2", "label": "Line Segment Division", "group": "construction" },
-      { "id": "n3", "label": "Similar Triangles", "group": "construction" },
-      { "id": "n4", "label": "Tangents to Circle", "group": "construction" },
-      { "id": "n5", "label": "BPT (Thales Theorem)", "group": "theory" },
-      { "id": "n6", "label": "Tangent-Radius Theorem", "group": "theory" },
-      { "id": "n7", "label": "Angle in Semicircle", "group": "theory" },
-      { "id": "n8", "label": "Scale Factor Application", "group": "application" },
-      { "id": "n9", "label": "Land Surveying / Architecture", "group": "real_world" }
+      {
+        "id": "n1",
+        "label": "Ruler & Compass",
+        "group": "tools"
+      },
+      {
+        "id": "n2",
+        "label": "Line Segment Division",
+        "group": "construction"
+      },
+      {
+        "id": "n3",
+        "label": "Similar Triangles",
+        "group": "construction"
+      },
+      {
+        "id": "n4",
+        "label": "Tangents to Circle",
+        "group": "construction"
+      },
+      {
+        "id": "n5",
+        "label": "BPT (Thales Theorem)",
+        "group": "theory"
+      },
+      {
+        "id": "n6",
+        "label": "Tangent-Radius Theorem",
+        "group": "theory"
+      },
+      {
+        "id": "n7",
+        "label": "Angle in Semicircle",
+        "group": "theory"
+      },
+      {
+        "id": "n8",
+        "label": "Scale Factor Application",
+        "group": "application"
+      },
+      {
+        "id": "n9",
+        "label": "Land Surveying / Architecture",
+        "group": "real_world"
+      }
     ],
     "edges": [
-      ["n1", "n2"], ["n1", "n3"], ["n1", "n4"],
-      ["n2", "n5"], ["n3", "n5"],
-      ["n4", "n6"], ["n4", "n7"],
-      ["n2", "n8"], ["n3", "n8"],
-      ["n8", "n9"]
+      [
+        "n1",
+        "n2"
+      ],
+      [
+        "n1",
+        "n3"
+      ],
+      [
+        "n1",
+        "n4"
+      ],
+      [
+        "n2",
+        "n5"
+      ],
+      [
+        "n3",
+        "n5"
+      ],
+      [
+        "n4",
+        "n6"
+      ],
+      [
+        "n4",
+        "n7"
+      ],
+      [
+        "n2",
+        "n8"
+      ],
+      [
+        "n3",
+        "n8"
+      ],
+      [
+        "n8",
+        "n9"
+      ]
     ]
   },
-
   "flowcharts": [
     {
       "title": "Decision Flowchart: Which Construction Method to Use?",
       "steps": [
-        { "order": 1, "action": "What do you need to construct?", "decision": true, "if_yes": 2, "if_no": 4 },
-        { "order": 2, "action": "Is it dividing a line segment in a ratio?", "decision": true, "if_yes": 3, "if_no": 4 },
-        { "order": 3, "action": "Draw ray → mark (m+n) arcs → draw parallel through mth arc", "next": "END" },
-        { "order": 4, "action": "Is it constructing a similar triangle?", "decision": true, "if_yes": 5, "if_no": 7 },
-        { "order": 5, "action": "Scale factor = m/n. Is m > n?", "decision": true, "if_yes": 6, "if_no": 10 },
-        { "order": 6, "action": "Enlargement: Extend sides of triangle", "next": 10 },
-        { "order": 10, "action": "Mark n arcs on ray → draw parallel through mth arc → get new triangle", "next": "END" },
-        { "order": 7, "action": "Is it constructing tangents to a circle?", "decision": true, "if_yes": 8, "if_no": "END" },
-        { "order": 8, "action": "Is the point ON the circle or OUTSIDE?", "decision": true, "if_yes": 9, "if_no": "END" },
-        { "order": 9, "action": "ON circle: draw ⟂ to radius. OUTSIDE: draw circle with diameter OP, join P to intersections", "next": "END" }
+        {
+          "order": 1,
+          "action": "What do you need to construct?",
+          "decision": true,
+          "if_yes": 2,
+          "if_no": 4
+        },
+        {
+          "order": 2,
+          "action": "Is it dividing a line segment in a ratio?",
+          "decision": true,
+          "if_yes": 3,
+          "if_no": 4
+        },
+        {
+          "order": 3,
+          "action": "Draw ray → mark (m+n) arcs → draw parallel through mth arc",
+          "next": "END"
+        },
+        {
+          "order": 4,
+          "action": "Is it constructing a similar triangle?",
+          "decision": true,
+          "if_yes": 5,
+          "if_no": 7
+        },
+        {
+          "order": 5,
+          "action": "Scale factor = m/n. Is m > n?",
+          "decision": true,
+          "if_yes": 6,
+          "if_no": 10
+        },
+        {
+          "order": 6,
+          "action": "Enlargement: Extend sides of triangle",
+          "next": 10
+        },
+        {
+          "order": 10,
+          "action": "Mark n arcs on ray → draw parallel through mth arc → get new triangle",
+          "next": "END"
+        },
+        {
+          "order": 7,
+          "action": "Is it constructing tangents to a circle?",
+          "decision": true,
+          "if_yes": 8,
+          "if_no": "END"
+        },
+        {
+          "order": 8,
+          "action": "Is the point ON the circle or OUTSIDE?",
+          "decision": true,
+          "if_yes": 9,
+          "if_no": "END"
+        },
+        {
+          "order": 9,
+          "action": "ON circle: draw ⟂ to radius. OUTSIDE: draw circle with diameter OP, join P to intersections",
+          "next": "END"
+        }
       ]
     },
     {
       "title": "Tangent Construction — Step-by-Step Flow",
       "steps": [
-        { "order": 1, "action": "Draw circle with center O and given radius r" },
-        { "order": 2, "action": "Mark external point P" },
-        { "order": 3, "action": "Join OP" },
-        { "order": 4, "action": "Find midpoint M of OP (perpendicular bisector)" },
-        { "order": 5, "action": "Draw circle with center M, radius MO = MP" },
-        { "order": 6, "action": "Mark intersections T₁, T₂ of both circles" },
-        { "order": 7, "action": "Join PT₁ and PT₂ — these are the required tangents" }
+        {
+          "order": 1,
+          "action": "Draw circle with center O and given radius r"
+        },
+        {
+          "order": 2,
+          "action": "Mark external point P"
+        },
+        {
+          "order": 3,
+          "action": "Join OP"
+        },
+        {
+          "order": 4,
+          "action": "Find midpoint M of OP (perpendicular bisector)"
+        },
+        {
+          "order": 5,
+          "action": "Draw circle with center M, radius MO = MP"
+        },
+        {
+          "order": 6,
+          "action": "Mark intersections T₁, T₂ of both circles"
+        },
+        {
+          "order": 7,
+          "action": "Join PT₁ and PT₂ — these are the required tangents"
+        }
       ]
     }
   ],
-
   "visualizations": [],
-
   "common_misconceptions": [
     "Any point on a circle can have multiple tangents — FALSE: Exactly ONE tangent exists at a given point on a circle, and it is perpendicular to the radius at that point.",
     "A tangent touches the circle at exactly one point and can cross the circle elsewhere — FALSE: A tangent touches at exactly one point and does NOT intersect the circle anywhere else.",

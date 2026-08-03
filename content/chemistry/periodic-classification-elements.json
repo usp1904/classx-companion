@@ -3,9 +3,33 @@
   "chapter": "Periodic Classification of Elements",
   "title": "Modern periodic table, periodic trends, and properties of elements.",
   "concepts": [
-    "Periodic Table",
-    "Periodic Trends",
-    "Groups and Periods"
+    {
+      "name": "Periodic Table",
+      "day_to_day_usage": [],
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": "",
+      "real_life_application": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing.",
+      "industry_relevance": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing."
+    },
+    {
+      "name": "Periodic Trends",
+      "day_to_day_usage": [],
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": "",
+      "real_life_application": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing.",
+      "industry_relevance": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing."
+    },
+    {
+      "name": "Groups and Periods",
+      "day_to_day_usage": [],
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": "",
+      "real_life_application": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing.",
+      "industry_relevance": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing."
+    }
   ],
   "theorems": [],
   "exercises": [

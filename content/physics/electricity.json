@@ -3,10 +3,46 @@
   "chapter": "Electricity",
   "title": "Current, resistance, Ohm's law, circuit diagrams, and power in electrical circuits.",
   "concepts": [
-    "Ohm's Law",
-    "Series and Parallel Circuits",
-    "Electrical Power",
-    "Heating Effects of Current"
+    {
+      "name": "Ohm's Law",
+      "real_life_application": "A 40 W bulb glows dimmer on a long extension wire because the wire's resistance limits current — exactly V = IR at work.",
+      "day_to_day_usage": [
+        "Bulb brightness on long vs short wires",
+        "Why heaters use thick coils",
+        "Fuse blowing when too many appliances run on one plug"
+      ],
+      "industry_relevance": "Electrical wiring, power transmission, circuit design in every gadget.",
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": ""
+    },
+    {
+      "name": "Series and Parallel Circuits",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    },
+    {
+      "name": "Electrical Power",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    },
+    {
+      "name": "Heating Effects of Current",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    }
   ],
   "theorems": [
     "Ohm's Law"

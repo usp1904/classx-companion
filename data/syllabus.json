@@ -128,7 +128,14 @@
               "question": "Decide if 43.123456789, 0.120120012000..., and 43.123456789 (repeating) are rational.",
               "solution": "43.123456789 (terminating) → rational. 0.120120012000... (non-terminating non-recurring) → irrational. 43.123456789 (repeating) → rational."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Cryptography, UPI/prime-based security, computer arithmetic.",
+            "foundation": [
+              "Number theory groundwork for IOQM/JEE"
+            ]
+          }
         },
         {
           "id": "polynomials",
@@ -150,7 +157,14 @@
               "question": "If p(x) is a polynomial with p(2) = 0, show that (x - 2) is a factor of p(x).",
               "solution": "By the Factor Theorem, if p(2) = 0 then (x - 2) divides p(x)."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "AI/ML model fitting, econometrics, projectile physics.",
+            "foundation": [
+              "Zero-factor theorem, graphs for calculus"
+            ]
+          }
         },
         {
           "id": "pair-of-linear-equations",
@@ -169,7 +183,14 @@
               "question": "Solve the system x + y = 5 and 2x - y = 1.",
               "solution": "Add the equations to eliminate y: 3x = 6, so x = 2. Then y = 3."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Optimization in finance, circuit networks, AI regression.",
+            "foundation": [
+              "Graphical methods -> linear programming"
+            ]
+          }
         },
         {
           "id": "quadratic-equations",
@@ -190,7 +211,14 @@
               "question": "Find the roots of x^2 - 5x + 6 = 0.",
               "solution": "Factor the quadratic: (x - 2)(x - 3) = 0, so the roots are x = 2 and x = 3."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Ballistic motion, optimization, projectile design.",
+            "foundation": [
+              "Nature of roots, quadratic graphs feed JEE functions"
+            ]
+          }
         },
         {
           "id": "arithmetic-progressions",
@@ -208,7 +236,14 @@
               "question": "Find the sum of the first 10 terms of the AP 3, 7, 11, ... .",
               "solution": "The common difference is 4. The 10th term is 3 + 9*4 = 39. Sum = 10/2 * (3 + 39) = 210."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "EMI schedules, population models, time-series.",
+            "foundation": [
+              "Sequences & series base for JEE"
+            ]
+          }
         },
         {
           "id": "coordinate-geometry",
@@ -226,7 +261,14 @@
               "question": "Find the distance between (3, 4) and (7, 1).",
               "solution": "Distance = sqrt((7-3)^2 + (1-4)^2) = sqrt(16 + 9) = 5."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "GIS, autonomous vehicles, 3D rendering.",
+            "foundation": [
+              "Straight lines/circles feed JEE coordinate geometry"
+            ]
+          }
         },
         {
           "id": "triangles",
@@ -247,7 +289,14 @@
               "question": "If two triangles are similar and the ratio of corresponding sides is 2:3, what is the ratio of their areas?",
               "solution": "The ratio of areas is the square of the ratio of sides, so 4:9."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Similarity in computer vision, construction geometry.",
+            "foundation": [
+              "Similarity -> trigonometry & geometry of JEE"
+            ]
+          }
         },
         {
           "id": "circles",
@@ -267,7 +316,14 @@
               "question": "If a tangent to a circle makes a right angle with the radius at the point of contact, what is the angle between the tangent and the radius?",
               "solution": "The angle between the tangent and the radius at the point of contact is 90 degrees."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Mathematics underpins AI, finance, engineering and space.",
+            "foundation": [
+              "Builds the numerical foundation for JEE/NEET"
+            ]
+          }
         },
         {
           "id": "introduction-to-trigonometry",
@@ -287,7 +343,14 @@
               "question": "If sin(theta) = 3/5 for an acute angle theta, find cos(theta).",
               "solution": "cos(theta) = sqrt(1 - sin^2(theta)) = sqrt(1 - 9/25) = 4/5."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Wave analysis, satellite orbit, structural engineering.",
+            "foundation": [
+              "Trig identities are core JEE/NEET physics tooling"
+            ]
+          }
         },
         {
           "id": "applications-of-trigonometry",
@@ -305,7 +368,14 @@
               "question": "From a point 20 m away from the base of a tower, the angle of elevation of its top is 30 degrees. Find the height of the tower.",
               "solution": "Height = 20 * tan(30 degrees) = 20 / sqrt(3) ≈ 11.55 m."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Wave analysis, satellite orbit, structural engineering.",
+            "foundation": [
+              "Trig identities are core JEE/NEET physics tooling"
+            ]
+          }
         },
         {
           "id": "areas-related-to-circles",
@@ -323,7 +393,14 @@
               "question": "Find the area of a sector of a circle of radius 7 cm and central angle 60 degrees.",
               "solution": "Area = (60/360) * pi * 7^2 = (1/6) * 49pi ≈ 25.67 cm^2."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Wheel & gear sizing, circular motion design.",
+            "foundation": [
+              "Mensuration base for JEE geometry"
+            ]
+          }
         },
         {
           "id": "surface-areas-and-volumes",
@@ -341,7 +418,14 @@
               "question": "Calculate the volume of a cylinder with radius 3 cm and height 10 cm.",
               "solution": "Volume = pi * r^2 * h = pi * 3^2 * 10 = 90pi cm^3."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Packaging, storage tanks, 3D printing.",
+            "foundation": [
+              "3D mensuration for JEE"
+            ]
+          }
         },
         {
           "id": "statistics",
@@ -359,7 +443,14 @@
               "question": "Find the mean of the data set 12, 15, 17, 20, 25.",
               "solution": "Mean = (12 + 15 + 17 + 20 + 25) / 5 = 89 / 5 = 17.8."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Data science, sports analytics, public policy.",
+            "foundation": [
+              "Mean/variance groundwork for probability"
+            ]
+          }
         },
         {
           "id": "probability",
@@ -377,7 +468,14 @@
               "question": "If a coin is tossed twice, what is the probability of getting exactly one head?",
               "solution": "Outcomes: HH, HT, TH, TT. Exactly one head occurs in 2 of 4 cases, so probability = 1/2."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Insurance, AI prediction, quant finance.",
+            "foundation": [
+              "Probability is a direct JEE unit"
+            ]
+          }
         }
       ]
     },
@@ -406,7 +504,14 @@
               "question": "A concave mirror forms a real image at infinity. Where is the object placed?",
               "solution": "When the object is at the focal point of a concave mirror, the reflected rays become parallel and the image forms at infinity."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Optics, LASIK, fibre optics, LiDAR, telescope design.",
+            "foundation": [
+              "Ray optics is a core JEE/NEET optics unit"
+            ]
+          }
         },
         {
           "id": "human-eye-and-colourful-world",
@@ -425,7 +530,14 @@
               "question": "Why does a rainbow appear after rain?",
               "solution": "Rain drops act like prisms, dispersing sunlight into its component colours. Each colour refracts at a different angle, forming a rainbow."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Optometry, camera & AR/VR optics.",
+            "foundation": [
+              "Defects of vision -> lens combinations in JEE"
+            ]
+          }
         },
         {
           "id": "electricity",
@@ -446,7 +558,14 @@
               "question": "Calculate the current through a 12 ohm resistor connected across a 24 V battery.",
               "solution": "Current = V / R = 24 / 12 = 2 A."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Power grids, EV batteries, circuit design.",
+            "foundation": [
+              "Current electricity is a major JEE/NEET unit"
+            ]
+          }
         },
         {
           "id": "magnetic-effects-of-electric-current",
@@ -465,7 +584,14 @@
               "question": "Describe the direction of the magnetic field around a current-carrying straight conductor.",
               "solution": "The magnetic field forms concentric circles around the conductor, with direction given by the right-hand thumb rule."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Electric motors, generators, MRI.",
+            "foundation": [
+              "Magnetism groundwork for JEE electromagnetism"
+            ]
+          }
         },
         {
           "id": "sources-of-energy",
@@ -484,7 +610,14 @@
               "question": "Name one renewable and one non-renewable source of energy.",
               "solution": "Solar energy is renewable; coal is non-renewable."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Physics runs every device, vehicle and power system.",
+            "foundation": [
+              "Physics is a top-weightage JEE/NEET subject"
+            ]
+          }
         }
       ]
     },
@@ -509,7 +642,14 @@
               "question": "Balance the equation: Fe + O2 -> Fe2O3.",
               "solution": "4Fe + 3O2 -> 2Fe2O3."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Pharma synthesis, cement, battery chemistry.",
+            "foundation": [
+              "Chemical equations underpin physical & organic chemistry"
+            ]
+          }
         },
         {
           "id": "acids-bases-salts",
@@ -527,7 +667,14 @@
               "question": "What is the pH of a neutral solution?",
               "solution": "The pH of a neutral solution is 7."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "pH in medicine, water treatment, food.",
+            "foundation": [
+              "Acids-bases equilibrium is a NEET favourite"
+            ]
+          }
         },
         {
           "id": "metals-and-non-metals",
@@ -545,7 +692,14 @@
               "question": "Why does sodium react vigorously with water?",
               "solution": "Sodium is a highly reactive metal that displaces hydrogen from water, producing sodium hydroxide and hydrogen gas."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Metallurgy, alloys, aerospace bodies.",
+            "foundation": [
+              "Metallurgy appears in NEET inorganic chemistry"
+            ]
+          }
         },
         {
           "id": "carbon-and-its-compounds",
@@ -563,7 +717,14 @@
               "question": "What is a homologous series?",
               "solution": "A homologous series consists of organic compounds with the same functional group and similar chemical properties, differing by CH2 units."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Petrochemicals, polymers, biofuels.",
+            "foundation": [
+              "Carbon compounds are the base of organic chemistry"
+            ]
+          }
         },
         {
           "id": "periodic-classification-elements",
@@ -581,7 +742,14 @@
               "question": "Why does atomic radius decrease across a period?",
               "solution": "Atomic radius decreases across a period because the effective nuclear charge increases, pulling electrons closer."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Chemistry builds pharma, energy and materials industries.",
+            "foundation": [
+              "Chemistry is a high-weightage NEET subject"
+            ]
+          }
         }
       ]
     },
@@ -607,7 +775,14 @@
               "question": "Describe the role of stomata in transpiration.",
               "solution": "Stomata are tiny openings on leaves that allow water vapour to escape during transpiration, helping transport nutrients and cool the plant."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Medicine, sports science, physiology.",
+            "foundation": [
+              "Human physiology is a NEET heavy-weight unit"
+            ]
+          }
         },
         {
           "id": "control-and-coordination",
@@ -625,7 +800,14 @@
               "question": "How does the endocrine system contribute to coordination?",
               "solution": "The endocrine system secretes hormones that regulate body functions and maintain internal balance, complementing the nervous system."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Neuroscience, prosthetics, robotics.",
+            "foundation": [
+              "Neural control is a NEET topic"
+            ]
+          }
         },
         {
           "id": "how-do-organisms-reproduce",
@@ -643,7 +825,14 @@
               "question": "Give one advantage of sexual reproduction over asexual reproduction.",
               "solution": "Sexual reproduction generates variation, which helps populations adapt to changing environments."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Biology drives medicine, biotech and public health.",
+            "foundation": [
+              "Biology is the core of NEET"
+            ]
+          }
         },
         {
           "id": "heredity-and-evolution",
@@ -661,7 +850,14 @@
               "question": "What does Mendel's law of segregation state?",
               "solution": "It states that during gamete formation, the two alleles for a trait separate so that each gamete carries only one allele."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Genetics, personalised medicine, forensics.",
+            "foundation": [
+              "Mendelian genetics is a NEET core topic"
+            ]
+          }
         },
         {
           "id": "natural-resources",
@@ -679,7 +875,14 @@
               "question": "Why is water conservation important for ecosystems?",
               "solution": "Water conservation protects freshwater supplies for plants, animals, and people, and maintains healthy ecosystems."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "HIGH",
+            "relevance": "Biology drives medicine, biotech and public health.",
+            "foundation": [
+              "Biology is the core of NEET"
+            ]
+          }
         }
       ]
     },
@@ -704,7 +907,14 @@
               "question": "Explain the significance of the Salt March led by Mahatma Gandhi in 1930.",
               "solution": "Salt was chosen because it was consumed by rich and poor alike, making salt tax an essential grievance unifying all Indians. Gandhi walked 240 miles from Sabarmati to Dandi, breaking the British salt monopoly law on 6 April 1930 and triggering the Civil Disobedience Movement nationwide."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Policy, diplomacy, governance careers.",
+            "foundation": [
+              "Indian National Movement strengthens essay/GS answers"
+            ]
+          }
         }
       ]
     },
@@ -729,7 +939,14 @@
               "question": "Differentiate between Black Soil and Alluvial Soil in India.",
               "solution": "Alluvial Soil is deposited by Indus, Ganga, and Brahmaputra rivers, ideal for wheat, paddy, and sugarcane (found in Northern Plains). Black Soil (Regur) is made of volcanic lava, highly moisture retentive, ideal for cotton cultivation (found in Deccan Trap)."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "GIS, climate science, disaster management.",
+            "foundation": [
+              "Resource geography supports UPSC/CLAT prep"
+            ]
+          }
         }
       ]
     },
@@ -754,7 +971,14 @@
               "question": "Why is power sharing desirable in democracies?",
               "solution": "Power sharing is desirable for two reasons: (1) Prudential reason: Reduces the possibility of conflict between social groups and ensures political stability. (2) Moral reason: Power sharing is the spirit of democracy; citizens have a right to be consulted on how they are governed."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Public administration, constitutional law.",
+            "foundation": [
+              "Power-sharing grounds Polity for UPSC/CLAT"
+            ]
+          }
         }
       ]
     },
@@ -779,7 +1003,14 @@
               "question": "Why is the Tertiary Sector growing rapidly in India?",
               "solution": "Tertiary sector (services) is growing rapidly because: (1) Basic services like hospitals, schools, post offices, and police stations are needed. (2) Development of agriculture and industry leads to development of transport, trade, and storage. (3) Rise in income levels demands tourism, shopping, and private schooling."
             }
-          ]
+          ],
+          "jee_neet": {
+            "weightage": "MEDIUM",
+            "relevance": "Banking, public policy, analytics.",
+            "foundation": [
+              "Sectors ground macroeconomics for UPSC"
+            ]
+          }
         }
       ]
     }

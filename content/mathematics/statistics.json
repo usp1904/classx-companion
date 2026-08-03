@@ -27,7 +27,10 @@
         "Average marks of a class when marks are grouped into ranges",
         "Average household income in a sector from census grouped data",
         "Average wait time at a railway reservation counter"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Mode of Grouped Data — The Most Common",
@@ -38,7 +41,10 @@
         "Most common shoe size sold at Bata stores in a district",
         "Most common income tax slab for small business owners",
         "Most common time slot for Ola/Uber bookings in Bangalore traffic"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Median of Grouped Data — The Middle Value",
@@ -49,7 +55,10 @@
         "Median marks in board exams — shows typical student performance",
         "Median waiting time at AIIMS OPD — more useful than average due to extreme cases",
         "Median age of India's population (28.2 years) — used for policy planning"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Cumulative Frequency and Ogive Curves",
@@ -59,7 +68,10 @@
         "Number of employees earning less than ₹5 lakh — from cumulative salary data",
         "Students who scored above 80% in board exams — from 'more than' ogive",
         "Population below age 15 in a district — from cumulative age distribution"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Empirical Relationship: 3 Median = Mode + 2 Mean",
@@ -69,7 +81,10 @@
         "Estimating modal income from published mean and median income data",
         "Checking if exam results are skewed towards high or low scores",
         "Quality control — checking symmetry of manufacturing defects distribution"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [

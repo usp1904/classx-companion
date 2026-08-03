@@ -3,10 +3,46 @@
   "chapter": "Human Eye and Colourful World",
   "title": "Structure of the eye, defects of vision, and dispersion of light.",
   "concepts": [
-    "Structure of the Eye",
-    "Defects of Vision",
-    "Dispersion of Light",
-    "Rainbow Formation"
+    {
+      "name": "Structure of the Eye",
+      "real_life_application": "When you squint to read a distant board, your eye's lens is doing the same job a camera lens does — focusing light onto a screen.",
+      "day_to_day_usage": [
+        "Squinting at a whiteboard",
+        "Eyes adjusting when entering a dark theatre",
+        "Wearing spectacles to correct myopia"
+      ],
+      "industry_relevance": "Optometry, LASIK surgery, camera and AR/VR optics.",
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": ""
+    },
+    {
+      "name": "Defects of Vision",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    },
+    {
+      "name": "Dispersion of Light",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    },
+    {
+      "name": "Rainbow Formation",
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "real_life_application": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy.",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
+    }
   ],
   "theorems": [],
   "exercises": [

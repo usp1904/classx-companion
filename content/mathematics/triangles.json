@@ -27,7 +27,10 @@
         "Architects: a 1:100 model of a housing complex in Bengaluru uses similar triangles",
         "Photography: zooming in on a photo keeps the shape but changes the size",
         "Tailoring: a boutique in Chandni Chowk uses scale drawings (similar figures) to design lehengas"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Basic Proportionality Theorem (Thales Theorem)",
@@ -37,7 +40,10 @@
         "A civil engineer designing a flyover in Mumbai uses this to calculate load distribution along triangular trusses",
         "A mapmaker dividing a triangular plot of land in a village near Pune into proportional parts",
         "Creating gradient dividers in a PowerPoint presentation or graphic design"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Criteria for Similarity of Triangles (AA, SSS, SAS)",
@@ -47,7 +53,10 @@
         "Sign makers creating similar triangular logo boards of different sizes for a franchise chain like Haldiram's",
         "A surveyor in Kerala using the AA criterion to measure the width of a river indirectly",
         "A jeweller in Jaipur designing similar triangular meenakari patterns in different sizes"
-      ]
+      ],
+      "industry_relevance": "Architecture, construction, forensics, image processing.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Areas of Similar Triangles",
@@ -57,7 +66,10 @@
         "A real estate developer in Gurgaon calculating how much more paint is needed for a larger triangular facade",
         "A pizza shop in Mumbai: if a 6-inch pizza costs ₹200, a 12-inch pizza (which has 4x the area) should cost about ₹800, not ₹400",
         "Packaging: doubling the dimensions of a samosa box increases material cost by 4x"
-      ]
+      ],
+      "industry_relevance": "Architecture, construction, forensics, image processing.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Pythagoras Theorem and Its Converse",
@@ -68,7 +80,10 @@
         "A farmer measuring the diagonal of a rectangular field to plan irrigation pipe length",
         "A TV screen size (32 inches) is the diagonal — calculated using Pythagoras from width and height",
         "A delivery boy in Bengaluru using a GPS that determines locations via triangulation using Pythagoras"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [

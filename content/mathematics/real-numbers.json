@@ -29,7 +29,10 @@
         "Integers: Odometer showing negative elevation at Kuttanad, Kerala (-2.2 m below sea level), profit/loss in a kirana shop",
         "Rational numbers: ₹25.50 for chai, 1/2 kg atta, 3/4 cup dahi",
         "Irrational numbers: Diagonal of a 1m × 1m plot = √2 m, the ratio of a circle's circumference to its diameter (π)"
-      ]
+      ],
+      "industry_relevance": "Cryptography, data compression, computer arithmetic.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Euclid's Division Lemma",
@@ -39,7 +42,10 @@
         "Dividing a bill of ₹347 equally among 4 friends at a dhaba: 347 = 4 × 86 + 3, each pays ₹86, ₹3 extra for chai",
         "A tailor cutting 135m cloth into 2.5m pieces: 135 = 2.5 × 54 + 0, exactly 54 pieces",
         "Organizing 255 students into rows of 12: 255 = 12 × 21 + 3, 21 full rows, 3 students left"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Euclid's Division Algorithm (to find HCF)",
@@ -49,7 +55,10 @@
         "An event organizer with 84 laddoos and 56 pedas wants identical gift bags: HCF(84, 56) = 28 bags",
         "A farmer with 144m and 96m plots dividing into square plots: HCF gives the largest square size",
         "Scheduling: two trains from Mumbai and Delhi have maintenance every 24 and 18 days — HCF helps find overlap patterns"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Fundamental Theorem of Arithmetic",
@@ -59,7 +68,10 @@
         "LCM helps find when two festivals will fall on the same day again (e.g., Diwali cycle and Eid cycle)",
         "HCF helps in equal distribution — dividing 48 gulab jamuns and 32 barfis equally among panditji's students",
         "Prime factorization is used in UPI encryption and Aadhaar security systems"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Decimal Expansions of Rational Numbers",
@@ -69,7 +81,10 @@
         "Petrol pump: ₹124.50 for 3 litres = ₹41.50/L (terminating decimal, exact calculation possible)",
         "Sharing: ₹100 among 3 people = ₹33.33... each (non-terminating, UPI can't send 33.33..., hence the system tracks to paise)",
         "Cooking: 200g of 750g packet used = 0.2666... (non-terminating, you approximate)"
-      ]
+      ],
+      "industry_relevance": "Cryptography, data compression, computer arithmetic.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Irrational Numbers and Their Proofs",
@@ -79,7 +94,10 @@
         "The screen size of your TV (32 inches = diagonal, involves √2 scaling)",
         "The ratio of a Roti's circumference to its diameter = π, an irrational",
         "The golden ratio φ (1.618...) appears in the petals of marigold flowers and the spiral of a conch shell"
-      ]
+      ],
+      "industry_relevance": "Cryptography, data compression, computer arithmetic.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     }
   ],
   "theorems": [

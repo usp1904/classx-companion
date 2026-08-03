@@ -3,9 +3,41 @@
   "chapter": "Metals and Non-metals",
   "title": "Physical and chemical properties of metals and non-metals, reactivity series, and corrosion.",
   "concepts": [
-    "Physical Properties of Metals",
-    "Reactivity Series",
-    "Metallic and Non-metallic Behaviour"
+    {
+      "name": "Physical Properties of Metals",
+      "real_life_application": "The aluminium foil you wrap food in and the iron in your school grill both behave differently with air and water — that is the reactivity series.",
+      "day_to_day_usage": [
+        "Aluminium foil for wrapping",
+        "Iron nails rusting",
+        "Gold jewellery not tarnishing"
+      ],
+      "industry_relevance": "Metallurgy, corrosion protection, alloy design.",
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": ""
+    },
+    {
+      "name": "Reactivity Series",
+      "day_to_day_usage": [],
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": "",
+      "real_life_application": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing.",
+      "industry_relevance": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing."
+    },
+    {
+      "name": "Metallic and Non-metallic Behaviour",
+      "real_life_application": "The aluminium foil you wrap food in and the iron in your school grill both behave differently with air and water — that is the reactivity series.",
+      "day_to_day_usage": [
+        "Aluminium foil for wrapping",
+        "Iron nails rusting",
+        "Gold jewellery not tarnishing"
+      ],
+      "industry_relevance": "Metallurgy, corrosion protection, alloy design.",
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": ""
+    }
   ],
   "theorems": [],
   "exercises": [

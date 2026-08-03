@@ -3,9 +3,41 @@
   "chapter": "How Do Organisms Reproduce?",
   "title": "Asexual and sexual reproduction in plants and animals.",
   "concepts": [
-    "Asexual Reproduction",
-    "Sexual Reproduction",
-    "Reproductive Structures"
+    {
+      "name": "Asexual Reproduction",
+      "real_life_application": "A seed sprouting in a pot and a mango tree flowering — both are reproduction strategies ensuring the species continues.",
+      "day_to_day_usage": [
+        "Planting seeds in a garden",
+        "Layering in rose plants",
+        "Budding in yeast used in bakery"
+      ],
+      "industry_relevance": "Agriculture, IVF and fertility clinics, plant biotechnology.",
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": ""
+    },
+    {
+      "name": "Sexual Reproduction",
+      "real_life_application": "A seed sprouting in a pot and a mango tree flowering — both are reproduction strategies ensuring the species continues.",
+      "day_to_day_usage": [
+        "Planting seeds in a garden",
+        "Layering in rose plants",
+        "Budding in yeast used in bakery"
+      ],
+      "industry_relevance": "Agriculture, IVF and fertility clinics, plant biotechnology.",
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": ""
+    },
+    {
+      "name": "Reproductive Structures",
+      "day_to_day_usage": [],
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": "",
+      "real_life_application": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry.",
+      "industry_relevance": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry."
+    }
   ],
   "theorems": [],
   "exercises": [

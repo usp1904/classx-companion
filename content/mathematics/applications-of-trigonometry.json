@@ -26,7 +26,10 @@
         "A kite flyer in Ahmedabad estimating how high his kite is flying",
         "A drone pilot calculating the altitude of the drone",
         "A crane operator at a construction site in Bengaluru judging the height of the load"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Angle of Depression — Looking Down",
@@ -37,7 +40,10 @@
         "A pilot looking down at the runway to plan the landing approach",
         "A bird watcher at the top of a tree estimating the distance to a bird on the ground",
         "A rescue worker on a helicopter estimating the position of a stranded person during floods in Kerala"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Combined Elevation & Depression Problems",
@@ -48,7 +54,10 @@
         "An archaeologist in Hampi measuring the height of an ancient pillar",
         "A forest officer estimating the height of a tree in the Sundarbans without climbing it",
         "A photographer determining the best distance to capture a full building in frame"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [],

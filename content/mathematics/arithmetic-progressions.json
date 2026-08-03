@@ -28,7 +28,10 @@
         "Temperature dropping: 30°C at 6pm, 28°C at 7pm, 26°C at 8pm (d = -2°C)",
         "Seats in an auditorium: 20 in row 1, 24 in row 2, 28 in row 3 (d = 4)",
         "Penalty charges: ₹100 for 1st day late, ₹150 for 2nd, ₹200 for 3rd (d = ₹50)"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "nth Term of an AP — Finding Any Term Directly",
@@ -38,7 +41,10 @@
         "A taxi driver's daily earnings increase by ₹50 each day. His earnings on day 30 = first day + 29 × ₹50",
         "A student's test scores improve by 3 marks each test. Score on 10th test = first score + 9 × 3",
         "Annual rent increase: ₹12,000 in Year 1, ₹500 increase each year. Rent in Year 15 = 12000 + 14(500) = ₹19,000"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Sum of n Terms of an AP — Cumulative Effect",
@@ -50,7 +56,10 @@
         "Total distance traveled by a car accelerating uniformly (covered in Physics too!)",
         "Total penalty paid for delayed bill payment over a week",
         "Total earnings over a year with monthly salary increments"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Arithmetic Mean — Finding the Middle Value",
@@ -60,7 +69,10 @@
         "If a stock price was ₹100 on Monday and ₹180 on Wednesday, the Tuesday price for steady growth = (100+180)/2 = ₹140",
         "Interpolating missing data between two known data points in a regular pattern",
         "Creating equal installment amounts between two loan repayment dates"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [],

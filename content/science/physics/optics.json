@@ -6,12 +6,20 @@
     {
       "name": "Law of Reflection",
       "real_life_application": "Seeing your own reflection in a mirror",
-      "day_to_day_usage": []
+      "day_to_day_usage": [],
+      "industry_relevance": "Periscopes in submarines, laser alignment in metro tunnels, retro-reflectors on road signs.",
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": ""
     },
     {
       "name": "Snell's Law",
       "real_life_application": "Designing lenses for glasses",
-      "day_to_day_usage": []
+      "day_to_day_usage": [],
+      "engineering_domains": "Aerospace & Satellites, Optics / LASIK & Lenses, Electrical & Power Grids, Robotics & EVs",
+      "future_careers": "Engineer (Space/Mech/Electrical), Data Scientist, Medical Physicist, Defence Scientist",
+      "purpose": "",
+      "industry_relevance": "Every smartphone, vehicle and power grid is a physics machine — this concept underpins engineering in aerospace, electronics, optics and energy."
     }
   ],
   "exercises": {

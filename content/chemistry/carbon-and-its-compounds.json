@@ -3,9 +3,37 @@
   "chapter": "Carbon and Its Compounds",
   "title": "Organic chemistry basics, covalent bonding, and hydrocarbon families.",
   "concepts": [
-    "Covalent Bonding",
-    "Hydrocarbons",
-    "Functional Groups"
+    {
+      "name": "Covalent Bonding",
+      "day_to_day_usage": [],
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": "",
+      "real_life_application": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing.",
+      "industry_relevance": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing."
+    },
+    {
+      "name": "Hydrocarbons",
+      "real_life_application": "Petrol, LPG, plastic bottles and even you are made of carbon chains — this chapter explains why carbon forms so many compounds.",
+      "day_to_day_usage": [
+        "LPG cooking gas",
+        "Plastic water bottles",
+        "Petrol in vehicles"
+      ],
+      "industry_relevance": "Petrochemicals, polymers/plastics, biofuels, pharmaceuticals.",
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": ""
+    },
+    {
+      "name": "Functional Groups",
+      "day_to_day_usage": [],
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": "",
+      "real_life_application": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing.",
+      "industry_relevance": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing."
+    }
   ],
   "theorems": [],
   "exercises": [

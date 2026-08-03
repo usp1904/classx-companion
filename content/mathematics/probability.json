@@ -27,7 +27,10 @@
         "Life insurance: premium calculated based on probability of death at a given age",
         "Cricket: probability of winning based on historical head-to-head records",
         "Railways: probability of a train being on time based on past data"
-      ]
+      ],
+      "industry_relevance": "Insurance, finance risk, AI prediction, gaming.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Experimental vs Theoretical Probability",
@@ -37,7 +40,10 @@
         "A bus company tracks on-time arrivals for a year to get experimental probability",
         "In a cricket match, the theoretical probability of heads in the toss is always 1/2",
         "A factory tests 1000 products to find experimental probability of defects"
-      ]
+      ],
+      "industry_relevance": "Insurance, finance risk, AI prediction, gaming.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Sample Space and Events",
@@ -47,7 +53,10 @@
         "Rolling a die: S = {1, 2, 3, 4, 5, 6}, event 'even number' = {2, 4, 6}",
         "Raffle draw: S = all ticket numbers, event 'win' = your ticket numbers",
         "Traffic light: S = {red, yellow, green}, event 'stop' = {red}"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Complementary Events",
@@ -57,7 +66,10 @@
         "P(it rains today) + P(it doesn't rain today) = 1",
         "P(team wins) + P(team doesn't win) = 1",
         "'At least one head' is easier found as 1 - P(no heads)"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Probability Problems — Dice, Coins, Cards, Balls",
@@ -68,7 +80,10 @@
         "Ludo and Snakes & Ladders use a die — each number has probability 1/6",
         "Lottery systems — probability = 1 / (total ticket combinations)",
         "Random sampling in quality control — picking defective items from a batch"
-      ]
+      ],
+      "industry_relevance": "Insurance, finance risk, AI prediction, gaming.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     }
   ],
   "worked_examples": [

@@ -3,9 +3,46 @@
   "chapter": "Chemical Reactions and Equations",
   "title": "Types of chemical reactions, balancing equations, and activity series.",
   "concepts": [
-    "Types of Reactions",
-    "Balancing Chemical Equations",
-    "Exothermic and Endothermic Reactions"
+    {
+      "name": "Types of Reactions",
+      "real_life_application": "Rust on a bicycle, milk turning into curd, and bread puffing up with yeast are all chemical reactions happening around you.",
+      "day_to_day_usage": [
+        "Rusting of iron gates and cycles",
+        "Curd formation from milk",
+        "Burning LPG gas to cook food"
+      ],
+      "industry_relevance": "Pharmaceutical synthesis, fertiliser plants, cement kilns.",
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": ""
+    },
+    {
+      "name": "Balancing Chemical Equations",
+      "real_life_application": "Rust on a bicycle, milk turning into curd, and bread puffing up with yeast are all chemical reactions happening around you.",
+      "day_to_day_usage": [
+        "Rusting of iron gates and cycles",
+        "Curd formation from milk",
+        "Burning LPG gas to cook food"
+      ],
+      "industry_relevance": "Pharmaceutical synthesis, fertiliser plants, cement kilns.",
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": ""
+    },
+    {
+      "name": "Exothermic and Endothermic Reactions",
+      "real_life_application": "Rust on a bicycle, milk turning into curd, and bread puffing up with yeast are all chemical reactions happening around you.",
+      "day_to_day_usage": [
+        "Rusting of iron gates and cycles",
+        "Curd formation from milk",
+        "Burning LPG gas to cook food"
+      ],
+      "industry_relevance": "Pharmaceutical synthesis, fertiliser plants, cement kilns.",
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "video_embed": "https://www.youtube.com/embed/Hh33dC52R0M?autoplay=1&mute=1&playlist=Hh33dC52R0M&loop=1&controls=0&rel=0&modestbranding=1",
+      "purpose": ""
+    }
   ],
   "theorems": [],
   "exercises": [

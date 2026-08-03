@@ -3,9 +3,37 @@
   "chapter": "Acids, Bases and Salts",
   "title": "Properties of acids and bases, pH scale, and neutralization reactions.",
   "concepts": [
-    "Characteristics of Acids and Bases",
-    "pH Scale",
-    "Neutralization"
+    {
+      "name": "Characteristics of Acids and Bases",
+      "real_life_application": "Antacids neutralise the excess acid in your stomach — a real-life example of the acid–base neutralisation reaction.",
+      "day_to_day_usage": [
+        "Taking an antacid for acidity",
+        "Lemon juice and baking soda fizzing",
+        "Applying vinegar to clean mineral stains"
+      ],
+      "industry_relevance": "pH control in water treatment, battery electrolytes, food preservation.",
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": ""
+    },
+    {
+      "name": "pH Scale",
+      "day_to_day_usage": [],
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": "",
+      "real_life_application": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing.",
+      "industry_relevance": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing."
+    },
+    {
+      "name": "Neutralization",
+      "day_to_day_usage": [],
+      "engineering_domains": "Pharma & Drug Design, Petrochemicals & Refining, Batteries & Energy Storage, Agri-Chemicals & Fertilizers",
+      "future_careers": "Pharmacist / Drug Researcher, Chemical Engineer, Materials Scientist, Environmental Chemist",
+      "purpose": "",
+      "real_life_application": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing.",
+      "industry_relevance": "From medicines to batteries to food, chemistry builds every material industry — this concept is core to pharma, energy and manufacturing."
+    }
   ],
   "theorems": [],
   "exercises": [

@@ -28,7 +28,10 @@
         "Area of a square plot = x² (quadratic polynomial, where x is side length)",
         "Volume of a cylindrical water tank in a colony = πr²h = πr² × constant (quadratic in r)",
         "Profit of a kirana shop over quarters: P(t) = 10000 + 5000t - 200t² (quadratic, shows growth then saturation)"
-      ]
+      ],
+      "industry_relevance": "Economics modelling, physics simulation, machine learning.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Zeroes of a Polynomial — The Roots",
@@ -38,7 +41,10 @@
         "Break-even analysis: Ravi's samosa stall has profit P(x) = -x² + 40x - 300. The zeroes tell him when he neither profits nor loses.",
         "A ball thrown upward: height h(t) = -5t² + 20t + 1. The positive zero gives when it hits the ground.",
         "A farmer's yield Y(x) = -2x² + 60x + 200 where x is fertilizer in kg. Zeroes show when yield equals a baseline."
-      ]
+      ],
+      "industry_relevance": "Economics modelling, physics simulation, machine learning.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Remainder Theorem — The Shortcut for Division",
@@ -48,7 +54,10 @@
         "A factory owner knows production cost C(x) = 3x² + 5x + 2. To find cost at x = 10 units, just substitute: 3(100) + 50 + 2 = ₹352",
         "Checking if a specific input gives a specific output in any polynomial model",
         "Verifying calculations: if remainder = 0, your division (or factorization) is correct"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Factor Theorem — Breaking Polynomials into Simpler Parts",
@@ -58,7 +67,10 @@
         "Breaking down a 3-year business projection P(t) = t³ - 6t² + 11t - 6 into yearly factors: (t-1)(t-2)(t-3) means key events at years 1, 2, 3",
         "Splitting a large area into smaller rectangular plots: x³ + 3x² + 2x = x(x+1)(x+2) gives dimensions",
         "Simplifying complex algebraic fractions in engineering calculations"
-      ]
+      ],
+      "industry_relevance": "Economics modelling, physics simulation, machine learning.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Relationship Between Zeroes and Coefficients",
@@ -68,7 +80,10 @@
         "If a quadratic profit model has zeroes 5 and 10 (break-even at months 5 and 10), the polynomial is k(x² - 15x + 50) = k(x-5)(x-10)",
         "Verifying factorization without re-expanding: check if sum of zeroes = -b/a",
         "Quickly finding quadratic when two solutions are known in word problems"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [

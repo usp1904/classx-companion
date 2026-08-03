@@ -29,7 +29,10 @@
         "A municipal corporation calculating the cost of laying grass in a circular park in South Delhi",
         "A tailor measuring the fabric required for a circular tablecloth for a wedding reception",
         "A potter in Khurja estimating the amount of clay needed for a circular plate"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Area of a Sector of a Circle",
@@ -41,7 +44,10 @@
         "A fan's sweep area calculated as a sector with angle determined by the fan's oscillation",
         "A shopkeeper in a circular market complex allocating space based on sector angles",
         "A pizza restaurant calculating cost per slice based on sector area"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Area of a Segment of a Circle",
@@ -53,7 +59,10 @@
         "A window design with a circular top and rectangular bottom in traditional Indian architecture",
         "The area of a protractor's transparent region",
         "Calculating the glass needed for a circular window with a horizontal support beam"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Combinations of Plane Figures",
@@ -65,7 +74,10 @@
         "A park with a circular playground and rectangular walking track",
         "A coin (circle) placed inside a square card — find the area of card visible around the coin",
         "A decorative pattern with circles inscribed in squares in a traditional Kolam design"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "important_formulae": [

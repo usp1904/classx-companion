@@ -28,7 +28,10 @@
         "Profit optimization: a dhaba owner adjusts prices to maximize daily profit",
         "Time-speed problems: how long until two trains meet given quadratic distance relations",
         "Age problems where product of ages equals a constant"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Solving by Factorization — Finding the Roots",
@@ -39,7 +42,10 @@
         "Determining how many units to produce for zero profit (break-even analysis)",
         "Finding the time when a ball thrown upward returns to ground level",
         "Solving number puzzles where product and sum conditions are given"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Completing the Square — The Geometric Method",
@@ -49,7 +55,10 @@
         "Finding the maximum height of a fountain in a park (vertex of parabola)",
         "Determining the minimum cost in a production optimization problem",
         "Converting to vertex form to graph a parabola easily"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Quadratic Formula — The Universal Solver",
@@ -59,7 +68,10 @@
         "Calculating EMI for a loan using the quadratic payment formula",
         "Finding optimal pricing for a product with quadratic demand function",
         "Solving any quadratic model that arises in physics, engineering, or economics"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Nature of Roots — The Discriminant Decides",
@@ -69,7 +81,10 @@
         "Checking if a quadratic equation from a real problem actually has a feasible solution",
         "Determining if a projectile will reach a certain height (if D ≥ 0 for the equation)",
         "In business: checking if there is a break-even point (real positive root exists)"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [

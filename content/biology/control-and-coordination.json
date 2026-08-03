@@ -3,9 +3,33 @@
   "chapter": "Control and Coordination",
   "title": "Nervous and hormonal coordination in animals and plants.",
   "concepts": [
-    "Nervous System",
-    "Endocrine System",
-    "Plant Hormones"
+    {
+      "name": "Nervous System",
+      "day_to_day_usage": [],
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": "",
+      "real_life_application": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry.",
+      "industry_relevance": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry."
+    },
+    {
+      "name": "Endocrine System",
+      "day_to_day_usage": [],
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": "",
+      "real_life_application": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry.",
+      "industry_relevance": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry."
+    },
+    {
+      "name": "Plant Hormones",
+      "day_to_day_usage": [],
+      "engineering_domains": "Medicine & Surgery, Biotech & Genetic Engineering, Public Health & Epidemiology, Agriculture & Food Tech",
+      "future_careers": "Doctor (MBBS/MD), Biotech Engineer, Clinical Researcher, Microbiologist",
+      "purpose": "",
+      "real_life_application": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry.",
+      "industry_relevance": "From hospitals to biotech labs to agriculture, life science runs on these principles — this concept is the foundation of medicine and bio-industry."
+    }
   ],
   "theorems": [],
   "exercises": [

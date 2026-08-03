@@ -29,7 +29,10 @@
         "Train vs bus fare comparison for a Delhi-to-Agra trip",
         "Mixing two varieties of atta or rice to get a specific price per kg",
         "UPI transaction splitting: amount paid by two friends for a joint dinner"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Graphical Method — Seeing the Solution",
@@ -39,7 +42,10 @@
         "Finding the break-even point where profit from two business models are equal",
         "Determining when two mobile plans with different fixed and per-minute charges become equal",
         "Comparing two savings schemes where one has higher interest but lower principal"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Substitution Method — Step-by-Step Solving",
@@ -49,7 +55,10 @@
         "Comparing prices of two items across two different stores",
         "Calculating ticket prices for adults and children from total collection data",
         "Determining interest rates for two different investments from total returns"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Elimination Method — The Fast Lane",
@@ -59,7 +68,10 @@
         "Comparing Zomato and Swiggy delivery fees: eliminate the platform fee to find per-km charge",
         "Calculating hourly wages of two workers from their total earnings with different hours",
         "Finding petrol and diesel prices from two fuel station bills"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Cross-Multiplication Method — Formula-Based Solving",
@@ -69,7 +81,10 @@
         "Quick calculation of two unknown prices from two bills at a ration shop",
         "Determining mixture quantities: how many kg of ₹40/kg and ₹60/kg tea to get 10 kg of ₹50/kg mixture",
         "Finding two-digit numbers from sum and reversed-number conditions"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Consistency of Equations — Does a Solution Exist?",
@@ -79,7 +94,10 @@
         "Checking if two different payment plans for a mobile recharge are actually the same (infinite solutions)",
         "Detecting contradictory information in survey data (no solution)",
         "Confirming that two different suppliers' pricing models have a unique comparison point"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [],

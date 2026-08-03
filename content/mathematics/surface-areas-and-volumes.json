@@ -29,7 +29,10 @@
         "A tent manufacturer in Rajasthan calculating canvas needed for a conical tent with a cylindrical base",
         "An architect designing the Qutub Minar-inspired column with a hemispherical top for a new government building",
         "A packaging engineer designing a box to hold a cylindrical bottle with a spherical cap"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Volume of a Combination of Solids",
@@ -41,7 +44,10 @@
         "An ice cream vendor determining how many cones he can fill from a cylindrical container of ice cream",
         "A farmer calculating the capacity of a cylindrical grain silo with a conical roof in Punjab",
         "A water supply department calculating water stored in an overhead tank with hemispherical bottom"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Conversion of Solids (Melting and Recasting)",
@@ -53,7 +59,10 @@
         "A sculptor reshaping a marble sphere into a statue on a cylindrical pedestal",
         "An ice cream factory pouring liquid mix into conical molds — volume determines the number of cones",
         "A jaggery (gur) maker in Maharashtra pouring melted jaggery from a spherical pot into cuboid blocks"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Frustum of a Cone",
@@ -65,7 +74,10 @@
         "A drinking glass that is wider at top than bottom",
         "A conical funnel with the tip cut off — the frustum is the useful part",
         "A lampshade in a traditional Diwali decoration — fabric needed = lateral surface area of frustum"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "important_formulae": [

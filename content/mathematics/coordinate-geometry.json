@@ -28,7 +28,10 @@
         "Flight tracking: air traffic control uses coordinates to track planes",
         "Delivery apps: Zomato/Swiggy use coordinates to find the nearest restaurant to your location",
         "Construction: architects use coordinate grids for building plans"
-      ]
+      ],
+      "industry_relevance": "GIS, autonomous vehicles, map apps, robotics.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Distance Formula — How Far Is It?",
@@ -39,7 +42,10 @@
         "A farmer in Punjab checking if his rectangular field is actually a square (all sides equal)",
         "A town planner in Jaipur ensuring equal distances between bus stops",
         "A nature guide in Jim Corbett park measuring straight-line distances between landmarks"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Section Formula — Dividing a Segment Proportionally",
@@ -50,7 +56,10 @@
         "A graphic designer dividing a line segment for a logo design using specific proportions",
         "An architect in Bengaluru placing columns at equal intervals along a beam",
         "A game developer placing waypoints along a path in a racing game"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Area of a Triangle Using Coordinates",
@@ -61,7 +70,10 @@
         "A government official verifying the area of a property for tax assessment in Pune",
         "An event organizer arranging triangular stages and calculating carpet area",
         "A cartographer calculating the area of a lake on a map"
-      ]
+      ],
+      "industry_relevance": "GIS, autonomous vehicles, map apps, robotics.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     }
   ],
   "theorems": [],

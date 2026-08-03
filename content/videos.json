@@ -1,0 +1,34 @@
+{
+  "description": "Curated <30s YouTube Shorts per concept for ClassX [10-18]. Only real, verified embed IDs. Extend this file; scripts/enrichLessons.js reads it and stamps each matching concept with the Shorts embed URL.",
+  "format": "https://www.youtube.com/embed/<VIDEO_ID>?autoplay=1&mute=1&playlist=<VIDEO_ID>&loop=1&controls=0&rel=0&modestbranding=1",
+  "videos": {
+    "physics": {
+      "Refraction & Optical Density": "y55tzg_jS0Y",
+      "Reflection of Light": "y55tzg_jS0Y",
+      "Laws of Reflection": "y55tzg_jS0Y"
+    },
+    "chemistry": {
+      "Exothermic and Endothermic Reactions": "Hh33dC52R0M",
+      "Exothermic vs Endothermic Reactions": "Hh33dC52R0M"
+    },
+    "biology": {
+      "Autotrophic vs Heterotrophic Nutrition": "UP7aG8xip48"
+    },
+    "civics": {
+      "Horizontal vs Vertical Power Sharing": "0G2z583Vf4E",
+      "Power Sharing": "0G2z583Vf4E"
+    },
+    "economics": {
+      "Primary, Secondary, and Tertiary Sectors": "wzP_tDsbRoo"
+    },
+    "geography": {
+      "Soil Classification & Formation": "E-sh99Fae90",
+      "Resources and Development": "E-sh99Fae90"
+    },
+    "history": {
+      "Impact of First World War on India": "5F7JtP1EGFw",
+      "The Idea of Satyagraha": "S_B7sH3f1gY",
+      "Nationalism in India": "5F7JtP1EGFw"
+    }
+  }
+}

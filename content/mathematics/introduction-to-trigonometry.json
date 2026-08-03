@@ -26,7 +26,10 @@
         "A pilot calculating the descent angle for landing at Indira Gandhi International Airport",
         "A solar panel installer tilting panels at the optimal angle for maximum sunlight in Rajasthan",
         "A gamer using trigonometry to calculate projectile trajectories in PUBG or GTA"
-      ]
+      ],
+      "industry_relevance": "Surveying, civil engineering, navigation, computer graphics.",
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician"
     },
     {
       "name": "Trigonometric Ratios — Sin, Cos, Tan, and Friends",
@@ -37,7 +40,10 @@
         "An architect in Delhi uses sin and cos to design the angle of a staircase",
         "A photographer uses angles of view (a trigonometric concept) to frame shots",
         "An astronomer uses trigonometry to calculate distances to stars"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Trigonometric Ratios of Standard Angles (0°, 30°, 45°, 60°, 90°)",
@@ -48,7 +54,10 @@
         "A wheelchair ramp built at an angle of about 30° for accessibility",
         "The roof of a house in Himachal designed at 45° to allow snow to slide off",
         "A staircase typically has a slope of about 30° to 35°"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     },
     {
       "name": "Trigonometric Identities — The Three Pillars",
@@ -59,7 +68,10 @@
         "Computer graphics in animation movies use rotation matrices based on trig identities",
         "AC current in your home follows sinusoidal patterns described by trig functions",
         "The sound waves in a musician's performance are analyzed using trigonometric identities"
-      ]
+      ],
+      "engineering_domains": "AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography",
+      "future_careers": "AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician",
+      "industry_relevance": "Math is the engine of AI, finance, engineering and space — this concept is used daily by data scientists and engineers."
     }
   ],
   "theorems": [

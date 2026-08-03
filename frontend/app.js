@@ -51,7 +51,7 @@ const api = (path) => fetch(path).then(r => r.json());
 
 /* ───────── THEME COLORS ───────── */
 const C = {
-  cyan: '#6366f1', violet: '#6366f1', green: '#14b8a6', amber: '#f59e0b', red: '#f43f5e'
+  cyan: '#2563eb', violet: '#2563eb', green: '#14b8a6', amber: '#f59e0b', red: '#f43f5e'
 };
 
 /* ───────── SIDEBAR NAV ───────── */
@@ -144,6 +144,20 @@ function Concepts({ lesson }) {
             c.purpose ? div({className:'concept-section'},
               h4(null, '🎯 Purpose'),
               p(null, c.purpose)
+            ) : null,
+            c.industry_relevance ? div({className:'concept-section concept-industry'},
+              h4(null, '🏭 Where This Is Used — Industry & Engineering'),
+              p(null, c.industry_relevance)
+            ) : null,
+            (c.engineering_domains || c.future_careers) ? div({className:'concept-section'},
+              c.engineering_domains ? div(null,
+                h4(null, '🔧 Engineering Domains'),
+                p(null, c.engineering_domains)
+              ) : null,
+              c.future_careers ? div(null,
+                h4(null, '🚀 Your Future Career Paths'),
+                p(null, c.future_careers)
+              ) : null
             ) : null,
             c.day_to_day_usage?.length ? div({className:'concept-section'},
               h4(null, '📌 Day-to-Day Usage'),
@@ -546,6 +560,17 @@ function ConceptCarousel({ concepts }) {
       c.purpose ? div({className:'cc-section cc-purpose'},
         h5(null, '🎯 Purpose'), p(null, c.purpose)
       ) : null,
+      c.industry_relevance ? div({className:'cc-section cc-industry'},
+        h5(null, '🏭 Industry & Engineering'), p(null, c.industry_relevance)
+      ) : null,
+      (c.engineering_domains || c.future_careers) ? div({className:'cc-section'},
+        c.engineering_domains ? div(null,
+          h5(null, '🔧 Engineering Domains'), p(null, c.engineering_domains)
+        ) : null,
+        c.future_careers ? div(null,
+          h5(null, '🚀 Future Career Paths'), p(null, c.future_careers)
+        ) : null
+      ) : null,
       c.day_to_day_usage?.length ? div({className:'cc-section'},
         h5(null, '📌 Examples'),
         ul(null, c.day_to_day_usage.map((u,j) => li({key:j}, u)))
@@ -613,18 +638,18 @@ function drawUnitCircle(ctx, w, h, angleDeg, opts) {
   const cos = Math.cos(rad), sin = Math.sin(rad);
   const px = cx+r*cos, py = cy-r*sin;
   ctx.clearRect(0,0,w,h);
-  ctx.strokeStyle='rgba(99,102,241,0.15)'; ctx.lineWidth=1;
+  ctx.strokeStyle='rgba(37,99,235,0.15)'; ctx.lineWidth=1;
   for (let a=0;a<360;a+=30) {
     const ar=a*Math.PI/180;
     ctx.beginPath(); ctx.moveTo(cx,cy);
     ctx.lineTo(cx+r*Math.cos(ar),cy-r*Math.sin(ar)); ctx.stroke();
   }
-  ctx.strokeStyle='rgba(99,102,241,0.3)'; ctx.lineWidth=1.5;
+  ctx.strokeStyle='rgba(37,99,235,0.3)'; ctx.lineWidth=1.5;
   ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.stroke();
-  ctx.strokeStyle='rgba(99,102,241,0.2)'; ctx.lineWidth=1;
+  ctx.strokeStyle='rgba(37,99,235,0.2)'; ctx.lineWidth=1;
   ctx.beginPath(); ctx.moveTo(cx-r-10,cy); ctx.lineTo(cx+r+10,cy); ctx.stroke();
   ctx.beginPath(); ctx.moveTo(cx,cy-r-10); ctx.lineTo(cx,cy+r+10); ctx.stroke();
-  ctx.fillStyle='#6366f1'; ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,cy); ctx.lineTo(px,py); ctx.closePath(); ctx.fill();
+  ctx.fillStyle='#2563eb'; ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(px,cy); ctx.lineTo(px,py); ctx.closePath(); ctx.fill();
   ctx.strokeStyle='#f43f5e'; ctx.lineWidth=2.5;
   ctx.beginPath(); ctx.arc(cx,cy,r*0.06,0,-rad,true); ctx.stroke();
   ctx.fillStyle='#f43f5e'; ctx.font='bold 11px Inter,sans-serif';
@@ -636,7 +661,7 @@ function drawUnitCircle(ctx, w, h, angleDeg, opts) {
   ctx.font='12px Inter,sans-serif'; ctx.textAlign='center';
   ctx.fillStyle='#14b8a6';
   ctx.fillText('sin = '+sin.toFixed(4), cx+r+60, cy-20);
-  ctx.fillStyle='#6366f1';
+  ctx.fillStyle='#2563eb';
   ctx.fillText('cos = '+cos.toFixed(4), cx+r+60, cy);
   ctx.fillStyle='#f59e0b';
   ctx.fillText('tan = '+(angleDeg%90===0?'∞':(sin/cos).toFixed(4)), cx+r+60, cy+20);
@@ -691,14 +716,14 @@ function drawRightTriangle(canvas, a, b) {
   const ax = sx + b*scale, ay = sy;
   const bx = sx, by = sy - a*scale;
   const c = Math.sqrt(a*a+b*b);
-  ctx.strokeStyle='#6366f1'; ctx.lineWidth=2.5;
+  ctx.strokeStyle='#2563eb'; ctx.lineWidth=2.5;
   ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(ax,ay); ctx.lineTo(bx,by); ctx.closePath(); ctx.stroke();
-  ctx.fillStyle='rgba(99,102,241,0.06)';
+  ctx.fillStyle='rgba(37,99,235,0.06)';
   ctx.beginPath(); ctx.moveTo(sx,sy); ctx.lineTo(ax,ay); ctx.lineTo(bx,by); ctx.closePath(); ctx.fill();
   ctx.fillStyle='#14b8a6'; ctx.font='bold 14px Inter,sans-serif'; ctx.textAlign='center';
   const mx = (sx+ax)/2, my = (sy+ay)/2;
   ctx.fillText('b = '+b, mx, my+18);
-  ctx.fillStyle='#6366f1';
+  ctx.fillStyle='#2563eb';
   const nx = (sx+bx)/2-4, ny = (sy+by)/2;
   ctx.fillText('a = '+a, nx-20, ny);
   ctx.fillStyle='#f59e0b';
@@ -708,7 +733,7 @@ function drawRightTriangle(canvas, a, b) {
   ctx.fillStyle='#f43f5e'; ctx.font='12px Inter,sans-serif';
   ctx.beginPath(); ctx.arc(sx,sy,20,0,-angleA*Math.PI/180,true); ctx.stroke();
   ctx.fillText('θ='+angleA.toFixed(1)+'°', sx+30, sy-8);
-  ctx.fillStyle='#6366f1'; ctx.font='10px Inter,sans-serif'; ctx.textAlign='center';
+  ctx.fillStyle='#2563eb'; ctx.font='10px Inter,sans-serif'; ctx.textAlign='center';
   ctx.fillText('sin θ = '+(a/c).toFixed(4)+'  cos θ = '+(b/c).toFixed(4)+'  tan θ = '+(a/b).toFixed(4),
     w/2, h-8);
   ctx.fillStyle='#94a3b8'; ctx.textAlign='left'; ctx.font='11px Inter,sans-serif';
@@ -774,14 +799,14 @@ function drawCoordinateGraph(canvas, viz) {
   const range = props.gridRange || { xMin: -10, xMax: 10, yMin: -10, yMax: 10 };
   const mapX = x => (x - range.xMin) / (range.xMax - range.xMin) * w;
   const mapY = y => h - (y - range.yMin) / (range.yMax - range.yMin) * h;
-  ctx.strokeStyle = 'rgba(99,102,241,0.08)'; ctx.lineWidth = 1;
+  ctx.strokeStyle = 'rgba(37,99,235,0.08)'; ctx.lineWidth = 1;
   for (let i = 0; i <= 10; i++) {
     const gx = range.xMin + (range.xMax - range.xMin) * i / 10;
     ctx.beginPath(); ctx.moveTo(mapX(gx), 0); ctx.lineTo(mapX(gx), h); ctx.stroke();
     const gy = range.yMin + (range.yMax - range.yMin) * i / 10;
     ctx.beginPath(); ctx.moveTo(0, mapY(gy)); ctx.lineTo(w, mapY(gy)); ctx.stroke();
   }
-  ctx.strokeStyle = 'rgba(99,102,241,0.25)'; ctx.lineWidth = 1.5;
+  ctx.strokeStyle = 'rgba(37,99,235,0.25)'; ctx.lineWidth = 1.5;
   if (range.yMin <= 0 && range.yMax >= 0) { ctx.beginPath(); ctx.moveTo(0, mapY(0)); ctx.lineTo(w, mapY(0)); ctx.stroke(); }
   if (range.xMin <= 0 && range.xMax >= 0) { ctx.beginPath(); ctx.moveTo(mapX(0), 0); ctx.lineTo(mapX(0), h); ctx.stroke(); }
   if (props.functionString) {
@@ -814,7 +839,7 @@ function drawCoordinateGraph(canvas, viz) {
 function Viz({ lesson }) {
   const [input, setInput] = useState(JSON.stringify({
     rendererType:'COORDINATE_GRAPH', syllabusSource:'NCERT_2026_27',
-    visualizationProperties:{functionString:'2*x^2 - 5*x + 3',curveColor:'#6366f1',gridRange:{xMin:-3,xMax:5,yMin:-4,yMax:8}}
+    visualizationProperties:{functionString:'2*x^2 - 5*x + 3',curveColor:'#2563eb',gridRange:{xMin:-3,xMax:5,yMin:-4,yMax:8}}
   }, null, 2));
   const [viz, setViz] = useState(null);
   const canvasRef = useRef();
@@ -1063,7 +1088,10 @@ function App() {
             concepts: dbCh.topics.map(t => ({
               name: t.name,
               real_life_application: t.description || `Everyday application of ${t.name} in daily routine.`,
-              purpose: "Understand the purpose and application of this mathematical concept."
+              purpose: "Understand the purpose and application of this mathematical concept.",
+              industry_relevance: `This concept powers engineering, medicine, AI and industry. Learn it to unlock career paths in science and technology.`,
+              engineering_domains: 'AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography',
+              future_careers: 'AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician'
             })),
             theorems: [],
             exercises: {},
