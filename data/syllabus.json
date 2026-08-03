@@ -684,9 +684,9 @@
       ]
     },
     {
-      "id": "social-studies",
-      "name": "Social Studies",
-      "description": "NCERT Class X Social Sciences covering History, Civics, Geography, and Economics.",
+      "id": "history",
+      "name": "History",
+      "description": "NCERT Class X History (India and the Contemporary World II) — nationalism and the making of the modern world.",
       "chapters": [
         {
           "id": "nationalism-in-india",
@@ -705,7 +705,14 @@
               "solution": "Salt was chosen because it was consumed by rich and poor alike, making salt tax an essential grievance unifying all Indians. Gandhi walked 240 miles from Sabarmati to Dandi, breaking the British salt monopoly law on 6 April 1930 and triggering the Civil Disobedience Movement nationwide."
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "geography",
+      "name": "Geography",
+      "description": "NCERT Class X Geography — Contemporary India II: resources, land, water, agriculture and industries.",
+      "chapters": [
         {
           "id": "resources-and-development",
           "name": "Resources and Development",
@@ -723,7 +730,14 @@
               "solution": "Alluvial Soil is deposited by Indus, Ganga, and Brahmaputra rivers, ideal for wheat, paddy, and sugarcane (found in Northern Plains). Black Soil (Regur) is made of volcanic lava, highly moisture retentive, ideal for cotton cultivation (found in Deccan Trap)."
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "civics",
+      "name": "Civics",
+      "description": "NCERT Class X Civics — Democratic Politics II: power sharing, federalism and democratic reforms.",
+      "chapters": [
         {
           "id": "power-sharing",
           "name": "Power Sharing in Democracy",
@@ -741,7 +755,14 @@
               "solution": "Power sharing is desirable for two reasons: (1) Prudential reason: Reduces the possibility of conflict between social groups and ensures political stability. (2) Moral reason: Power sharing is the spirit of democracy; citizens have a right to be consulted on how they are governed."
             }
           ]
-        },
+        }
+      ]
+    },
+    {
+      "id": "economics",
+      "name": "Economics",
+      "description": "NCERT Class X Economics — Understanding Economic Development: sectors, money and globalisation.",
+      "chapters": [
         {
           "id": "sectors-of-indian-economy",
           "name": "Sectors of the Indian Economy",

@@ -5,8 +5,10 @@ const { loadInstructionModules, getInstructionByName } = require('../lib/instruc
 const syllabus = require('../lib/syllabus');
 const mcp = require('../services/mcp');
 const kg = require('../services/kg');
+const aiTutor = require('../services/aiTutor');
 const flags = require('../lib/featureFlags');
 const content = require('../lib/content');
+const ragService = require('../lib/ragService');
 const fs = require('fs');
 const path = require('path');
 const Ajv = require('ajv');
@@ -144,6 +146,38 @@ router.post('/format-math', (req, res) => {
 
 
 
+// POST /api/ai/tutor -> route a student question through the AI tutor service
+// Supports SSE streaming: send `{ stream:true }` (or query `?stream=1`) and
+// the answer is pushed in `data:` chunks instead of a single buffered JSON.
+router.post('/ai/tutor', async (req, res) => {
+  const body = req.body || {};
+  const wantStream = flags.isEnabled('streamingResponses') &&
+    (body.stream === true || body.stream === '1' || req.query.stream === '1');
+
+  const result = await aiTutor.askTutor(body);
+  if (!result.ok) {
+    return res.status(400).json(result);
+  }
+
+  if (!wantStream) {
+    return res.json(result);
+  }
+
+  const text = (result.answer && result.answer.text) || '';
+  res.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    Connection: 'keep-alive',
+    'X-Accel-Buffering': 'no'
+  });
+  const chunks = text.match(/[\s\S]{1,128}/g) || [text];
+  for (const c of chunks) {
+    res.write(`data: ${JSON.stringify({ delta: c })}\n\n`);
+  }
+  res.write(`data: ${JSON.stringify({ done: true, source: result.source, tier: result.tier })}\n\n`);
+  return res.end();
+});
+
 // MCP fetch connector
 router.get('/mcp/fetch', async (req, res) => {
   const q = req.query.q || 'default';
@@ -185,7 +219,6 @@ router.get('/content/lessons/:lessonId', (req, res) => {
 });
 
 // DB/RAG Service routes
-const ragService = require('../lib/ragService');
 
 // GET /api/db/syllabus
 router.get('/db/syllabus', (req, res) => {

@@ -23,6 +23,8 @@ const crypto = require('crypto');
 const config = require('../lib/config');
 const flags = require('../lib/featureFlags');
 const cache = require('../lib/semanticCache');
+const ragService = require('../lib/ragService');
+const logger = require('../lib/logger');
 const { getSuperMemory, SuperMemory } = require('../lib/superMemory');
 
 /* ------------------------------------------------------------------------- *
@@ -60,7 +62,6 @@ class StubProvider {
     this.name = 'stub';
   }
   async generate({ prompt, tier, context }) {
-    const ragService = require('../lib/ragService');
     const safe = String(prompt || '').trim();
     
     // Perform hybrid RAG search
@@ -136,13 +137,40 @@ const PROVIDERS = {
 };
 
 function getProvider() {
-  if (process.env.GEMINI_API_KEY || config.ai.aliases.gemini) {
-    return PROVIDERS.gemini;
-  }
-  const name = config.ai.provider;
+  // Respect the explicitly configured provider (default 'stub' → deterministic,
+  // no LLM). Never auto-select a gateway provider just because an API key is
+  // present — that silently bypasses the configured default and drives AI cost.
+  const name = (config.ai.provider || 'stub').toLowerCase();
   const provider = PROVIDERS[name];
-  if (!provider) return PROVIDERS.stub;
-  return provider;
+  if (provider) return provider;
+  return PROVIDERS.stub;
+}
+
+/**
+ * Retry wrapper with exponential backoff + jitter. Swallows transient gateway
+ * failures (503 queue-full, 429 rate-limit) up to `maxRetries` times. Returns
+ * the raw result or throws the last error so callers can fall back.
+ */
+function isRetryableError(err) {
+  if (err && typeof err.status === 'number') return err.status === 503 || err.status === 429;
+  if (err && typeof err.response === 'object') return err.response.status === 503 || err.response.status === 429;
+  const msg = String((err && err.message) || '');
+  return msg.includes('503') || msg.includes('429') || msg.includes('queue is full') || msg.includes('rate limit');
+}
+
+async function withRetry(fn, { maxRetries = 3, baseDelayMs = 400, maxDelayMs = 4000 } = {}) {
+  let lastErr;
+  for (let attempt = 0; attempt <= maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      if (attempt === maxRetries || !isRetryableError(err)) throw err;
+      const jitter = Math.random() * baseDelayMs;
+      await new Promise(r => setTimeout(r, Math.min(baseDelayMs * 2 ** attempt + jitter, maxDelayMs)));
+    }
+  }
+  throw lastErr;
 }
 
 
@@ -201,9 +229,27 @@ async function askTutor({ question, mode, context }) {
 
   let result;
   try {
-    result = await provider.generate({ prompt: userPrompt, systemPrompt, tier, context });
+    result = await withRetry(() => provider.generate({ prompt: userPrompt, systemPrompt, tier, context }));
   } catch (err) {
-    return { ok: false, error: 'provider failed', details: err.message };
+    // Suppress gateway failures (503/429). Fall back to a structured teaching
+    // answer so the student never sees a hard error; log the reason.
+    const msg = String((err && err.message) || err);
+    logger.warn('AI provider failed after retries: %s', msg);
+    return {
+      ok: true,
+      source: 'fallback',
+      tier,
+      answer: {
+        provider: 'fallback',
+        tier,
+        text:
+          `**[degraded mode]** The AI service is busy right now (${msg.slice(0, 120)}). ` +
+          `Try this anchor: recall the everyday analogy — think of a real-world situation you've seen today that maps to this idea. ` +
+          `Then state the NCERT rule from the chapter, and identify the single "golden step" for the JEE/NEET shortcut. ` +
+          `Ask again in a minute.`,
+        usedContext: false
+      }
+    };
   }
 
   // 4) Store in cache

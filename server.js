@@ -5,6 +5,7 @@ const compression = require('compression');
 const rateLimit = require('express-rate-limit');
 const api = require('./routes/api');
 const agents = require('./routes/agents');
+const engagement = require('./routes/engagement');
 const config = require('./lib/config');
 const logger = require('./lib/logger');
 const enterprise = require('./lib/enterprise');
@@ -104,6 +105,7 @@ app.get('/metrics', enterprise.metricsEndpoint);
 // API routes
 app.use('/api', api);
 app.use('/api/agents', agents);
+app.use('/api', engagement);
 
 // SPA fallback
 app.get('*', (req, res) => {

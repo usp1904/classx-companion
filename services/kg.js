@@ -5,30 +5,13 @@
  *   KG_ENDPOINT - full URL of the knowledge graph resolver endpoint
  *   KG_API_KEY  - optional bearer token for Authorization
  */
-const fetchImpl = global.fetch || (() => {
-  try {
-    return require('node-fetch');
-  } catch (err) {
-    throw new Error('Global fetch is not available. Install node-fetch or use Node 18+.');
-  }
-})();
+'use strict';
+
+const { fetchWithTimeout } = require('../lib/httpClient');
 
 const KG_ENDPOINT = process.env.KG_ENDPOINT;
 const KG_API_KEY = process.env.KG_API_KEY;
 const DEFAULT_TIMEOUT_MS = 10000;
-
-function createFetchWithTimeout(url, options = {}) {
-  const { timeout, ...fetchOptions } = options;
-  if (!timeout || typeof AbortController === 'undefined') {
-    return fetchImpl(url, fetchOptions);
-  }
-
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), timeout);
-
-  return fetchImpl(url, { ...fetchOptions, signal: controller.signal })
-    .finally(() => clearTimeout(timeoutId));
-}
 
 async function resolveEntity(entityId) {
   if (!KG_ENDPOINT) {
@@ -48,7 +31,7 @@ async function resolveEntity(entityId) {
   }
 
   try {
-    const response = await createFetchWithTimeout(KG_ENDPOINT, {
+    const response = await fetchWithTimeout(KG_ENDPOINT, {
       method: 'POST',
       headers,
       body: JSON.stringify(requestBody),

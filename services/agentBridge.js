@@ -1,10 +1,8 @@
 'use strict';
 
-const fetchImpl = global.fetch || (() => {
-  try { return require('node-fetch'); } catch (e) {
-    throw new Error('Global fetch unavailable. Use Node 18+ or install node-fetch.');
-  }
-})();
+const crypto = require('crypto');
+
+const { fetchWithTimeout } = require('../lib/httpClient');
 
 const { DoomLoop } = require('../lib/doomLoop');
 const config = require('../lib/config');
@@ -59,7 +57,7 @@ async function callBridge(endpoint, payload) {
   const timeout = setTimeout(() => controller.abort(), BRIDGE_TIMEOUT_MS);
 
   try {
-    const response = await fetchImpl(url, {
+    const response = await fetchWithTimeout(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
@@ -364,7 +362,7 @@ async function superMemoryStats() {
  */
 async function healthCheck() {
   try {
-    const response = await fetchImpl(`${BRIDGE_URL}/agents/health`, {
+    const response = await fetchWithTimeout(`${BRIDGE_URL}/agents/health`, {
       signal: AbortSignal.timeout(5000)
     });
     if (response.ok) {

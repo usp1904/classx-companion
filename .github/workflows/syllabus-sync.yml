@@ -1,0 +1,30 @@
+name: Syllabus Sync
+
+# Scheduled job that keeps the syllabus index healthy and auto-ingests on a
+# schedule (Academic Year 2026-27 and beyond). Runs tests + the syllabus sync
+# guard; fails the run loudly if the syllabus JSON ever breaks its contract.
+on:
+  schedule:
+    - cron: '0 3 * * *'   # 03:00 UTC daily
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+      - name: Syllabus sync (validate + report inventory)
+        run: node scripts/syncSyllabus.js

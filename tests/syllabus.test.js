@@ -6,7 +6,11 @@ const EXPECTED_SUBJECTS = [
   { id: 'mathematics', name: 'Mathematics', chapterCount: 14 },
   { id: 'physics', name: 'Physics', chapterCount: 5 },
   { id: 'chemistry', name: 'Chemistry', chapterCount: 5 },
-  { id: 'biology', name: 'Biology', chapterCount: 5 }
+  { id: 'biology', name: 'Biology', chapterCount: 5 },
+  { id: 'history', name: 'History', chapterCount: 1 },
+  { id: 'geography', name: 'Geography', chapterCount: 1 },
+  { id: 'civics', name: 'Civics', chapterCount: 1 },
+  { id: 'economics', name: 'Economics', chapterCount: 1 }
 ];
 
 const EXPECTED_CHAPTERS = {
@@ -31,12 +35,16 @@ const EXPECTED_CHAPTERS = {
     'life-processes', 'control-and-coordination',
     'how-do-organisms-reproduce', 'heredity-and-evolution',
     'natural-resources'
-  ]
+  ],
+  history: ['nationalism-in-india'],
+  geography: ['resources-and-development'],
+  civics: ['power-sharing'],
+  economics: ['sectors-of-indian-economy']
 };
 
-test('getSubjects: returns all 4 subjects with correct metadata', () => {
+test('getSubjects: returns all 8 subjects with correct metadata', () => {
   const subjects = syllabus.getSubjects();
-  assert.equal(subjects.length, 4);
+  assert.equal(subjects.length, 8);
   for (const expected of EXPECTED_SUBJECTS) {
     const found = subjects.find(s => s.id === expected.id);
     assert.ok(found, `Subject ${expected.id} not found`);

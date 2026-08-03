@@ -7,7 +7,7 @@ test('list: returns all feature flags', () => {
   assert.ok(all.aiTutor === true);
   assert.ok(all.semanticCache === true);
   assert.ok(all.promptCascade === true);
-  assert.ok(all.streamingResponses === false);
+  assert.ok(all.streamingResponses === true);
   assert.ok(all.requestCoalescing === false);
 });
 
@@ -16,7 +16,7 @@ test('isEnabled: returns true for enabled flags', () => {
 });
 
 test('isEnabled: returns false for disabled flags', () => {
-  assert.equal(flags.isEnabled('streamingResponses'), false);
+  assert.equal(flags.isEnabled('requestCoalescing'), false);
 });
 
 test('isEnabled: returns false for unknown flags', () => {

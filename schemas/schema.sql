@@ -86,3 +86,38 @@ CREATE TABLE IF NOT EXISTS vectors (
     id TEXT PRIMARY KEY,
     embedding BLOB NOT NULL
 );
+
+-- ── Engagement / Gamification (VidyaSethu MVP) ─────────────────────────────
+-- Registered users (Auth)
+CREATE TABLE IF NOT EXISTS users (
+    id TEXT PRIMARY KEY,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL UNIQUE,
+    password_hash TEXT NOT NULL,
+    role TEXT NOT NULL DEFAULT 'student',
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+-- One row per user; cumulative XP, streaks and solved counts for gamification
+CREATE TABLE IF NOT EXISTS user_progress (
+    user_id TEXT PRIMARY KEY,
+    total_xp INTEGER NOT NULL DEFAULT 0,
+    solved_count INTEGER NOT NULL DEFAULT 0,
+    current_streak INTEGER NOT NULL DEFAULT 0,
+    longest_streak INTEGER NOT NULL DEFAULT 0,
+    last_activity_date TEXT,
+    updated_at TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- Append-only log of every practice attempt (drives analytics & XP)
+CREATE TABLE IF NOT EXISTS practice_events (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT NOT NULL,
+    problem_id TEXT,
+    difficulty TEXT NOT NULL DEFAULT 'MEDIUM',
+    correct INTEGER NOT NULL DEFAULT 0,
+    xp_awarded INTEGER NOT NULL DEFAULT 0,
+    created_at TEXT NOT NULL DEFAULT (datetime('now')),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);

@@ -9,30 +9,13 @@
  * RAG / vector search / document retrieval service that supports an
  * HTTP query endpoint.
  */
-const fetchImpl = global.fetch || (() => {
-  try {
-    return require('node-fetch');
-  } catch (err) {
-    throw new Error('Global fetch is not available. Install node-fetch or use Node 18+.');
-  }
-})();
+'use strict';
+
+const { fetchWithTimeout } = require('../lib/httpClient');
 
 const MCP_ENDPOINT = process.env.MCP_ENDPOINT;
 const MCP_API_KEY = process.env.MCP_API_KEY;
 const DEFAULT_TIMEOUT_MS = 10000;
-
-function createFetchWithTimeout(url, options = {}) {
-  const { timeout, ...fetchOptions } = options;
-  if (!timeout || typeof AbortController === 'undefined') {
-    return fetchImpl(url, fetchOptions);
-  }
-
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), timeout);
-
-  return fetchImpl(url, { ...fetchOptions, signal: controller.signal })
-    .finally(() => clearTimeout(timeoutId));
-}
 
 async function fetchCurriculumChunk(query) {
   if (!MCP_ENDPOINT) {
@@ -53,7 +36,7 @@ async function fetchCurriculumChunk(query) {
   }
 
   try {
-    const response = await createFetchWithTimeout(MCP_ENDPOINT, {
+    const response = await fetchWithTimeout(MCP_ENDPOINT, {
       method: 'POST',
       headers,
       body: JSON.stringify(requestBody),
