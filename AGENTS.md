@@ -2,6 +2,18 @@
 
 CRS operating rules: **Caveman + RTK + Supermemory**. Read once, persist, reuse. Spend tokens on fixes, not chatter.
 
+## CRS resolution hierarchy (run every task in this order)
+1. **User request** — capture intent verbatim, nothing more.
+2. **CRS architecture instruction** — apply the active architectural contract (VidyaSethu spec, ARCHITECTURE.md phases) before any code.
+3. **Task classification** — class the task: `authoring` / `backend` / `frontend` / `integration` / `infra` / `fix`. Pick ONE.
+4. **Skill selection** — load ONLY the matching module guidance: `curriculum-guard` (Math/Sci content correctness), `math-formatter` (LaTeX), `dual-mode-router` (Board vs JEE/NEET pedagogy), `viz-generator` (graph/viz schemas), `historical-paper-tags` (paper metadata). Load exactly one unless the task genuinely spans two.
+5. **Load only matching module guidance** — do not dump all skill docs into context.
+6. **Respond using compact output** — Caveman + RTK (Anchor/Core/Bridge); strip filler tokens.
+7. **Optionally write memory note** — persist a one-line Supertypes entry only if behavior/state changes for future sessions.
+
+## CRS mode defaults
+- **Caveman + RTK + SuperMemory** across every reply. Optimize token usage. Use multiple agents ONLY if the task has truly parallel independent sub-searches.
+
 ## Command core
 - `npm test` — run whole suite (node --test). Do NOT re-read test files before/after if they pass.
 - `npm start` — `node server.js` (binds `0.0.0.0`, CORS `*` → globally reachable).

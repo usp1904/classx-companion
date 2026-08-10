@@ -1,0 +1,2 @@
+{"timestamp":"2026-08-04T14:33:49.947Z","level":"info","message":"OpenRouter AI (free tier) configured via OPENROUTER_API_KEY"}
+{"timestamp":"2026-08-04T14:33:50.107Z","level":"info","message":"ClassX Companion API v0.1.0 listening on http://0.0.0.0:3000"}

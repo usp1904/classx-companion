@@ -68,8 +68,11 @@ const NAV_ITEMS = [
   { id:'vedic-math',    icon:'⚡', label:'Vedic Math' },
   { id:'mind-maps',     icon:'🧠', label:'Mind Maps' },
   { id:'interactive',  icon:'🎮', label:'Interactive' },
-  { id:'viz',           icon:'📈', label:'Visualizations' },
+  { id:'media',           icon:'🎥', label:'Media Overview' },
   { id:'rag-search',    icon:'🔍', label:'RAG Hybrid Search' },
+  { id:'ai-tutor',      icon:'🤖', label:'AI Tutor' },
+  { id:'account',       icon:'👤', label:'My Account' },
+  { id:'leaderboard',   icon:'🏆', label:'Leaderboard' },
 ];
 
 /* ───────── LOADING ───────── */
@@ -113,6 +116,21 @@ function Overview({ lesson, subjects, instructions }) {
     d.common_misconceptions?.length ? div({style:{marginTop:16}},
       h3({style:{fontSize:14,color:C.amber,marginBottom:8}}, '⚠️ Common Misconceptions'),
       d.common_misconceptions.map((m,i) => div({key:i,className:'misconception-card',dangerouslySetInnerHTML:{__html:m.replace(/^(.*?)(—|–)(.*)$/,'<strong>$1</strong>$2$3')}}))
+    ) : null,
+    instructions && instructions.length ? div({style:{marginTop:16}},
+      h3({style:{fontSize:14,color:C.violet,marginBottom:8}}, '🔧 Active System Modules'),
+      div({style:{display:'flex',flexDirection:'column',gap:8}},
+        instructions.map((im,i) => div({key:im.name||i,className:'concept-card',style:{padding:14,marginBottom:0}},
+          div({style:{display:'flex',alignItems:'center',justifyContent:'space-between',gap:8}},
+            h4({style:{fontSize:13,color:C.violet,fontWeight:600}}, im.name),
+        span({className:'tag cyan'}, (im.triggers||[]).length+' triggers')
+          ),
+          im.description ? p({style:{fontSize:12,color:'var(--textDim)',marginTop:6,lineHeight:1.6}}, im.description) : null,
+          (im.triggers||[]).length ? div({style:{marginTop:8,display:'flex',flexWrap:'wrap',gap:4}},
+            im.triggers.map((t,j) => span({key:j,className:'tag green',style:{fontSize:10}}, t))
+          ) : null
+        ))
+      )
     ) : null,
   );
 }
@@ -1036,6 +1054,185 @@ function RagSearch() {
   );
 }
 
+/* ───────── DASHBOARD WIDGETS ───────── */
+const ROLES_META = {
+  student: 'Learn → Practice → Quizzes → AI Tutor → Leaderboard',
+  teacher: 'Concepts → Exercises → Model Papers → Analytics → RAG Search (content QA)',
+  parent: 'Overview → Progress → Leaderboard → Model Papers preview'
+};
+const ROLES_GROUPS = {
+  student: [
+    { label:'📚 Learn', items:['overview','concepts','theorems','examples','exercises'] },
+    { label:'🎯 Practice', items:['model-papers','quizzes','vedic-math','mind-maps'] },
+    { label:'🔬 Explore', items:['interactive','media'] },
+    { label:'📖 Reference', items:['rd-sharma','rs-aggarwal'] },
+    { label:'🔍 Tools', items:['rag-search','ai-tutor'] },
+    { label:'👤 Account', items:['account','leaderboard'] }
+  ],
+  teacher: [
+    { label:'📚 Teach', items:['overview','concepts','theorems','examples','exercises','model-papers'] },
+    { label:'👥 Class', items:['leaderboard','account'] },
+    { label:'🎯 Practice', items:['quizzes','vedic-math','mind-maps'] },
+    { label:'🔬 Explore', items:['interactive','media','rag-search'] },
+    { label:'📖 Reference', items:['rd-sharma','rs-aggarwal'] },
+    { label:'⚙️ Tools', items:['ai-tutor'] }
+  ],
+  parent: [
+    { label:'📊 Progress', items:['account','leaderboard','overview'] },
+    { label:'🎯 Practice', items:['quizzes','model-papers','exercises'] },
+    { label:'📚 Learn', items:['concepts','theorems','examples'] },
+    { label:'🔬 Explore', items:['interactive','media'] },
+    { label:'⚙️ Tools', items:['ai-tutor','rag-search'] },
+    { label:'📖 Reference', items:['rd-sharma','rs-aggarwal'] },
+    { label:'🧠 Extras', items:['vedic-math','mind-maps'] }
+  ]
+};
+
+const SUBJECT_ICONS = {
+  mathematics:'📐', physics:'⚛️', chemistry:'🧪', biology:'🧬',
+  history:'🏛️', geography:'🌍', civics:'⚖️', economics:'💹'
+};
+const barStyle = (pct, color) => ({ width: Math.max(0, Math.min(100, pct)) + '%', height: '100%', background: color, borderRadius: 6, transition: 'width .5s ease' });
+
+function DailyGoalRing({ goal }) {
+  if (!goal) return null;
+  const pct = goal.progressPct || 0;
+  const r = 26, c = 2 * Math.PI * r;
+  return div({ className:'dash-ring' },
+    h('svg', { viewBox:'0 0 64 64', width:64, height:64 },
+      h('circle', { cx:32, cy:32, r, fill:'none', stroke:'var(--panelBorder)', strokeWidth:7 }),
+      h('circle', { cx:32, cy:32, r, fill:'none', stroke: goal.done ? 'var(--emerald)' : 'var(--marigold)', strokeWidth:7,
+        strokeLinecap:'round', strokeDasharray:c, strokeDashoffset:c - (c * pct / 100),
+        transform:'rotate(-90 32 32)', style:{ transition:'stroke-dashoffset .6s ease' } })
+    ),
+    div({ className:'dash-ring-center' }, String(pct) + '%'),
+    div({ className:'dash-ring-label' }, goal.done ? 'Goal Met 🎉' : (goal.remaining + ' left today'))
+  );
+}
+
+function WeeklyCalendar({ events }) {
+  const [sel, setSel] = useState(null);
+  const dayLabels = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const byDate = {};
+  (events||[]).forEach(e => { const d = (e.createdAt||'').slice(0,10); if (d) (byDate[d]=byDate[d]||[]).push(e); });
+  const days = [];
+  for (let i = 6; i >= 0; i--) {
+    const dt = new Date(); dt.setDate(dt.getDate() - i);
+    const key = dt.toISOString().slice(0,10);
+    const list = byDate[key] || [];
+    const anyCorrect = list.some(e => e.correct);
+    const anyAttempt = list.length > 0;
+    days.push({ key, label: dayLabels[dt.getDay()], num: dt.getDate(), list, anyCorrect, anyAttempt, isToday: i === 0 });
+  }
+  return div({ className:'dash-card' },
+    div({ className:'dash-card-head' }, h3(null, '📅 This Week'), span({ className:'tag green' }, 'Tap a day')),
+    div({ className:'cal-row' },
+      days.map(d => div({ key:d.key,
+        className:'cal-day'+(d.anyCorrect?' done':'')+(d.anyAttempt?' partial':'')+(d.isToday?' today':''),
+        onClick:()=>setSel(sel===d.key?null:d.key)
+      },
+        span({ className:'cal-day-label' }, d.label),
+        span({ className:'cal-day-num' }, d.num)
+      ))
+    ),
+    sel ? (() => {
+      const d = days.find(x => x.key === sel);
+      const items = d ? d.list : [];
+      return div({ className:'cal-detail' },
+        div({ className:'cal-detail-head' }, span(null, d.key), btn({ className:'btn btn-secondary', style:{padding:'2px 8px',fontSize:11}, onClick:()=>setSel(null) }, '✕')),
+        items.length ? items.slice(0,6).map((e,i) =>
+          div({ className:'cal-item'+(e.correct?' ok':' miss') },
+            span(null, e.difficulty),
+            span(null, e.correct ? '✔ Correct  +'+e.xpAwarded+' XP' : 'Missed'),
+            e.correct && e.xpAwarded ? span({ className:'tag green' }, '+' + e.xpAwarded + ' XP') : null
+          )) : p({ style:{ fontSize:12, color:'var(--textMuted)' } }, 'No activity recorded this day.')
+      );
+    })() : null
+  );
+}
+
+function ProfileSidebar({ profile, goal }) {
+  if (!profile) return div({ className:'dash-card dash-profile' }, 'Loading profile…');
+  const u = profile.user || {};
+  const p = profile.progress || {};
+  return div({ className:'dash-card dash-profile' },
+    div({ className:'prof-top' },
+      div({ className:'prof-avatar' }, (u.name||'L').charAt(0).toUpperCase()),
+      div(null,
+        h3(null, u.name || 'Learner'),
+        p({ style:{ fontSize:12, color:'var(--textMuted)' } }, (profile.rank||'') + (profile.rankPosition ? ` • #${profile.rankPosition}` : ''))
+      )
+    ),
+    div({ className:'prof-stats' },
+      div({ className:'prof-stat' }, span({ className:'prof-stat-v accent' }, p.totalXp ?? 0), span({ className:'prof-stat-l' }, 'XP')),
+      div({ className:'prof-stat' }, span({ className:'prof-stat-v marigold' }, p.currentStreak ?? 0), span({ className:'prof-stat-l' }, 'Streak')),
+      div({ className:'prof-stat' }, span({ className:'prof-stat-v emerald' }, p.solvedCount ?? 0), span({ className:'prof-stat-l' }, 'Solved'))
+    ),
+    (profile.badges||[]).length ? div({ className:'badge-row' },
+      profile.badges.slice(0,5).map((b,i) => span({ key:i, className:'tag amber' }, '🏅 '+b))
+    ) : null,
+    h(DailyGoalRing, { goal })
+  );
+}
+
+function ProgressTrackers({ analytics, goal }) {
+  const totalXp = analytics ? analytics.totalXp || 0 : 0;
+  const level = Math.floor(totalXp / 100) + 1;
+  const intoLevel = totalXp % 100;
+  const acc = analytics ? (analytics.accuracy || 0) : 0;
+  return div({ className:'dash-card' },
+    div({ className:'dash-card-head' }, h3(null, '🚀 Progress Trackers')),
+    div({ className:'trk' },
+      span({ className:'trk-label' }, 'Level ' + level),
+      div({ className:'trk-bar' }, div({ style: barStyle(intoLevel, 'var(--royal)') })),
+      span({ className:'trk-meta' }, intoLevel + ' / 100 XP to level ' + (level+1))
+    ),
+    div({ className:'trk' },
+      span({ className:'trk-label' }, 'Accuracy'),
+      div({ className:'trk-bar' }, div({ style: barStyle(acc, 'var(--emerald)') })),
+      span({ className:'trk-meta' }, acc + '% correct across ' + (analytics ? analytics.attempts : 0) + ' attempts')
+    ),
+    div({ className:'trk' },
+      span({ className:'trk-label' }, 'Accuracy by streak: ' + (analytics ? analytics.currentStreak : 0) + ' days 🔥'),
+      div({ className:'trk-value-row' },
+        span({ className:'tag cyan' }, (analytics ? analytics.currentStreak : 0) + '-day streak'),
+        span({ className:'tag violet' }, (analytics ? analytics.longestStreak : 0) + ' best')
+      )
+    )
+  );
+}
+
+function SubjectCards({ subjects, onPick }) {
+  return div({ className:'dash-card' },
+    div({ className:'dash-card-head' }, h3(null, '📚 Your Subjects'), span({ className:'tag blue' }, subjects.length + ' subjects')),
+    div({ className:'subject-grid' },
+      subjects.map(s => btn({ key:s.id, className:'subject-card', onClick:()=>onPick(s), role:'button' },
+        div({ className:'subject-icon' }, SUBJECT_ICONS[s.id] || '📘'),
+        div({ className:'subject-body' },
+          h4(null, s.name),
+          p(null, s.description || '')
+        ),
+        span({ className:'subject-cta' }, 'Open →')
+      ))
+    )
+  );
+}
+
+function Dashboard({ subjects, analytics, profile, goal, onPickSubject }) {
+  return div({ className:'dash-grid' },
+    div({ className:'dash-col dash-col-left' },
+      h(ProfileSidebar, { profile, goal })
+    ),
+    div({ className:'dash-col dash-col-main' },
+      h(ProgressTrackers, { analytics, goal }),
+      h(WeeklyCalendar, { events: analytics ? analytics.recent : [] })
+    ),
+    div({ className:'dash-col dash-col-right' },
+      h(SubjectCards, { subjects, onPick: onPickSubject })
+    )
+  );
+}
+
 /* ───────── MAIN APP ───────── */
 
 function App() {
@@ -1043,12 +1240,16 @@ function App() {
   const [lesson, setLesson] = useState(null);
   const [subjects, setSubjects] = useState([]);
   const [instructions, setInstructions] = useState([]);
-  const [activeNav, setActiveNav] = useState('overview');
+  const [activeNav, setActiveNav] = useState('dashboard');
   const [selectedSubject, setSelectedSubject] = useState('');
   const [selectedChapter, setSelectedChapter] = useState('');
   const [status, setStatus] = useState('offline');
   const [allLessons, setAllLessons] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [role, setRole] = useState('student');
+  const [dashProfile, setDashProfile] = useState(null);
+  const [dashAnalytics, setDashAnalytics] = useState(null);
+  const [dashGoal, setDashGoal] = useState(null);
 
   const filteredLessons = allLessons.filter(l =>
     (!selectedSubject || l.subject === selectedSubject) &&
@@ -1076,52 +1277,53 @@ function App() {
       if (dbs.ok && dbs.syllabus) {
         const dbCh = dbs.syllabus.find(c => c.id === lessonId);
         if (dbCh) {
-          const mockLesson = {
-            id: dbCh.id,
-            chapter: dbCh.name,
-            title: dbCh.name,
-            outcomes: [
-              `Understand the core concepts of ${dbCh.name}`,
-              "Apply standard mathematical formulas to solve problems step-by-step",
-              "Practice selected textbook problems from NCERT, RD Sharma, and RS Aggarwal"
-            ],
-            concepts: dbCh.topics.map(t => ({
-              name: t.name,
-              real_life_application: t.description || `Everyday application of ${t.name} in daily routine.`,
-              purpose: "Understand the purpose and application of this mathematical concept.",
-              industry_relevance: `This concept powers engineering, medicine, AI and industry. Learn it to unlock career paths in science and technology.`,
-              engineering_domains: 'AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography',
-              future_careers: 'AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician'
-            })),
-            theorems: [],
-            exercises: {},
-            rd_sharma_extensions: {
-              book: `RD Sharma Class 10, Chapter — ${dbCh.name}`,
-              topics: dbCh.topics.filter(t => t.name.toLowerCase().includes('rd sharma') || t.id.includes('-rd-')).map(t => ({
-                name: t.name.replace('RD Sharma: ', ''),
-                concept: t.description || 'Advanced concept and applications.',
-                formula: 'Refer to formulas in RAG Search.',
-                examples: t.problems ? t.problems.map(p => ({
-                  problem: p.question_text,
-                  solution: ["Step 1: Check step details in RAG Search"],
-                  final_answer: p.question_latex || ''
-                })) : []
-              }))
-            },
-            rs_aggarwal_extensions: {
-              book: `RS Aggarwal Class 10, Chapter — ${dbCh.name}`,
-              topics: dbCh.topics.filter(t => t.name.toLowerCase().includes('rs aggarwal') || t.id.includes('-rs-')).map(t => ({
-                name: t.name.replace('RS Aggarwal: ', ''),
-                concept: t.description || 'Advanced concept and applications.',
-                formula: 'Refer to formulas in RAG Search.',
-                examples: t.problems ? t.problems.map(p => ({
-                  problem: p.question_text,
-                  solution: ["Step 1: Check step details in RAG Search"],
-                  final_answer: p.question_latex || ''
-                })) : []
-              }))
-            }
-          };
+            const mockLesson = {
+                lessonId: dbCh.id,
+                subject: dbCh.subject_id,
+                chapter: dbCh.name,
+                title: dbCh.name,
+                outcomes: [
+                    `Understand the core concepts of ${dbCh.name}`,
+                    "Apply standard mathematical formulas to solve problems step-by-step",
+                    "Practice selected textbook problems from NCERT, RD Sharma, and RS Aggarwal"
+                ],
+                concepts: dbCh.topics.map(t => ({
+                    name: t.name,
+                    real_life_application: t.description || `Everyday application of ${t.name} in daily routine.`,
+                    purpose: "Understand the purpose and application of this mathematical concept.",
+                    industry_relevance: `This concept powers engineering, medicine, AI and industry. Learn it to unlock career paths in science and technology.`,
+                    engineering_domains: 'AI & Data Science, Finance & Quant Trading, Civil & Structural Engineering, Space Navigation & Cryptography',
+                    future_careers: 'AI/ML Engineer, Actuary & Quantitative Analyst, Data Scientist, Aerospace Mathematician'
+                })),
+                theorems: [],
+                exercises: {},
+                rd_sharma_extensions: {
+                    book: `RD Sharma Class 10, Chapter — ${dbCh.name}`,
+                    topics: dbCh.topics.filter(t => t.name.toLowerCase().includes('rd sharma') || t.id.includes('-rd-')).map(t => ({
+                        name: t.name.replace('RD Sharma: ', ''),
+                        concept: t.description || 'Advanced concept and applications.',
+                        formula: 'Refer to formulas in RAG Search.',
+                        examples: t.problems ? t.problems.map(p => ({
+                            problem: p.question_text,
+                            solution: ["Step 1: Check step details in RAG Search"],
+                            final_answer: p.question_latex || ''
+                        })) : []
+                    }))
+                },
+                rs_aggarwal_extensions: {
+                    book: `RS Aggarwal Class 10, Chapter — ${dbCh.name}`,
+                    topics: dbCh.topics.filter(t => t.name.toLowerCase().includes('rs aggarwal') || t.id.includes('-rs-')).map(t => ({
+                        name: t.name.replace('RS Aggarwal: ', ''),
+                        concept: t.description || 'Advanced concept and applications.',
+                        formula: 'Refer to formulas in RAG Search.',
+                        examples: t.problems ? t.problems.map(p => ({
+                            problem: p.question_text,
+                            solution: ["Step 1: Check step details in RAG Search"],
+                            final_answer: p.question_latex || ''
+                        })) : []
+                    }))
+                }
+            };
 
           if (mockLesson.rd_sharma_extensions.topics.length === 0) {
             mockLesson.rd_sharma_extensions.topics = dbCh.topics.slice(0, 2).map(t => ({
@@ -1195,6 +1397,28 @@ function App() {
     }).catch(() => setStatus('offline'));
   }, []);
 
+  // ── Dashboard data (profile / analytics / daily goal) ──
+  const dashboardUserId = (() => {
+    try { const t = localStorageGet('cx_token'); if (t) { const u = JSON.parse(atob(t.split('.')[0])); if (u && u.userId) return u.userId; } } catch(e) {}
+    return 'student01';
+  })();
+  const refreshDashboard = useCallback((userId) => {
+    Promise.all([
+      fetch('/api/profile/'+userId).then(r => r.json()).catch(() => null),
+      fetch('/api/analytics/'+userId).then(r => r.json()).catch(() => null),
+      fetch('/api/gamify/'+userId+'/goal?target=5').then(r => r.json()).catch(() => null)
+    ]).then(([prof, ana, goal]) => {
+      if (prof && prof.ok) setDashProfile(prof.data);
+      if (ana && ana.ok) setDashAnalytics(ana.data);
+      if (goal && goal.ok) setDashGoal(goal.data);
+    });
+  }, []);
+  useEffect(() => {
+    refreshDashboard(dashboardUserId);
+    window.addEventListener('cx-auth', () => refreshDashboard(dashboardUserId));
+    return () => window.removeEventListener('cx-auth', () => refreshDashboard(dashboardUserId));
+  }, [dashboardUserId, refreshDashboard]);
+
   const handleBoardChange = useCallback((boardId) => {
     setSelectedBoard(boardId);
     const lessonsInBoard = allLessons.filter(l => l.board === boardId);
@@ -1215,31 +1439,42 @@ function App() {
     }
   }, [allLessons, selectedBoard, loadLesson]);
 
+  const handleSubjectPick = useCallback((subject) => {
+    if (!subject) return;
+    setSelectedSubject(subject.id);
+    const lessonsInSubject = allLessons.filter(l => l.subject === subject.id && l.board === selectedBoard);
+    const first = lessonsInSubject[0] || allLessons[0];
+    setActiveNav('overview');
+    if (first) {
+      setSelectedChapter(first.lessonId);
+      loadLesson(first.lessonId, first.board || selectedBoard);
+    }
+  }, [allLessons, selectedBoard, loadLesson]);
+
   const view = (() => {
-    if (!lesson) return h(Loading);
     switch (activeNav) {
-      case 'overview':    return h(Overview, {lesson,subjects,instructions});
-      case 'concepts':    return h(Concepts, {lesson});
-      case 'theorems':    return h(Theorems, {lesson});
-      case 'examples':    return h(Examples, {lesson});
-      case 'exercises':   return h(Exercises, {lesson});
+      case 'dashboard':   return h(Dashboard, { subjects, analytics:dashAnalytics, profile:dashProfile, goal:dashGoal, onPickSubject:handleSubjectPick });
+      case 'overview':    return lesson ? h(Overview, {lesson,subjects,instructions}) : h(Loading);
+      case 'concepts':    return lesson ? h(Concepts, {lesson}) : h(Loading);
+      case 'theorems':    return lesson ? h(Theorems, {lesson}) : h(Loading);
+      case 'examples':    return lesson ? h(Examples, {lesson}) : h(Loading);
+      case 'exercises':   return lesson ? h(Exercises, {lesson}) : h(Loading);
       case 'rag-search':  return h(RagSearch);
-      case 'rd-sharma':   return h(ExtensionView, {title:'📖 RD Sharma Extensions', data:lesson.rd_sharma_extensions});
-      case 'rs-aggarwal': return h(ExtensionView, {title:'📖 RS Aggarwal Extensions', data:lesson.rs_aggarwal_extensions});
-      case 'model-papers': return h(ModelPapers, {lesson});
-      case 'quizzes':     return h(Quizzes, {lesson});
-      case 'vedic-math':  return h(VedicMath, {lesson});
-      case 'mind-maps':   return h(MindMaps, {lesson});
-      case 'interactive': return h(Interactive, {lesson});
-      case 'viz':         return h(Viz, {lesson});
-      default:            return h(Overview, {lesson,subjects,instructions});
+      case 'rd-sharma':   return lesson ? h(ExtensionView, {title:'📖 RD Sharma Extensions', data:lesson.rd_sharma_extensions}) : h(Loading);
+      case 'rs-aggarwal': return lesson ? h(ExtensionView, {title:'📖 RS Aggarwal Extensions', data:lesson.rs_aggarwal_extensions}) : h(Loading);
+      case 'model-papers': return lesson ? h(ModelPapers, {lesson}) : h(Loading);
+      case 'quizzes':     return lesson ? h(Quizzes, {lesson}) : h(Loading);
+      case 'vedic-math':  return lesson ? h(VedicMath, {lesson}) : h(Loading);
+      case 'mind-maps':   return lesson ? h(MindMaps, {lesson}) : h(Loading);
+      case 'interactive': return lesson ? h(Interactive, {lesson}) : h(Loading);
+       case 'media':         return lesson ? h(Media, {lesson}) : h(Loading);
+      case 'ai-tutor':    return h(AI_Tutor);
+      case 'account':     return h(AuthScreen, { onAuthed: () => { const uid = (() => { try { const t = localStorageGet('cx_token'); if (t) { const u = JSON.parse(atob(t.split('.')[0])); return u.userId; } } catch(e) {} return 'student01'; })(); refreshDashboard(uid); setActiveNav('dashboard'); } });
+      case 'leaderboard': return h(LeaderboardScreen);
+      default:            return h(Dashboard, { subjects, analytics:dashAnalytics, profile:dashProfile, goal:dashGoal, onPickSubject:handleSubjectPick });
     }
   })();
 
-  const sideLearn = NAV_ITEMS.slice(0,5);
-  const sideRef = NAV_ITEMS.slice(5,7);
-  const sidePractice = NAV_ITEMS.slice(7,11);
-  const sideExplore = NAV_ITEMS.slice(11);
   return div(null,
     /* ── SIDEBAR OVERLAY (mobile) ── */
     div({className:'sidebar-overlay'+(sidebarOpen?' open':''), onClick:()=>setSidebarOpen(false)}),
@@ -1283,6 +1518,19 @@ function App() {
         div({className:'header-status '+status},
           div({className:'status-dot'}),
           status==='online'?'API Online':'API Offline'
+        ),
+        div({className:'role-switch'},
+          ['student','teacher','parent'].map(r => btn({
+            key:r, className:'role-btn'+(role===r?' active':''),
+            onClick:()=>{setRole(r); setSidebarOpen(false);}
+          }, r.charAt(0).toUpperCase()+r.slice(1)))
+        ),
+        btn({
+          className:'header-user',
+          onClick:()=>{ setActiveNav('account'); setSidebarOpen(false); }
+        },
+          div({className:'avatar'}, 'CX'),
+          'My Account'
         )
       )
     ),
@@ -1291,26 +1539,24 @@ function App() {
     div({className:'layout'},
       /* Sidebar */
       div({className:'sidebar'+(sidebarOpen?' open':'')},
-        div({className:'sidebar-label'}, '📚 Learn'),
-        sideLearn.map(item => btn({
-          key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
-          onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
-        }, span({className:'nav-icon'}, item.icon), item.label)),
-        div({className:'sidebar-label',style:{marginTop:8}}, '📖 Reference'),
-        sideRef.map(item => btn({
-          key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
-          onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
-        }, span({className:'nav-icon'}, item.icon), item.label)),
-        div({className:'sidebar-label',style:{marginTop:8}}, '🎯 Practice'),
-        sidePractice.map(item => btn({
-          key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
-          onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
-        }, span({className:'nav-icon'}, item.icon), item.label)),
-        div({className:'sidebar-label',style:{marginTop:8}}, '🔬 Explore'),
-        sideExplore.map(item => btn({
-          key:item.id, className:'nav-btn'+(activeNav===item.id?' active':''),
-          onClick:()=>{setActiveNav(item.id);setSidebarOpen(false);}
-        }, span({className:'nav-icon'}, item.icon), item.label)),
+        btn({
+          className:'nav-btn dash-nav'+(activeNav==='dashboard'?' active':''),
+          onClick:()=>{setActiveNav('dashboard');setSidebarOpen(false);}
+        }, span({className:'nav-icon'}, '🏠'), 'Dashboard'),
+        (ROLES_GROUPS[role]||ROLES_GROUPS.student).map(group => div({key:group.label},
+          div({className:'sidebar-label'}, group.label),
+          group.items.map(item => {
+            const nav = NAV_ITEMS.find(n => n.id === item);
+            if (!nav) return null;
+            return btn({
+              key:nav.id, className:'nav-btn'+(activeNav===nav.id?' active':''),
+              onClick:()=>{setActiveNav(nav.id);setSidebarOpen(false);}
+            }, span({className:'nav-icon'}, nav.icon), nav.label);
+          })
+        )),
+        div({className:'role-hint', style:{fontSize:11,color:'var(--textMuted)',marginTop:12,padding:'8px 10px',background:'var(--accentLight)',borderRadius:8,lineHeight:1.5}},
+          '👁 ' + (ROLES_META[role] || ROLES_META.student)
+        ),
         lesson ? div({style:{marginTop:'auto',paddingTop:12,borderTop:'1px solid var(--panelBorder)'}},
           div({style:{fontSize:11,color:'var(--textMuted)',textAlign:'center'}},
             (lesson.concepts?.length||0)+' concepts • '+
@@ -1330,5 +1576,340 @@ function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(h(App));
+/**
+ * Media Overview Component
+ * Displays overview videos, flashcards, mind maps, and concept videos for a lesson
+ * @param {Object} props - The component properties
+ * @param {Object} props.lesson - The lesson data
+ * @returns {JSX.Element} The media overview component
+ */
+function Media({ lesson }) {
+  const [overviewVideo, setOverviewVideo] = useState(null);
+  const [flashcards, setFlashcards] = useState([]);
+  const [videosData, setVideosData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Fetch videos.json for overview video lookup
+    fetch('/content/videos.json')
+      .then(res => res.json())
+      .then(data => {
+        setVideosData(data);
+        // Find overview video for this chapter
+        const subject = lesson.subject.toLowerCase();
+        const chapter = lesson.chapter;
+        if (videosData?.videos?.[subject]) {
+          const subjectVideos = videosData.videos[subject];
+          // Try exact match first
+          let videoId = subjectVideos[chapter];
+          // If not found, try to find any video that contains the chapter name (case insensitive)
+          if (!videoId) {
+            const chapterLower = chapter.toLowerCase();
+            for (const [key, value] of Object.entries(subjectVideos)) {
+              if (key.toLowerCase().includes(chapterLower)) {
+                videoId = value;
+                break;
+              }
+            }
+          }
+          if (videoId) {
+            setOverviewVideo(`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&playlist=${videoId}&loop=1&controls=0&rel=0&modestbranding=1`);
+          }
+        }
+      })
+      .catch(err => console.warn('Could not load videos.json:', err));
+
+    // Fetch flashcards
+    fetch(`/api/content/flashcards/${lesson.lessonId}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.ok && data.data) {
+          setFlashcards(data.data.flashcards);
+        }
+      })
+      .catch(err => console.warn('Could not load flashcards:', err))
+      .finally(() => setLoading(false));
+  }, [lesson]);
+
+  if (loading) {
+    return div({className:'card'}, div({className:'card-header'}, h2(null, '🎥 Media Overview')), div({style:{textAlign:'center',padding:'40px'}}, h3(null, 'Loading...')));
+  }
+
+  return div(null,
+    div({className:'card'},
+      div({className:'card-header'},
+        h2(null, '🎥 Media Overview'),
+        p(null, 'Audio/Video overviews, flashcards, mind maps, and concept visualizations for quick review')
+      ),
+      div({className:'media-grid'},
+        // Overview Video Section
+        div({className:'media-card'},
+          h3(null, '🎬 Chapter Overview'),
+          overviewVideo
+            ? div({style:{position:'relative',paddingBottom:'56.25%',height:0,overflow:'hidden',borderRadius:10}},
+                h('iframe', {
+                  src: overviewVideo,
+                  title: 'Chapter Overview',
+                  style: {position:'absolute',top:0,left:0,width:'100%',height:'100%',border:0},
+                  allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+                  allowFullScreen: true
+                })
+              )
+            : div({style:{textAlign:'center',padding:'40px',color:'var(--textMuted)'}},
+                p(null, 'No overview video available for this chapter'),
+                p(null, 'Check back later or explore concept videos below')
+              )
+        ),
+
+        // Flashcards Section
+        div({className:'media-card'},
+          h3(null, '🃏 Flashcards for Quick Review'),
+          flashcards.length > 0
+            ? div({className:'flashcards-container'},
+                flashcards.map((card, index) =>
+                  div({key:index, className:'flashcard'},
+                    div({className:'flashcard-front', onClick:(e)=>e.currentTarget.classList.toggle('flipped')},
+                      h4(null, card.front)
+                    ),
+                    div({className:'flashcard-back', onClick:(e)=>e.currentTarget.classList.toggle('flipped')},
+                      p(null, card.back || 'No description available')
+                    )
+                  )
+                )
+              )
+            : div({style:{textAlign:'center',padding:'40px',color:'var(--textMuted)'}},
+                p(null, 'No flashcards available for this chapter')
+              )
+        ),
+
+        // Mind Maps Section
+        lesson && lesson.mind_maps
+          ? h(MindMaps, {lesson})
+          : div({className:'media-card'},
+              h3(null, '🧠 Mind Maps'),
+              p(null, 'No mind map available for this chapter')
+            ),
+
+        // Concept Videos Section
+        div({className:'media-card'},
+          h3(null, '🎥 Concept Videos'),
+          (lesson && lesson.concepts && lesson.concepts.some(c => c.video_embed))
+            ? div({className:'videos-grid'},
+                lesson.concepts.map((concept, index) =>
+                  concept.video_embed
+                    ? div({key:index, className:'video-item'},
+                        h4(null, concept.name),
+                        div({style:{position:'relative',paddingBottom:'56.25%',height:0,overflow:'hidden',borderRadius:8}},
+                          h('iframe', {
+                            src: concept.video_embed,
+                            title: concept.name,
+                            style: {position:'absolute',top:0,left:0,width:'100%',height:'100%',border:0},
+                            allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture',
+                            allowFullScreen: true
+                          })
+                        )
+                      )
+                    : null
+                ).filter(Boolean)
+              )
+            : div({style:{textAlign:'center',padding:'40px',color:'var(--textMuted)'}},
+                p(null, 'No concept videos available for this chapter')
+              )
+        )
+      )
+    )
+  );
+}
+
+/* ───────── AI TUTOR ───────── */
+function AI_Tutor() {
+  const [question, setQuestion] = useState('');
+  const [answer, setAnswer] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [meta, setMeta] = useState(null);
+  const suggestions = [
+    'Explain the quadratic formula with a real-life example',
+    'How do I find the HCF of two numbers using Euclid division lemma?',
+    'What is the difference between rational and irrational numbers?',
+    'Show me a JEE shortcut for solving linear equations in two variables'
+  ];
+  const ask = async (q) => {
+    const useQ = (q !== undefined) ? q : question;
+    if (!useQ || !useQ.trim() || loading) return;
+    setLoading(true); setAnswer(''); setMeta(null);
+    try {
+      const res = await fetch('/api/ai/tutor', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ question: useQ, stream: false })
+      });
+      const json = await res.json();
+      if (json.ok) {
+        setAnswer(json.answer && json.answer.text ? json.answer.text : '');
+        setMeta({ tier: json.tier, source: json.source });
+      } else {
+        setAnswer('Error: '+(json.error || 'tutor unavailable'));
+      }
+    } catch(e) { setAnswer('Network error: '+e.message); }
+    setLoading(false);
+  };
+  return div({className:'card'},
+    div({className:'card-header'},
+      h2(null, '🤖 AI Tutor'),
+      p(null, 'Ask any concept — get an explanation tuned to Class X NCERT + IIT-JEE/NEET bridge'),
+    ),
+    div({style:{display:'flex',flexDirection:'column',gap:8}},
+      suggestions.map((s, i) => btn({
+        key:i, className:'btn btn-secondary', style:{justifyContent:'flex-start'},
+        onClick:()=>{ setQuestion(s); ask(s); }
+      }, '❓ '+s))
+    ),
+    textarea({
+      className:'viz-editor', placeholder:'Type your question here...', value:question,
+      style:{minHeight:90, marginTop:14},
+      onChange:e=>setQuestion(e.target.value)
+    }),
+    div({style:{marginTop:10}},
+      btn({className:'btn btn-primary', onClick:()=>ask(), disabled:loading || !question.trim()},
+        loading ? 'Thinking...' : '🤖 Ask the AI Tutor')
+    ),
+    meta ? div({style:{marginTop:10,display:'flex',gap:6}},
+        span({className:'tag cyan'}, 'Tier: '+meta.tier),
+        span({className:'tag green'}, 'Source: '+meta.source)
+      ) : null,
+    answer ? div({style:{marginTop:16}},
+      h3({style:{fontSize:14,color:C.violet,marginBottom:8}}, '💬 Answer'),
+      pre({className:'answer-box', dangerouslySetInnerHTML:{__html:answer}})
+    ) : null
+  );
+}
+
+/* ───────── ENGAGEMENT: AUTH ───────── */
+function localStorageGet(k){ try { return window.localStorage.getItem(k); } catch(e){ return null; } }
+function localStorageSet(k,v){ try { window.localStorage.setItem(k,v); } catch(e){} }
+
+function AuthScreen({ onAuthed }) {
+  const [mode, setMode] = useState(localStorageGet('cx_token') ? 'logged' : 'login');
+  const token = localStorageGet('cx_token');
+  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [msg, setMsg] = useState('');
+  const [profile, setProfile] = useState(null);
+  const decodeUser = (t) => { try { const b = t.split('.')[0]; return JSON.parse(atob(b)); } catch(e){ return {}; } };
+  const loadProfile = async () => {
+    const t = localStorageGet('cx_token');
+    if (!t) return;
+    const u = decodeUser(t);
+    try {
+      const r = await fetch('/api/profile/'+u.userId, { headers:{ Authorization:'Bearer '+t } });
+      const j = await r.json();
+      if (j.ok) setProfile(j.data);
+    } catch(e){}
+  };
+  useEffect(()=>{ if (mode==='logged') loadProfile(); }, [mode]);
+
+  const submit = async () => {
+    setMsg('');
+    const ep = mode==='login' ? '/api/auth/login' : '/api/auth/register';
+    const body = mode==='login' ? { email, password } : { name, email, password, role:'student' };
+    try {
+      const r = await fetch(ep, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body) });
+      const j = await r.json();
+      if (j.ok) {
+        localStorageSet('cx_token', j.token);
+        setMode('logged'); setMsg('Welcome, '+(j.data.name||'')+'!');
+        onAuthed(j.data, j.token);
+      } else setMsg(j.error || 'Request failed');
+    } catch(e){ setMsg('Network error: '+e.message); }
+  };
+  const logout = () => { localStorageSet('cx_token',''); localStorageSet('cx_user',''); setMode('login'); setProfile(null); onAuthed(null, null); };
+
+  if (mode==='logged') {
+    const u = decodeUser(token);
+    return div({className:'card'},
+      div({className:'card-header'}, h2(null,'👤 My Account'), p(null,'Your learning profile & progression')),
+      profile ? div({style:{display:'flex',flexDirection:'column',gap:14}},
+        div({style:{display:'flex',alignItems:'center',gap:16,flexWrap:'wrap'}},
+          div({style:{width:56,height:56,borderRadius:'50%',background:'linear-gradient(135deg,var(--accent),var(--sage))',display:'grid',placeItems:'center',fontSize:22,fontWeight:800,color:'#fff'}},
+            (profile.user?.name||'U').charAt(0).toUpperCase()),
+          div(null,
+            h3({style:{fontSize:18,fontWeight:700,color:'var(--text)'}}, profile.user?.name||u.name||'Student'),
+            p({style:{fontSize:12,color:'var(--textMuted)'}}, (profile.rank||'')+' • '+(profile.user?.email||''))
+          )
+        ),
+        div({className:'stats-grid',style:{marginTop:8,gridTemplateColumns:'repeat(auto-fill,minmax(120px,1fr))'}},
+          div({className:'stat-card cyan'}, div({className:'stat-value'}, profile.progress?.totalXp??0), div({className:'stat-label'},'Total XP')),
+          div({className:'stat-card green'}, div({className:'stat-value'}, profile.progress?.currentStreak??0), div({className:'stat-label'},'Day Streak')),
+          div({className:'stat-card violet'}, div({className:'stat-value'}, profile.progress?.solvedCount??0), div({className:'stat-label'},'Solved')),
+          div({className:'stat-card amber'}, div({className:'stat-value'}, profile.progress?.longestStreak??0), div({className:'stat-label'},'Best Streak'))
+        ),
+        profile.badges?.length ? div({style:{marginTop:6}},
+          h4({style:{fontSize:12,color:C.amber,marginBottom:6}},'🏅 Badges'),
+          div({style:{display:'flex',flexWrap:'wrap',gap:6}}, profile.badges.map((b,i)=>span({key:i,className:'tag amber'}, b)))
+        ) : null,
+        profile.share ? div({style:{marginTop:10,padding:'10px 12px',background:'var(--accentLight)',borderRadius:8,fontSize:12,color:'var(--textDim)'}},
+          '🔗 '+profile.share
+        ) : null,
+        div({style:{marginTop:12,display:'flex',gap:10}},
+          btn({className:'btn btn-secondary',onClick:logout},'🚪 Logout')
+        )
+      ) : div({style:{color:'var(--textMuted)'}}, 'Loading profile...'),
+      div({style:{marginTop:12,padding:'10px',background:'var(--bg1)',borderRadius:8,fontSize:11,color:'var(--textMuted)'}},
+        'Progression is stored locally on this device via your login token.'
+      )
+    );
+  }
+  const fieldstyle = { width:'100%', padding:'10px 12px', borderRadius:8, border:'1px solid var(--panelBorder)', background:'var(--bg2)', color:'var(--text)', fontSize:14, marginBottom:10 };
+  return div({className:'card',style:{maxWidth:480,margin:'0 auto'}},
+    div({className:'card-header'}, h2(null, mode==='login'?'🔐 Login':'📝 Create Account'), p(null, mode==='login'?'Sign in to sync your progress across screens':'Join ClassX Companion to start earning XP')),
+    div({style:{display:'flex',gap:6,marginBottom:14}},
+      btn({className:'btn '+(mode==='login'?'btn-primary':'btn-secondary'),onClick:()=>{setMode('login');setMsg('');}}, 'Login'),
+      btn({className:'btn '+(mode==='register'?'btn-primary':'btn-secondary'),onClick:()=>{setMode('register');setMsg('');}}, 'Register')
+    ),
+    mode==='register' ? div(null, label({style:{fontSize:12,color:'var(--textMuted)'}},'Full Name'), h('input',{style:fieldstyle,type:'text',value:name,placeholder:'e.g. Ananya Sharma',onChange:e=>setName(e.target.value)})) : null,
+    label({style:{fontSize:12,color:'var(--textMuted)'}},'Email'),
+    h('input',{style:fieldstyle,type:'email',value:email,placeholder:'you@classx.com',onChange:e=>setEmail(e.target.value)}),
+    label({style:{fontSize:12,color:'var(--textMuted)'}},'Password'),
+    h('input',{style:fieldstyle,type:'password',value:password,placeholder:'min 6 characters',onChange:e=>setPassword(e.target.value)}),
+    msg ? p({style:{fontSize:12,color:mode==='logged'?C.green:C.red,marginBottom:8}}, msg) : null,
+    btn({className:'btn btn-primary',style:{width:'100%',justifyContent:'center'},onClick:submit,disabled:!email||!password||(mode==='register'&&!name)},
+      mode==='login' ? 'Sign In' : 'Create Account')
+  );
+}
+
+/* ───────── ENGAGEMENT: LEADERBOARD ───────── */
+function LeaderboardScreen() {
+  const [rows, setRows] = useState([]);
+  const [error, setError] = useState('');
+  useEffect(()=>{
+    fetch('/api/leaderboard').then(r=>r.json()).then(j=>{
+      if (j.ok) setRows(j.data);
+      else setError(j.error||'Could not load leaderboard');
+    }).catch(()=>setError('Leaderboard unavailable'));
+  },[]);
+  return div({className:'card'},
+    div({className:'card-header'}, h2(null,'🏆 Leaderboard'), p(null,'Top learners by total XP across ClassX Companion')),
+    error ? p({style:{color:C.red,fontSize:13}}, error) : null,
+    rows.length ? rows.map((r,i)=>
+      div({key:r.userId||i,className:'leaderboard-row',style:{display:'flex',alignItems:'center',gap:12,padding:'10px 8px',borderBottom:'1px solid var(--panelBorder)'}},
+        div({style:{width:32,height:32,borderRadius:'50%',display:'grid',placeItems:'center',fontWeight:800,fontSize:13,color:'#fff',background:i<3?'linear-gradient(135deg,#f59e0b,#f43f5e)':'var(--accent)'}}, r.position||(i+1)),
+        div({style:{flex:1,fontSize:13,color:'var(--textDim)'}}, r.name || ('Learner #'+String(r.userId||i).slice(0,4))),
+        span({style:{fontSize:12,color:'var(--textMuted)'}}, r.solvedCount+' solved'),
+        div({style:{display:'flex',gap:3,alignItems:'center'}},
+          span({className:'tag cyan'}, r.totalXp+' XP'),
+          span({className:'tag green'}, '🔥 '+r.longestStreak)
+        )
+      )
+    ) : p({style:{color:'var(--textMuted)',textAlign:'center',padding:20}}, 'No leaderboard data yet — practice some problems to appear here!')
+  );
+}
+
+/* ───────── MOUNT ───────── */
+const rootEl = document.getElementById('root');
+if (rootEl && window.ReactDOM && typeof window.ReactDOM.createRoot === 'function') {
+  const root = window.ReactDOM.createRoot(rootEl);
+  root.render(h(App));
+} else if (rootEl) {
+  // Pre-React-18 fallback (legacy render)
+  rootEl.innerHTML = '<div style="padding:40px;text-align:center;color:#64748b;font-family:Inter,system-ui">React 18 root API not found. Check vendor-react-dom.production.min.js.</div>';
+}

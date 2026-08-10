@@ -2,6 +2,7 @@
 // tests NEVER write to prod data/classx.db, then runs the node test runner.
 // Cross-platform: spawns node as a child so env propagates to each test file
 // process.
+// Accepts --watch flag to enable watch mode.
 'use strict';
 
 const { spawnSync } = require('child_process');
@@ -12,7 +13,16 @@ const fs = require('fs');
 const tmpDb = path.join(os.tmpdir(), `classx-test-${process.pid}-${Date.now()}.db`);
 process.env.CLASSX_DB_PATH = tmpDb;
 
-const result = spawnSync(process.execPath, ['--test', 'tests/**/*.test.js'], {
+// Parse args: support --watch flag
+const args = process.argv.slice(2);
+const watch = args.includes('--watch');
+const nodeArgs = ['--test'];
+if (watch) {
+  nodeArgs.push('--watch');
+}
+nodeArgs.push('tests/**/*.test.js');
+
+const result = spawnSync(process.execPath, nodeArgs, {
   stdio: 'inherit',
   env: process.env
 });

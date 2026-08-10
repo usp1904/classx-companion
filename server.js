@@ -80,10 +80,17 @@ app.get('/favicon.ico', (req, res) => {
 });
 
 // Serve frontend static files
+app.use('/content', express.static(path.join(__dirname, 'content')));
+app.use((req, res, next) => {
+  if (req.path === '/index.html' || req.path === '/') {
+    res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+  }
+  next();
+});
 app.use(express.static(path.join(__dirname, 'frontend'), {
-  maxAge: process.env.NODE_ENV === 'production' ? '7d' : 0,
-  etag: true,
-  lastModified: true
+   maxAge: process.env.NODE_ENV === 'production' ? '1h' : 0,
+   etag: true,
+   lastModified: true
 }));
 
 // Health route at /health
