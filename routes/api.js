@@ -9,6 +9,8 @@ const aiTutor = require('../services/aiTutor');
 const flags = require('../lib/featureFlags');
 const content = require('../lib/content');
 const ragService = require('../lib/ragService');
+const subjectFeatures = require('../lib/subjectFeatures');
+const tutorScaffold = require('../lib/tutorScaffold');
 const fs = require('fs');
 const path = require('path');
 const Ajv = require('ajv');
@@ -53,6 +55,17 @@ router.post('/dual-mode-route', (req, res) => {
 router.get('/syllabus/subjects', (req, res) => {
   const subjects = syllabus.getSubjects();
   return res.json({ ok: true, subjects });
+});
+
+// GET /api/dashboard/subject-features -> per-subject dashboard feature flags
+router.get('/dashboard/subject-features', (req, res) => {
+  return res.json({ ok: true, default: subjectFeatures.get(null), subjects: subjectFeatures.getAll() });
+});
+
+// GET /api/dashboard/subject-features/:subjectId -> feature flags for one subject
+router.get('/dashboard/subject-features/:subjectId', (req, res) => {
+  const features = subjectFeatures.get(req.params.subjectId);
+  return res.json({ ok: true, subject: req.params.subjectId, features });
 });
 
 // GET /api/syllabus/subjects/:subjectId -> get subject detail and chapters
@@ -212,10 +225,21 @@ router.get('/content/lessons', (req, res) => {
 });
 
 // GET /api/content/lessons/:lessonId -> full lesson with all features
+// Falls back to a subject-aware DB-scaffolded lesson for chapters without an
+// authored file, so non-math subjects get real Q&A and subject-aligned content
+// instead of the generic frontend mock.
 router.get('/content/lessons/:lessonId', (req, res) => {
   const lesson = content.getLessonById(req.params.lessonId);
-  if (!lesson) return res.status(404).json({ ok: false, error: 'Lesson not found' });
-  return res.json({ ok: true, lesson: lesson.data });
+  if (lesson) return res.json({ ok: true, lesson: lesson.data });
+  if (!flags.isEnabled('tutorScaffold')) return res.status(404).json({ ok: false, error: 'Lesson not found' });
+
+  const dbChapter = ragService.getChapterById(req.params.lessonId);
+  if (!dbChapter) return res.status(404).json({ ok: false, error: 'Lesson not found' });
+
+  const slChapter = syllabus.getChapter(dbChapter.subject_id, dbChapter.id);
+  const scaffolded = tutorScaffold.getScaffoldForDbChapter(dbChapter, slChapter);
+  if (!scaffolded) return res.status(404).json({ ok: false, error: 'Lesson not found' });
+  return res.json({ ok: true, lesson: scaffolded });
 });
 
 // GET /api/content/flashcards/:lessonId -> flashcards derived from lesson content
@@ -224,6 +248,33 @@ router.get('/content/flashcards/:lessonId', (req, res) => {
   if (!lesson) return res.status(404).json({ ok: false, error: 'Lesson not found' });
   const flashcards = content.buildFlashcards(lesson.data);
   return res.json({ ok: true, data: { lessonId: lesson.lessonId, subject: lesson.subject, count: flashcards.length, flashcards } });
+});
+
+// ── Tutor scaffold (base content for every subject/chapter) ──────────────
+
+// GET /api/scaffold/subjects -> subjects that can be scaffolded
+router.get('/scaffold/subjects', (req, res) => {
+  if (!flags.isEnabled('tutorScaffold')) return res.status(404).json({ ok: false, error: 'tutor scaffold disabled' });
+  return res.json({ ok: true, subjects: syllabus.getSubjects().map(s => ({ id: s.id, name: s.name, chapters: (s.chapters || []).length })) });
+});
+
+// GET /api/scaffold/:subjectId/:chapterId -> full scaffolded lesson for any
+// subject+chapter in the syllabus (explanation, Q&A, model papers, mind maps,
+// quizzes, media overview with all reel URLs).
+router.get('/scaffold/:subjectId/:chapterId', (req, res) => {
+  if (!flags.isEnabled('tutorScaffold')) return res.status(404).json({ ok: false, error: 'tutor scaffold disabled' });
+  const scaffold = tutorScaffold.getScaffold({ subjectId: req.params.subjectId, chapterId: req.params.chapterId });
+  if (!scaffold) return res.status(404).json({ ok: false, error: 'Subject or chapter not found' });
+  return res.json({ ok: true, lesson: scaffold });
+});
+
+// GET /api/scaffold/:subjectId/:chapterId/media -> Media Overview: every 20s
+// ad-free YouTube reel URL for the chapter, for quick refresh and reference.
+router.get('/scaffold/:subjectId/:chapterId/media', (req, res) => {
+  if (!flags.isEnabled('tutorScaffold')) return res.status(404).json({ ok: false, error: 'tutor scaffold disabled' });
+  const scaffold = tutorScaffold.getScaffold({ subjectId: req.params.subjectId, chapterId: req.params.chapterId });
+  if (!scaffold) return res.status(404).json({ ok: false, error: 'Subject or chapter not found' });
+  return res.json({ ok: true, media: scaffold.media_overview });
 });
 
 // DB/RAG Service routes

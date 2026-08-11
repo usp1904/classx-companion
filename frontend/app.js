@@ -79,19 +79,20 @@ const NAV_ITEMS = [
 const Loading = () => div({className:'loading'}, 'Loading lesson content...');
 
 /* ───────── OVERVIEW ───────── */
-function Overview({ lesson, subjects, instructions }) {
+function Overview({ lesson, subjects, instructions, features }) {
   if (!lesson) return null;
   const d = lesson;
+  const feat = features || {};
   const stats = [
     { value:d.concepts?.length||0, label:'Concepts', color:'cyan' },
-    { value:d.theorems?.length||0, label:'Theorems', color:'violet' },
+    feat.theorems !== false ? { value:d.theorems?.length||0, label:'Theorems', color:'violet' } : null,
     { value:d.worked_examples?.length||0, label:'Examples', color:'green' },
-    { value:Object.keys(d.exercises||{}).length, label:'Exercises', color:'amber' },
+    feat.exercises !== false ? { value:Object.keys(d.exercises||{}).length, label:'Exercises', color:'amber' } : null,
     { value:(d.quizzes?.simple?.length||0)+(d.quizzes?.medium?.length||0)+(d.quizzes?.complex?.length||0), label:'Quiz Questions', color:'cyan' },
-    { value:d.vedic_math_shortcuts?.length||0, label:'Vedic Shortcuts', color:'violet' },
+    feat.vedicMaths !== false ? { value:d.vedic_math_shortcuts?.length||0, label:'Vedic Shortcuts', color:'violet' } : null,
     { value:d.flowcharts?.length||0, label:'Flowcharts', color:'green' },
     { value:d.common_misconceptions?.length||0, label:'Misconceptions', color:'amber' },
-  ];
+  ].filter(Boolean);
   const totalProblems = Object.values(d.exercises||{}).reduce((sum, ex) => sum + (ex.problems?.length||0), 0);
   const totalRdProblems = (d.rd_sharma_extensions?.topics||[]).reduce((s, t) => s + (t.examples?.length||0), 0);
   const totalRsProblems = (d.rs_aggarwal_extensions?.topics||[]).reduce((s, t) => s + (t.examples?.length||0), 0);
@@ -106,7 +107,7 @@ function Overview({ lesson, subjects, instructions }) {
         div({className:'stat-label'}, s.label)
       ))
     ),
-    totalProblems > 0 ? div({style:{marginBottom:16,fontSize:13,color:'var(--textDim)'}},
+    totalProblems > 0 && (feat.rdSharma !== false || feat.rsAggarwal !== false) ? div({style:{marginBottom:16,fontSize:13,color:'var(--textDim)'}},
       `📊 Total NCERT Problems: ${totalProblems}  |  RD Sharma: ${totalRdProblems}  |  RS Aggarwal: ${totalRsProblems}`
     ) : null,
     div({className:'outcomes'},
@@ -1055,6 +1056,27 @@ function RagSearch() {
 }
 
 /* ───────── DASHBOARD WIDGETS ───────── */
+// Maps subject-feature flags (from /api/dashboard/subject-features) to nav ids
+// that must be hidden when the flag is false. NO_MATH_NAV applies to all
+// non-mathematics subjects via their feature config.
+const NAV_FEATURE_GATE = [
+  { navId:'theorems',   flag:'theorems' },
+  { navId:'exercises',  flag:'exercises' },
+  { navId:'vedic-math', flag:'vedicMaths' },
+  { navId:'rd-sharma',  flag:'rdSharma' },
+  { navId:'rs-aggarwal',flag:'rsAggarwal' },
+  { navId:'interactive',flag:'interactive' }
+];
+function visibleNavItems(items, features) {
+  const feat = features || {};
+  const hidden = NAV_FEATURE_GATE.filter(g => feat[g.flag] === false).map(g => g.navId);
+  return items.filter(i => !hidden.includes(i));
+}
+function navGroupsForSubject(groups, features) {
+  return groups
+    .map(g => Object.assign({}, g, { items: visibleNavItems(g.items, features) }))
+    .filter(g => g.items.length > 0);
+}
 const ROLES_META = {
   student: 'Learn → Practice → Quizzes → AI Tutor → Leaderboard',
   teacher: 'Concepts → Exercises → Model Papers → Analytics → RAG Search (content QA)',
@@ -1250,6 +1272,7 @@ function App() {
   const [dashProfile, setDashProfile] = useState(null);
   const [dashAnalytics, setDashAnalytics] = useState(null);
   const [dashGoal, setDashGoal] = useState(null);
+  const [subjectFeatures, setSubjectFeatures] = useState({});
 
   const filteredLessons = allLessons.filter(l =>
     (!selectedSubject || l.subject === selectedSubject) &&
@@ -1358,8 +1381,10 @@ function App() {
       api('/health'),
       api('/api/content/lessons'),
       api('/api/db/syllabus'), // Get all chapters across all boards to avoid empty states
-    ]).then(([s, i, h, cl, dbs]) => {
+      api('/api/dashboard/subject-features'),
+    ]).then(([s, i, h, cl, dbs, sf]) => {
       if (s.ok) setSubjects(s.subjects);
+      if (sf.ok && sf.subjects) setSubjectFeatures(sf.subjects);
       if (i.ok) setInstructions(i.instructions || []);
       
       let mergedLessons = [];
@@ -1451,10 +1476,12 @@ function App() {
     }
   }, [allLessons, selectedBoard, loadLesson]);
 
+  const curFeatures = subjectFeatures[selectedSubject] || subjectFeatures.default || {};
+
   const view = (() => {
     switch (activeNav) {
       case 'dashboard':   return h(Dashboard, { subjects, analytics:dashAnalytics, profile:dashProfile, goal:dashGoal, onPickSubject:handleSubjectPick });
-      case 'overview':    return lesson ? h(Overview, {lesson,subjects,instructions}) : h(Loading);
+      case 'overview':    return lesson ? h(Overview, {lesson,subjects,instructions,features:curFeatures}) : h(Loading);
       case 'concepts':    return lesson ? h(Concepts, {lesson}) : h(Loading);
       case 'theorems':    return lesson ? h(Theorems, {lesson}) : h(Loading);
       case 'examples':    return lesson ? h(Examples, {lesson}) : h(Loading);
@@ -1543,7 +1570,7 @@ function App() {
           className:'nav-btn dash-nav'+(activeNav==='dashboard'?' active':''),
           onClick:()=>{setActiveNav('dashboard');setSidebarOpen(false);}
         }, span({className:'nav-icon'}, '🏠'), 'Dashboard'),
-        (ROLES_GROUPS[role]||ROLES_GROUPS.student).map(group => div({key:group.label},
+        (navGroupsForSubject(ROLES_GROUPS[role]||ROLES_GROUPS.student, curFeatures)).map(group => div({key:group.label},
           div({className:'sidebar-label'}, group.label),
           group.items.map(item => {
             const nav = NAV_ITEMS.find(n => n.id === item);
@@ -1559,9 +1586,9 @@ function App() {
         ),
         lesson ? div({style:{marginTop:'auto',paddingTop:12,borderTop:'1px solid var(--panelBorder)'}},
           div({style:{fontSize:11,color:'var(--textMuted)',textAlign:'center'}},
-            (lesson.concepts?.length||0)+' concepts • '+
-            (lesson.theorems?.length||0)+' theorems • '+
-            (Object.keys(lesson.exercises||{}).length)+' exercises'
+            (lesson.concepts?.length||0)+' concepts'+
+            (curFeatures.theorems !== false && lesson.theorems?.length ? ' • '+(lesson.theorems?.length||0)+' theorems' : '')+
+            (curFeatures.exercises !== false && Object.keys(lesson.exercises||{}).length ? ' • '+Object.keys(lesson.exercises||{}).length+' exercises' : '')
           )
         ) : null
       ),
