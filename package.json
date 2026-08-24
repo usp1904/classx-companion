@@ -9,16 +9,16 @@
     "test:watch": "node --test --watch tests/**/*.test.js"
   },
   "dependencies": {
-    "@langchain/core": "^1.2.2",
-    "@langchain/langgraph": "^1.4.7",
-    "ajv": "^8.12.0",
-    "body-parser": "^1.20.2",
+    "@langchain/core": "^1.2.8",
+    "@langchain/langgraph": "^1.4.10",
+    "ajv": "^8.20.0",
+    "body-parser": "^1.20.6",
     "compression": "^1.8.1",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "express-rate-limit": "^8.5.2",
-    "langchain": "^1.5.3",
-    "node-fetch": "^2.6.9"
+    "cors": "^2.8.6",
+    "express": "^4.22.2",
+    "express-rate-limit": "^8.6.2",
+    "langchain": "^1.5.9",
+    "node-fetch": "^2.7.0"
   },
   "directories": {
     "lib": "lib",
